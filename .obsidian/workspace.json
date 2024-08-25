@@ -6,7 +6,6 @@
       {
         "id": "51202127b8ee7255",
         "type": "tabs",
-        "dimension": 76.96700507614213,
         "children": [
           {
             "id": "65035e27668a84e3",
@@ -14,28 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git笔记.md",
+                "file": "Leetcode_notes/Day01_Array_Part1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4608ba278b5ac919",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Leetcode_notes/Day01_Array_Part1.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
-      },
-      {
-        "id": "ed4e33190a680209",
-        "type": "tabs",
-        "dimension": 23.032994923857867,
-        "children": [
-          {
-            "id": "24e03d73bf0ba9fa",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -101,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Git笔记.md",
+                "file": "Leetcode_notes/Day01_Array_Part1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,12 +110,20 @@
             }
           },
           {
+            "id": "f25c1712022f3014",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
             "id": "d65593c59e749f1e",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Git笔记.md",
+                "file": "Leetcode_notes/Day01_Array_Part1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,24 +146,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git笔记.md"
+                "file": "Leetcode_notes/Day01_Array_Part1.md"
               }
             }
-          },
-          {
-            "id": "f25c1712022f3014",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 426.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,24 +165,29 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "remotely-save:Remotely Save": false
+      "remotely-save:Remotely Save": false,
+      "random-note:开始漫游笔记": false,
+      "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "65035e27668a84e3",
+  "active": "4608ba278b5ac919",
   "lastOpenFiles": [
+    "模板/LeetcodeRecordTemplate.md",
+    "imgs/Pasted image 20240628081005.png",
+    "imgs/Pasted image 20240708122822.png",
+    "每日学习记录(简略).md",
+    "Leetcode_notes/Day01_Array_Part1.md",
+    "模板",
+    "Git笔记.md",
     "Leetcode_notes/Q1.md",
     "Leetcode_notes/README.md",
-    "每日学习记录(简略).md",
     "Spring6笔记.md",
     "rs-test-folder-pjgjRya34GD5Sl67UOT6Y",
     "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq",
     "rs-test-folder-6IUAevxh7aydLGTHMWu8A",
     "JavaWeb.md",
-    "Git笔记.md",
     "欢迎.md",
     "Leetcode_notes",
-    "imgs/Pasted image 20240708122822.png",
-    "imgs/Pasted image 20240628081005.png",
     "imgs"
   ]
 }
