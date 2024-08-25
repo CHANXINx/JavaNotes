@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode_notes/Day01_Array_Part1.md",
+                "file": "Leetcode_notes/Day02_Array_Part2.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode_notes/Day01_Array_Part1.md",
+                "file": "模板/LeetcodeRecordTemplate.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#★★☆☆☆",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Leetcode_notes/Day01_Array_Part1.md",
+                "file": "Leetcode_notes/Day02_Array_Part2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Leetcode_notes/Day01_Array_Part1.md",
+                "file": "Leetcode_notes/Day02_Array_Part2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,12 +145,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Leetcode_notes/Day01_Array_Part1.md"
+                "file": "Leetcode_notes/Day02_Array_Part2.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -170,13 +169,14 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "4608ba278b5ac919",
+  "active": "65035e27668a84e3",
   "lastOpenFiles": [
+    "Leetcode_notes/Day01_Array_Part1.md",
+    "Leetcode_notes/Day02_Array_Part2.md",
     "模板/LeetcodeRecordTemplate.md",
     "imgs/Pasted image 20240628081005.png",
     "imgs/Pasted image 20240708122822.png",
     "每日学习记录(简略).md",
-    "Leetcode_notes/Day01_Array_Part1.md",
     "模板",
     "Git笔记.md",
     "Leetcode_notes/Q1.md",
