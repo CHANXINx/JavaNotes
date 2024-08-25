@@ -148,9 +148,17 @@
                 "file": "Leetcode_notes/Day02_Array_Part2.md"
               }
             }
+          },
+          {
+            "id": "7f9bd1c5f9f9f687",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -171,9 +179,9 @@
   },
   "active": "65035e27668a84e3",
   "lastOpenFiles": [
-    "Leetcode_notes/Day01_Array_Part1.md",
-    "Leetcode_notes/Day02_Array_Part2.md",
     "模板/LeetcodeRecordTemplate.md",
+    "Leetcode_notes/Day02_Array_Part2.md",
+    "Leetcode_notes/Day01_Array_Part1.md",
     "imgs/Pasted image 20240628081005.png",
     "imgs/Pasted image 20240708122822.png",
     "每日学习记录(简略).md",
