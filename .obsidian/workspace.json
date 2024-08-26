@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode_notes/Day02_Array_Part2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4608ba278b5ac919",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "模板/LeetcodeRecordTemplate.md",
+                "file": "Leetcode_notes/AlgoNote.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#★★☆☆☆",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 332.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Leetcode_notes/Day02_Array_Part2.md",
+                "file": "Leetcode_notes/AlgoNote.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Leetcode_notes/Day02_Array_Part2.md",
+                "file": "Leetcode_notes/AlgoNote.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Leetcode_notes/Day02_Array_Part2.md"
+                "file": "Leetcode_notes/AlgoNote.md"
               }
             }
           },
@@ -179,11 +167,18 @@
   },
   "active": "65035e27668a84e3",
   "lastOpenFiles": [
-    "模板/LeetcodeRecordTemplate.md",
+    "Leetcode_notes/Day04_LinkedList_Part2.md",
     "Leetcode_notes/Day02_Array_Part2.md",
     "Leetcode_notes/Day01_Array_Part1.md",
+    "imgs/LinkedListPart2_img1.png",
+    "imgs/LinkedListPart2_img2.png",
+    "模板/LeetcodeRecordTemplate.md",
+    "Leetcode_notes/AlgoNote.md",
     "imgs/Pasted image 20240628081005.png",
     "imgs/Pasted image 20240708122822.png",
+    "imgs/Pasted image 20240826153054.png",
+    "Pasted image 20240826153054 1.png",
+    "未命名",
     "每日学习记录(简略).md",
     "模板",
     "Git笔记.md",
