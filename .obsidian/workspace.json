@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode_notes/Day05_HashTable_Part1.md",
+                "file": "Leetcode_notes/Day06_HashTable_Part2.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#★☆☆☆☆",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Leetcode_notes/Day05_HashTable_Part1.md",
+                "file": "Leetcode_notes/Day06_HashTable_Part2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Leetcode_notes/Day05_HashTable_Part1.md",
+                "file": "Leetcode_notes/Day06_HashTable_Part2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Leetcode_notes/Day05_HashTable_Part1.md"
+                "file": "Leetcode_notes/Day06_HashTable_Part2.md"
               }
             }
           },
@@ -168,8 +167,9 @@
   },
   "active": "65035e27668a84e3",
   "lastOpenFiles": [
-    "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day05_HashTable_Part1.md",
+    "Leetcode_notes/Day06_HashTable_Part2.md",
+    "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day04_LinkedList_Part2.md",
     "Leetcode_notes/Day02_Array_Part2.md",
     "Leetcode_notes/Day01_Array_Part1.md",
