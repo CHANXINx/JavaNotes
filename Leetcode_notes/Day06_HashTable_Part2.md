@@ -133,7 +133,7 @@ class Solution {
 你可以按 **任意顺序** 返回答案 。
 ## 信息:
 - **难度**: medium
-- **重要性:** #★☆☆☆☆
+- **重要性:** #★★★★★
 ## 思路:
 - 这题其实是和三数之和一种类型的题目,都是利用多指针法.其中i,j,m三个指针在左,k指针在右.先判断sum值:1)若大于target,则移动指针k; 2)若小于target,则移动指针m; 3)若等于,则`list.add`,并同时移动m和k.当`m>=k`时,此时就需要更新一次j,重复上述步骤;若遍历完所有j,则需要更新i了.即i是最外层循环,j是内层循环,而m和k是内内层循环.
 - 去重操作,对于i的去重,`if (i > 0 && nums[i] == nums[i - 1]);`,总是迷惑是用`nums[i]==nums[i-1]`还是`nums[i]==nums[i+1]`,这样理解:**i是向右移动的**,所以先对i进行遍历,结束后i++,此时的`nums[i]和nums[i-1]`有可能重复,所以判断条件是`nums[i]==nums[i-1]`,若重复了,则跳过当前的i!
@@ -142,6 +142,8 @@ class Solution {
 - 多指针法!特别是指针k需要放在最右边!然后就是根据sum值的不同移动指针.
 - **去重操作**是重点,要注意不同的条件,指针往右移动时,是使用`num[i]==nums[i-1]`;向左移动时,是使用`num[i]==nums[i+1]`,即判断当前值和前面使用过的值是否相等,相等则跳过!
 - **剪枝操作**,即当满足一定条件时直接跳出循环,不执行多余的操作:
+	- i循环的剪枝,当满足`nums[i]>0且nums[i]>target`时,此时往后的均是`大于0且大于nums[i]`的数,只会越来越大于target,故可直接返回list.
+	- j循环的剪枝,当`nums[i]+nums[j] > 0 && nums[i]+nums[j] > target`时,
 ```
 i循环的剪枝:
 
@@ -176,15 +178,15 @@ class Solution {
             if (i > 0 && nums[i] == nums[i - 1]) {  // 去重a  
                 continue;  
             }  
-            for (int j = i+1; j < nums.length - 2; j++){  
-  
-                if((nums[i] + nums[j]) > target && (nums[i] + nums[j]) >= 0) break;  
-  
+            for (int j = i + 1; j < nums.length - 2; j++){  
+                if (nums[i]+nums[j] > 0 && nums[i]+nums[j] > target) {  
+                    break;  
+                }  
                 if (j > i + 1 && nums[j] == nums[j - 1]) continue; // 去重b  
                 m = j + 1;  
                 k = nums.length - 1;  
   
-                while (m < k) {  
+               while (m < k) {  
                    long sum =(long) nums[i] + nums[j] + nums[m] + nums[k];  
                    if (sum > target) k--;  
                    else if (sum < target) m++;  
