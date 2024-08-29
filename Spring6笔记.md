@@ -20,7 +20,7 @@
 ## 2.1 Spring简介
 - Spring是一个**轻量级的控制反转(IoC)和面向切面(AOP)的容器框架**。 Spring最初的出现是为了解决EJB臃肿的设计，以及难以测试等问题。 Spring为简化开发而生，让程序员只需关注核心业务的实现，尽可能的不再关注非业务逻辑代码（事务控制，安全日志等）。*
 ## 2.2 Spring八大模块
-![[imgs/Pasted image 20240708122822.png]]
+![[SpringNote_SpringAllModules.png]]
 ### 1. Spring Core
 - 最基础的部分，提供了IoC特征来实现容器对Bean的管理。核心容器的主要组件是 BeanFactory，BeanFactory是工厂模式的一个实现，是任何Spring应用的核心。它使用IoC将应用配置和依赖从实际的应用代码中分离出来。
 ### 2. Spring Context

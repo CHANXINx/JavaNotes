@@ -31,7 +31,7 @@
 - `git config --system --list`：查看系统配置信息
 - `git config --global --list`：查看当前用户配置
 - 系统配置信息存放于`F:/Git/etc/gitconfig`中，全局配置信息存放于`C:/User/Adminstrator/.gitgonfig`中。
-  ![[Pasted image 20240628081005.png]]
+  ![[GitNote_gitconfig.png]]
 # Git基本理论:
 ## 工作分区：
 1. **Working Directory：** 存放本地代码库；
