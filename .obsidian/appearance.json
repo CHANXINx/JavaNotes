@@ -2,5 +2,6 @@
   "textFontFamily": "iA Writer Mono V Regular",
   "interfaceFontFamily": "iA Writer Mono V Regular",
   "baseFontSizeAction": true,
-  "theme": "obsidian"
+  "theme": "moonstone",
+  "baseFontSize": 15
 }

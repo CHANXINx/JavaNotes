@@ -10,7 +10,7 @@
 ## 思路:
 - 双指针交换数组元素,利用中间变量temp保存交换元素.
 ## 关键点:
-- 
+- 无.
 ## 代码:
 ```java
 class Solution {  
@@ -36,13 +36,14 @@ class Solution {
 - 如果剩余字符少于 `k` 个，则将剩余字符全部反转。
 - 如果剩余字符小于 `2k` 但大于或等于 `k` 个，则反转前 `k` 个字符，其余字符保持原样。
 ## 信息:
-- **难度**:
-- **重要性:** #★★★☆☆
+- **难度**: easy
+- **重要性:** #★★★★☆
 ## 思路:
 - **理解题目:** 每2k个,反转前k个;若当出现剩下的字符长度<k,则全部反转;若剩下的字符>=k,但<2k,则依旧反转前k个.
 - 定义index变量,用于判断剩余字符串属于上述哪种类型,不同类型执行不同的反转操作.最终代码如下.每次执行反转操作后,都需要更新index!
 ## 关键点:
-- 
+- 思路很清晰,重点是代码如何操作!还有就是减少冗余.
+- **每2k个翻转前k个,若剩余字符小于2k,但大于k,仍翻转前k个**,所以这两者的右指针其实是一样的;若剩余字符小于k个,则此时右指针会不同,但翻转逻辑仍是一样的.
 ## 代码:
 ### 版本一:(冗余度高)
 ```java
@@ -52,19 +53,21 @@ class Solution {
         char temp;  
         char[] s1 = s.toCharArray();  
         while ((s.length()-index) > 0){  
-            if ((s.length() - index) > 2*k) {  
+        // 1和2内的for循环逻辑是相同的,可以合并!
+            1:if ((s.length() - index) > 2*k) {  
                 for (int i = index, j = index+k-1; i < j; i++,j--){  
                     temp = s1[j];  
                     s1[j] = s1[i];  
                     s1[i] = temp;  
                 }  
-            }else if ((s.length() - index > k)){  
+            }2:else if ((s.length() - index > k)){  
                 for (int i = index, j = index+k-1; i < j;i++,j--){  
                     temp = s1[j];  
                     s1[j] = s1[i];  
                     s1[i] = temp;  
                 }  
             }else {  
+            // 逻辑与上面也相同,但是右指针不一样!想办法根据不同条件获得不同右指针.
                 for (int i = index, j = s.length()-1; i < j;i++,j--){  
                     temp = s1[j];  
                     s1[j] = s1[i];  
@@ -80,14 +83,18 @@ class Solution {
 ### 版本二:(优化后)
 #### 优化思路:
 1. 首先,上面的if和else-if是一样的逻辑,所以首先合并了;
-2. if和else的逻辑交换逻辑也是一样的,只是右指针不同,所以这里可以利用`Math.min()`函数来判断j取`index+k-1`还是`s.length()-1`,即**若剩余字符小于k时,此时`s.length()-1`肯定小于`index+k-1`**,故取min值是正确且合理的.
+2. if和else的交换逻辑也是一样的,**只是右指针不同**,所以这里可以利用`Math.min()`函数来判断j取`index+k-1`还是`s.length()-1`,即**若剩余字符小于k时,此时`s.length()-1`肯定小于`index+k-1`**,故取min值是正确且合理的.
 ```java
 class Solution {  
     public String reverseStr(String s, int k) {  
         int index = 0;  
         char[] s1 = s.toCharArray();  
+        // 只要还剩余字符,就需要交换!
         while ((s.length()-index) > 0){  
             int i = index;  
+            // 取min值,避免右指针越界了!
+			// s.length()-1代表着剩余字符少于k,全翻转;
+			// index+k-1,代表着剩余字符大于k,翻转前k个.
             int j = Math.min(index + k - 1, s.length() - 1);  
             while(i<j){  
                 char temp = s1[j];  
@@ -118,7 +125,9 @@ class Solution {
 - 利用`Character.isDigit(char c)`来判断当前字符是否为数字,若为数字,则`res.append("number")`;若非数字,则`res.append("currChar")`
 - **在不需要获取索引时,可以使用增强for循环!**
 ## 关键点:
-- 1)利用好StringBuilder的可变性; 2)利用append函数在可变字符串尾部添加字符(串); 3)利用`Character.isDigit()`判断是否为数字.
+- 1)利用好StringBuilder的可变性; 
+- 2)利用append函数在可变字符串尾部添加字符(串);
+- 3)利用`Character.isDigit()`判断是否为数字.
 ## 代码:
 ```java
 import java.util.Scanner;
