@@ -13,9 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Leetcode_notes/Day09_StackAndQueue_part1.md",
+                "file": "苍穹外卖/苍穹外卖.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "57e7cee431d46012",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "苍穹外卖/imgs/SkyTakeout_SearchByCata.png"
               }
             }
           }
@@ -93,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Leetcode_notes/Day09_StackAndQueue_part1.md",
+                "file": "苍穹外卖/苍穹外卖.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Leetcode_notes/Day09_StackAndQueue_part1.md",
+                "file": "苍穹外卖/苍穹外卖.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Leetcode_notes/Day09_StackAndQueue_part1.md"
+                "file": "苍穹外卖/苍穹外卖.md"
               }
             }
           },
@@ -157,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 419.5
+    "width": 266.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,36 +183,38 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "5c2c5105078021e7",
   "lastOpenFiles": [
-    "Leetcode_notes/Day08_String_Part2.md",
-    "Leetcode_notes/Day09_StackAndQueue_part1.md",
-    "Leetcode_notes/Day10_StackAndQueue_part2.md",
-    "Leetcode_notes/Day07_String_Part1.md",
+    "苍穹外卖/imgs/SkyTakeout_dbdesign.png",
+    "苍穹外卖/imgs/SkyTakeout_ModulesRole.png",
+    "苍穹外卖/苍穹外卖.md",
+    "苍穹外卖/imgs/SkyTakeout_AddEmployeeDTO.png",
+    "苍穹外卖/imgs",
+    "苍穹外卖",
+    "苍穹外卖/imgs/SkyTakeout_addNewDish.png",
+    "imgs/Pasted image 20240904222306.png",
+    "苍穹外卖/imgs/SkyTakeout_SearchByCata.png",
+    "苍穹外卖/imgs/skyTakeout_uploadFile.png",
     "Leetcode_notes/AlgoNote.md",
-    "Leetcode_notes/Day06_HashTable_Part2.md",
+    "Leetcode_notes/Day10_StackAndQueue_part2.md",
+    "Leetcode_notes/Day02_Array_Part2.md",
+    "Leetcode_notes/Day01_Array_Part1.md",
+    "Leetcode_notes/Day08_String_Part2.md",
     "Leetcode_notes/Day05_HashTable_Part1.md",
     "Leetcode_notes/Day04_LinkedList_Part2.md",
+    "Leetcode_notes/Day07_String_Part1.md",
+    "Leetcode_notes/Day06_HashTable_Part2.md",
+    "Leetcode_notes/Day09_StackAndQueue_part1.md",
     "Leetcode_notes/Day03_LinkedList_Part1.md",
-    "Leetcode_notes/Day02_Array_Part2.md",
     "imgs/ArrayPart2_img1.png",
-    "Leetcode_notes/Day01_Array_Part1.md",
     "模板/LeetcodeRecordTemplate.md",
-    "苍穹外卖.md",
-    "imgs/SkyTakeout_updateStatus2.png",
-    "imgs/SkyTakeout_UpdateStatus.png",
+    "苍穹外卖/imgs/SkyTakeout_updateStatus2.png",
+    "苍穹外卖/imgs/SkyTakeout_UpdateStatus.png",
     "imgs/Pasted image 20240901144042.png",
-    "imgs/SkyTakeout_PageQueryInterface.png",
-    "imgs/SkyTakeout_ThreadLocal.png",
-    "imgs/SkyTakeout_UserIndentify.png",
-    "imgs/SkyTakeout_Knife4jConfig.png",
-    "imgs/SkyTakeout_AddEmployeeTest.png",
-    "imgs/SkyTakeout_AddEmployeeDTO.png",
     "JavaWeb.md",
     "每日学习记录(简略).md",
     "Git笔记.md",
     "Spring6笔记.md",
-    "未命名",
     "模板",
     "Leetcode_notes/Q1.md",
     "Leetcode_notes/README.md",

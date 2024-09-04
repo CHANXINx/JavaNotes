@@ -83,9 +83,9 @@ class MyQueue {
 - 可以使用单向队列或双向队列来实现,使用双向队列则更简单.
 - 可以使用"循环队列"来实现先进后出.
 - 使用队列实现栈的出栈操作: 因为出栈是末尾弹出,所以当队列有size个元素,即**将前size-1个元素先出队,再入队**.就能在**保证末尾元素被出队,同时保存前面元素顺序不变!**
-- 
+- 获得栈顶元素,就是将末尾元素出队,再入队.故先调用pop()方法,再push.
 ## 关键点:
-- 
+- 循环队列!
 ## 代码:
 ```java
 class MyStack {  
@@ -126,31 +126,68 @@ class MyStack {
 ```
 # 20. 有效的括号
 ## 题目:
+给定一个只包括 `'('`，`')'`，`'{'`，`'}'`，`'['`，`']'` 的字符串 `s` ，判断字符串是否有效。
 
+有效字符串需满足：
+
+1. 左括号必须用相同类型的右括号闭合。
+2. 左括号必须以正确的顺序闭合。
+3. 每个右括号都有一个对应的相同类型的左括号。
 ## 信息:
 - **难度**: easy
-- **重要性:** #★☆☆☆☆
+- **重要性:** #★★★★☆
 ## 思路:
-- 
+- 遇到左括号就入栈一个相应的右括号.遇到右括号就弹出栈顶元素进行匹配.此时
 ## 关键点:
-- 
+- **遇到左括号,入栈对应右括号!**
 ## 代码:
 ```java
-
-
+class Solution {  
+    public boolean isValid(String s) {  
+        if ((s.length() % 2) != 0) return false;  
+        Stack<Character> stack = new Stack<>();  
+  
+        for (int i = 0; i < s.length(); i++){  
+            char c = s.charAt(i);  
+            if (c == '(') stack.push(')');  
+            else if (c == '{') stack.push('}');  
+            else if (c == '[') stack.push(']');  
+            else if (stack.isEmpty() || stack.peek() != c) return false;  
+            else stack.pop();  
+        }  
+        return stack.isEmpty();  
+    }  
+}
 ```
 # 1047. 删除字符串中的所有相邻重复项
 ## 题目:
+给出由小写字母组成的字符串 `s`，**重复项删除操作**会选择两个相邻且相同的字母，并删除它们。
 
+在 `s` 上反复执行重复项删除操作，直到无法继续删除。
+
+在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
 ## 信息:
 - **难度**: easy
-- **重要性:** #★☆☆☆☆
+- **重要性:** #★★★☆☆
 ## 思路:
-- 
+- 将当前元素与前一个入栈的元素进行比较.
+- 若栈为空或字母与栈顶元素不匹配,则入栈;否则,将栈顶元素弹出.
 ## 关键点:
-- 
+- 无.
 ## 代码:
 ```java
-
-
+class Solution {  
+    public String removeDuplicates(String s) {  
+        Stack<Character> stack = new Stack<>();  
+        if (s.length() == 1) return s;  
+        for (int i = 0; i < s.length();i++){  
+            char c = s.charAt(i);  
+            if (stack.isEmpty() || stack.peek() != c) stack.push(c);  
+            else stack.pop();  
+        }  
+        StringBuilder sb = new StringBuilder();  
+        while (!stack.isEmpty()) sb.append(stack.pop());  
+        return sb.reverse().toString();  
+    }  
+}
 ```

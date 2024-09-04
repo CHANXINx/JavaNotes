@@ -1,6 +1,6 @@
 {
   "showLineNumber": false,
   "readableLineLength": true,
-  "attachmentFolderPath": "imgs",
+  "attachmentFolderPath": "./imgs",
   "alwaysUpdateLinks": true
 }
