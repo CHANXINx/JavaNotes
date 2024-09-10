@@ -58,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#a0",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,6 +73,17 @@
             "state": {
               "type": "bookmarks",
               "state": {}
+            }
+          },
+          {
+            "id": "fe1161c9466568fe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
             }
           }
         ]
@@ -98,68 +109,10 @@
             }
           },
           {
-            "id": "bf3251987899eb93",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "苍穹外卖/苍穹外卖.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "f25c1712022f3014",
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "d65593c59e749f1e",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "苍穹外卖/苍穹外卖.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "fe1161c9466568fe",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "c1d1c3819db38c23",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "苍穹外卖/苍穹外卖.md"
-              }
-            }
-          },
-          {
-            "id": "28005d3e9a01090f",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
               "state": {}
             }
           },
@@ -171,7 +124,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -191,19 +145,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "fe09b38776c1adae",
   "lastOpenFiles": [
+    "苍穹外卖/imgs/Pasted image 20240910231328.png",
+    "苍穹外卖/imgs/Pasted image 20240910220931.png",
+    "苍穹外卖/imgs/Pasted image 20240910214913.png",
+    "苍穹外卖/imgs/Pasted image 20240910201447.png",
+    "苍穹外卖/imgs/Pasted image 20240910201426.png",
     "苍穹外卖/imgs/Pasted image 20240910013953.png",
     "苍穹外卖/imgs/Pasted image 20240910013807.png",
     "苍穹外卖/imgs/Pasted image 20240909230444.png",
     "苍穹外卖/imgs/Pasted image 20240909224620.png",
     "苍穹外卖/imgs/Pasted image 20240909220421.png",
     "苍穹外卖/imgs/Pasted image 20240909214325.png",
-    "苍穹外卖/imgs/Pasted image 20240909013043.png",
-    "苍穹外卖/imgs/Pasted image 20240909012934.png",
-    "苍穹外卖/imgs/Pasted image 20240909012834.png",
-    "苍穹外卖/imgs/Pasted image 20240908090703.png",
-    "苍穹外卖/imgs/Pasted image 20240908084512.png",
     "苍穹外卖/苍穹外卖.md",
     "苍穹外卖/imgs",
     "苍穹外卖",
