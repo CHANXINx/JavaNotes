@@ -3,5 +3,7 @@
   "remotely-save",
   "obsidian-git",
   "editing-toolbar",
-  "table-editor-obsidian"
+  "table-editor-obsidian",
+  "obsidian-quiet-outline",
+  "obsidian-outliner"
 ]

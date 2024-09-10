@@ -79,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 271.51103591918945
   },
   "right": {
     "id": "45beac71d173d048",
@@ -162,6 +162,14 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "81b75f44518705b1",
+            "type": "leaf",
+            "state": {
+              "type": "quiet-outline",
+              "state": {}
+            }
           }
         ]
       }
@@ -183,22 +191,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fe09b38776c1adae",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
-    "苍穹外卖/imgs/Pasted image 20240907223711.png",
-    "苍穹外卖/imgs/Pasted image 20240905143724.png",
-    "苍穹外卖/imgs/Pasted image 20240905144001.png",
-    "苍穹外卖/imgs/Pasted image 20240907223502.png",
+    "苍穹外卖/imgs/Pasted image 20240910013953.png",
+    "苍穹外卖/imgs/Pasted image 20240910013807.png",
+    "苍穹外卖/imgs/Pasted image 20240909230444.png",
+    "苍穹外卖/imgs/Pasted image 20240909224620.png",
+    "苍穹外卖/imgs/Pasted image 20240909220421.png",
+    "苍穹外卖/imgs/Pasted image 20240909214325.png",
+    "苍穹外卖/imgs/Pasted image 20240909013043.png",
+    "苍穹外卖/imgs/Pasted image 20240909012934.png",
+    "苍穹外卖/imgs/Pasted image 20240909012834.png",
+    "苍穹外卖/imgs/Pasted image 20240908090703.png",
+    "苍穹外卖/imgs/Pasted image 20240908084512.png",
     "苍穹外卖/苍穹外卖.md",
-    "苍穹外卖/imgs/SkyTakeout_dbDelDish.png",
-    "苍穹外卖/imgs/SkyTakeout_dbdesign.png",
-    "苍穹外卖/imgs/SkyTakeout_ModulesRole.png",
-    "苍穹外卖/imgs/SkyTakeout_AddEmployeeDTO.png",
     "苍穹外卖/imgs",
     "苍穹外卖",
-    "苍穹外卖/imgs/SkyTakeout_addNewDish.png",
-    "imgs/Pasted image 20240904222306.png",
-    "苍穹外卖/imgs/SkyTakeout_SearchByCata.png",
     "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "Leetcode_notes/Day02_Array_Part2.md",
