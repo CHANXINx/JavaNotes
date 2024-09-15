@@ -127,12 +127,21 @@
               "type": "quiet-outline",
               "state": {}
             }
+          },
+          {
+            "id": "2a84e60425321e01",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 205.5
+    "width": 315.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,12 +157,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "98c74d634a6cd8a0",
   "lastOpenFiles": [
-    "天机学堂/imgs/Pasted image 20240912132332.png",
+    "天机学堂/imgs/Pasted image 20240915201844.png",
+    "天机学堂/imgs/Pasted image 20240915193407.png",
+    "天机学堂/imgs/Pasted image 20240915192742.png",
+    "天机学堂/imgs/Pasted image 20240915192558.png",
+    "天机学堂/imgs/Pasted image 20240915192307.png",
+    "天机学堂/imgs/Pasted image 20240915191155.png",
+    "天机学堂/imgs/Pasted image 20240915173012.png",
+    "天机学堂/imgs/Pasted image 20240915154402.png",
+    "天机学堂/imgs/Pasted image 20240915153653.png",
+    "天机学堂/imgs/Pasted image 20240915100222.png",
+    "天机学堂/imgs/Pasted image 20240915095955.png",
     "苍穹外卖/苍穹外卖.md",
     "天机学堂/天机学堂.md",
-    "天机学堂/imgs/Pasted image 20240912131056.png",
     "天机学堂/imgs",
     "天机学堂",
     "每日学习记录/09月10日.md",
@@ -162,15 +180,6 @@
     "每日学习记录",
     "2024-09-10.md",
     "每日学习记录(简略).md",
-    "苍穹外卖/imgs/Pasted image 20240911000511.png",
-    "苍穹外卖/imgs/Pasted image 20240910231328.png",
-    "苍穹外卖/imgs/Pasted image 20240910220931.png",
-    "苍穹外卖/imgs/Pasted image 20240910214913.png",
-    "苍穹外卖/imgs/Pasted image 20240910201447.png",
-    "苍穹外卖/imgs/Pasted image 20240910201426.png",
-    "苍穹外卖/imgs/Pasted image 20240910013953.png",
-    "苍穹外卖/imgs/Pasted image 20240910013807.png",
-    "苍穹外卖/imgs/Pasted image 20240909230444.png",
     "苍穹外卖/imgs",
     "苍穹外卖",
     "Leetcode_notes/AlgoNote.md",
