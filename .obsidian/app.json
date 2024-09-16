@@ -2,5 +2,14 @@
   "showLineNumber": false,
   "readableLineLength": true,
   "attachmentFolderPath": "./imgs",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "autoConvertHtml": true,
+  "vimMode": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 80
+  }
 }
