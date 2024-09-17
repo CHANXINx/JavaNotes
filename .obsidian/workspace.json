@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "天机学堂/天机学堂.md",
+                "file": "每日学习记录/09月10日.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "45beac71d173d048",
@@ -156,8 +155,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "497885abaeaf1dc3",
   "lastOpenFiles": [
+    "天机学堂/天机学堂.md",
     "天机学堂/imgs/Pasted image 20240917204644.png",
     "天机学堂/imgs/Pasted image 20240917204209.png",
     "天机学堂/imgs/Pasted image 20240917200815.png",
@@ -168,9 +168,7 @@
     "天机学堂/imgs/Pasted image 20240917191849.png",
     "天机学堂/imgs/Pasted image 20240917191422.png",
     "天机学堂/imgs/Pasted image 20240917144410.png",
-    "天机学堂/imgs/Pasted image 20240917144323.png",
     "苍穹外卖/苍穹外卖.md",
-    "天机学堂/天机学堂.md",
     "JavaWeb.md",
     "Resume.md",
     "每日学习记录/09月10日.md",
