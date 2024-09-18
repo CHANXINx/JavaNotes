@@ -78,5 +78,13 @@
       "key": "5"
     }
   ],
-  "workspace:goto-tab-5": []
+  "workspace:goto-tab-5": [],
+  "editing-toolbar:underline": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ]
 }

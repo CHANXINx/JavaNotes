@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "510c80ed0f20d685",
+        "id": "2fe07b770c517f78",
         "type": "tabs",
         "children": [
           {
-            "id": "57e7cee431d46012",
+            "id": "c1650b736046c0fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "天机学堂/天机学堂.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "497885abaeaf1dc3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "每日学习记录/09月10日.md",
+                "file": "Leetcode_notes/AlgoNote.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 419.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -135,7 +122,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -155,23 +143,40 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "c1650b736046c0fd",
   "lastOpenFiles": [
-    "苍穹外卖/苍穹外卖.md",
+    "Leetcode_notes/imgs/Pasted image 20240917233523.png",
+    "Leetcode_notes/imgs/Pasted image 20240917234523.png",
+    "Leetcode_notes/imgs/Pasted image 20240918000531.png",
+    "Leetcode_notes/imgs/Pasted image 20240917234336.png",
+    "Leetcode_notes/imgs/Pasted image 20240917233621.png",
+    "Leetcode_notes/AlgoNote.md",
+    "Leetcode_notes/Day10_StackAndQueue_part2.md",
+    "未命名.md",
+    "Leetcode_notes/imgs",
     "每日学习记录/09月10日.md",
+    "八股文/八股文.md",
+    "八股文/未命名.canvas",
+    "八股文",
+    "imgs/ArrayPart2_img1.png",
+    "Leetcode_notes/Day03_LinkedList_Part1.md",
+    "Leetcode_notes/Day02_Array_Part2.md",
+    "Leetcode_notes/Day04_LinkedList_Part2.md",
+    "Leetcode_notes/Day05_HashTable_Part1.md",
+    "Leetcode_notes/Day06_HashTable_Part2.md",
+    "Leetcode_notes/Day07_String_Part1.md",
+    "Leetcode_notes/Day08_String_Part2.md",
+    "Leetcode_notes/Day09_StackAndQueue_part1.md",
+    "Spring6笔记.md",
+    "Resume.md",
+    "Git笔记.md",
+    "JavaWeb.md",
     "天机学堂/天机学堂.md",
+    "苍穹外卖/苍穹外卖.md",
     "天机学堂/imgs/Pasted image 20240917204644.png",
     "天机学堂/imgs/Pasted image 20240917204209.png",
     "天机学堂/imgs/Pasted image 20240917200815.png",
     "天机学堂/imgs/Pasted image 20240917200513.png",
-    "天机学堂/imgs/Pasted image 20240917194756.png",
-    "天机学堂/imgs/Pasted image 20240917193640.png",
-    "天机学堂/imgs/Pasted image 20240917193108.png",
-    "天机学堂/imgs/Pasted image 20240917191849.png",
-    "天机学堂/imgs/Pasted image 20240917191422.png",
-    "天机学堂/imgs/Pasted image 20240917144410.png",
-    "JavaWeb.md",
-    "Resume.md",
     "天机学堂/imgs",
     "天机学堂",
     "模板/学习记录模板.md",
@@ -181,26 +186,10 @@
     "每日学习记录(简略).md",
     "苍穹外卖/imgs",
     "苍穹外卖",
-    "Leetcode_notes/AlgoNote.md",
-    "Leetcode_notes/Day10_StackAndQueue_part2.md",
-    "Leetcode_notes/Day02_Array_Part2.md",
     "Leetcode_notes/Day01_Array_Part1.md",
-    "Leetcode_notes/Day08_String_Part2.md",
-    "Leetcode_notes/Day05_HashTable_Part1.md",
-    "Leetcode_notes/Day04_LinkedList_Part2.md",
-    "Leetcode_notes/Day07_String_Part1.md",
-    "Leetcode_notes/Day06_HashTable_Part2.md",
-    "Leetcode_notes/Day09_StackAndQueue_part1.md",
-    "Leetcode_notes/Day03_LinkedList_Part1.md",
     "模板/LeetcodeRecordTemplate.md",
-    "Git笔记.md",
-    "Spring6笔记.md",
     "模板",
-    "Leetcode_notes/Q1.md",
-    "Leetcode_notes/README.md",
     "rs-test-folder-pjgjRya34GD5Sl67UOT6Y",
-    "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq",
-    "rs-test-folder-6IUAevxh7aydLGTHMWu8A",
-    "Leetcode_notes"
+    "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq"
   ]
 }
