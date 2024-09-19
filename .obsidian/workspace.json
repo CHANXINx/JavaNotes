@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Leetcode_notes/Day11_BinaryTree_part1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "26010e5df182dabc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "天机学堂/天机学堂.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8b9db5eb7b37cb98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Leetcode_notes/AlgoNote.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,7 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 419.5
+    "width": 229.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -127,7 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 216.5
+    "width": 249.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -143,15 +168,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c1650b736046c0fd",
+  "active": "26010e5df182dabc",
   "lastOpenFiles": [
+    "Leetcode_notes/Day11_BinaryTree_part1.md",
+    "Leetcode_notes/AlgoNote.md",
+    "Leetcode_notes/Day10_StackAndQueue_part2.md",
+    "Leetcode_notes/imgs/二叉树中序遍历（迭代法）.gif",
     "Leetcode_notes/imgs/Pasted image 20240917233523.png",
     "Leetcode_notes/imgs/Pasted image 20240917234523.png",
     "Leetcode_notes/imgs/Pasted image 20240918000531.png",
     "Leetcode_notes/imgs/Pasted image 20240917234336.png",
     "Leetcode_notes/imgs/Pasted image 20240917233621.png",
-    "Leetcode_notes/AlgoNote.md",
-    "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "未命名.md",
     "Leetcode_notes/imgs",
     "每日学习记录/09月10日.md",
@@ -176,7 +203,6 @@
     "天机学堂/imgs/Pasted image 20240917204644.png",
     "天机学堂/imgs/Pasted image 20240917204209.png",
     "天机学堂/imgs/Pasted image 20240917200815.png",
-    "天机学堂/imgs/Pasted image 20240917200513.png",
     "天机学堂/imgs",
     "天机学堂",
     "模板/学习记录模板.md",
@@ -187,7 +213,6 @@
     "苍穹外卖/imgs",
     "苍穹外卖",
     "Leetcode_notes/Day01_Array_Part1.md",
-    "模板/LeetcodeRecordTemplate.md",
     "模板",
     "rs-test-folder-pjgjRya34GD5Sl67UOT6Y",
     "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq"
