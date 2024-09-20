@@ -32,6 +32,26 @@
             }
           },
           {
+            "id": "3795efc0044e0416",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "天机学堂/imgs/Pasted image 20240919234412.png"
+              }
+            }
+          },
+          {
+            "id": "94a3c0a1604d4fcb",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "天机学堂/imgs/Pasted image 20240917144410.png"
+              }
+            }
+          },
+          {
             "id": "8b9db5eb7b37cb98",
             "type": "leaf",
             "state": {
@@ -170,6 +190,14 @@
   },
   "active": "26010e5df182dabc",
   "lastOpenFiles": [
+    "天机学堂/imgs/Pasted image 20240919234412.png",
+    "天机学堂/天机学堂.md",
+    "天机学堂/imgs/Pasted image 20240917144410.png",
+    "天机学堂/imgs/Pasted image 20240920000538.png",
+    "Pasted image 20240919234508.png.md",
+    "天机学堂/imgs/Pasted image 20240919234508.png",
+    "天机学堂/imgs/Pasted image 20240919235109.png",
+    "天机学堂/imgs/Pasted image 20240919234236.png",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
@@ -177,15 +205,12 @@
     "Leetcode_notes/imgs/Pasted image 20240917233523.png",
     "Leetcode_notes/imgs/Pasted image 20240917234523.png",
     "Leetcode_notes/imgs/Pasted image 20240918000531.png",
-    "Leetcode_notes/imgs/Pasted image 20240917234336.png",
-    "Leetcode_notes/imgs/Pasted image 20240917233621.png",
     "未命名.md",
     "Leetcode_notes/imgs",
     "每日学习记录/09月10日.md",
     "八股文/八股文.md",
     "八股文/未命名.canvas",
     "八股文",
-    "imgs/ArrayPart2_img1.png",
     "Leetcode_notes/Day03_LinkedList_Part1.md",
     "Leetcode_notes/Day02_Array_Part2.md",
     "Leetcode_notes/Day04_LinkedList_Part2.md",
@@ -198,11 +223,7 @@
     "Resume.md",
     "Git笔记.md",
     "JavaWeb.md",
-    "天机学堂/天机学堂.md",
     "苍穹外卖/苍穹外卖.md",
-    "天机学堂/imgs/Pasted image 20240917204644.png",
-    "天机学堂/imgs/Pasted image 20240917204209.png",
-    "天机学堂/imgs/Pasted image 20240917200815.png",
     "天机学堂/imgs",
     "天机学堂",
     "模板/学习记录模板.md",
@@ -212,7 +233,6 @@
     "每日学习记录(简略).md",
     "苍穹外卖/imgs",
     "苍穹外卖",
-    "Leetcode_notes/Day01_Array_Part1.md",
     "模板",
     "rs-test-folder-pjgjRya34GD5Sl67UOT6Y",
     "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq"
