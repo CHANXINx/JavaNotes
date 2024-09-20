@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "26010e5df182dabc",
+            "id": "7f340bdf3f4649aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -117,7 +117,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 229.5,
+    "collapsed": true
   },
   "right": {
     "id": "45beac71d173d048",
@@ -158,9 +159,48 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "936051026071354d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "天机学堂/天机学堂.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6db0526dd7bab3d2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "天机学堂/天机学堂.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8009c19fd089f4b7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "天机学堂/天机学堂.md"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -180,10 +220,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f25c1712022f3014",
+  "active": "7f340bdf3f4649aa",
   "lastOpenFiles": [
-    "天机学堂/imgs/Pasted image 20240920200013.png",
+    "天机学堂/imgs/Pasted image 20240920222502.png",
+    "天机学堂/imgs/Pasted image 20240920222127.png",
+    "天机学堂/imgs/Pasted image 20240920221823.png",
+    "天机学堂/imgs/Pasted image 20240920221310.png",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
+    "Spring6笔记.md",
+    "天机学堂/imgs/Pasted image 20240920200013.png",
     "Resume.md",
     "天机学堂/天机学堂.md",
     "Leetcode_notes/AlgoNote.md",
@@ -195,10 +240,6 @@
     "天机学堂/imgs/Pasted image 20240919235109.png",
     "天机学堂/imgs/Pasted image 20240919234236.png",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
-    "Leetcode_notes/imgs/二叉树中序遍历（迭代法）.gif",
-    "Leetcode_notes/imgs/Pasted image 20240917233523.png",
-    "Leetcode_notes/imgs/Pasted image 20240917234523.png",
-    "Leetcode_notes/imgs/Pasted image 20240918000531.png",
     "未命名.md",
     "Leetcode_notes/imgs",
     "每日学习记录/09月10日.md",
@@ -213,7 +254,6 @@
     "Leetcode_notes/Day07_String_Part1.md",
     "Leetcode_notes/Day08_String_Part2.md",
     "Leetcode_notes/Day09_StackAndQueue_part1.md",
-    "Spring6笔记.md",
     "Git笔记.md",
     "JavaWeb.md",
     "苍穹外卖/苍穹外卖.md",
