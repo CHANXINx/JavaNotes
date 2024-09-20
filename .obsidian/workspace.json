@@ -32,22 +32,14 @@
             }
           },
           {
-            "id": "3795efc0044e0416",
+            "id": "d89de56c59fad925",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "天机学堂/imgs/Pasted image 20240919234412.png"
-              }
-            }
-          },
-          {
-            "id": "94a3c0a1604d4fcb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "天机学堂/imgs/Pasted image 20240917144410.png"
+                "file": "Resume.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -168,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -188,18 +180,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "26010e5df182dabc",
+  "active": "f25c1712022f3014",
   "lastOpenFiles": [
-    "天机学堂/imgs/Pasted image 20240919234412.png",
+    "天机学堂/imgs/Pasted image 20240920200013.png",
+    "Leetcode_notes/Day11_BinaryTree_part1.md",
+    "Resume.md",
     "天机学堂/天机学堂.md",
+    "Leetcode_notes/AlgoNote.md",
+    "天机学堂/imgs/Pasted image 20240919234412.png",
     "天机学堂/imgs/Pasted image 20240917144410.png",
     "天机学堂/imgs/Pasted image 20240920000538.png",
     "Pasted image 20240919234508.png.md",
     "天机学堂/imgs/Pasted image 20240919234508.png",
     "天机学堂/imgs/Pasted image 20240919235109.png",
     "天机学堂/imgs/Pasted image 20240919234236.png",
-    "Leetcode_notes/Day11_BinaryTree_part1.md",
-    "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "Leetcode_notes/imgs/二叉树中序遍历（迭代法）.gif",
     "Leetcode_notes/imgs/Pasted image 20240917233523.png",
@@ -220,7 +214,6 @@
     "Leetcode_notes/Day08_String_Part2.md",
     "Leetcode_notes/Day09_StackAndQueue_part1.md",
     "Spring6笔记.md",
-    "Resume.md",
     "Git笔记.md",
     "JavaWeb.md",
     "苍穹外卖/苍穹外卖.md",
