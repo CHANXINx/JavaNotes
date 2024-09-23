@@ -199,11 +199,13 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 249.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,8 +221,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "7f340bdf3f4649aa",
   "lastOpenFiles": [
+    "天机学堂/imgs/Pasted image 20240923080430.png",
+    "天机学堂/imgs/Pasted image 20240923080225.png",
+    "天机学堂/imgs/Pasted image 20240923000225.png",
+    "天机学堂/imgs/Pasted image 20240923000109.png",
+    "天机学堂/imgs/Pasted image 20240922235610.png",
     "天机学堂/imgs/Pasted image 20240922222807.png",
     "天机学堂/imgs/Pasted image 20240922220610.png",
     "八股文/八股文.md",
@@ -229,11 +236,6 @@
     "天机学堂/imgs/Pasted image 20240922112321.png",
     "天机学堂/imgs/Pasted image 20240922111947.png",
     "天机学堂/imgs/Pasted image 20240922004406.png",
-    "天机学堂/imgs/Pasted image 20240922001508.png",
-    "天机学堂/imgs/Pasted image 20240921234029.png",
-    "天机学堂/imgs/Pasted image 20240921232928.png",
-    "天机学堂/imgs/Pasted image 20240921232539.png",
-    "天机学堂/imgs/Pasted image 20240921230543.png",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Spring6笔记.md",
     "Resume.md",
