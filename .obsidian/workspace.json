@@ -199,13 +199,11 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 249.5,
-    "collapsed": true
+    "width": 249.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -221,21 +219,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f340bdf3f4649aa",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
+    "天机学堂/imgs/Pasted image 20240925222548.png",
+    "天机学堂/imgs/Pasted image 20240925214505.png",
+    "天机学堂/imgs/Pasted image 20240925212916.png",
+    "天机学堂/imgs/Pasted image 20240925211911.png",
+    "天机学堂/imgs/Pasted image 20240925211851.png",
+    "天机学堂/imgs/Pasted image 20240925211830.png",
+    "天机学堂/imgs/Pasted image 20240925211808.png",
+    "天机学堂/天机学堂.md",
+    "天机学堂/imgs/Pasted image 20240925165745.png",
     "天机学堂/imgs/Pasted image 20240925152302.png",
     "天机学堂/imgs/Pasted image 20240925152150.png",
     "天机学堂/imgs/Pasted image 20240925150017.png",
-    "天机学堂/imgs/Pasted image 20240925143328.png",
-    "天机学堂/imgs/Pasted image 20240925142217.png",
-    "天机学堂/imgs/Pasted image 20240925142056.png",
-    "天机学堂/imgs/Pasted image 20240925142054.png",
-    "天机学堂/imgs/Pasted image 20240925135323.png",
-    "天机学堂/imgs/Pasted image 20240925134851.png",
-    "天机学堂/imgs/Pasted image 20240924084505.png",
-    "天机学堂/imgs/Pasted image 20240924003713.png",
     "八股文/八股文.md",
-    "天机学堂/天机学堂.md",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Spring6笔记.md",
     "Resume.md",
