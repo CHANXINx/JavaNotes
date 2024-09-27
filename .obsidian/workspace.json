@@ -8,19 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c1650b736046c0fd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Leetcode_notes/Day11_BinaryTree_part1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7f340bdf3f4649aa",
+            "id": "87d2e236dbf546b0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,24 +20,12 @@
             }
           },
           {
-            "id": "d89de56c59fad925",
+            "id": "7f340bdf3f4649aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resume.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8b9db5eb7b37cb98",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Leetcode_notes/AlgoNote.md",
+                "file": "代码摘录/代码摘录.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 229.5,
+    "collapsed": true
   },
   "right": {
     "id": "45beac71d173d048",
@@ -165,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "天机学堂/天机学堂.md",
+                "file": "代码摘录/代码摘录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "天机学堂/天机学堂.md",
+                "file": "代码摘录/代码摘录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -194,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "天机学堂/天机学堂.md"
+                "file": "代码摘录/代码摘录.md"
               }
             }
           }
@@ -218,20 +195,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f340bdf3f4649aa",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
+    "代码摘录/imgs/Pasted image 20240927232847.png",
+    "代码摘录/imgs/Pasted image 20240927231135.png",
+    "代码摘录/imgs/Pasted image 20240927230708.png",
+    "代码摘录/imgs/Pasted image 20240927230547.png",
+    "代码摘录/imgs/Pasted image 20240927223434.png",
+    "代码摘录/imgs",
+    "天机学堂/天机学堂.md",
+    "代码摘录/代码摘录.md",
+    "未命名 1",
+    "代码摘录",
     "天机学堂/imgs/Pasted image 20240926212732.png",
     "天机学堂/imgs/Pasted image 20240926183743.png",
     "天机学堂/imgs/Pasted image 20240926170118.png",
     "天机学堂/imgs/Pasted image 20240926170023.png",
     "天机学堂/imgs/Pasted image 20240925225856.png",
     "天机学堂/imgs/Pasted image 20240925223633.png",
-    "天机学堂/imgs/Pasted image 20240925223049.png",
-    "天机学堂/imgs/Pasted image 20240925222548.png",
-    "天机学堂/imgs/Pasted image 20240925214505.png",
-    "天机学堂/imgs/Pasted image 20240925212916.png",
-    "天机学堂/imgs/Pasted image 20240925211911.png",
-    "天机学堂/天机学堂.md",
     "八股文/八股文.md",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Spring6笔记.md",
@@ -261,11 +242,7 @@
     "每日学习记录/09月11日.md",
     "每日学习记录",
     "2024-09-10.md",
-    "每日学习记录(简略).md",
     "苍穹外卖/imgs",
-    "苍穹外卖",
-    "模板",
-    "rs-test-folder-pjgjRya34GD5Sl67UOT6Y",
-    "rs-test-folder-6IUAevxh7aydLGTHMWu8A/rs-test-file-VjXXcBBnIWSpwHIFI8CHq"
+    "苍穹外卖"
   ]
 }
