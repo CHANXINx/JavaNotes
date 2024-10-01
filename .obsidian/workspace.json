@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -142,7 +141,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "代码摘录/代码摘录.md",
+                "file": "天机学堂/天机学堂.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +158,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "代码摘录/代码摘录.md",
+                "file": "天机学堂/天机学堂.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,15 +170,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "代码摘录/代码摘录.md"
+                "file": "天机学堂/天机学堂.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 249.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,24 +196,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "87d2e236dbf546b0",
   "lastOpenFiles": [
-    "代码摘录/imgs/Pasted image 20240927232847.png",
-    "代码摘录/imgs/Pasted image 20240927231135.png",
-    "代码摘录/imgs/Pasted image 20240927230708.png",
-    "代码摘录/imgs/Pasted image 20240927230547.png",
-    "代码摘录/imgs/Pasted image 20240927223434.png",
-    "代码摘录/imgs",
-    "天机学堂/天机学堂.md",
     "代码摘录/代码摘录.md",
+    "天机学堂/天机学堂.md",
+    "天机学堂/imgs/Pasted image 20240930103444.png",
+    "天机学堂/imgs/Pasted image 20240930102720.png",
+    "天机学堂/imgs/Pasted image 20240930102432.png",
+    "天机学堂/imgs/Pasted image 20240930101701.png",
+    "天机学堂/imgs/Pasted image 20240930101604.png",
+    "天机学堂/imgs/Pasted image 20240929204454.png",
+    "天机学堂/imgs/Pasted image 20240929204430.png",
+    "天机学堂/imgs/Pasted image 20240929204426.png",
+    "天机学堂/imgs/Pasted image 20240929204421.png",
+    "天机学堂/imgs/Pasted image 20240929153123.png",
+    "未命名.md",
+    "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
-    "天机学堂/imgs/Pasted image 20240926212732.png",
-    "天机学堂/imgs/Pasted image 20240926183743.png",
-    "天机学堂/imgs/Pasted image 20240926170118.png",
-    "天机学堂/imgs/Pasted image 20240926170023.png",
-    "天机学堂/imgs/Pasted image 20240925225856.png",
-    "天机学堂/imgs/Pasted image 20240925223633.png",
     "八股文/八股文.md",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Spring6笔记.md",
@@ -220,7 +221,6 @@
     "Leetcode_notes/AlgoNote.md",
     "Pasted image 20240919234508.png.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
-    "未命名.md",
     "Leetcode_notes/imgs",
     "每日学习记录/09月10日.md",
     "八股文/未命名.canvas",
