@@ -55,8 +55,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -166,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "八股文/八股文.md",
+                "file": "苍穹外卖/苍穹外卖.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,19 +182,17 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "八股文/八股文.md",
+                "file": "苍穹外卖/苍穹外卖.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 263.5,
-    "collapsed": true
+    "width": 263.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,14 +208,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0a71728a331a4a2f",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
+    "Leetcode_notes/刷题笔记.md",
+    "八股文/八股文.md",
+    "苍穹外卖/苍穹外卖.md",
+    "陈鑫的个人求职简历.md",
     "八股文/imgs/Pasted image 20241009232927.png",
     "八股文/imgs/Pasted image 20241009232918.png",
     "八股文/imgs/Pasted image 20241009232226.png",
     "八股文/imgs",
-    "Leetcode_notes/刷题笔记.md",
-    "苍穹外卖/苍穹外卖.md",
     "苍穹外卖/imgs/Pasted image 20241009211945.png",
     "苍穹外卖/imgs/Pasted image 20241009211928.png",
     "苍穹外卖/imgs/Pasted image 20241009184509.png",
@@ -226,8 +225,6 @@
     "苍穹外卖/imgs/Pasted image 20241009183849.png",
     "苍穹外卖/imgs/Pasted image 20241009183137.png",
     "苍穹外卖/imgs/Pasted image 20241009182953.png",
-    "苍穹外卖/imgs/Pasted image 20241009181231.png",
-    "陈鑫的个人求职简历.md",
     "天机学堂/天机学堂面试题总结.md",
     "代码摘录/代码摘录.md",
     "天机学堂/天机学堂.md",
@@ -251,7 +248,6 @@
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
-    "八股文/八股文.md",
     "Spring6笔记.md",
     "Leetcode_notes/imgs",
     "八股文/未命名.canvas",
