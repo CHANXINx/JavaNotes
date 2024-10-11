@@ -226,6 +226,11 @@
       "id": "editing-toolbar:workplace-fullscreen-focus",
       "name": "workplace-Fullscreen ",
       "icon": "exit-fullscreen"
+    },
+    {
+      "id": "number-headings-obsidian:number-headings",
+      "name": "Number Headings: Number all headings in document",
+      "icon": "header-n"
     }
   ],
   "appendMethod": "workspace",

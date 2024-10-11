@@ -55,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -116,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5,
-    "collapsed": true
+    "width": 229.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "苍穹外卖/苍穹外卖.md",
+                "file": "八股文/八股文.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,17 +182,18 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "苍穹外卖/苍穹外卖.md",
+                "file": "八股文/八股文.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 329.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,11 +209,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "0a71728a331a4a2f",
   "lastOpenFiles": [
+    "八股文/imgs/Pasted image 20241011012123.png",
+    "苍穹外卖/苍穹外卖.md",
     "Leetcode_notes/刷题笔记.md",
     "八股文/八股文.md",
-    "苍穹外卖/苍穹外卖.md",
     "陈鑫的个人求职简历.md",
     "八股文/imgs/Pasted image 20241009232927.png",
     "八股文/imgs/Pasted image 20241009232918.png",
