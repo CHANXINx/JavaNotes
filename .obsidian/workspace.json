@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "八股文/八股文.md",
+                "file": "Leetcode_notes/刷题笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +182,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "八股文/八股文.md",
+                "file": "Leetcode_notes/刷题笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -209,12 +209,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0a71728a331a4a2f",
+  "active": "ddbc749eb4f404d9",
   "lastOpenFiles": [
+    "Leetcode_notes/imgs/Pasted image 20241012000929.png",
+    "八股文/八股文.md",
     "八股文/imgs/Pasted image 20241011012123.png",
     "苍穹外卖/苍穹外卖.md",
     "Leetcode_notes/刷题笔记.md",
-    "八股文/八股文.md",
     "陈鑫的个人求职简历.md",
     "八股文/imgs/Pasted image 20241009232927.png",
     "八股文/imgs/Pasted image 20241009232918.png",
@@ -226,7 +227,6 @@
     "苍穹外卖/imgs/Pasted image 20241009184455.png",
     "苍穹外卖/imgs/Pasted image 20241009183849.png",
     "苍穹外卖/imgs/Pasted image 20241009183137.png",
-    "苍穹外卖/imgs/Pasted image 20241009182953.png",
     "天机学堂/天机学堂面试题总结.md",
     "代码摘录/代码摘录.md",
     "天机学堂/天机学堂.md",
