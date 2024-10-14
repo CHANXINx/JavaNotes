@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "4adda6f4a4a5fba3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Leetcode_notes/AlgoNote.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "0a71728a331a4a2f",
             "type": "leaf",
             "state": {
@@ -54,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c253a1dfbc2cb4b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "并发编程JUC/并发编程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -165,7 +189,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Leetcode_notes/刷题笔记.md",
+                "file": "并发编程JUC/并发编程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +206,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Leetcode_notes/刷题笔记.md",
+                "file": "并发编程JUC/并发编程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -209,31 +233,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ddbc749eb4f404d9",
+  "active": "c253a1dfbc2cb4b1",
   "lastOpenFiles": [
-    "Leetcode_notes/imgs/Pasted image 20241012000929.png",
     "八股文/八股文.md",
-    "八股文/imgs/Pasted image 20241011012123.png",
+    "并发编程JUC/并发编程.md",
+    "并发编程JUC",
     "苍穹外卖/苍穹外卖.md",
-    "Leetcode_notes/刷题笔记.md",
+    "八股文/imgs/Pasted image 20241013180555.png",
+    "八股文/imgs/Pasted image 20241013180516.png",
     "陈鑫的个人求职简历.md",
+    "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/imgs/Pasted image 20241013140923.png",
+    "Leetcode_notes/AlgoNote.md",
+    "八股文/imgs/Pasted image 20241012202850.png",
+    "八股文/imgs/Pasted image 20241012202231.png",
+    "模板/LeetcodeRecordTemplate.md",
+    "Leetcode_notes/imgs/Pasted image 20241012000929.png",
+    "八股文/imgs/Pasted image 20241011012123.png",
     "八股文/imgs/Pasted image 20241009232927.png",
     "八股文/imgs/Pasted image 20241009232918.png",
     "八股文/imgs/Pasted image 20241009232226.png",
     "八股文/imgs",
-    "苍穹外卖/imgs/Pasted image 20241009211945.png",
-    "苍穹外卖/imgs/Pasted image 20241009211928.png",
-    "苍穹外卖/imgs/Pasted image 20241009184509.png",
-    "苍穹外卖/imgs/Pasted image 20241009184455.png",
-    "苍穹外卖/imgs/Pasted image 20241009183849.png",
-    "苍穹外卖/imgs/Pasted image 20241009183137.png",
     "天机学堂/天机学堂面试题总结.md",
     "代码摘录/代码摘录.md",
     "天机学堂/天机学堂.md",
-    "模板/LeetcodeRecordTemplate.md",
     "模板/学习记录模板.md",
     "每日学习记录/09月10日.md",
-    "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "Leetcode_notes/Day09_StackAndQueue_part1.md",
@@ -246,7 +271,6 @@
     "Leetcode_notes/Day02_Array_Part2 1.md",
     "Leetcode_notes/Day02_Array_Part2.md",
     "Pasted image 20240919234508.png.md",
-    "未命名.md",
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
@@ -256,7 +280,6 @@
     "八股文",
     "天机学堂/imgs",
     "天机学堂",
-    "每日学习记录",
-    "苍穹外卖/imgs"
+    "每日学习记录"
   ]
 }

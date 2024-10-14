@@ -12,6 +12,6 @@
     "margin": "0",
     "downscalePercent": 80
   },
-  "smartIndentList": false,
+  "smartIndentList": true,
   "foldHeading": true
 }
