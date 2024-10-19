@@ -3,5 +3,9 @@
   "interfaceFontFamily": "iA Writer Mono V Regular",
   "baseFontSizeAction": true,
   "theme": "moonstone",
-  "baseFontSize": 15
+  "baseFontSize": 15,
+  "enabledCssSnippets": [
+    "新建文本文档",
+    "图片对齐语法"
+  ]
 }
