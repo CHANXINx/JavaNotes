@@ -13,5 +13,6 @@
     "downscalePercent": 80
   },
   "smartIndentList": true,
-  "foldHeading": true
+  "foldHeading": true,
+  "promptDelete": true
 }
