@@ -247,7 +247,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.5
+    "width": 283.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -263,22 +264,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "10466c2e15355cae",
   "lastOpenFiles": [
-    "并发编程JUC/并发编程_模式.md",
+    "Leetcode_notes/动态规划.md",
+    "Leetcode_notes/imgs/Pasted image 20241023144055.png",
+    "[.md",
+    "Leetcode_notes/刷题笔记.md",
     "并发编程JUC/并发编程.md",
+    "并发编程JUC/并发编程_模式.md",
+    "Leetcode_notes/imgs/Pasted image 20241023092053.png",
+    "并发编程JUC/imgs/Pasted image 20241022231756.png",
     "并发编程JUC/imgs/Pasted image 20241022202510.png",
     "并发编程JUC/imgs/Pasted image 20241022145258.png",
     "并发编程JUC/imgs/Pasted image 20241022144824.png",
     "并发编程JUC/imgs/Pasted image 20241022144719.png",
-    "Leetcode_notes/动态规划.md",
     "Leetcode_notes/imgs/Pasted image 20241022142834.png",
-    "Leetcode_notes/刷题笔记.md",
     "并发编程JUC/imgs/Pasted image 20241021164857.png",
     "并发编程JUC/imgs/Pasted image 20241021164632.png",
-    "并发编程JUC/imgs/Pasted image 20241021154238.png",
-    "并发编程JUC/imgs/Pasted image 20241021123517.png",
-    "Leetcode_notes/imgs/Pasted image 20241021092603.png",
     "八股文/Redis八股.md",
     "苍穹外卖/苍穹外卖.md",
     "Leetcode_notes/AlgoNote.md",
@@ -302,7 +304,6 @@
     "Leetcode_notes/Day07_String_Part1.md",
     "Leetcode_notes/Day06_HashTable_Part2.md",
     "Leetcode_notes/Day05_HashTable_Part1.md",
-    "Leetcode_notes/Day04_LinkedList_Part2.md",
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
