@@ -77,8 +77,7 @@
               "title": "并发编程"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -247,7 +246,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.5,
+    "width": 256.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -264,8 +263,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "10466c2e15355cae",
+  "active": "ddbc749eb4f404d9",
   "lastOpenFiles": [
+    "并发编程JUC/并发编程.md",
+    "并发编程JUC/imgs/Pasted image 20241024225601.png",
+    "并发编程JUC/并发编程_模式.md",
     "并发编程JUC/imgs/Pasted image 20241023164038.png",
     "并发编程JUC/imgs/Pasted image 20241023162617.png",
     "并发编程JUC/imgs/Pasted image 20241023162424.png",
@@ -274,14 +276,10 @@
     "Leetcode_notes/imgs/Pasted image 20241023144055.png",
     "[.md",
     "Leetcode_notes/刷题笔记.md",
-    "并发编程JUC/并发编程.md",
-    "并发编程JUC/并发编程_模式.md",
     "Leetcode_notes/imgs/Pasted image 20241023092053.png",
     "并发编程JUC/imgs/Pasted image 20241022231756.png",
     "并发编程JUC/imgs/Pasted image 20241022202510.png",
     "并发编程JUC/imgs/Pasted image 20241022145258.png",
-    "并发编程JUC/imgs/Pasted image 20241022144824.png",
-    "并发编程JUC/imgs/Pasted image 20241022144719.png",
     "八股文/Redis八股.md",
     "苍穹外卖/苍穹外卖.md",
     "Leetcode_notes/AlgoNote.md",
