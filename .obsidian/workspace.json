@@ -91,7 +91,8 @@
               "title": "并发编程"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -256,11 +257,13 @@
               "title": "并发编程 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 256.5
+    "width": 256.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -276,11 +279,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ddbc749eb4f404d9",
+  "active": "10466c2e15355cae",
   "lastOpenFiles": [
-    "Leetcode_notes/动态规划.md",
-    "Leetcode_notes/单调栈.md",
+    "并发编程JUC/并发编程_模式.md",
+    "八股文/Redis八股.md",
     "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/单调栈.md",
+    "Leetcode_notes/动态规划.md",
     "Leetcode_notes/imgs/Pasted image 20241026144606.png",
     "Leetcode_notes/imgs/Pasted image 20241026114430.png",
     "Leetcode_notes/imgs/Pasted image 20241026113053.png",
@@ -290,11 +295,9 @@
     "并发编程JUC/imgs/Pasted image 20241026003546.png",
     "并发编程JUC/imgs/Pasted image 20241026003132.png",
     "并发编程JUC/imgs/Pasted image 20241026003130.png",
-    "并发编程JUC/并发编程_模式.md",
     "并发编程JUC/imgs/Pasted image 20241024225601.png",
     "并发编程JUC/imgs/Pasted image 20241023164038.png",
     "[.md",
-    "八股文/Redis八股.md",
     "苍穹外卖/苍穹外卖.md",
     "Leetcode_notes/AlgoNote.md",
     "并发编程JUC/imgs",
