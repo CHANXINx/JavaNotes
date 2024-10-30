@@ -41,6 +41,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Leetcode_notes/图论.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "图论"
+            }
+          },
+          {
+            "id": "796b8ccf24da807f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Leetcode_notes/刷题笔记.md",
                 "mode": "source",
                 "source": false
@@ -55,44 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "八股文/Redis八股.md",
+                "file": "JVM/JVM基础篇.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redis八股"
-            }
-          },
-          {
-            "id": "c253a1dfbc2cb4b1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "并发编程JUC/并发编程_模式.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "并发编程_模式"
-            }
-          },
-          {
-            "id": "10466c2e15355cae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "并发编程JUC/并发编程.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "并发编程"
+              "title": "JVM基础篇"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -257,13 +243,11 @@
               "title": "并发编程 的大纲"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 256.5,
-    "collapsed": true
+    "width": 256.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -279,27 +263,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "10466c2e15355cae",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
-    "并发编程JUC/并发编程_模式.md",
+    "JVM/imgs/Pasted image 20241030152830.png",
+    "JVM/imgs/Pasted image 20241030150831.png",
+    "JVM/imgs/Pasted image 20241030145201.png",
+    "JVM/imgs/Pasted image 20241030141644.png",
+    "JVM/imgs/Pasted image 20241030141117.png",
+    "JVM/imgs/Pasted image 20241030101432.png",
+    "JVM/imgs/Pasted image 20241030095938.png",
+    "JVM/imgs/Pasted image 20241030095756.png",
+    "JVM/imgs/Pasted image 20241030092056.png",
+    "JVM/imgs/Pasted image 20241030092054.png",
+    "JVM/imgs/Pasted image 20241030091755.png",
+    "JVM/imgs",
     "八股文/Redis八股.md",
+    "JVM/JVM基础篇.md",
+    "JVM",
+    "并发编程JUC/并发编程.md",
+    "并发编程JUC/并发编程_模式.md",
+    "Leetcode_notes/图论.md",
     "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/单调栈.md",
     "Leetcode_notes/动态规划.md",
-    "Leetcode_notes/imgs/Pasted image 20241026144606.png",
-    "Leetcode_notes/imgs/Pasted image 20241026114430.png",
-    "Leetcode_notes/imgs/Pasted image 20241026113053.png",
-    "Leetcode_notes/imgs/Pasted image 20241026105809.png",
-    "Leetcode_notes/imgs/Pasted image 20241026105028.png",
-    "并发编程JUC/并发编程.md",
-    "并发编程JUC/imgs/Pasted image 20241026003546.png",
-    "并发编程JUC/imgs/Pasted image 20241026003132.png",
-    "并发编程JUC/imgs/Pasted image 20241026003130.png",
-    "并发编程JUC/imgs/Pasted image 20241024225601.png",
-    "并发编程JUC/imgs/Pasted image 20241023164038.png",
     "[.md",
     "苍穹外卖/苍穹外卖.md",
-    "Leetcode_notes/AlgoNote.md",
     "并发编程JUC/imgs",
     "题518.md",
     "天机学堂/天机学堂.md",
@@ -317,16 +306,11 @@
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "Leetcode_notes/Day09_StackAndQueue_part1.md",
     "Leetcode_notes/Day08_String_Part2.md",
-    "Leetcode_notes/Day07_String_Part1.md",
-    "Leetcode_notes/Day06_HashTable_Part2.md",
-    "Leetcode_notes/Day05_HashTable_Part1.md",
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
     "Leetcode_notes/imgs",
     "八股文/未命名.canvas",
-    "八股文",
-    "天机学堂/imgs",
-    "天机学堂"
+    "八股文"
   ]
 }
