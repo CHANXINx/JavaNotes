@@ -151,5 +151,15 @@
       ],
       "key": "2"
     }
+  ],
+  "table-editor-obsidian:table-control-bar": [],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "D"
+    }
   ]
 }

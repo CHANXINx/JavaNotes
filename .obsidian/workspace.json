@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -237,13 +237,14 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "并发编程JUC/并发编程.md"
+                "file": "Leetcode_notes/动态规划.md"
               },
               "icon": "lucide-list",
-              "title": "并发编程 的大纲"
+              "title": "动态规划 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -264,30 +265,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0a71728a331a4a2f",
+  "active": "b028954d255353ce",
   "lastOpenFiles": [
-    "JVM/imgs/Pasted image 20241030152830.png",
-    "JVM/imgs/Pasted image 20241030150831.png",
-    "JVM/imgs/Pasted image 20241030145201.png",
-    "JVM/imgs/Pasted image 20241030141644.png",
-    "JVM/imgs/Pasted image 20241030141117.png",
-    "JVM/imgs/Pasted image 20241030101432.png",
-    "JVM/imgs/Pasted image 20241030095938.png",
-    "JVM/imgs/Pasted image 20241030095756.png",
-    "JVM/imgs/Pasted image 20241030092056.png",
-    "JVM/imgs/Pasted image 20241030092054.png",
-    "JVM/imgs/Pasted image 20241030091755.png",
+    "Leetcode_notes/图论.md",
+    "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/动态规划.md",
+    "JVM/JVM基础篇.md",
+    "JVM/imgs/Pasted image 20241031223757.png",
+    "JVM/imgs/Pasted image 20241031223407.png",
+    "JVM/imgs/Pasted image 20241031223334.png",
+    "JVM/imgs/Pasted image 20241031223141.png",
+    "JVM/imgs/Pasted image 20241031222839.png",
+    "JVM/imgs/Pasted image 20241031222836.png",
+    "JVM/imgs/Pasted image 20241031220333.png",
+    "JVM/imgs/Pasted image 20241031211701.png",
+    "JVM/imgs/Pasted image 20241031211556.png",
+    "JVM/imgs/Pasted image 20241031211219.png",
     "JVM/imgs",
     "八股文/Redis八股.md",
-    "JVM/JVM基础篇.md",
     "JVM",
     "并发编程JUC/并发编程.md",
     "并发编程JUC/并发编程_模式.md",
-    "Leetcode_notes/图论.md",
-    "Leetcode_notes/刷题笔记.md",
     "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/单调栈.md",
-    "Leetcode_notes/动态规划.md",
     "[.md",
     "苍穹外卖/苍穹外卖.md",
     "并发编程JUC/imgs",
