@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JVM/JVM基础篇.md",
+                "file": "JVM/JVM高级篇.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JVM基础篇"
+              "title": "JVM高级篇"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -237,10 +237,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Leetcode_notes/动态规划.md"
+                "file": "JVM/JVM高级篇.md"
               },
               "icon": "lucide-list",
-              "title": "动态规划 的大纲"
+              "title": "JVM高级篇 的大纲"
             }
           }
         ],
@@ -265,22 +265,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b028954d255353ce",
+  "active": "0a71728a331a4a2f",
   "lastOpenFiles": [
+    "JVM/JVM实战篇.md",
+    "JVM/JVM高级篇.md",
+    "JVM/imgs/Pasted image 20241102181248.png",
+    "未命名.md",
+    "JVM/imgs/Pasted image 20241102140952.png",
+    "JVM/imgs/Pasted image 20241102140201.png",
+    "JVM/imgs/Pasted image 20241102104023.png",
+    "JVM/imgs/Pasted image 20241102103903.png",
+    "JVM/imgs/Pasted image 20241102103738.png",
+    "JVM/imgs/Pasted image 20241102103620.png",
+    "JVM/imgs/Pasted image 20241102102120.png",
+    "JVM/imgs/Pasted image 20241102101859.png",
+    "JVM/imgs/Pasted image 20241102100903.png",
+    "JVM/JVM基础篇.md",
+    "Leetcode_notes/动态规划.md",
     "Leetcode_notes/图论.md",
     "Leetcode_notes/刷题笔记.md",
-    "Leetcode_notes/动态规划.md",
-    "JVM/JVM基础篇.md",
-    "JVM/imgs/Pasted image 20241031223757.png",
-    "JVM/imgs/Pasted image 20241031223407.png",
-    "JVM/imgs/Pasted image 20241031223334.png",
-    "JVM/imgs/Pasted image 20241031223141.png",
-    "JVM/imgs/Pasted image 20241031222839.png",
-    "JVM/imgs/Pasted image 20241031222836.png",
-    "JVM/imgs/Pasted image 20241031220333.png",
-    "JVM/imgs/Pasted image 20241031211701.png",
-    "JVM/imgs/Pasted image 20241031211556.png",
-    "JVM/imgs/Pasted image 20241031211219.png",
     "JVM/imgs",
     "八股文/Redis八股.md",
     "JVM",
@@ -305,8 +308,6 @@
     "每日学习记录/09月10日.md",
     "Leetcode_notes/Day11_BinaryTree_part1.md",
     "Leetcode_notes/Day10_StackAndQueue_part2.md",
-    "Leetcode_notes/Day09_StackAndQueue_part1.md",
-    "Leetcode_notes/Day08_String_Part2.md",
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
