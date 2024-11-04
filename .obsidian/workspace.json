@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JVM/JVM高级篇.md",
+                "file": "JVM/JVM原理篇.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JVM高级篇"
+              "title": "JVM原理篇"
             }
           }
         ],
@@ -237,10 +237,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JVM/JVM高级篇.md"
+                "file": "JVM/JVM原理篇.md"
               },
               "icon": "lucide-list",
-              "title": "JVM高级篇 的大纲"
+              "title": "JVM原理篇 的大纲"
             }
           }
         ],
@@ -267,30 +267,32 @@
   },
   "active": "0a71728a331a4a2f",
   "lastOpenFiles": [
-    "JVM/JVM实战篇.md",
-    "JVM/JVM高级篇.md",
-    "JVM/imgs/Pasted image 20241102181248.png",
-    "未命名.md",
-    "JVM/imgs/Pasted image 20241102140952.png",
-    "JVM/imgs/Pasted image 20241102140201.png",
-    "JVM/imgs/Pasted image 20241102104023.png",
-    "JVM/imgs/Pasted image 20241102103903.png",
-    "JVM/imgs/Pasted image 20241102103738.png",
-    "JVM/imgs/Pasted image 20241102103620.png",
-    "JVM/imgs/Pasted image 20241102102120.png",
-    "JVM/imgs/Pasted image 20241102101859.png",
-    "JVM/imgs/Pasted image 20241102100903.png",
-    "JVM/JVM基础篇.md",
-    "Leetcode_notes/动态规划.md",
-    "Leetcode_notes/图论.md",
+    "JVM/imgs/Pasted image 20241104001010.png",
     "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/单调栈.md",
+    "Leetcode_notes/动态规划.md",
+    "JVM/JVM原理篇.md",
+    "JVM/imgs/Pasted image 20241103211519.png",
+    "JVM/imgs/Pasted image 20241103205832.png",
+    "JVM/imgs/Pasted image 20241103205231.png",
+    "JVM/imgs/Pasted image 20241103205144.png",
+    "JVM/imgs/Pasted image 20241103204840.png",
+    "JVM/imgs/Pasted image 20241103204301.png",
+    "JVM/imgs/Pasted image 20241103204133.png",
+    "JVM/imgs/Pasted image 20241103204027.png",
+    "JVM/imgs/Pasted image 20241103202927.png",
+    "JVM/imgs/Pasted image 20241103202820.png",
+    "JVM/JVM高级篇.md",
+    "JVM/JVM实战篇.md",
+    "未命名.md",
+    "JVM/JVM基础篇.md",
+    "Leetcode_notes/图论.md",
     "JVM/imgs",
     "八股文/Redis八股.md",
     "JVM",
     "并发编程JUC/并发编程.md",
     "并发编程JUC/并发编程_模式.md",
     "Leetcode_notes/AlgoNote.md",
-    "Leetcode_notes/单调栈.md",
     "[.md",
     "苍穹外卖/苍穹外卖.md",
     "并发编程JUC/imgs",
@@ -306,8 +308,6 @@
     "代码摘录/代码摘录.md",
     "模板/学习记录模板.md",
     "每日学习记录/09月10日.md",
-    "Leetcode_notes/Day11_BinaryTree_part1.md",
-    "Leetcode_notes/Day10_StackAndQueue_part2.md",
     "代码摘录/imgs",
     "未命名 1",
     "代码摘录",
