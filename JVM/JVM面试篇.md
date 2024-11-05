@@ -1,0 +1,240 @@
+## 1. 运行时数据区
+![[Pasted image 20241104165420.png]]
+### Java虚拟机栈
+
+Java虚拟机栈采用栈的数据结构来管理方法调用中的基本数据，先进后出 ,每一个方法的调用使用一个栈帧来保存。每个线程都会包含一个自己的虚拟机栈，它的生命周期和线程相同。
+
+![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=YWRlNjhkMmIyZmNiMmYxMDA0MjJjYjNlOWRhZGEzMWFfNUxOajBXMDhubWdaaWJRaWNjYmR2RE4yWXJNdkpBaVJfVG9rZW46RXdRSGI1bXpIb1NRblJ4czZsRGNMVGZabnZjXzE3MzA3MTA0MzY6MTczMDcxNDAzNl9WNA)
+
+栈帧主要包含三部分内容：
+
+1、局部变量表，在方法执行过程中存放所有的局部变量。
+
+![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTc2MTU1NjgwMzgzNWEyMmM0ODBjYTExYzJjNDhhOTVfTFpxNEs2QmxaM0psSDNyU1dvOW5JQTJ5cGY0OTdxdE1fVG9rZW46UGh6eGJXQm5mb0Z1UGt4cndnTWNSWEZGbk9iXzE3MzA3MTA0MzY6MTczMDcxNDAzNl9WNA)
+
+2、操作数栈，虚拟机在执行指令过程中用来存放临时数据的一块区域。
+
+如下图中，iadd指令会将操作数栈上的两个数相加，为了实现`i+1`。最终结果也会放到操作数上。
+
+![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=MjI4YTg1YzU4MzRlODkxMDZhOWFkYjdiMzQyMWQxODBfQ2pHeTZjTlJ0a3MwOGNsQWZoWkhkTzEyVHB1aEJmSVZfVG9rZW46T28xQWJaNjM1b0ZWTnV4N3RROWM4WVBBbjJnXzE3MzA3MTA0MzY6MTczMDcxNDAzNl9WNA)
+
+1. **帧数据**，主要包含动态链接、方法出口、异常表等内容。
+	- 动态链接：方法中要用到其他类的属性和方法，这些内容在字节码文件中是以编号保存的，**运行过程中需要替换成内存中的地址**，这个编号到内存地址的映射关系就保存在动态链接中。
+	- 方法出口：方法调用完需要弹出栈帧，回到上一个方法，程序计数器要切换到上一个方法的地址继续执行，方法出口保存的就是这个地址。
+	- 异常表：存放的是代码中异常的处理信息，包含了异常捕获的生效范围以及异常发生后跳转到的字节码指令位置。
+
+### 本地方法栈
+Java虚拟机栈存储了Java方法调用时的栈帧，而本地方法栈存储的是**native本地方法的栈帧**。
+
+在Hotspot虚拟机中，**Java虚拟机栈和本地方法栈实现上使用了同一个栈空间**。本地方法栈会在栈内存上生成一个栈帧，临时保存方法的参数同时方便出现异常时也把本地方法的栈信息打印出来。
+![[Pasted image 20241104165935.png|150]]
+
+### 堆
+- 一般Java程序中堆内存是空间最大的一块内存区域。**创建出来的对象都存在于堆上**。
+- 栈上的局部变量表中，可以存放堆上对象的引用。静态变量也可以存放堆对象的引用，**通过静态变量就可以实现对象在线程之间共享**。![[Pasted image 20241104170054.png]]
+- 堆是垃圾回收最主要的部分，**堆结构更详细的划分与垃圾回收器有关**，不同的垃圾回收器的堆结构划分不同！
+### 方法区
+方法区是Java虚拟机规范中提出来的一个虚拟机概念，在HotSpot不同版本中会用**永久代或者元空间**来实现。方法区主要存放的是基础信息，包含：
+
+1. 每一个加载的类的元信息（基础信息）。
+![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=NWFhNDI3NmNiYjNjNjI5YzkzN2YyOTgxNDliZjFjZmVfdHNpY3pmMnlPNzNESDdYekZwblo1dmFMT05HWGVhZ2ZfVG9rZW46SHZSVmJ0U2VIb0VNbk54OGQ3ZGNrcHVybmJiXzE3MzA3MTA5MDI6MTczMDcxNDUwMl9WNA)
+
+2. 运行时常量池，**保存了字节码文件中的常量池内容**，避免常量内容重复创建减少内存开销。
+3. 字符串常量池，**存储字符串的常量**。
+
+### 直接内存
+
+直接内存并不在《Java虚拟机规范》中存在，所以并不属于Java运行时的内存区域。在 JDK 1.4 中引入了 NIO 机制，由**操作系统直接管理这部分内容，主要为了提升读写数据的性能**。在网络编程框架如Netty中被大量使用。
+
+要创建直接内存上的数据，可以使用ByteBuffer。
+
+语法： `ByteBuffer directBuffer = ByteBuffer.allocateDirect(size);`
+
+## 2. 哪些区域会出现内存溢出，会有什么现象？
+内存溢出指的是内存中**某一块区域的使用量超过了允许使用的最大值**，从而使用内存时因空间不足而失败，虚拟机一般会抛出指定的错误。
+
+- 在Java虚拟机中，只有程序计数器不会出现内存溢出的情况，因为每个线程的程序计数器只保存一个固定长度的地址。![[Pasted image 20241104170651.png]]
+### 堆内存溢出：
+- 堆内存溢出指的是在**堆上分配的对象空间超过了堆的最大大小**，从而导致的内存溢出。堆的最大大小使用-Xmx参数进行设置，如-Xmx10m代表最大堆内存大小为10m。
+- 可通过不停创建对象复现，报错`OutOfMemory: heap sapce` 
+### 栈内存溢出：
+- 栈内存溢出指的是**所有栈帧空间的占用内存超过了最大值**，最大值使用-Xss进行设置，比如-Xss256k代表所有栈帧占用内存大小加起来不能超过256k。
+- 可通过方法递归调用复现，异常StackOverFlow
+### 方法区内存溢出：
+- 方法区内存溢出指的是**方法区中存放的内容比如类的元信息超过了方法区内存的最大值**，JDK7及之前版本方法区使用永久代（-XX:MaxPermSize=值）来实现，JDK8及之后使用元空间（-XX:MaxMetaspaceSize=值）来实现。
+- 可通过ClassWriter不停创建类来复现，报错`OutOfMemory:Meta Sapce/PermGen space`
+
+### 直接内存溢出：
+- 直接内存溢出指的是**申请的直接内存空间大小超过了最大值**，使用`-XX:MaxDirectMemorySize=值`设置最大值。
+- 可通过ByteBuffer写入直接内存复现,报错`OutOfMemory:Direct buffer memory`
+
+## 3. JVM在JDK6-8之间在内存区域上有什么不同
+### 方法区的实现
+方法区是《Java虚拟机规范》中设计的虚拟概念，每款Java虚拟机在实现上都各不相同。Hotspot设计如下：
+- JDK7及之前的版本将方法区存放在**堆区域中的永久代空间**，堆的大小由虚拟机参数来控制。
+- JDK8及之后的版本将方法区存放在**元空间**中，**元空间位于操作系统维护的直接内存中**，默认情况下只要不超过操作系统承受的上限，可以一直分配。也可以手动设置最大大小。![[Pasted image 20241104190241.png]]
+**使用元空间替换永久代的原因：**
+1. 提高内存上限：元空间使用的是操作系统内存，而不是JVM内存。如果不设置上限，只要不超过操作系统内存上限，就**可以持续分配**。而永久代在堆中，可使用的内存上限是有限的。所以**使用元空间可以有效减少OOM情况的出现**。
+2. 优化垃圾回收的策略：永久代在堆上，垃圾回收机制一般使用老年代的垃圾回收方式，不够灵活。**使用元空间之后单独设计了一套适合方法区的垃圾回收机制**。
+
+### 字符串常量池的位置
+- JDK7之前，字符串常量池在运行时常量池中，并且方法区的实现为永久代；
+- JDK7时，字符串常量池被放到了堆空间中，运行时常量池还在永久代中；
+- JDK7之后，移除了永久代，方法区用元空间实现，字符串常量池还在堆空间中。
+
+**字符串常量池从方法区移动到堆的原因：**
+1. **垃圾回收优化**：字符串常量池的回收逻辑和对象的回收逻辑类似，内存不足的情况下，如果**字符串常量池中的常量不被使用就可以被回收**；**方法区中的类的元信息回收逻辑更复杂一些**。移动到堆之后，就可以利用对象的垃圾回收器，对字符串常量池进行回收。
+	- 相当于让字符串常量的回收逻辑与对象一致，因此放到堆中能复用垃圾回收机制。
+2. **让方法区大小更可控**：一般在项目中，**类的元信息不会占用特别大的空间**，所以会给方法区设置一个比较小的上限。如果字符串常量池在方法区中，会让方法区的空间大小变得不可控。
+	- 避免字符串常量的存在让容量小的方法区出现内存溢出。
+3. **intern方法的优化**：JDK6版本中`intern()`方法会把第一次遇到的字符串实例**复制**到永久代的字符串常量池中。JDK7及之后版本中由于字符串常量池在堆上，就可以进行优化：字符串保存在堆上，把字符串的引用放入字符串常量池，减少了复制的操作。
+	- 字符串对象和字符串常量都在堆空间中，直接把字符串的引用放入字符串常量池，构建引用关系，避免了复制操作，降低性能损耗。
+
+## 4. 什么是类加载器？
+类加载器负责在类的加载过程中**将字节码信息以流的方式获取并加载到内存中**。
+JDK8及之前如下：
+![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=NTM5NGIzMjQ3ZGRkOWQ2MDIyOGUxNzk0OGQ3ODFkNjRfRnlEcVNUczBubDY2a2lWZnp0cEk5OWpGRlhPQm9oaXJfVG9rZW46V2FPdWJlYlhsb1dOY0p4c2Q1OWM5TkZtbjBnXzE3MzA3MTk4NzY6MTczMDcyMzQ3Nl9WNA)
+JDK9之后均由Java实现：
+- 启动类加载器也由Java语言实现；
+- 扩展类加载器变更为平台类加载器Platform ClassLoader
+  ![](https://lisxpq12rl7.feishu.cn/space/api/box/stream/download/asynccode/?code=MTcxMGNmODYxNWRhYjhjMWNlNzc3NmE4MjgzZDE1ZmVfYUNoZnNucTJtYjhlV1R4eVFZaDR1cUpnb2wzdWFoYzNfVG9rZW46RzRkTWJWdzBzb3lkNVR4aXczdmNzVWxEbmZoXzE3MzA3MTk4ODk6MTczMDcyMzQ4OV9WNA)
+### 自定义类加载器
+
+自定义类加载器允许用户自行实现类加载的逻辑，可以从网络、数据库等来源加载类信息。自定义类加载器需要**继承自ClassLoader抽象类，重写findClass方法**。
+
+## 5. ==什么是双亲委派机制==
+类加载有层级关系，上一级称之为下一级的父类(parent)加载器。
+![[Pasted image 20241104195230.png|250]]
+
+**双亲委派机制指的是：当一个类加载器接收到加载类的任务时，会==向上查找是否加载过，再由顶向下进行加载==。**
+
+
+**双亲委派机制的作用**：
+1. **保证类加载的安全性**，通过双亲委派机制避免恶意代码替换JDK中的核心类库，比如java.lang.String，确保核心类库的完整性和安全性。
+2. **避免重复加载**，双亲委派机制可以避免同一个类被多次加载。
+
+## 6. 如何打破双亲委派机制
+![[Pasted image 20241104195903.png]]
+**调用关系：**
+![[Pasted image 20241104200024.png]]
+双亲委派核心代码：
+1. 自底向上查找是否加载过：
+	```java
+	protected Class<?> loadClass(String name, boolean resolve){
+		...
+		if (parent != null) {  
+		    c = parent.loadClass(name, false);  
+		} else {  
+		    c = findBootstrapClassOrNull(name);  
+		}
+		...
+	}
+	```
+2. 自顶向下尝试加载类：
+	```java
+	final Class<?> loadClass(Module module, String name) {  
+	    synchronized (getClassLoadingLock(name)) {  
+	        // First, check if the class has already been loaded  
+	        Class<?> c = findLoadedClass(name);  
+	        if (c == null) {  
+	            c = findClass(module.getName(), name);  
+	        }  
+	        if (c != null && c.getModule() == module) {  
+	            return c;  
+	        } else {  
+	            return null;  
+	        }  
+	    }  
+	}
+	```
+
+打破双亲委派机制的唯一方法就是**实现自定义类加载器重写loadClass方法，将其中的双亲委派机制代码去掉。**
+
+## 7. ==Tomcat的自定义类加载器==^
+
+## 8. 如何判断堆上的对象没有被引用？？
+
+### 引用计数法
+引用计数法会为每个对象维护一个引用计数器，当对象被引用时加1，取消引用时减1。
+
+引用计数法的优点是实现简单，缺点有两点：
+1. 每次引用和取消引用都需要维护计数器，对系统性能会有一定的影响
+2. **存在循环引用问题，所谓循环引用就是当A引用B，B同时引用A时会出现对象无法回收的问题。**
+### 可达性分析法
+Java使用的是可达性分析算法来判断对象是否可以被回收。可达性分析将对象分为两类：垃圾回收的根对象（GC Root）和普通对象，对象与对象之间存在引用关系。
+
+常见GC Root对象:
+- 线程Thread对象，引用线程栈帧中的方法参数、局部变量等。
+- 系统类加载器加载的java.lang.Class对象，引用类中的静态变量。
+- 监视器对象，用来保存同步锁synchronized关键字持有的对象。
+- 本地方法调用时使用的全局对象。
+
+## 9. JVM 中都有哪些引用类型？
+- 强引用，JVM中默认引用关系就是强引用，即是对象被局部变量、静态变量等GC Root关联的对象引用，只要这层关系存在，普通对象就不会被回收。
+- 软引用，软引用相对于强引用是一种**比较弱的引用关系**，如果一个对象只有软引用关联到它，**当程序内存不足时，就会将软引用中的数据进行回收**。软引用主要在缓存框架中使用。
+	- 内存不足时，会将软引用对象中的字节数组移除。
+  ```java
+	  //-Xmx10m -verbose:gc
+	public class SoftReferenceDemo {
+	    private static int _1MB = 1024 * 1024 * 1;
+	    public static void main(String[] args) {
+	        List<SoftReference> objects = new ArrayList<>();
+	
+	        for (int i = 0; i < 10; i++) {
+	            byte[] bytes = new byte[_1MB];
+	            //软引用
+	            SoftReference<byte[]> softReferences = new SoftReference<byte[]>(bytes);
+	            //软引用对象放入集合中
+	            objects.add(softReferences);
+	
+	            System.out.println(i);
+	        }
+	
+	        //有一部分对象因为内存不足，已经被回收了
+	        for (SoftReference softReference : objects) {
+	            System.out.println(softReference.get());
+	        }
+	
+	    }
+	}
+	```
+
+- 弱引用，弱引用的整体机制和软引用基本一致，区别在于**弱引用包含的对象在垃圾回收时，不管内存够不够都会直接被回收**，弱引用主要在ThreadLocal中使用。
+- 虚引用（幽灵引用/幻影引用），不能通过虚引用对象获取到包含的对象。虚引用唯一的用途是**当对象被垃圾回收器回收时可以接收到对应的通知**。
+	- 直接内存中为了及时知道直接内存对象不再使用，从而回收内存，使用了虚引用来实现。
+  ```java
+	public class PhantomReferenceDemo {
+	    private static int _1MB = 1024 * 1024 * 1;
+	    public static void main(String[] args) {
+	        ReferenceQueue<byte[]> queue = new ReferenceQueue();
+	        byte[] bytes = new byte[_1MB];
+	        MyPhantomReference phantomReference = new MyPhantomReference(bytes, queue);
+	
+	        //去除强引用
+	        bytes = null;
+	        //执行垃圾回收
+	        System.gc();
+	
+	        //查看队列
+	        MyPhantomReference ref = (MyPhantomReference) queue.poll();
+	        //清理
+	        ref.clean();
+	
+	    }
+	}
+
+	class MyPhantomReference extends PhantomReference<byte[]>{
+	    public void clean(){
+	        System.out.println("清理...");
+	    }
+	
+	    public MyPhantomReference(byte[] referent, ReferenceQueue<byte[]> q) {
+	        super(referent, q);
+	    }
+	}
+	```
+- 终结器引用，终结器引用指的是在对象需要被回收时，**终结器引用会关联对象并放置在Finalizer类中的引用队列中**，在稍后由一条由FinalizerThread线程从队列中获取对象，然后执行对象的finalize方法，在对象第二次被回收时，该对象才真正的被回收。
+
+## 10. ThreadLocal中为什么要使用弱引用？
+1. 在每个线程中，存放了一个ThreadLocalMap对象，本质上就是一个数组实现的哈希表，里边存放多个Entry对象。
+2. 每个Entry对象继承自弱引用，内部存放ThreadLocal对象。同时用强引用，引用保存的ThreadLocal对应的value值。
