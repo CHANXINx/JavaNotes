@@ -151,6 +151,34 @@ JDK9之后均由Java实现：
 打破双亲委派机制的唯一方法就是**实现自定义类加载器重写loadClass方法，将其中的双亲委派机制代码去掉。**
 
 ## 7. ==Tomcat的自定义类加载器==^
+![[Pasted image 20241105152407.png]]
+
+### common类加载器：
+common类加载器**主要加载tomcat自身使用以及应用使用的jar包**，默认配置在catalina.properties文件中。
+
+`common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar"`
+### catalina类加载器
+catalina类加载器主要加载**tomcat自身使用的jar包**，**不让应用使用**，默认配置在catalina.properties文件中。
+
+server.loader= 默认配置为空，**为空时catalina加载器和common加载器是同一个**。
+### shared类加载器
+shared类加载器主要加载**应用使用**的jar包，不让tomcat使用，默认配置在catalina.properties文件中。
+
+shared.loader= 默认配置为空，**为空时shared加载器和common加载器是同一个**。
+
+### ==ParallelWebappClassLoader类加载器==
+ParallelWebappClassLoader类加载器可以**多线程并行加载应用中使用到的类**，每个应用都拥有一个自己的该类加载器，可以保证不同应用能加载同名类。
+##### **为什么每个应用会拥有一个独立的ParallelWebappClassLoader类加载器呢？**
+**同一个类加载器，只能加载一个同名的类**。两个应用中相同名称的类都必须要加载。
+
+##### 加载流程：
+![[Pasted image 20241105160042.png|450]]
+
+应用中的类会首先尝试使用ParallelWebAppClassLoader，其次才是尝试使用双亲委派机制交给父类加载器。这样可以实现应用中的类隔离，防止了类版本冲突。![[Pasted image 20241105160958.png]]
+
+### JasperLoader类加载器
+JasperLoader类加载器负责加载JSP文件编译出来的class字节码文件，为了实现**热部署**（不重启让修改的jsp生效），**每一个jsp文件都由一个独立的JasperLoader负责加载**。
+
 
 ## 8. 如何判断堆上的对象没有被引用？？
 
@@ -235,6 +263,23 @@ Java使用的是可达性分析算法来判断对象是否可以被回收。可�
 	```
 - 终结器引用，终结器引用指的是在对象需要被回收时，**终结器引用会关联对象并放置在Finalizer类中的引用队列中**，在稍后由一条由FinalizerThread线程从队列中获取对象，然后执行对象的finalize方法，在对象第二次被回收时，该对象才真正的被回收。
 
-## 10. ThreadLocal中为什么要使用弱引用？
+## 10. ThreadLocal中为什么要使用弱引用？^
 1. 在每个线程中，存放了一个ThreadLocalMap对象，本质上就是一个数组实现的哈希表，里边存放多个Entry对象。
 2. 每个Entry对象继承自弱引用，内部存放ThreadLocal对象。同时用强引用，引用保存的ThreadLocal对应的value值。
+3. 不再使用Threadlocal对象时， threadlocal = null；由于是弱引用，那么在垃圾回收之后，ThreadLocal对象就可以被回收。
+	1. 此时还有Entry对象和value对象没有能被回收，所以在ThreadLocal类的set、get、remove方法中，在某些特定条件满足的情况下，会主动删除这两个对象。
+
+## 11. 常见的JVM参数
+### 参数1：-Xmx 和 –Xms
+-Xmx参数设置的是最大堆内存。最合理的设置方式应该是根据最大并发量估算服务器的配置，然后再根据服务器配置计算最大堆内存的值。
+
+建议将-Xms设置的和-Xmx一样大,运行过程中不再产生扩容的开销。
+
+### 参数2：-XX:MaxMetaspaceSize 和 -Xss
+-XX:MaxMetaspaceSize=值 参数指的是最大元空间大小，默认值比较大，如果出现元空间内存泄漏会让操作系统可用内存不可控，建议根据测试情况设置最大值。
+
+-Xss256k 栈内存大小，如果我们不指定栈的大小，JVM 将创建一个具有默认大小的栈。大小取决于操作系统和计算机的体系结构。
+### 参数3：-Xmn 年轻代的大小
+默认值为整个堆的1/3，可以根据峰值流量计算最大的年轻代大小，尽量让对象只存放在年轻代，不进入老年代。G1垃圾回收器尽量不要设置该值，G1会动态调整年轻代的大小。
+
+![[Pasted image 20241105152235.png]]
