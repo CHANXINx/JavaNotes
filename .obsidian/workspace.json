@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "模板/LeetcodeRecordTemplate.md",
+                "file": "Leetcode_notes/Interview 75.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LeetcodeRecordTemplate"
+              "title": "Interview 75"
             }
           },
           {
@@ -246,7 +246,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.5
+    "width": 389.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,15 +264,18 @@
   },
   "active": "c617ec37154fab64",
   "lastOpenFiles": [
+    "Leetcode_notes/AlgoNote.md",
+    "Leetcode_notes/刷题笔记.md",
+    "Leetcode_notes/图论.md",
+    "Leetcode_notes/栈与队列.md",
+    "模板/LeetcodeRecordTemplate.md",
     "八股文/Redis八股.md",
     "Leetcode_notes/Interview 75.md",
     "MySQL/MySQL实战45讲.md",
-    "Leetcode_notes/栈与队列.md",
     "Leetcode_notes/单调栈.md",
     "Leetcode_notes/数组.md",
     "Leetcode_notes/动态规划.md",
     "Leetcode_notes/二叉树.md",
-    "Leetcode_notes/刷题笔记.md",
     "Leetcode_notes/字符串.md",
     "Leetcode_notes/哈希表.md",
     "Leetcode_notes/链表.md",
@@ -287,11 +290,9 @@
     "imgs/Pasted image 20241111232726.png",
     "imgs/Pasted image 20241111230420.png",
     "imgs/5e716ba1d464c8224c1c1f36135d0e97.webp",
-    "Leetcode_notes/图论.md",
     "Leetcode_notes/imgs/Pasted image 20241109112429.png",
     "Leetcode_notes/imgs/Pasted image 20241109104055.png",
     "Leetcode_notes/imgs/Pasted image 20241109102610.png",
-    "Leetcode_notes/AlgoNote.md",
     "陈鑫的个人求职简历.md",
     "每日学习记录(简略).md",
     "八股文/八股文.md",
@@ -300,7 +301,6 @@
     "每日学习记录/09月10日.md",
     "JVM/JVM原理篇.md",
     "JVM/JVM高级篇.md",
-    "JVM/JVM实战篇.md",
     "JVM/imgs",
     "JVM",
     "并发编程JUC/imgs",
