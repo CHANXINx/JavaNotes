@@ -5,7 +5,6 @@
   "theme": "moonstone",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "新建文本文档",
     "图片对齐语法"
   ]
 }
