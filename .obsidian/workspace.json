@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bba4c3306a4fd223",
+        "id": "c6fc874220fd8844",
         "type": "tabs",
         "children": [
           {
-            "id": "919e908bdc5d915a",
+            "id": "b2e2e6d5529df4cb",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#★★★☆☆",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "八股文/Redis八股.md",
+                "file": "八股文/MySQL八股.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +156,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Redis八股 的反向链接列表"
+              "title": "MySQL八股 的反向链接列表"
             }
           },
           {
@@ -165,12 +165,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "并发编程JUC/并发编程.md",
+                "file": "八股文/MySQL八股.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "并发编程 的出链列表"
+              "title": "MySQL八股 的出链列表"
             }
           },
           {
@@ -179,10 +179,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "八股文/Redis八股.md"
+                "file": "八股文/MySQL八股.md"
               },
               "icon": "lucide-list",
-              "title": "Redis八股 的大纲"
+              "title": "MySQL八股 的大纲"
             }
           }
         ],
@@ -206,31 +206,37 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "919e908bdc5d915a",
+  "active": "b2e2e6d5529df4cb",
   "lastOpenFiles": [
-    "例如竞对利用自增id获取.md",
     "八股文/MySQL八股.md",
+    "每日学习记录(简略).md",
     "Spring6笔记.md",
-    "八股文/Redis八股.md",
+    "Git笔记.md",
+    "陈鑫的个人求职简历.md",
     "八股文/八股文.md",
+    "MySQL/MySQL实战45讲.md",
+    "八股文/Redis八股.md",
+    "并发编程JUC/并发编程.md",
+    "并发编程JUC/并发编程_模式.md",
+    "天机学堂/imgs/03909b9c-7fde-464e-98fa-6c7cbf50f628.gif",
+    "JVM/imgs/Pasted image 20241029203953.png",
+    "Leetcode_notes/数组.md",
+    "数组.md",
+    "例如竞对利用自增id获取.md",
     "Leetcode_notes/Interview 75.md",
     "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/刷题笔记.md",
     "Leetcode_notes/图论.md",
     "Leetcode_notes/栈与队列.md",
     "模板/LeetcodeRecordTemplate.md",
-    "MySQL/MySQL实战45讲.md",
     "Leetcode_notes/单调栈.md",
-    "Leetcode_notes/数组.md",
     "Leetcode_notes/动态规划.md",
     "Leetcode_notes/二叉树.md",
     "Leetcode_notes/字符串.md",
     "Leetcode_notes/哈希表.md",
     "Leetcode_notes/链表.md",
-    "==数组==.md",
     "未命名 1.md",
     "MySQL",
-    "未命名.md",
     "imgs/Pasted image 20241112001927.png",
     "imgs/Pasted image 20241111235240.png",
     "imgs/Pasted image 20241111233019.png",
@@ -239,12 +245,6 @@
     "imgs/Pasted image 20241111230420.png",
     "imgs/5e716ba1d464c8224c1c1f36135d0e97.webp",
     "Leetcode_notes/imgs/Pasted image 20241109112429.png",
-    "Leetcode_notes/imgs/Pasted image 20241109104055.png",
-    "Leetcode_notes/imgs/Pasted image 20241109102610.png",
-    "陈鑫的个人求职简历.md",
-    "每日学习记录(简略).md",
-    "模板/学习记录模板.md",
-    "JVM/JVM面试篇.md",
     "JVM/imgs",
     "JVM",
     "并发编程JUC/imgs",
