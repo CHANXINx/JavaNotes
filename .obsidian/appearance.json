@@ -1,6 +1,6 @@
 {
-  "textFontFamily": "iA Writer Mono V Regular",
-  "interfaceFontFamily": "iA Writer Mono V Regular",
+  "textFontFamily": "Source Han Sans CN,iA Writer Mono V Regular,霞鹜文楷",
+  "interfaceFontFamily": "Source Han Sans CN,iA Writer Mono V Regular",
   "baseFontSizeAction": true,
   "theme": "moonstone",
   "baseFontSize": 16,

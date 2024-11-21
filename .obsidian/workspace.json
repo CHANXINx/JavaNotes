@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "八股文/Java集合类八股.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Java集合类八股"
+            }
+          },
+          {
+            "id": "a19353aa32b8cd08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "八股文/MySQL八股.md",
                 "mode": "source",
                 "source": false
@@ -209,6 +223,14 @@
   "active": "b2e2e6d5529df4cb",
   "lastOpenFiles": [
     "八股文/MySQL八股.md",
+    "八股文/Java集合类八股.md",
+    "八股文/imgs/Pasted image 20241120225226.png",
+    "八股文/imgs/Pasted image 20241120223713.png",
+    "八股文/Redis八股.md",
+    "八股文/杂项.md",
+    "未命名.md",
+    "八股文/imgs/Pasted image 20241120194528.png",
+    "八股文/imgs/Pasted image 20241120194509.png",
     "八股文/imgs/Pasted image 20241120013145.png",
     "八股文/imgs/Pasted image 20241120011127.png",
     "八股文/imgs/Pasted image 20241119223926.png",
@@ -228,22 +250,14 @@
     "陈鑫的个人求职简历.md",
     "八股文/八股文.md",
     "MySQL/MySQL实战45讲.md",
-    "八股文/Redis八股.md",
     "并发编程JUC/并发编程.md",
     "并发编程JUC/并发编程_模式.md",
-    "天机学堂/imgs/03909b9c-7fde-464e-98fa-6c7cbf50f628.gif",
-    "JVM/imgs/Pasted image 20241029203953.png",
     "Leetcode_notes/数组.md",
     "数组.md",
     "例如竞对利用自增id获取.md",
     "Leetcode_notes/刷题笔记.md",
     "模板/LeetcodeRecordTemplate.md",
-    "Leetcode_notes/单调栈.md",
-    "Leetcode_notes/哈希表.md",
-    "Leetcode_notes/链表.md",
     "MySQL",
-    "imgs/Pasted image 20241112001927.png",
-    "imgs/Pasted image 20241111235240.png",
     "JVM/imgs",
     "JVM",
     "并发编程JUC/imgs",
