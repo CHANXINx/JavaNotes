@@ -14,5 +14,6 @@
   },
   "smartIndentList": true,
   "foldHeading": true,
-  "promptDelete": true
+  "promptDelete": true,
+  "strictLineBreaks": false
 }
