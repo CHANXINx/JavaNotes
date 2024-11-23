@@ -44,15 +44,17 @@ JDK1.7以前，是通过数组+链表的数据结构进行存储的。数组中�
 ![[Pasted image 20241120225226.png]]
 JDK1.8以后，在链表长度大于8时，会将链表转换为红黑树结构，并在小于6时再次转换为链表结构。
 ![[Pasted image 20241121183819.png]]
-## 3. 如何再次转换回链表的？
-红黑树结构中，存在next和prev节点
-![[Pasted image 20241121183819.png]]
-## 4. HashMap、Hashtable和ConcurrentHashMap的区别？
+## 3. HashMap、Hashtable和ConcurrentHashMap的区别？
 - HashMap线程不安全，效率更高，可以存储
 - Hashtable线程安全，效率较低，内部方法通过synchronized修饰，不可以有null的key和value，默认初始容量为11.
+- ConcurrentHashMap是线程安全的HashMap，内部通过CAS+Synchronized实现线程安全。
 
-## 5. HashMap在get和put时经过哪些步骤？^
+## 4. HashMap在get和put时经过哪些步骤？
 ### get方法详解：
+1. 调用`hash(key)`方法计算key的哈希值，计算出在数组中的索引位置；
+2. 若索引位置为空，则直接返回null；
+3. 若不为空，则遍历链表元素，若找到了与key相等的键值对就返回，否则返回null。
+
 ```java
 public V get(Object key) {  
     Node<K,V> e;  
@@ -96,6 +98,12 @@ static final int hash(Object key) {
 }
 ```
 ### put方法详解：
+1. 首先是调用`hash(key)`计算key的哈希值，找到在数组中的索引位置；
+2. 若为空，则直接将创建新的Node，将键值对存储在索引位置上
+3. 若不为空，则遍历链表或红黑树，若找到与key相同的键值对，则更新为当前值，并返回旧值；
+4. 若不为空，但没有找到相同key的键值对，则在插入新节点；
+5. 若插入元素后超过转换阈值，则将链表结构转换为红黑树；
+6. 插入成功后，若元素超过`Threshold`，则调用`resize()`方法进行扩容操作。
 ```java
 public V put(K key, V value) {  
     return putVal(hash(key), key, value, false, true);  
@@ -146,15 +154,22 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     return null;  
 }
 ```
-## 6. HashMap的remove方法是如何实现的？
+## 5. HashMap的remove方法是如何实现的？^
 
+## 6. 讲讲HashMap的延迟初始化
+当创建一个 `HashMap` 实例时，可以指定初始容量和负载因子（此时初始容量存储在Threshold变量中），但内部的哈希表（即数组）并不会立即被分配。只有在插入第一个元素时，调用`resize()` 方法来初始化哈希表并设置容量，从而实际分配内存。
 
+**优点：**
+- 通过推迟内存分配和资源创建来提高性能并节省内存；
+
+**缺点：**
+- 多个线程同时访问未初始化的HashMap时，可能会导致竞态条件。
 ## 7. 为什么HashMap的容量是$2^n$，如何保证？
 因为HashMap在计算某个元素对应的桶下标时，采用了`h & (length - 1)`的位运算操作来代替取模操作。位运算是基于内存的二进制直接运算，比转成十进制再进行取模运算要快。为了保证取模操作能使用位运算替代，因此要求容量必须是2的n次幂。
 
 **如何保证？**
 1. 若不传入初始容量，则默认将HashMap的容量初始化为16.
-2. 若传入的初始化容量为$2^n$，则直接将容量初始化为$2^n$。若传入的初始化容量不为$2^n$，则调用tableSizeFor方法，找到比传入值大的第一个$2^n$值。
+2. 若传入的初始化容量为$2^n$，则直接将容量初始化为$2^n$。若传入的初始化容量不为$2^n$，则调用`tableSizeFor`方法，找到比传入值大的第一个$2^n$值。
 
 ```java
 static final int tableSizeFor(int cap) {  
@@ -184,7 +199,22 @@ public static int numberOfLeadingZeros(int i) {
 - 如果暂时无法确定集合大小，则指定为默认值16即可；
 - 若已知需要存储的元素个数，则设定为`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`
 
-## 10. ==HashMap是如何扩容的？==
+不能简单地需要存储多少元素就设置初始容量为多少。例如需要存储7个元素，则设置初始容量为7，这样JDK内部会通过tableSizeFor方法将初始容量设置为8. 但是这个值也不是合理值。因为此时扩容阈值为$0.75\times8=6$，所以存入第6个元素后，内部就会通过resize方法扩容。因此，正确的初始容量设置应该遵循`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`！
+
+**对这个`+1`的理解：**
+- ~~假设刚好需要存储12个元素，那么通过`12/0.75`则会获得初始容量为16，那么刚好存储第12个元素就会扩容。而若初始容量+1=16，内部会通过tableSizeFor方法将初始容量设置为32，则可以避免在插入第12个元素的时候扩容。~~
+>**stackoverflow:**
+>	If you did a `+1` it would add one `Integer` which would then be promoted to a `Float` in the addition to the left hand side `float` value. **They reason they wrote `1.0F` is to tell the compiler that it is a `float` early, avoiding the eventual promotion of `int` to `float`.** **Yes, it's a human optimizing for the needs of the compiler and runtime, but in some JVMs it really can make a difference.** `1.0d` is the `double` version, `1L` is the long version; but, there's no constant specifiers for "less than int" integer data types.
+
+>**stackoverflow:**
+>	The table needs to be reallocated when **entry_count > table_size * load_factor**.
+>	If we solve for table size, we find that in order to ensure that a reallocation isn't required, we need **table_size >= entry_count / load_factor**.
+>	This size is calculated in floating point, and the **1.0F** is added to ensure that the chosen table size will _still_ be large enough after it is rounded down to an integer number of entries.
+
+## 10. ==HashMap是如何扩容的？^==
+
+
+
 
 ## 11. 为什么JDK8中HashMap的数据结构要转成红黑树？
 1. 使用链表时，若某一个bucket的链表过长，则会导致查询的时间复杂度过高；
@@ -192,19 +222,74 @@ public static int numberOfLeadingZeros(int i) {
 3. 使用AVL树，虽然能克服二叉树的退化情况，但是由于需要保持平衡，所以在插入删除时可能会频繁左旋、右旋，导致插入性能低；
 4. -**红黑树**在平衡性上更为宽松，允许更少的旋转来维护平衡，在插入上最多2次旋转，在删除上最多3次旋转，因此在插入和删除操作上通常比AVL树快。
 ## 12. 为什么是链表长度达到8的时候转？
-### 11.1 为什么不在冲突时立刻转换为红黑树？
+### 为什么不在冲突时立刻转换为红黑树？
 1. 因为在存储相同数量的节点，红黑树所占用的空间是链表的2倍，因此发生冲突立刻转换，会导致空间浪费；
 2. 红黑树的插入删除操作比链表慢（需要节点变色和旋转），因此小于8就转换为红黑树的话，在时间和空间的综合平衡上没链表好。
-### 11.2 为什么是在长度为8的时候转，而不是其他长度？
+### 为什么是在长度为8的时候转，而不是其他长度？
 当 hashCode遵循泊松分布时，因为哈希冲突造成桶的链表长度等于8的概率只有0.00000006，官方认为这个概率足够的低，所以指定链表长度为 8 时转化为红黑树。
 
-### 11.3 为什么在长度为6时转换回来？
+### 为什么在长度为6时转换回来？
 8的时候转成红黑树，那么如果小于8立刻转回去，那么就可能会导致频繁转换，所以要选一个小于8的值，但是又不能是7。而通过前面提到的泊松分布可以看到，当红黑树节点数小于 6 时，它所带来的优势其实就是已经没有那么大了，就不足以抵消由于红黑树维护节点所带来的额外开销，此时转换回链表能够节省空间和时间。
 
-## 13. HashMap的hash方法是如何实现的？
+## 13. 如何再次转换回链表的？
+会在红黑树的节点小于6时重新转换回链表结构。
+
+```java
+final Node<K,V> untreeify(HashMap<K,V> map) {  
+    Node<K,V> hd = null, tl = null;  
+    for (Node<K,V> q = this; q != null; q = q.next) {  
+        Node<K,V> p = map.replacementNode(q, null);  
+        if (tl == null)  
+            hd = p;  
+        else  
+            tl.next = p;  
+        tl = p;  
+    }  
+    return hd;  
+}
+```
+## 14. ==HashMap的hash方法是如何实现的？==
+
+### JDK1.7：
+1. `hashseed`与key的哈希值进行异或，增加随机性；
+2. 进行一系列异或操作进行扰动计算；
+3. 调用indexFor方法：与`length-1`进行与操作，获取在数组中的索引下标。
+```java
+final int hash(Object k) {
+    int h = hashSeed; // transient int hashSeed = 0;
+    if (0 != h && k instanceof String) {
+        return sun.misc.Hashing.stringHash32((String) k);
+    }
+
+    h ^= k.hashCode();
+    h ^= (h >>> 20) ^ (h >>> 12);
+    return h ^ (h >>> 7) ^ (h >>> 4);
+}
+
+static int indexFor(int h, int length) {
+    return h & (length-1);
+}
+```
+### JKD1.8：
+- 若key为null，则hash方法获得哈希值为0；
+- 若key不为null，则调用key的`hashCode()`方法获取哈希值，并与哈希值左移16位的结果（高位信息）异或进行扰动计算。
+```JAVA
+static final int hash(Object key) {  
+    int h;  
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);  
+}
+```
+
+>[!NOTE]
+>**扰动计算：**
+>在 `HashMap` 中，直接使用 `hashCode()` 值作为数组下标可能会导致较多的哈希冲突，因为虽然 `hashCode()` 的取值范围很大（\[-2147483648, 2147483647]），但**实际数组的大小通常较小**（如默认大小为 16），所以与`length-1`做与运算后，高位信息会被丢失，这就意味着许多不同的键可能会映射到同一个下标。
+>
+>使用扰动函数可以**有效地混合哈希值的高位和低位信息，使得相同的低位哈希值不再总是映射到同一个桶中，从而提高了元素在哈希表中的分散程度。**
 
 
-## 14. ==ConcurrentHashMap是如何保证线程安全的==？
+
+
+## 15. ==ConcurrentHashMap是如何保证线程安全的==？
 ### JDK1.7以前
 
 使用**分段锁技术**，将哈希表分为多个段，每个段拥有独立的锁。这样当多个线程同时访问哈希表时，只需要锁住需要操作的段而不是整个表，以此保证线程安全，并提高并发度。
@@ -216,7 +301,7 @@ public static int numberOfLeadingZeros(int i) {
 这样可以避免分段锁机制下的锁粒度太大，以及在高并发场景下，由于线程数量过多导致的锁竞争问题，提高了并发性能。
 
 
-## 15. Set是如何保证元素不重复的？
+## 16. Set是如何保证元素不重复的？
 Set的实现类有HashSet和TreeSet，二者保证不重复的机制不同。
 ### HashSet：
 1. 通过`hashCode()`方法获取插入元素的哈希码，并经过扰动处理后用于确定元素在HashSet中的存储位置；
