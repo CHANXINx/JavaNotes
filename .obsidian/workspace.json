@@ -120,6 +120,20 @@
             }
           },
           {
+            "id": "f8d20d75c0a44d5c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Leetcode_notes/动态规划.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "动态规划"
+            }
+          },
+          {
             "id": "dbf54ccb025b7a09",
             "type": "leaf",
             "state": {
@@ -321,17 +335,18 @@
   },
   "active": "7d886d602498d65f",
   "lastOpenFiles": [
-    "并发编程JUC/并发编程.md",
+    "天机学堂/天机学堂面试题总结.md",
+    "陈鑫的个人求职简历.md",
+    "天机学堂/天机学堂.md",
     "八股文/JUC八股.md",
+    "Leetcode_notes/动态规划.md",
+    "并发编程JUC/并发编程.md",
     "八股文/imgs/Pasted image 20241128223908.png",
     "八股文/imgs/Pasted image 20241128215126.png",
-    "陈鑫的个人求职简历.md",
     "八股文/imgs/Pasted image 20241126233627.png",
     "八股文/Java集合类八股.md",
     "八股文/Redis八股.md",
-    "天机学堂/天机学堂面试题总结.md",
     "八股文/imgs/Pasted image 20241125233149.png",
-    "天机学堂/天机学堂.md",
     "天机学堂/imgs/Pasted image 20241124202036.png",
     "天机学堂/imgs/Pasted image 20241124152734.png",
     "天机学堂/imgs/Pasted image 20241124151330.png",
@@ -350,7 +365,6 @@
     "Leetcode_notes/AlgoNote.md",
     "Leetcode_notes/Interview 75.md",
     "Leetcode_notes/字符串.md",
-    "Leetcode_notes/动态规划.md",
     "每日学习记录(简略).md",
     "Spring6笔记.md",
     "Git笔记.md",
