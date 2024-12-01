@@ -4,81 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c6fc874220fd8844",
+        "id": "a9332077dac31877",
         "type": "tabs",
         "children": [
           {
-            "id": "b2e2e6d5529df4cb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/Java集合类八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Java集合类八股"
-            }
-          },
-          {
-            "id": "b21c01271e1b8ee1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/Spring八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Spring八股文"
-            }
-          },
-          {
-            "id": "a19353aa32b8cd08",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/MySQL八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MySQL八股"
-            }
-          },
-          {
-            "id": "dc213fccfc2a282f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/Redis八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Redis八股"
-            }
-          },
-          {
-            "id": "24c09194741e9c5d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "天机学堂/天机学堂.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "天机学堂"
-            }
-          },
-          {
-            "id": "567fe85f15a6efd3",
+            "id": "7c3da1a716506dba",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -92,7 +22,21 @@
             }
           },
           {
-            "id": "80b98bb67078c7a9",
+            "id": "c03cfb42eb150731",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "天机学堂/天机学堂.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "天机学堂"
+            }
+          },
+          {
+            "id": "659ad1a64ef2e147",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -106,7 +50,7 @@
             }
           },
           {
-            "id": "7d886d602498d65f",
+            "id": "c8ed10482ae23e87",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -120,21 +64,7 @@
             }
           },
           {
-            "id": "f8d20d75c0a44d5c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Leetcode_notes/动态规划.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "动态规划"
-            }
-          },
-          {
-            "id": "dbf54ccb025b7a09",
+            "id": "625519595975bf54",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -148,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -333,14 +263,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7d886d602498d65f",
+  "active": "c8ed10482ae23e87",
   "lastOpenFiles": [
-    "天机学堂/天机学堂面试题总结.md",
+    "并发编程JUC/并发编程.md",
+    "八股文/JUC八股.md",
+    "八股文/imgs/Pasted image 20241130211945.png",
     "陈鑫的个人求职简历.md",
     "天机学堂/天机学堂.md",
-    "八股文/JUC八股.md",
+    "天机学堂/天机学堂面试题总结.md",
+    "八股文/MySQL八股.md",
     "Leetcode_notes/动态规划.md",
-    "并发编程JUC/并发编程.md",
     "八股文/imgs/Pasted image 20241128223908.png",
     "八股文/imgs/Pasted image 20241128215126.png",
     "八股文/imgs/Pasted image 20241126233627.png",
@@ -352,9 +284,7 @@
     "天机学堂/imgs/Pasted image 20241124151330.png",
     "天机学堂/imgs/Pasted image 20241124150850.png",
     "天机学堂/imgs/Pasted image 20241124150800.png",
-    "天机学堂/imgs/Pasted image 20241123203545.png",
     "简历.md",
-    "八股文/MySQL八股.md",
     "八股文/Spring八股文.md",
     "八股文/杂项.md",
     "八股文/八股文.md",

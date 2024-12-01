@@ -1,5 +1,5 @@
 {
-  "skipTopLevel": false,
+  "skipTopLevel": true,
   "firstLevel": 2,
   "maxLevel": 2,
   "styleLevel1": "1",

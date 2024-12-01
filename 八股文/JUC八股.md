@@ -1,3 +1,4 @@
+# <font color="#245bdb">基础</font>
 ## 1. 什么是多线程中的上下文切换？
 上下文切换是指 CPU 从一个线程转到另一个线程时，需要保存当前线程的上下文状态，恢复另一个线程的上下文状态，以便于下一次恢复执行该线程时能够正确地运行。
 
@@ -185,27 +186,67 @@ class Task implements Runnable{
 ### run/start：
 start方法用于启动线程；
 若调用`t1.run()`，只会在当前线程运行run方法，不会创建新线程。
-
 ### wait/sleep：
 - sleep方法可以在任意地方调用；而wait方法只能在同步代码块中调用；
 - sleep不会释放对象锁，而wait方法会释放对象锁；
 - wait的线程会进入WAITING状态，直至被唤醒；sleep的线程会进入TIME_WAITING，等待休眠结束后再重新尝试获取时间片；
-
 ### notify/notifyAll：
 - notify只会随机唤醒一个线程，而notifyAll会唤醒所有处于WAITING/TIME_WAITING的线程；
 	- 对于hotspot虚拟机，使用“先进先出”的顺序唤醒。
 - 被唤醒后会重新竞争锁，并且notifyAll唤醒的线程最终也只会有一个线程成功获取锁；
-### 如何停止一个线程的运行?
+
+### 如何停止一个线程的运行?^
 1. 调用Interrupt方法；
 
-## 10. 什么是线程池，如何实现的？
+## 10. 线程同步方式
+线程同步指的是让多个线程按顺序访问同一共享资源。
+
+1. synchronized：保证同一时间只有一个线程访问共享资源；
+2. ReentrantLock：也保证同一时间只有一个线程访问共享资源，但是更灵活，通过`lock.lock()`加锁。并且支持公平锁、可中断锁、多个条件变量等；
+3. Semaphore：允许多个线程同时访问共享资源，并通过计数器来控制访问量。通过`lock.acquire()`加锁。
+4. CountDownLatch：允许一个线程或多个线程等待其它线程执行完毕后再执行，可用于线程之间的协调和通信。
+5. CyclicBarrier：用来进行线程协作，允许多个线程相互等待，当满足计数后，所有等待线程同步执行。
+6. Phaser：与CyclicBarrier类似，但是支持更灵活的栅栏操作，可以动态地注册和注销参与者，并可以控制各个参与者的到达和离开。
+
+## 11. 介绍下线程死锁
+
+死锁发生在多个线程相互等待对方释放锁资源，导致所有线程都无法继续执行。
+
+**产生死锁的四个必要条件：**  
+（1） 互斥条件：一个资源每次只能被一个进程使用。  
+（2） 占有且等待：一个进程因请求资源而阻塞时，对已获得的资源保持不放。  
+（3）不可强行占有：进程已获得的资源，在末使用完之前，不能强行剥夺。  
+（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。
+## 12. 死锁问题如何排查？
+1. 系统级别的排查，Linux环境中，使用`top ps`可查看进程信息，查看哪个进程占用资源多；
+2. 使用JDK自带的监控工具进行排查，如使用`jstack pid`命令可以查看死锁的线程信息。
+
+## 13. Thread.sleep(0)的作用是什么？
+让当前线程释放CPU时间片，然后重新开始争抢。
+
+使用场景主要为某些底层框架中，**让长期占用CPU资源的线程主动释放CPU时间片**，让其它线程可以有机会获取CPU时间片。
+
+## 14. 实现线程安全的方案有哪些？
+1. 单线程执行，例如Redis；
+2. 互斥锁，例如synchronized；
+3. 读写分离，例如COW；
+4. 原子操作，例如AtomicInteger、CAS；
+5. 不可变模式，让共享变量只有读操作，例如不可变模式；
+6. 数据不共享，例如ThreadLocal，线程之间数据不共享。
+
+## 什么是可重入锁？
+可重入锁是一种多线程同步机制，允许同一线程多次获取同一个锁而不会导致死锁。这意味着一个线程可以在持有锁的情况下再次请求并获得相同的锁，而不会被自己阻塞。可重入锁有助于避免死锁和提高代码的可维护性，因为它允许在一个线程中嵌套地调用锁定的方法。
+
+当有线程获取锁时
+# <font color="#245bdb">线程池</font>
+## 1. 什么是线程池，如何实现的？
 线程池是一种池化技术。提前创建一批线程保存到线程池中，当有任务需要执行时，从线程池中选择一个线程来执行任务。
 **作用：** 减少了频繁的线程创建和线程销毁所带来的性能损耗。
 ![[Pasted image 20241128215126.png|550]]
-## 11. 线程池工作流程：
+## 2. 线程池工作流程：
 ![[Pasted image 20241128223908.png|550]]
 
-## 12. 线程池的参数：
+## 3. 线程池的参数：
 - corePoolSize：线程池的核心线程数量。若线程池中的线程数量少于核心线程数，那么这些线程**不会被销毁（回收）**。
 - maximumPoolSize：最多可容纳的线程数量。`max-core=临时线程（救急线程）的数量。也叫临时线程、非核心线程。`
 - keepAliveTime：超过核心线程数的线程，空闲时间超过了keepAliveTime后会被销毁；
@@ -214,14 +255,32 @@ start方法用于启动线程；
 - threadFactory：线程工厂，用于为新创建的线程取名字、设置优先级等；
 - handler：拒绝策略。当核心线程都在忙、且工作队列也已经满了，那么此时新任务就会被拒绝。
 	- 常见的拒绝策略：
-		1. CallerRunsPolicy：使用线程池的调用者所在的线程去执行被拒绝的任务；
-		2. AbortPolicy：直接抛出`Task xx rejected from XX`；
+		1. AbortPolicy：直接抛出`Task xx rejected from XX`，**默认拒绝策略**。
+		2. CallerRunsPolicy：使用线程池的调用者所在的线程去执行被拒绝的任务；
 		3. DiscardPolicy：不做任何处理，静默拒绝提交的任务；
 		4. DiscardOldestPolicy：抛弃最老任务，然后执行该任务；
 		5. 自定义。
-## 13. ==线程数设定成多少更合适？==
+## 4. ==线程数设定成多少更合适？==^
 
-## 14. 什么是ThreadLocal，如何实现的？
+## 5. ForkJoinPool和ThreadPoolExecutor区别是什么？
+### ForkJoinPool
+- ForkJoinPool是基于工作窃取算法实现的线程池，内部每个线程都有自己的工作队列，用于存储待执行的任务。当线程执行完自己的任务后，会从其它线程窃取任务来执行，以此实现任务的动态均衡和线程利用率最大化。
+- ForkJoinPool适用于**能够进行任务拆分的cpu密集型运算**，例如快速排序。
+- ForkJoinPool中的工作线程是一种特殊线程，会自动创建和销毁、自动管理线程的数量和调度。
+
+## 6. 为什么不建议通过Executors构建线程池？
+因为Executors底层实现是LinkedBlockingQueue，是无边界的阻塞队列。所以可以不断往队列中添加任务，最终会因为任务过多而导致内存溢出。
+
+1. 正确的创建线程池方式应该是调用ThreadPoolExecutor来创建线程池，并为阻塞队列指定容量。
+	```java
+private static ExecutorService executor = new ThreadPoolExecutor(10, 10,
+        60L, TimeUnit.SECONDS,
+        new ArrayBlockingQueue(10));
+	```
+
+2. 更推荐使用guava提供的ThreadFactoryBuilder创建线程池。
+# <font color="#245bdb">ThreadLocal：</font>
+## 1. 什么是ThreadLocal，如何实现的？
 通过为每一个线程创建一份共享变量的副本来保证各个线程之间的变量的访问和修改互相不影响。
 
 ThreadLocal存放的值是**线程内共享的，线程间互斥的**，主要用于线程内共享一些数据，避免通过参数来传递，这样处理后，能够优雅的解决一些实际问题。
@@ -232,19 +291,319 @@ ThreadLocal存放的值是**线程内共享的，线程间互斥的**，主要�
 1. **用户信息存储**：使用ThreadLocal存储用户信息，例如JWT鉴权后存储userId；
 2. **线程安全**：用来定义一些需要并发安全处理的成员变量，例如SimpleDateFormat，可以使用ThreadLocal为每个线程创建一个独立的SimpleDateFormat实例。
 
-## 15. 谈谈ThreadLocal的内存泄漏问题以及解决办法
+## 2. 谈谈ThreadLocal的内存泄漏问题以及解决办法^
 
-## 16. 线程同步方式
-线程同步指的是让多个线程按顺序访问同一共享资源。
+## 3. 有了InheritableThreadLocal为啥还需要TransmittableThreadLocal？
+InheritableThreadLocal用于父子线程之间的参数传递，但是只适用于在主线程中手动创建子线程。而无法在复用线程的线程池中使用。
 
-1. synchronized：保证同一时间只有一个线程访问共享资源；
-2. ReentrantLock：也保证同一时间只有一个线程访问共享资源，但是更灵活，通过`lock.lock()`加锁。并且支持公平锁、可中断锁、多个条件变量等；
-3. Semaphore：允许多个线程同时访问共享资源，并通过计数器来控制访问量。通过`lock.acquire()`加锁。
-4. CountDownLatch：允许一个线程或多个线程等待其它线程执行完毕后再执行，可用于线程之间的协调和通信。
-5. CyclicBarrier：用来进行线程协作，允许多个线程相互等待，当满足计数后，所有等待线程同步执行。
-6. Phaser：与CyclicBarrier类似，但是支持更灵活的栅栏操作，可以动态地注册和注销参与者，并可以控制各个参与者的到达和离开。
+TransmittableThreadLocal是继承并加强了InheritableThreadLocal类，用于实现**线程池环境下的线程之间的参数传递**。
+使用场景有：
+1.  分布式跟踪系统 或 全链路压测（链路打标）；
+2. 日志收集记录系统上下文。
 
-## 17. 三个线程t1、t2、t3顺序执行
+# <font color="#245bdb">Synchronized</font>
+## 1. Synchronized是如何实现的？
+1. 针对于代码块，**通过字节码`monitorenter`和`monitorexit`实现**，前者代表加锁，后者代表释放锁。每个对象都维护着一个记录着被锁次数的计数器，未加锁的对象计数器值为0，加锁后计数器自增变1，重入后次数会再加1，解锁的话会减1。计数器为0的话就会释放锁。
+2. 针对于方法，是**通过`ACC_SYNCHRONIZED`标志**实现。当某个线程要访问某个方法时，会先检查是否有该标志。若有，则需要先获得监视器锁。此时若有其它线程来访问，则会因为无法获得监视器锁而被阻塞！
+
+Java中每个对象都有自己的监视器Monitor，当尝试获取对象的锁时，实质上就是对对象监视器Monitor的获取。
+
+Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性：
+- \_owner：指向持有ObjectMonitor对象的线程；
+- \_WaitSet：存放处于wait状态的线程队列；
+- \_EntryList：存放处于等待锁block状态的线程队列；
+- \_recursions：锁的重入次数；
+- \_count：用来记录线程获取锁的次数。
+
+**流程：**
+- 多个线程尝试获取锁，此时会先进入\_EntryList队列中，当某个线程获取到Monitor，将\_owner设置为当前线程，同时计数器\_count+1；
+- 若持有锁的线程调用`wait()`方法，则会释放当前持有的Monitor，并将\_owner设置为null，将计数器\_count-1，并且当前线程会进入WaitSet等待被唤醒；
+- 若持有Monitor线程已结束执行代码块，那么会唤醒\_EntryList中的线程来竞争锁； 
+## 2. Synchronized锁的是什么？
+锁对象、锁类，实质上都是锁的对象，一个是锁的当前实例this，另一个锁的是类对象。
+
+同步方法：
+1. `public synchronized void print(){}`：锁的是调用此方法的实例对象；
+2. `public static synchronized void print()`：锁的是类对象。
+同步代码块：
+1. `synchronized (this)`：锁的是this这个实例对象；
+2. `synchronized (MyThread.class)`：锁的是`xx.class`类对象。
+## 3. synchronized是如何保证原子性、可见性、有序性的？
+### 原子性：
+由`monitorenter`和`monitorexit`实现，保证了在锁未释放前，内部代码块不会被其他线程访问到。即使在`monitorexit`执行前，CPU时间片用完了，由于synchronized是可重入的，下一个时间片还是会被当前线程获取到，直至代码执行完毕并释放锁。
+- 其它线程获取了时间片，也无法执行内部代码块。
+### 有序性：
+>**Java程序中天然的有序性可以总结为一句话：如果在本线程内观察，所有操作都是天然有序的。如果在一个线程中观察另一个线程，所有操作都是无序的。**
+
+和as-if-serial语义相关，保证了不管如何重排序，单线程程序的执行结果不会改变。
+- 仍会发生指令重拍。
+### 可见性：
+当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。
+
+1. 加锁前，会删除工作内存中共享变量的值，从而使用共享变量时会从主存中读取变量最新的值；
+2. 加锁后，其它线程无法获取主内存中的共享变量；
+3. 解锁前，必须把工作内存中变量的值同步到主存中。
+## 4. synchronized的可重入是如何实现的？
+因为锁对象的对象头包含了一个Mark Word，存储着对象的状态以及锁信息。当线程尝试重入锁时，JVM会检查线程ID与Mark Word中的线程ID是否匹配，若匹配则锁计数器+1.
+## 5. synchronized的锁升级过程是怎样的？^
+由轻量级锁升级到重量级锁的过程，**无锁→偏向锁→轻量级锁→重量级锁**。
+
+因为重量级锁，在获取锁和释放锁时都需要**在操作系统层面进行线程的阻塞和唤醒**，带来很大开销！因此，引入了“偏向锁”、“轻量级锁”来适应不同场景下的锁竞争情况。
+
+**Mark Word**
+- 使用低两位来表示锁状态：01（无锁/偏向锁）、00（轻量级锁）、10（重量级锁），并且引入低三位用于区分无锁和偏向锁。
+![[Pasted image 20241130211945.png]]
+
+### 无锁→偏向锁：
+当同步代码块被线程首次进入时，JVM会在对象头中设置该线程的Thread ID，并将锁标志位设置成"01"，偏向锁位也设置成1。此时对象会偏向第一个访问的线程。
+### 偏向锁→轻量级锁：
+此时若有其他线程访问对象尝试获取锁，那么首先会检查是否与对象头中的线程ID相同，若相同，则直接获取锁；若不同，则锁状态会升级成轻量级锁，此时锁标志位被设置成"00"。
+
+在轻量级锁状态中，JVM为对象头的Mark Word预留了一部分空间，用于**存储指向线程栈中锁记录的指针**。
+### 轻量级锁→重量级锁：
+当线程尝试获取
+
+## 6. synchronized能降级吗？
+锁一旦升级为重量级锁，它将保持在这个状态，直到锁被完全释放。
+
+**特殊情况：**
+1. 锁状态检查：在STW停顿期间，JVM会检查所有Monitor对象；
+2. 确定降级对象：JVM会识别出没有被任何线程持有的Monitor对象；
+3. “降级”操作：对于未被使用的Monitor对象，JVM会进行"deflation"操作，即清理对象状态，使其不再占用系统资源。
+
+## 7. synchronized的重量级锁很慢，为什么还需要重量级锁？
+
+重量级锁是指在多线程竞争激烈的情况下，synchronized锁膨胀为一种**系统级别**的锁机制。与偏向锁和轻量级锁不同，重量级锁会**阻塞线程**，并会在**加锁和解锁过程中频繁地与操作系统交互**。
+
+synchronized对线程的阻塞唤醒需要CPU从用户态切换到内核态，涉及操作系统的调度，开销大，但是能保证线程对共享资源的安全访问，同时通过阻塞避免自旋导致的CPU资源浪费。
+## 8. synchronized的锁优化是怎样的？
+
+### 自旋：
+### 锁消除：
+### 锁粗化：
+## 9. 
+
+# <font color="#245bdb">volatile</font>
+## 1. volatile关键字有什么作用？^
+1. **保证变量对所有线程的可见性**。声明为volatile后，写操作会立刻同步到主存中，读操作会直接从主存中读取，保证变量在多线程环境下的可见性。
+2. **禁止指令重排序**。通过内存屏障来禁止特定类型的指令重排序：
+	- 写写屏障（StoreStore屏障）：
+	- 读写屏障（LoadStore屏障）：
+	- 写读屏障（StoreLoad屏障）：
+	- 读读屏障（LoadLoad屏障）：
+
+
+## 2. 指令重排序的原理是什么？
+为了提高执行性能，处理器和编译器对字节码指令进行重排序。
+
+重排序需要满足以下两个要求：
+1. 不改变运行结果；
+2. 存在数据依赖关系的指令不允许重排序。
+## 3. 指令重排有限制吗？
+### happens-before：
+
+### as-if-serial：
+
+## 4. volatile是如何保证有序性和可见性的？
+### 有序性：
+通过添加内存屏障。
+
+### 可见性：
+写操作之后，立马刷新到主存；
+读操作，永远读的是主存中的最新数据。
+## 5. volatile能保证原子性吗？（volatile能保证线程安全吗？）
+不能。但是可以保证有序性和可见性。
+## 6. 有了synchronized为何还需要volatile？^
+
+# <font color="#245bdb">AQS</font>
+## 1. ==AQS是什么？==
+AbstractQueueSynchronizer，抽象队列同步器，内部维护了一个**FIFO队列**和一个**volatile的int类型的state变量**，为构建锁和同步器提供了一些通用功能的实现。因此，使用AQS能简单且高效的构造出应用广泛的同步器。
+
+常见的实现类有ReentrantLock、Semaphore、CountDownLatch。
+### FIFO队列：
+用来实现多线程的排队工作，当线程加锁失败后，会被封装成一个Node添加至队尾。
+
+#### Node变量：
+
+### state变量：
+用于判断当前对象锁是否已经被占有，变量的值通过CAS进行修改。
+提供了三个基本方法来操作同步状态：get、set和CAS。
+```java
+// 同步状态
+private volatile int state;
+
+// 获取状态
+protected final int getState() {
+    return state;
+}
+
+// 设置状态
+protected final void setState(int newState) {
+    state = newState;
+}
+
+// CAS更新状态
+protected final boolean compareAndSetState(int expect, int update) {
+    // See below for intrinsics setup to support this
+    return unsafe.compareAndSwapInt(this, stateOffset, expect, update);
+}
+```
+## 2. AQS是如何实现线程的等待和唤醒的？
+主要是通过park和unpark实现，
+- 获取锁失败的线程会被封装成Node节点并被添加到队列尾部，通过`park()`方法阻塞线程；
+- 当锁被释放，会通过`unpark()`方法唤醒队列中的线程来尝试获取锁。
+
+
+## 3. 讲讲ReentrantLock。
+
+## 4. 公平锁和非公平锁的区别是什么？
+区别在于线程是否按照入队顺序来获取锁。
+- 非公平锁是锁释放后，队列中的线程不按照申请锁的顺序来获得锁，而是竞争锁，失败的继续会队列中等待；
+	- **优点**：减少CPU唤醒线程的开销；
+	- **缺点**：可能会有排队线程一直无法获取锁，直至饿死。
+
+- 公平锁是锁释放后，队列中的线程按照申请锁的顺序去获得锁，保证队首元素先获得锁。
+	- **优点**：所有等待线程都能获取资源，不会饿死；
+	- **缺点**：队列中除了第一个线程，其它线程都处于阻塞状态，唤醒阻塞线程的开销会很大。
+
+## 5. LongAdder和AtomicLong的区别？
+LongAdder的出现是为了解决AtomicLong在多线程竞争激烈的情况下性能不高的问题，采用分段+CAS操作来提升原子操作的性能。
+- **优点**：性能更高！
+- **缺点**：以空间换时间，因此占用内存会更大；可能出现结果不准确的问题。
+
+### AtomicLong原理：
+- 通过Unsafe类调用CAS操作实现原子性。
+```java
+>>>成员变量和常用方法：
+	private volatile long value;
+
+    public final long incrementAndGet() {
+        return unsafe.getAndAddLong(this, valueOffset, 1L) + 1L;
+    }
+
+
+    public final long addAndGet(long delta) {
+        return unsafe.getAndAddLong(this, valueOffset, delta) + delta;
+    }
+
+    public final boolean compareAndSet(long expect, long update) {
+        return unsafe.compareAndSwapLong(this, valueOffset, expect, update);
+    }
+
+		public final long getAndSet(long newValue) {
+        return unsafe.getAndSetLong(this, valueOffset, newValue);
+    }
+```
+
+### LongAdder原理：
+- 通过分散竞争来提高并发：
+	- 若竞争不激烈，则直接通过CAS操作更新；
+	- 若竞争激烈，则是通过将不同线程分散到Cell数组的不同idx上，并将线程的计数内容保存到该索引上，最后累加统计获取结果。【不准确就来源于累加】
+```java
+    /**
+     * Table of cells. When non-null, size is a power of 2.
+     */
+    transient volatile Cell[] cells;
+
+    /**
+     * Base value, used mainly when there is no contention, but also as
+     * a fallback during table initialization races. Updated via CAS.
+     */
+    transient volatile long base;
+
+    public void add(long x) {
+        Cell[] as; long b, v; int m; Cell a;
+        if ((as = cells) != null || !casBase(b = base, b + x)) {
+            boolean uncontended = true;
+            if (as == null || (m = as.length - 1) < 0 ||
+                (a = as[getProbe() & m]) == null ||
+                !(uncontended = a.cas(v = a.value, v + x)))
+                longAccumulate(x, null, uncontended);
+        }
+    }
+	public long sum() {
+	    Cell[] as = cells; Cell a;
+	    long sum = base;
+	    if (as != null) {
+	        for (int i = 0; i < as.length; ++i) {
+	            if ((a = as[i]) != null)
+	                sum += a.value;
+	        }
+	    }
+	    return sum;
+	}
+```
+
+## 6. CountDownLatch、CyclicBarrier和Semaphore的区别？
+三者都用于协调多线程之间的执行。
+- CountDownLatch是一个计数器，允许一个或多个线程等待其它线程完成操作。`countDown()`和`await()`。
+- CyclicBarrier是一个同步屏障，用于协调多个线程同时执行。
+- Semaphore是一个信号量，允许多个线程同时访问共享资源，并通过计数器来控制访问线程数。用于线程需要等待获取许可证才能访问共享资源。`acquire()`和`release()`
+
+# <font color="#245bdb">CAS</font>
+## 1. CAS是什么？
+全称CompareAndSwap，属于乐观锁，通过比较内存值与预期原值是否相等来决定是否将内存值替换成新值。
+## 2. 什么是ABA问题？
+CAS会导致ABA问题。
+
+ABA指的是在Compare 和 Swap之间，变量被连续修改了两次，使其值更改又恢复为原值。此时线程1无法感受到这两次修改，仍能成功执行CAS操作。
+### **解决办法：**
+通过添加版本号来实现。每次修改操作都会使版本号+1，只有在版本号相等时才进行修改。
+
+在JUC类中，可以借助AtomicStampedReference来实现。AtomicStampedReference通过维护“引用”和“时间戳”。AtomicStampedReference在执行CAS操作时会检查引用和时间戳是否相等，只有都相等了才会执行更新操作。
+- **使用案例：** 初始化时实参为引用和时间戳。
+```java
+	String initialRef = "hollis";
+	int initialStamp = 0;
+	
+	AtomicStampedReference<String> atomicStampedRef =
+		new AtomicStampedReference<>(initialRef, initialStamp);
+	
+	String newRef = "hollis666";
+	int newStamp = initialStamp + 1;
+	
+	boolean updated = atomicStampedRef.compareAndSet(initialRef, newRef, initialStamp, newStamp);
+	System.out.println("Updated: " + updated);
+```
+
+## 3. CAS一定有自旋吗？
+自旋指的是CAS在执行失败后，会尝试重新执行CAS操作，直至成功或达到最大尝试次数。
+- 采用自旋让CPU空转一段时间，而不是阻塞线程，可以避免线程切换和阻塞带来的开销。但是过多的尝试会耗费CPU资源。
+## 4. 什么是Unsafe？
+Unsafe是CAS的核心类，用于提供硬件级别的原子操作：
+1. 通过Unsafe可以分配、释放内存；
+2. 可以定位对象某字段的内存位置，也可以修改对象的字段值；
+3. 将线程挂起或恢复；
+4. CAS操作。
+## 5. CAS是如何保证原子性的？
+基于cmpxchg命令（CoMPareAndEXcHanGe）实现。
+1. cmpxchg是原子指令，执行时处理器会自动锁定总线，防止其他CPU访问共享变量，然后执行比较和交换，结束后释放总线；
+2. CPU会自动禁止中断；
+3. cmpxchg是硬件实现的，CPU的硬件电路确保了执行正确执行以及对共享变量的访问是原子的。
+
+# <font color="#245bdb">内存模型</font>
+## 1. JMM是什么？
+## 2. ~~什么是总线嗅探和总线风暴，和JMM有什么关系？~~
+Java内存模型中保存缓存一致性相关。
+- CPU会使用总线嗅探是检测是否有其他处理器修改了变量。
+- 总线风暴是由多个处理器同时竞争总线资源时，产生大量的总线通信导致。
+
+## 3. 
+
+
+
+# <font color="#245bdb">多线程编排问题</font>
+## 1. CompletableFuture的底层是如何实现的？
+CompletableFuture提供了一种简单的方法来实现异步编程和任务组合。
+1. 使用**ForkJoinPool**实现异步计算。
+2. 内部采用**链式结构**处理异步计算结果。
+3. 使用**事件驱动机制**来处理异步计算的的完成事件。
+## 2. 为什么CompletableFuture使用ForkJoinPool实现？
+1. 因为两者的执行模型和任务分割方式相似。
+	1. ForkJoinPool可以自动进行任务拆分与合并，避免了手动拆分与合并任务，简化操作；
+	2. 能够自动创建、管理、销毁线程，动态调整线程池大小，并且能够自动调整线程负载，提高线程的利用率，避免过多占用资源。
+
+## 3. 三个线程t1、t2、t3顺序执行
 ### 使用`join()`实现：
 t1正常执行，t2的打印语句前插入`t1.join()`，t3的打印语句前插入`t2.join`。
 - 插入`join()`代表将该线程插入在当前线程，所以需要等待该线程完成，才能继续执行后面的代码块。 
@@ -464,6 +823,7 @@ class MyThead extends Thread{
 ```
 
 ### 使用CompletableFuture实现：
+- 使用CompletableFuture的thenRun进行实现交替打印。
 ```java
 public class PrintTest {  
     public static void main(String[] args) throws InterruptedException, ExecutionException {  
@@ -492,26 +852,9 @@ class MyThead extends Thread{
 }
 ```
 
-## 18. 介绍下线程死锁
+## 4. 三个线程顺序打印0~100^
 
-死锁发生在多个线程相互等待对方释放锁资源，导致所有线程都无法继续执行。
-
-**产生死锁的四个必要条件：**  
-（1） 互斥条件：一个资源每次只能被一个进程使用。  
-（2） 占有且等待：一个进程因请求资源而阻塞时，对已获得的资源保持不放。  
-（3）不可强行占有：进程已获得的资源，在末使用完之前，不能强行剥夺。  
-（4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。
-## 19. 死锁问题如何排查？
-1. 系统级别的排查，Linux环境中，使用`top ps`可查看进程信息，查看哪个进程占用资源多；
-2. 使用JDK自带的监控工具进行排查，如使用`jstack pid`命令可以查看死锁的线程信息。
-
-## Synchronized是如何实现的？
-1. 针对于代码块，通过字节码`monitorenter`和`monitorexit`实现，前者代表加锁，后者代表释放锁。每个对象都维护着一个记录着被锁次数的计数器，未加锁的对象计数器值为0，加锁后计数器自增变1，重入后次数会再加1，解锁的话会减1。计数器为0的话就会释放锁。
-2. 针对于方法，是通过`ACC_SYNCHRONIZED`标志实现。当某个线程要访问某个方法时，会先检查是否有该标志。若有，则需要先获得监视器锁。此时若有其它线程来访问，则会因为无法获得监视器锁而被阻塞！
-## Monitor是什么？
-
-## ==如何理解AQS？==
-
-
-## 为什么需要分布式锁？
+## 5. 如何保证i++结果正确？
+# <font color="#245bdb">分布式锁</font>
+## 1. 为什么需要分布式锁？
 基于Synchronized的锁是根据每个JVM内部的Monitor实现的，然而在分布式集群的情况下，每个实例都有各自的JVM，所以此时请求进入了不同的JVM，争抢的是不同的Monitor监视器，无法导致互斥效果，自然会出现并发问题。
