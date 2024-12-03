@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "天机学堂/天机学堂.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -263,13 +263,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c8ed10482ae23e87",
+  "active": "c03cfb42eb150731",
   "lastOpenFiles": [
-    "并发编程JUC/并发编程.md",
     "八股文/JUC八股.md",
+    "并发编程JUC/并发编程.md",
+    "天机学堂/天机学堂.md",
+    "八股文/imgs/Pasted image 20241202220212.png",
+    "八股文/imgs/Pasted image 20241202220110.png",
+    "八股文/imgs/Pasted image 20241202215828.png",
     "八股文/imgs/Pasted image 20241130211945.png",
     "陈鑫的个人求职简历.md",
-    "天机学堂/天机学堂.md",
     "天机学堂/天机学堂面试题总结.md",
     "八股文/MySQL八股.md",
     "Leetcode_notes/动态规划.md",
@@ -281,9 +284,6 @@
     "八股文/imgs/Pasted image 20241125233149.png",
     "天机学堂/imgs/Pasted image 20241124202036.png",
     "天机学堂/imgs/Pasted image 20241124152734.png",
-    "天机学堂/imgs/Pasted image 20241124151330.png",
-    "天机学堂/imgs/Pasted image 20241124150850.png",
-    "天机学堂/imgs/Pasted image 20241124150800.png",
     "简历.md",
     "八股文/Spring八股文.md",
     "八股文/杂项.md",
