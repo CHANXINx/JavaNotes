@@ -4,137 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "a9332077dac31877",
+        "id": "bfaedecbb95c90c3",
         "type": "tabs",
         "children": [
           {
-            "id": "7c3da1a716506dba",
+            "id": "a02d5078286642d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "天机学堂/天机学堂面试题总结.md",
-                "mode": "source",
+                "file": "03_八股文/01_Java基础兼集合类八股.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "天机学堂面试题总结"
+              "title": "01_Java基础兼集合类八股"
             }
           },
           {
-            "id": "c03cfb42eb150731",
+            "id": "e74f1fac0868785b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "八股文/MySQL八股.md",
+                "file": "04_力扣刷题笔记/01_数组.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MySQL八股"
-            }
-          },
-          {
-            "id": "7629a5254c38a141",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/Redis八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Redis八股"
-            }
-          },
-          {
-            "id": "89c9462f37b3adfb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/JVM八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "JVM八股文"
-            }
-          },
-          {
-            "id": "10ee9db57665efef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "JVM/JVM基础篇.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "JVM基础篇"
-            }
-          },
-          {
-            "id": "feae4cd5e8ae7050",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "JVM/JVM原理篇.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "JVM原理篇"
-            }
-          },
-          {
-            "id": "659ad1a64ef2e147",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "陈鑫的个人求职简历.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "陈鑫的个人求职简历"
-            }
-          },
-          {
-            "id": "c8ed10482ae23e87",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "八股文/JUC八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "JUC八股"
-            }
-          },
-          {
-            "id": "625519595975bf54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "并发编程JUC/并发编程.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "并发编程"
+              "title": "01_数组"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -165,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "问题",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -203,7 +104,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.51103591918945
+    "width": 417.51103591918945
   },
   "right": {
     "id": "45beac71d173d048",
@@ -303,7 +204,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 425.5
+    "width": 427.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -319,54 +220,54 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7629a5254c38a141",
+  "active": "a02d5078286642d6",
   "lastOpenFiles": [
-    "八股文/imgs/Pasted image 20241205002548.png",
-    "八股文/MySQL八股.md",
-    "八股文/Redis八股.md",
-    "八股文/imgs/Pasted image 20241204223025.png",
-    "八股文/imgs/Pasted image 20241204223015.png",
-    "八股文/imgs/Pasted image 20241204222013.png",
-    "八股文/imgs/Pasted image 20241204211801.png",
-    "八股文/imgs/Pasted image 20241204211002.png",
-    "八股文/imgs/Pasted image 20241204210219.png",
-    "八股文/imgs/Pasted image 20241204205725.png",
-    "八股文/imgs/Pasted image 20241204205441.png",
-    "八股文/imgs/Pasted image 20241204203149.png",
-    "八股文/JUC八股.md",
-    "八股文/imgs/Pasted image 20241204200241.png",
-    "八股文/Java集合类八股.md",
-    "八股文/杂项.md",
-    "八股文/计算机网络八股文.md",
-    "八股文/操作系统八股文.md",
-    "八股文/八股文.md",
+    "04_力扣刷题笔记/AlgoNote.md",
+    "04_力扣刷题笔记/刷题笔记.md",
+    "04_力扣刷题笔记/05_二叉树.md",
+    "03_八股文/05_JUC八股.md",
+    "03_八股文/01_Java基础兼集合类八股.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "04_力扣刷题笔记/04_哈希表.md",
+    "04_力扣刷题笔记/01_数组.md",
+    "04_力扣刷题笔记/02_链表.md",
+    "04_力扣刷题笔记/03_字符串.md",
+    "03_八股文/04_Redis八股.md",
+    "01_课程学习笔记/JVM/JVM基础篇.md",
     "陈鑫的个人求职简历.md",
-    "八股文/JVM八股文.md",
-    "JVM/JVM基础篇.md",
-    "JVM/JVM原理篇.md",
-    "JVM/JVM高级篇.md",
-    "未命名.md",
-    "JVM/JVM面试篇.md",
-    "天机学堂/天机学堂面试题总结.md",
-    "天机学堂/天机学堂.md",
-    "并发编程JUC/并发编程.md",
-    "Leetcode_notes/动态规划.md",
+    "03_八股文/06_JVM八股文.md",
     "简历.md",
-    "八股文/Spring八股文.md",
-    "Leetcode_notes/二叉树.md",
-    "Leetcode_notes/栈与队列.md",
-    "Leetcode_notes/图论.md",
-    "Leetcode_notes/AlgoNote.md",
-    "MySQL",
-    "JVM/imgs",
-    "JVM",
-    "并发编程JUC/imgs",
-    "并发编程JUC",
-    "八股文/imgs",
-    "代码摘录/imgs",
-    "未命名 1",
-    "代码摘录",
-    "Leetcode_notes/imgs",
+    "02_项目笔记/02_天机学堂/天机学堂面试题总结.md",
+    "02_项目笔记/02_天机学堂/天机学堂.md",
+    "02_项目笔记/02_天机学堂/imgs/03909b9c-7fde-464e-98fa-6c7cbf50f628.gif",
+    "03_八股文/imgs/Pasted image 20241208203458.png",
+    "03_八股文/imgs/Pasted image 20241208203017.png",
+    "03_八股文/02_Spring八股文.md",
+    "03_八股文/10_RabbitMQ.md",
+    "03_八股文/09_分布式.md",
+    "03_八股文/imgs/Pasted image 20241208195828.png",
+    "03_八股文/03_MySQL八股.md",
+    "03_八股文/imgs/Pasted image 20241208191125.png",
+    "03_八股文/imgs/Pasted image 20241208190639.png",
+    "03_八股文/Java基础.md",
+    "03_八股文/03_Spring八股文.md",
+    "03_八股文/05_Redis八股.md",
+    "03_八股文/04_Spring八股文.md",
+    "03_八股文/02_Java集合类八股.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241208105035.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241207224853.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241207181426.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241206151338.png",
+    "01_课程学习笔记/Spring6笔记/imgs",
+    "01_课程学习笔记/MySQL/imgs",
+    "01_课程学习笔记/Git笔记/imgs",
+    "01_课程学习笔记/Spring6笔记",
+    "01_课程学习笔记/Git笔记",
+    "02_项目笔记",
+    "01_课程学习笔记",
+    "01_课程学习笔记/MySQL",
+    "01_课程学习笔记/JVM/imgs",
+    "01_课程学习笔记/JVM",
     "八股文/未命名.canvas"
   ]
 }
