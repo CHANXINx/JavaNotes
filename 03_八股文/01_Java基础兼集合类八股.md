@@ -45,9 +45,9 @@ JDK1.7以前，是通过数组+链表的数据结构进行存储的。数组中�
 JDK1.8以后，在链表长度大于8时，会将链表转换为红黑树结构，并在小于6时再次转换为链表结构。
 ![[Pasted image 20241121183819.png]]
 ## 3. HashMap、Hashtable和ConcurrentHashMap的区别？
-- HashMap线程不安全，效率更高，可以存储；
-- Hashtable线程安全，效率较低，内部**方法通过synchronized修饰**，不可以有null的key和value，默认初始容量为11.
-- ConcurrentHashMap是线程安全的HashMap，内部通过**CAS+Synchronized**实现线程安全。
+- HashMap线程不安全，效率更高，可以存储一个null的key；
+- Hashtable线程安全，效率较低，内部**方法通过synchronized修饰**。底层数组为数组+链表，不可以有null的key和value，默认初始容量为11.
+- ConcurrentHashMap是线程安全的HashMap，内部通过**CAS+分段锁**实现线程安全。它将哈希表分为多个Segment，每个Segment都类似于一个小的HashMap。执行写操作时，会直接锁定对应的Segment，而不是整个哈希表，据此大大提高并发性能。
 
 ## 4. HashMap在get和put时经过哪些步骤？
 ### get方法详解：
@@ -102,7 +102,7 @@ static final int hash(Object key) {
 2. 若为空，则直接将创建新的Node，将键值对存储在索引位置上
 3. 若不为空，则遍历链表或红黑树，若找到与key相同的键值对，则更新为当前值，并返回旧值；
 4. 若不为空，但没有找到相同key的键值对，则在插入新节点；
-5. 若插入元素后超过转换阈值，则将链表结构转换为红黑树；
+5. 若插入元素后超过转换阈值（默认为8），则将链表结构转换为红黑树；
 6. 插入成功后，若元素超过`Threshold`，则调用`resize()`方法进行扩容操作。
 ```java
 public V put(K key, V value) {  
@@ -154,9 +154,16 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     return null;  
 }
 ```
-## 5. HashMap的remove方法是如何实现的？^
+## 5. HashMap的key可以为null吗？
+可以有一个值为null的key。
+当出现key为null时，会直接令哈希值为0，不走`hashCode()`计算哈希值。
+## 6. HashMap的remove方法是如何实现的？
+1. 调用hash方法计算哈希值，获取在数组中的索引位置；
+2. 为空，则直接返回null；
+3. 不为空，则检查是否与当前key相等，是的话则直接删除并返回键值对的值
+4. 不是的话，则会遍历链表或红黑树，找到对应键值对并删除。
 
-## 6. 讲讲HashMap的延迟初始化
+## 7. 讲讲HashMap的延迟初始化
 当创建一个 `HashMap` 实例时，可以指定初始容量和负载因子（此时初始容量存储在Threshold变量中），但内部的哈希表（即数组）并不会立即被分配。只有在插入第一个元素时，调用`resize()` 方法来初始化哈希表并设置容量，从而实际分配内存。
 
 **优点：**
@@ -164,8 +171,8 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 **缺点：**
 - 多个线程同时访问未初始化的HashMap时，可能会导致竞态条件。
-## 7. 为什么HashMap的容量是$2^n$，如何保证？
-因为HashMap在计算某个元素对应的桶下标时，采用了`h & (length - 1)`的位运算操作来代替取模操作。位运算是基于内存的二进制直接运算，比转成十进制再进行取模运算要快。为了保证取模操作能使用位运算替代，因此要求容量必须是2的n次幂。
+## 8. 为什么HashMap的容量是$2^n$，如何保证？
+因为HashMap在计算某个元素对应的桶下标时，**采用了`h & (length - 1)`的位运算操作来代替取模操作**。位运算是基于内存的二进制直接运算，比转成十进制再进行取模运算要快。为了保证取模操作能使用位运算替代，因此要求容量必须是2的n次幂。
 
 **如何保证？**
 1. 若不传入初始容量，则默认将HashMap的容量初始化为16.
@@ -190,12 +197,12 @@ public static int numberOfLeadingZeros(int i) {
     return n - (i >>> 1);  
 }
 ```
-## 8. 为什么HashMap的默认负载因子设置成0.75？
+## 9. 为什么HashMap的默认负载因子设置成0.75？
 >`As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of the HashMap class, including get and put).`
 
 1. 负载因子设置为0.75f，是空间和时间成本的权衡。若设置的过高，虽减少了空间开销，但是提高了查询成本。假设负载因子取1，则此时在初始容量时，当元素满了才开始扩容，若哈希元素落在了同一个桶中，则查询复杂度增高，退化为$O(n)$.
 2. 设置为0.75，则此时扩容阈值也肯定为整数。
-## 9. HashMap的初始容量设置成多少合适？
+## 10. HashMap的初始容量设置成多少合适？
 - 如果暂时无法确定集合大小，则指定为默认值16即可；
 - 若已知需要存储的元素个数，则设定为`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`
 
@@ -211,17 +218,18 @@ public static int numberOfLeadingZeros(int i) {
 >	If we solve for table size, we find that in order to ensure that a reallocation isn't required, we need **table_size >= entry_count / load_factor**.
 >	This size is calculated in floating point, and the **1.0F** is added to ensure that the chosen table size will _still_ be large enough after it is rounded down to an integer number of entries.
 
-## 10. ==HashMap是如何扩容的？^==
+## 11. ==HashMap是如何扩容的？^==
 
 
 
 
-## 11. 为什么JDK8中HashMap的数据结构要转成红黑树？
+## 12. 为什么JDK8中HashMap的数据结构要转成红黑树？
 1. 使用链表时，若某一个bucket的链表过长，则会导致查询的时间复杂度过高；
 2. 使用二叉树，在极端情况下，也会退化成链表，导致查询的时间复杂度过高；
 3. 使用AVL树，虽然能克服二叉树的退化情况，但是由于需要保持平衡，所以在插入删除时可能会频繁左旋、右旋，导致插入性能低；
-4. -**红黑树**在平衡性上更为宽松，允许更少的旋转来维护平衡，在插入上最多2次旋转，在删除上最多3次旋转，因此在插入和删除操作上通常比AVL树快。
-## 12. 为什么是链表长度达到8的时候转？
+4. 红黑树在**平衡性上更为宽松**，允许更少的旋转来维护平衡，在插入上最多2次旋转，在删除上最多3次旋转，因此在插入和删除操作上通常比AVL树快。
+	- 平衡二叉树要求任意左右子树的高度差不超过1，而红黑树对平衡的要求较宽松，因此不需要频繁的旋转调整。
+## 13. 为什么是链表长度达到8的时候转？
 ### 为什么不在冲突时立刻转换为红黑树？
 1. 因为在存储相同数量的节点，红黑树所占用的空间是链表的2倍，因此发生冲突立刻转换，会导致空间浪费；
 2. 红黑树的插入删除操作比链表慢（需要节点变色和旋转），因此小于8就转换为红黑树的话，在时间和空间的综合平衡上没链表好。
@@ -229,9 +237,15 @@ public static int numberOfLeadingZeros(int i) {
 当 hashCode遵循泊松分布时，因为哈希冲突造成桶的链表长度等于8的概率只有0.00000006，官方认为这个概率足够的低，所以指定链表长度为 8 时转化为红黑树。
 
 ### 为什么在长度为6时转换回来？
+>[!abstract]-
+>1. 就是长度为6时维护红黑树的节点开销较大，性能低于链表。
+>2. 如果在8转换回来
+
+
+
 8的时候转成红黑树，那么如果小于8立刻转回去，那么就可能会导致频繁转换，所以要选一个小于8的值，但是又不能是7。而通过前面提到的泊松分布可以看到，当红黑树节点数小于 6 时，它所带来的优势其实就是已经没有那么大了，就不足以抵消由于红黑树维护节点所带来的额外开销，此时转换回链表能够节省空间和时间。
 
-## 13. 如何再次转换回链表的？
+## 14. 如何再次转换回链表的？
 会在红黑树的节点小于6时重新转换回链表结构。
 
 ```java
@@ -248,7 +262,7 @@ final Node<K,V> untreeify(HashMap<K,V> map) {
     return hd;  
 }
 ```
-## 14. ==HashMap的hash方法是如何实现的？==
+## 15. ==HashMap的hash方法是如何实现的？==
 
 ### JDK1.7：
 1. `hashseed`与key的哈希值进行异或，增加随机性；
@@ -271,8 +285,8 @@ static int indexFor(int h, int length) {
 }
 ```
 ### JKD1.8：
-- 若key为null，则hash方法获得哈希值为0；
-- 若key不为null，则调用key的`hashCode()`方法获取哈希值，并与哈希值左移16位的结果（高位信息）异或进行扰动计算。
+- 若key为null，则直接令哈希值为0；
+- 若key不为null，则调用key的`hashCode()`方法获取哈希值，并与哈希值左移16位的结果（高位信息）异或进行扰动计算，以有效混合哈希值的高位和低位信息。
 ```JAVA
 static final int hash(Object key) {  
     int h;  
@@ -289,7 +303,7 @@ static final int hash(Object key) {
 
 
 
-## 15. ==ConcurrentHashMap是如何保证线程安全的==？
+## 16. ==ConcurrentHashMap是如何保证线程安全的==？
 ### JDK1.7以前
 
 使用**分段锁技术**，将哈希表分为多个段，每个段拥有独立的锁。这样当多个线程同时访问哈希表时，只需要锁住需要操作的段而不是整个表，以此保证线程安全，并提高并发度。
@@ -301,7 +315,7 @@ static final int hash(Object key) {
 这样可以避免分段锁机制下的锁粒度太大，以及在高并发场景下，由于线程数量过多导致的锁竞争问题，提高了并发性能。
 
 
-## 16. Set是如何保证元素不重复的？
+## 17. Set是如何保证元素不重复的？
 Set的实现类有HashSet和TreeSet，二者保证不重复的机制不同。
 ### HashSet：
 1. 通过`hashCode()`方法获取插入元素的哈希码，并经过扰动处理后用于确定元素在HashSet中的存储位置；
@@ -309,7 +323,7 @@ Set的实现类有HashSet和TreeSet，二者保证不重复的机制不同。
 ### TreeSet：
 TreeSet中的元素都必须实现Comparable接口，通过compareTo方法比较新元素和树中已有元素，若出现结果为0，则代表有重复元素，不插入；否则插入节点。
 
-## 17. JDK6与JDK7中的substring原理与区别:
+## 18. JDK6与JDK7中的substring原理与区别:
 **substring的作用:**
 `substring(int beginIndex, int endIndex)`:截取并返回`[beginIndex,endIndex-1]`范围的字符串子串.
 
@@ -362,3 +376,12 @@ public String substring(int beginIndex, int endIndex) {
     return new String(value, beginIndex, subLen);
 }
 ```
+
+## 19. 重写HashMap的equal和hashcode方法需要注意什么？
+重写规则：
+- 如果`o1.equals(o2)`，那么`o1.hashCode() == o2.hashCode()`始终为true；
+- 如果`o1.hashCode() == o2.hashCode()`，并不意味着`o1.equals(o2)`会为true
+
+假如重写规则不当，那么会导致不同的key会获得相同的`hashCode()`和`equals()`输出，导致其中一个key-value会被覆盖。
+
+hashCode初步判断，equals

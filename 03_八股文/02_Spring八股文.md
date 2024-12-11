@@ -5,7 +5,7 @@
 >
 
 IOC，全称Inverse Of Control，控制反转.
-传统的程序设计中，应用程序代码通常控制对象的创建和管理。例如：当一个对象需要依赖其他对象时，程序通过new等方式创建对象。而在IOC中，控制关系反转，**控制权交由Spring容器管理，容器负责创建和管理对象**！并在有需要时**注入**程序中。
+传统的程序设计中，应用程序代码通常控制对象的创建和管理。例如：当一个对象需要依赖其他对象时，程序通过new等方式创建对象。而在IOC中，控制关系反转，**将对象的控制权交由Spring容器管理，容器负责创建和管理对象**！并在有需要时**注入**程序中。
 
 **优点:**
 1. 使用者无需关心引用bean的全部细节.
@@ -14,19 +14,25 @@ IOC，全称Inverse Of Control，控制反转.
 
 ## 2. 介绍一下Spring的AOP:
 
-AOP，Aspect Oriented Programming，面向切面编程。把业务逻辑中的通用代码抽取到独立的模块中。
+AOP，Aspect Oriented Programming，面向切面编程，把业务逻辑中的通用代码抽取到独立的模块中。
+
+优点：
+- 使代码模块化，提高代码的可重用性，减少代码冗余。
 ## 3. AOP是如何实现的？
 基于**动态代理**实现的。在运行时动态生成代理对象。允许开发者在运行时指定要代理的接口和行为，从而实现在不修改源码的情况下增强方法的功能。
 
 SpringAOP支持两种动态代理：
-- **基于JDK的动态代理**：使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现。需要被代理类实现一个或多个接口。
-- **基于CGLIB的动态代理**：当被代表的类**没有实现接口**时，会使用CGLIB库生成一个被代理类的子类作为代理。
+- **基于JDK的动态代理**：
+	- 使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现；
+	- 需要被代理类实现一个或多个接口；
+- **基于CGLIB的动态代理**：
+	- 当被代表的类**没有实现接口**时，会使用CGLIB库生成一个被代理类的子类作为代理。
 
 ## 4. 动态代理是什么？
 在**运行时动态创建代理对象**的机制，主要用于在不修改原始类的情况下对方法调用进行拦截和增强。
 ### 基于接口的动态代理(JDK动态代理)：
 使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现，需要被代理类实现一个或多个接口。
-Java会创建一个实现了相同接口的代理类，在运行时创建该类的实例。当通过代理对象调用一个方法时，方法的调用会被转发为有InvocationHandler接口的`invoke()`方法进行调用。
+Java会创建一个**实现了相同接口的代理类，在运行时创建该类的实例**。当通过代理对象调用一个方法时，方法的调用会被转发为有InvocationHandler接口的`invoke()`方法进行调用。
 
 ### 基于类的动态代理(CGLIB动态代理):
 当被代表的类**没有实现接口**时，会使用CGLIB库生成一个被代理类的子类作为代理。
@@ -41,25 +47,34 @@ CGLIB会在运行时动态生成一个目标类的子类。CGLIB通过继承的�
 - @Around：方法执行前后都执行通知
 - @AfterReturning：方法执行返回结果后通知
 - @AfterThrowing：方法抛出异常后执行通知
-- @Advice：
-
 ## 6. AOP什么时候会失效？
-1. 私有方法：
-2. 静态方法：
-3. final方法调用：
-4. 类内部调用：
-5. 内部类方法调用：
+AOP生效，需要动态代理生效，且能调用到代理对象的方法。
+1. **私有方法、类内部调用、内部类方法调用**：会用原始对象直接调用，不会调用到代理对象；
+2. **静态方法**：直接通过类调用，不会调用代理对象；
+3. **final方法**：无法对final方法进行子类化和覆盖；
+
 ## 7. 介绍一下DI：
 依赖注入，实现IOC的具体方式。
+
+通过@Autowired注解：
+- **Setter注入、构造器注入、字段注入。**
 
 常见注入方式：
 1. Setter注入；
 2. 构造器注入；
 
-## 8. 什么是循环依赖？
+## 8. 为什么Spring不建议使用基于字段的依赖注入？
+强制依赖使用构造器注入，可选依赖使用setter注入。
+
+- 依赖完整性：确保所有必需依赖在对象创建时就被注入，避免了空指针异常的风险。
+- 不可变性：有助于创建不可变对象，提高了线程安全性。
+- 初始化保证：组件在使用前已完全初始化，减少了潜在的错误。
+- 测试便利性：在单元测试中，可以直接通过构造函数传入模拟的依赖项，而不必依赖 Spring 容器进行注入。
+
+## 9. 什么是循环依赖？
 A依赖B，B依赖A，导致A在实例化时需要创建B实例，而B在实例化时又要创建A实例。
 ![[Pasted image 20241208190639.png|450]]
-## 9. 如何解决循环依赖的？
+## 10. 如何解决循环依赖的？
 通过三级缓存机制解决的。
 - 第一级缓存：存放完全初始化好的单例Bean；
 - 第二级缓存：存放正在创建但未完全初始化的单例Bean；
@@ -68,8 +83,6 @@ A依赖B，B依赖A，导致A在实例化时需要创建B实例，而B在实例�
 
 
 
-## 10. 为什么Spring不建议使用基于字段的依赖注入？
-强制依赖使用构造器注入，可选依赖使用setter注入。
 
 ## 11. Bean的生命周期(Hollis)
 ![[Pasted image 20241123151334.png]]
@@ -78,16 +91,20 @@ A依赖B，B依赖A，导致A在实例化时需要创建B实例，而B在实例�
 
 
 
-## Bean的初始化过程
+## 12. Bean的初始化过程
 ![[Pasted image 20241123151820.png|500]]
 初始化是在Bean实例化后，进行一些设置或准备工作，包括Bean属性的赋值、调用各种前置后置换处理器。
 
-## 12. 介绍一下Bean的生命周期
+## 13. 介绍一下Bean的生命周期
 Bean的生命周期分为5个阶段：①实例化；②属性赋值；③初始化；④Bean的使用；⑤Bean的销毁。
 
-①
+①实例化：Spring使用构造方法或工厂方法创建Bean的实例，此时为空对象，并未设置属性值；
+②属性赋值：Spring将配置文件中的属性值或依赖的Bean注入到该Bean中；
+③初始化：调用afterPropertiesSet方法，或通过配置文件中的init-method方法，完成初始化；
+④Bean的使用；
+⑤销毁：调用destory方法销毁。
 ## ---
-## 13. Spring的事务传播机制
+## 14. Spring的事务传播机制
 Spring的事务传播机制用于控制在多个事务方法相互调用时事务的行为，用于确保事务的一致性和完整性。
 Spring规定了7种事务的传播机制，默认为REQUIRED。
 1. **REQUIRED：** 如果不存在，则开启事务；若存在，则加入之前已开启的事务，总是只有一个事务在执行；
@@ -104,14 +121,30 @@ Spring规定了7种事务的传播机制，默认为REQUIRED。
 @Transactional
 ```
 
-## 14. Spring事务失效原因
+## 15. Spring事务失效原因
 1. @Transactional应用在private方法上，此时不会使用代理对象，而Spring的事务是基于动态代理实现的，因此会失效；
 2. 同一个类中方法调用：失效原因与1相同；
 3. final和static：无法调用动态代理对象，失效；
 4. 
 
 
-## 15. Spring常用注解
+## 16. Spring常用注解
+- @SpringBootApplication：标注主应用程序类，标识一个Spring Boot应用程序的入口点，同时启用**自动配置和组件扫描**。
+	- @EnableAutoConfiguration自动配置：扫描类路径下的所有spring.factories文件，然后进行Bean的自动化配置。
+	- @ComponentScan组件扫描：扫描被@Component注解标识的Bean。
+- @Autowired：用于Bean的自动装配；
+- @Configuration：标识配置类
 
+- @PathVariable：用于从URL路径中提取变量；（`/items/123`）
+- @RequestParam：用于从HTTP请求的查询参数中获取值；（`/items?category=books`）
+- @RequestBody：用于获取请求体中的值。
+
+- @RequestMapping：用于映射HTTP请求路径到Controller。【`@RequestMapping("/users/{userId})`代表以该路径结尾都会由该Controller进行处理】
+	- @GetMapping、@PostMapping、@PutMapping、@DeleteMapping。
+
+- @Component：通用的Spring组件注解，表示受Spring管理的组件；
+	- @Controller：标识控制器类；
+	- @Service：标识服务类；
+	- @Repository：标识数据访问组件
 
 

@@ -5,6 +5,8 @@
   "theme": "moonstone",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "图片对齐语法"
+    "图片对齐语法",
+    "无序列表样式",
+    "有序列表样式"
   ]
 }
