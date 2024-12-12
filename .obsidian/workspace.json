@@ -22,34 +22,77 @@
             }
           },
           {
-            "id": "e74f1fac0868785b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04_力扣刷题笔记/01_数组.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "01_数组"
-            }
-          },
-          {
             "id": "b3279f775723c0e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
+                "file": "03_八股文/03_MySQL八股.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "陈鑫的个人求职简历"
+              "title": "03_MySQL八股"
+            }
+          },
+          {
+            "id": "c9635b2ea7fb0a76",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "简历.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "简历"
+            }
+          },
+          {
+            "id": "4444990c147cf148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_力扣刷题笔记/04_哈希表.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04_哈希表"
+            }
+          },
+          {
+            "id": "7a0477f9f115e993",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/05_JUC八股.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_JUC八股"
+            }
+          },
+          {
+            "id": "93161f6fb67caf9a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_力扣刷题笔记/06_栈与队列.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06_栈与队列"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -118,7 +161,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.51103591918945
+    "width": 257.51103591918945
   },
   "right": {
     "id": "45beac71d173d048",
@@ -234,26 +277,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a02d5078286642d6",
+  "active": "93161f6fb67caf9a",
   "lastOpenFiles": [
+    "04_力扣刷题笔记/05_二叉树.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241212011643.png",
+    "03_八股文/03_MySQL八股.md",
     "陈鑫的个人求职简历.md",
+    "简历.md",
+    "03_八股文/05_JUC八股.md",
+    "04_力扣刷题笔记/04_哈希表.md",
+    "04_力扣刷题笔记/01_数组.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241211163454.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241211161144.png",
+    "未命名.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241211153256.png",
+    "04_力扣刷题笔记/03_字符串.md",
     "03_八股文/02_Spring八股文.md",
     "03_八股文/01_Java基础兼集合类八股.md",
-    "04_力扣刷题笔记/01_数组.md",
     "99_模板/abstract.md",
     "04_力扣刷题笔记/陈鑫_典型无源干扰作用下海面目标与环境毫米波辐射图像模拟(1).doc",
     "04_力扣刷题笔记/AlgoNote.md",
     "04_力扣刷题笔记/刷题笔记.md",
-    "04_力扣刷题笔记/05_二叉树.md",
-    "03_八股文/05_JUC八股.md",
     "03_八股文/07_计算机网络八股文.md",
-    "04_力扣刷题笔记/04_哈希表.md",
     "04_力扣刷题笔记/02_链表.md",
-    "04_力扣刷题笔记/03_字符串.md",
     "03_八股文/04_Redis八股.md",
     "01_课程学习笔记/JVM/JVM基础篇.md",
     "03_八股文/06_JVM八股文.md",
-    "简历.md",
     "02_项目笔记/02_天机学堂/天机学堂面试题总结.md",
     "02_项目笔记/02_天机学堂/天机学堂.md",
     "02_项目笔记/02_天机学堂/imgs/03909b9c-7fde-464e-98fa-6c7cbf50f628.gif",
@@ -262,17 +311,10 @@
     "03_八股文/10_RabbitMQ.md",
     "03_八股文/09_分布式.md",
     "03_八股文/imgs/Pasted image 20241208195828.png",
-    "03_八股文/03_MySQL八股.md",
     "03_八股文/imgs/Pasted image 20241208191125.png",
     "03_八股文/imgs/Pasted image 20241208190639.png",
     "03_八股文/Java基础.md",
     "03_八股文/03_Spring八股文.md",
-    "03_八股文/05_Redis八股.md",
-    "03_八股文/04_Spring八股文.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241208105035.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241207224853.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241207181426.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241206151338.png",
     "01_课程学习笔记/Spring6笔记/imgs",
     "01_课程学习笔记/MySQL/imgs",
     "01_课程学习笔记/Git笔记/imgs",
