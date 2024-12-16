@@ -243,10 +243,11 @@ start方法用于启动线程；
 线程池是一种池化技术。提前创建一批线程保存到线程池中，当有任务需要执行时，从线程池中选择一个线程来执行任务。
 **作用：** 减少了频繁的线程创建和线程销毁所带来的性能损耗。
 ![[Pasted image 20241128215126.png|550]]
-## 2. 线程池工作流程：
+## 2. 线程池由哪些组件构成？
+## 3. 线程池工作流程：
 ![[Pasted image 20241128223908.png|550]]
 
-## 3. 线程池的参数：
+## 4. 线程池的参数：
 - corePoolSize：线程池的核心线程数量。若线程池中的线程数量少于核心线程数，那么这些线程**不会被销毁（回收）**。
 - maximumPoolSize：最多可容纳的线程数量。`max-core=临时线程（救急线程）的数量。也叫临时线程、非核心线程。`
 - keepAliveTime：超过核心线程数的线程，空闲时间超过了keepAliveTime后会被销毁；
@@ -261,17 +262,17 @@ start方法用于启动线程；
 		4. DiscardOldestPolicy：抛弃最老任务，然后执行该任务；
 		5. 自定义。
 
-## 4. 线程池种类有哪些？
-## 5. ==线程数设定成多少更合适？==^
+## 5. 线程池种类有哪些？
+## 6. ==线程数设定成多少更合适？==^
 
 
-## 6. ForkJoinPool和ThreadPoolExecutor区别是什么？
+## 7. ForkJoinPool和ThreadPoolExecutor区别是什么？
 ### ForkJoinPool
 - ForkJoinPool是基于工作窃取算法实现的线程池，内部每个线程都有自己的工作队列，用于存储待执行的任务。当线程执行完自己的任务后，会从其它线程窃取任务来执行，以此实现任务的动态均衡和线程利用率最大化。
 - ForkJoinPool适用于**能够进行任务拆分的cpu密集型运算**，例如快速排序。
 - ForkJoinPool中的工作线程是一种特殊线程，会自动创建和销毁、自动管理线程的数量和调度。
 
-## 7. 为什么不建议通过Executors构建线程池？
+## 8. 为什么不建议通过Executors构建线程池？
 Executors返回的线程池对象：
 - `FixedThreadPool` 和 `SingleThreadExecutor`:使用的是有界阻塞队列是 `LinkedBlockingQueue` ，其任务队列的最大长度为 `Integer.MAX_VALUE` ，可能堆积大量的请求，从而导致 OOM。
 - `CachedThreadPool`:使用的是同步队列 `SynchronousQueue`, 允许创建的线程数量为 `Integer.MAX_VALUE` ，如果任务数量过多且执行速度较慢，可能会创建大量的线程，从而导致 OOM。
@@ -285,8 +286,8 @@ private static ExecutorService executor = new ThreadPoolExecutor(10, 10,
 	```
 
 2. 更推荐使用guava提供的ThreadFactoryBuilder创建线程池。
-## 8. 提交给线程池的任务能否撤回？^
-## 9. submit()和execute()有什么区别？^
+## 9. 提交给线程池的任务能否撤回？^
+## 10. submit()和execute()有什么区别？^
 # <font color="#245bdb">ThreadLocal：</font>
 ## 1. 什么是ThreadLocal，如何实现的？
 通过为每一个线程创建一份共享变量的副本来保证各个线程之间的变量的访问和修改互相不影响。
@@ -352,10 +353,9 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 >**Java程序中天然的有序性可以总结为一句话：如果在本线程内观察，所有操作都是天然有序的。如果在一个线程中观察另一个线程，所有操作都是无序的。**
 
 和as-if-serial语义相关，保证了不管如何重排序，单线程程序的执行结果不会改变。
-- 仍会发生指令重拍。
+- 仍会发生指令重排！
 ### 可见性：
 当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。
-
 1. 加锁前，会删除工作内存中共享变量的值，从而使用共享变量时会从主存中读取变量最新的值；
 2. 加锁后，其它线程无法获取主内存中的共享变量；
 3. 解锁前，必须把工作内存中变量的值同步到主存中。
@@ -450,7 +450,6 @@ AbstractQueueSynchronizer，抽象队列同步器，内部维护了一个**FIFO�
 常见的实现类有ReentrantLock、Semaphore、CountDownLatch。
 ### FIFO队列：
 用来实现多线程的排队工作，当线程加锁失败后，会被封装成一个Node添加至队尾。
-
 #### Node变量：
 
 ### state变量：
