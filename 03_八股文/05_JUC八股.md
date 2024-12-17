@@ -1,13 +1,10 @@
 # <font color="#245bdb">基础</font>
 ## 1. 什么是多线程中的上下文切换？
-上下文切换是指 CPU 从一个线程转到另一个线程时，需要保存当前线程的上下文状态，恢复另一个线程的上下文状态，以便于下一次恢复执行该线程时能够正确地运行。
+上下文切换是指 **CPU 从一个线程转到另一个线程时，需要保存当前线程的上下文状态，恢复另一个线程的上下文状态，以便于下一次恢复执行该线程时能够正确地运行。**
 
-上下文切换通常是指在一个 CPU 上，由于**多个线程共享 CPU 时间片**，当一个线程的时间片用完后，需要切换到另一个线程运行。
-
+上下文切换通常是指在一个 CPU 上，由于**多个线程共享 CPU 时间片**，当一个线程的时间片用完后，需要切换到另一个线程运行。此时需要保存当前线程的状态信息，包括程序计数器、寄存器、栈指针等，以便下次继续执行能恢复正常的执行状态。
 ## 2. 谈谈你对线程安全的理解
-
-线程安全是指某个方法或某个代码块在**并发环境** 被调用时，能够**正确地处理多个线程之间的共享变量**，使程序功能正确完成。
-
+线程安全是指某个方法或某个代码块在**并发环境**被调用时，能够**正确地处理多个线程之间的共享变量**，使程序功能正确完成。
 ## 3. 谈谈线程和进程的区别
 1. 进程是相互独立的，而线程存在于进程内，一个进程可以有多个线程；
 2. 线程作为最小调度单位，进程作为资源分配的最小单位。
@@ -16,28 +13,23 @@
 
 CPU的时间被划分为长短相同的时间片，通过操作系统的管理调度，将时间片依次轮流地分配给各个用户使用。
 
-并发：多个线程抢占同一个CPU时间片。（**系统有处理多个任务的能力，但同一时刻只有一个任务在执行**）【通过CPU时间片轮转实现】
-并行：当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，多个进程互不抢占CPU资源，可以同时进行。（**多个处理器同时执行多个任务**）
+**并发**：多个线程抢占同一个CPU时间片。（**系统有处理多个任务的能力，但同一时刻只有一个任务在执行**）【通过CPU时间片轮转实现】
+**并行**：当系统有一个以上CPU时，当一个CPU执行一个进程时，另一个CPU可以执行另一个进程，多个进程互不抢占CPU资源，可以同时进行。（**多个处理器同时执行多个任务**）
 ![[Pasted image 20241122223825.png]]
 
 ## 5. 线程有几种状态，状态之间的流转是怎样的？
 1. **初始(NEW)**：新创建了一个线程对象（如通过`new Thread()`)，处于新建状态，但还没有调用`start()`方法开始执行。
-   
 2. **运行(RUNNABLE)**：已调用线程的`start()`方法，线程进入可运行状态，此时线程可能正在运行（RUNNING），也可能正在等待CPU分配时间片（READY）。
 	- 就绪（READY）:线程对象创建后，其他线程(比如main线程）调用了该对象的`start()`方法。该状态的线程位于可运行线程池中，**等待被线程调度选中并分配cpu时间片** 。  
 	- 运行中（RUNNING）：就绪(READY)的线程获得了cpu 时间片，开始执行程序代码。  
-  
 3. **阻塞(BLOCKED)**：表示线程尝试获取锁以进入一个代码块或方法中，但锁被其他线程所持有，所以此时当前线程进入阻塞状态，等待获取锁。
-   
 4. **等待(WAITING)**：调用了`Object.wait()`或`LockSupport.park()`。进入等待状态的线程需要等待其他线程做出一些特定动作（通知`notify`或中断`interrupt`）。
-   
 5. **超时等待(TIMED_WAITING)**：具备等待时间的WAITING，**它可以在指定的时间后自行返回可运行状态(RUNNABLE)**。
-   
 6. **终止(TERMINATED)**：表示该线程已经执行完毕，生命周期结束，不会再被重启。
 ![[Pasted image 20241126233627.png|]]
 
 ## 6. 什么是守护线程，和普通线程有什么区别？
-Java线程分为两类，一类是普通线程，另一类就是守护线程。
+Java线程分为两类，一类是用户线程，另一类就是守护线程。
 - 用户线程一般用于执行用户级任务，而守护线程也就是“后台线程”，一般用**来执行后台任务**，守护线程最典型的应用就是**GC(垃圾回收器)。**
 - 若用户线程在运行，则JVM会等所有用户线程运行结束后才退出；而若守护线程仍在运行，JVM会直接退出，不必等待守护线程运行结束。
 
@@ -51,7 +43,7 @@ t1.setDaemon(true);
 t1.isDaemon();
 ```
 ## 7. JDK21中的虚拟线程是什么？
-新引入的虚拟线程，是JDK 实现的**轻量级线程**，他可以**避免上下文切换带来的的额外耗费**。他的实现原理其实是JDK**不再是每一个线程都一对一的对应一个操作系统的线程**，而是会将多个虚拟线程映射到少量操作系统线程中，通过有效的调度来避免那些上下文切换。
+新引入的虚拟线程，是JDK 实现的**轻量级线程**，他可以**避免上下文切换带来的的额外耗费**。他的实现原理其实是JDK**不再是每一个线程都一对一的对应一个操作系统的线程**，而是会**将多个虚拟线程映射到少量操作系统线程**中，通过有效的调度来避免那些上下文切换。
 
 1. 由JDK实现的轻量级线程，由JVM调度；
 2. 多个虚拟线程共享同一个操作系统线程；
@@ -79,8 +71,8 @@ t1.isDaemon();
 
 
 ## 8. 创建线程有几种方式？
-共有4种创建方式：
-### 继承Thread类创建线程：
+共有**4种**创建方式：
+### ①继承Thread类创建线程：
 1.创建MyThread类并继承Thread类；2. 调用`new MyThread()`方法创建线程。
 ```java hl:1
 class MyThread extends Thread{
@@ -99,7 +91,7 @@ public static void main(String[] args){
 1. 编写简单。
 缺点：
 1. 无法再继承其他父类。
-### 实现Runnable接口创建线程：
+### ②实现Runnable接口创建线程：
 1\. 创建MyRunnable类并实现Runnable接口；2. 调用`new Thread(new MyRunnable())`创建线程。
 ```java hl:1
 class MyRunnable implements Runnable{
@@ -116,7 +108,7 @@ public static void main(String[] args){
 ```
 优点：
 1. 仍可以继承其他类。
-### 通过Callable和FutureTask创建线程：（实现Callable接口）
+### ③通过Callable和FutureTask创建线程：（实现Callable接口）
 1. 创建MyCallable类实现Callable接口，实现call方法；
 2. 创建FutureTask类实例`futureTask`，传入所要执行的任务`new MyCallable()`；
 3. `new Thread(futureTask)`创建线程；
@@ -137,7 +129,7 @@ class MyCallable implements Callable<T> {
 	}
 }
 ```
-### 通过线程池创建线程：（Executor框架）
+### ④通过线程池创建线程：（Executor框架）
 1. 实现Runnable接口，实现run方法，编写具体任务；
 2. `Executors.newXxx(args)`创建线程池；
 3. `pool.submit(task)`创建线程，并执行task任务。
@@ -233,15 +225,20 @@ start方法用于启动线程；
 6. 数据不共享，例如ThreadLocal，线程之间数据不共享。
 
 ## 15. 什么是可重入锁？
-可重入锁是一种多线程同步机制，允许同一线程多次获取同一个锁而不会导致死锁。
-这意味着一个线程可以在持有锁的情况下再次请求并获得相同的锁，而不会被自己阻塞。可重入锁有助于避免死锁和提高代码的可维护性，因为它允许在一个线程中嵌套地调用锁定的方法。
+可重入锁是一种多线程同步机制，**允许同一线程多次获取同一个锁而不会导致死锁**。
+
+**优点：**
+- 有助于避免死锁和提高代码的可维护性，因为它允许在一个线程中嵌套地调用锁定的方法。
 
 **实现：**
 - state记录重入次数，threadId记录获取锁的线程ID。
 # <font color="#245bdb">线程池</font>
 ## 1. 什么是线程池，如何实现的？
-线程池是一种池化技术。提前创建一批线程保存到线程池中，当有任务需要执行时，从线程池中选择一个线程来执行任务。
-**作用：** 减少了频繁的线程创建和线程销毁所带来的性能损耗。
+- 线程池是一种池化技术。提前创建一批线程保存到线程池中，当有任务需要执行时，从线程池中选择一个线程来执行任务。
+- **作用：** 
+	- **降低资源消耗**：减少了频繁的线程创建和线程销毁所带来的性能损耗。
+	- **提高响应速度**：有任务提交时，可以立即执行，无需等待线程创建。
+	- **提高线程的可管理性**：使用线程池可以进行统一的分配、调优和监控，避免资源的调度失衡，降低系统稳定性。
 ![[Pasted image 20241128215126.png|550]]
 ## 2. 线程池由哪些组件构成？
 ## 3. 线程池工作流程：
@@ -261,22 +258,97 @@ start方法用于启动线程；
 		3. DiscardPolicy：不做任何处理，静默拒绝提交的任务；
 		4. DiscardOldestPolicy：抛弃最老任务，然后执行该任务；
 		5. 自定义。
+## 5. 线程池的拒绝策略有哪些？
+1. **AbortPolicy**：默认拒绝策略。线程池无法接收新任务时，会抛出RejectedExecutionException，任务不会被加入到阻塞队列中，也不会被执行。
+2. **CallerRunsPolicy**：使用线程池的调用者所在的线程去执行被拒绝的任务。
+3. **DiscardPolicy**：阻塞队列已满时，会丢弃新任务且不抛异常。不做任何处理，静默拒绝提交的任务；
+4. **DiscardOldestPolicy**：抛弃最老任务（队首任务），然后执行该任务；
+5. **自定义拒绝策略**：实现`RejectedExecutionHandler` 接口，实现`rejectedExecution`方法。
 
-## 5. 线程池种类有哪些？
-## 6. ==线程数设定成多少更合适？==^
+>[!拒绝策略的源代码]-
+>AbortPolicy：
+>![[Pasted image 20241217011938.png]]
+>CallerRunsPolicy：
+>![[Pasted image 20241217012020.png]]
+>DiscardPolicy：
+>![[Pasted image 20241217012041.png]]
+>DiscardOldestPolicy：
+>![[Pasted image 20241217012111.png]]
+## 6. 线程池有哪几种？
+![[Pasted image 20241217002505.png|600]]
+
+### newFixedThreadPool
+```java
+public static ExecutorService newFixedThreadPool(int nThreads) {  
+    return new ThreadPoolExecutor(nThreads, nThreads,  
+                                  0L, TimeUnit.MILLISECONDS,  
+                                  new LinkedBlockingQueue<Runnable>());  
+}
+```
+- 核心线程数和最大线程数相等（不会创建救急线程）；
+- 空闲时间为0；（无救急线程，自然也有无空闲时间）
+- 阻塞队列为无界队列LinkedBlockingQueue，会导致请求堆积过多而OOM。
+
+**适用场景：**
+- FixedThreadPool 适用于处理 CPU 密集型的任务，确保 CPU 在长期被工作线程使用的情况下，尽可能的少的分配线程，即适用执行长期的任务。
+### newCachedThreadPool
+```java
+public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {  
+    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,  
+                                  60L, TimeUnit.SECONDS,  
+                                  new SynchronousQueue<Runnable>(),  
+                                  threadFactory);  
+}
+```
+- 核心线程为0，会创建至多$2^{31}-1$个救急线程，可能会因为创建过多线程而OOM。
+- 阻塞队列是 SynchronousQueue；
+- 救急线程在空闲时最多存活60秒。
+
+**适用场景：**
+- 用于并发执行大量短期的小任务。
+### newSingleThreadExecutor
+```java
+public static ExecutorService newSingleThreadExecutor() {  
+    return new FinalizableDelegatedExecutorService  
+        (new ThreadPoolExecutor(1, 1,  
+                                0L, TimeUnit.MILLISECONDS,  
+                                new LinkedBlockingQueue<Runnable>()));  
+}
+```
+- 核心线程和最大线程都为1，不会创建救急线程；
+- 阻塞队列为LinkedBlockingQueue，会导致请求堆积过多OOM；
+
+**适用场景：**
+- 适用于串行执行任务的场景，一个任务一个任务地执行。
+
+### newScheduledThreadPool
+```java
+public ScheduledThreadPoolExecutor(int corePoolSize) {  
+    super(corePoolSize, Integer.MAX_VALUE,  
+          DEFAULT_KEEPALIVE_MILLIS, MILLISECONDS,  
+          new DelayedWorkQueue());  
+}
+```
+- 最大线程数为Integer.MAX_VALUE，可能会导致线程创建过多而OOM！
+- 阻塞队列是 DelayedWorkQueue；
+
+**适用场景：**
+- 周期性执行任务的场景，需要限制线程数量的场景
+## 7. ==线程数设定成多少更合适？==^
 
 
-## 7. ForkJoinPool和ThreadPoolExecutor区别是什么？
+## 8. ForkJoinPool和ThreadPoolExecutor区别是什么？
 ### ForkJoinPool
 - ForkJoinPool是基于工作窃取算法实现的线程池，内部每个线程都有自己的工作队列，用于存储待执行的任务。当线程执行完自己的任务后，会从其它线程窃取任务来执行，以此实现任务的动态均衡和线程利用率最大化。
 - ForkJoinPool适用于**能够进行任务拆分的cpu密集型运算**，例如快速排序。
 - ForkJoinPool中的工作线程是一种特殊线程，会自动创建和销毁、自动管理线程的数量和调度。
 
-## 8. 为什么不建议通过Executors构建线程池？
-Executors返回的线程池对象：
-- `FixedThreadPool` 和 `SingleThreadExecutor`:使用的是有界阻塞队列是 `LinkedBlockingQueue` ，其任务队列的最大长度为 `Integer.MAX_VALUE` ，可能堆积大量的请求，从而导致 OOM。
-- `CachedThreadPool`:使用的是同步队列 `SynchronousQueue`, 允许创建的线程数量为 `Integer.MAX_VALUE` ，如果任务数量过多且执行速度较慢，可能会创建大量的线程，从而导致 OOM。
-- `ScheduledThreadPool` 和 `SingleThreadScheduledExecutor` :使用的无界的延迟阻塞队列 `DelayedWorkQueue` ，任务队列最大长度为 `Integer.MAX_VALUE` ，可能堆积大量的请求，从而导致 OOM。
+## 9. 为什么不建议通过Executors构建线程池？
+**FixedThreadPool和SingleThreadPool：**
+- 内部的阻塞队列为LinkedBlockingQueue，会导致任务请求堆积过多而OOM。
+
+**CachedThreadPool和ScheduledThreadPool：**
+- 最大线程数为Integer.MAX_VALUE，会导致线程创建过多而OOM。
 
 1. 正确的创建线程池方式应该是调用ThreadPoolExecutor来创建线程池，并为阻塞队列指定容量。
 	```java
@@ -286,8 +358,8 @@ private static ExecutorService executor = new ThreadPoolExecutor(10, 10,
 	```
 
 2. 更推荐使用guava提供的ThreadFactoryBuilder创建线程池。
-## 9. 提交给线程池的任务能否撤回？^
-## 10. submit()和execute()有什么区别？^
+## 10. 提交给线程池的任务能否撤回？^
+## 11. submit()和execute()有什么区别？^
 # <font color="#245bdb">ThreadLocal：</font>
 ## 1. 什么是ThreadLocal，如何实现的？
 通过为每一个线程创建一份共享变量的副本来保证各个线程之间的变量的访问和修改互相不影响。
@@ -319,10 +391,11 @@ value只有一个引用，就是Thread对象。
 ![[Pasted image 20241202220212.png|650]]
 所以
 # <font color="#245bdb">Synchronized</font>
+
 ## 1. Synchronized是如何实现的？
 1. 针对于代码块，**通过字节码`monitorenter`和`monitorexit`实现**，前者代表加锁，后者代表释放锁。每个对象都维护着一个记录着被锁次数的计数器，未加锁的对象计数器值为0，加锁后计数器自增变1，重入后次数会再加1，解锁的话会减1。计数器为0的话就会释放锁。
 2. 针对于方法，是**通过`ACC_SYNCHRONIZED`标志**实现。当某个线程要访问某个方法时，会先检查是否有该标志。若有，则需要先获得监视器锁。此时若有其它线程来访问，则会因为无法获得监视器锁而被阻塞！
-
+## 2. Monitor是什么？
 Java中每个对象都有自己的监视器Monitor，当尝试获取对象的锁时，实质上就是对对象监视器Monitor的获取。
 
 Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性：
@@ -336,7 +409,7 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 - 多个线程尝试获取锁，此时会先进入\_EntryList队列中，当某个线程获取到Monitor，将\_owner设置为当前线程，同时计数器\_count+1；
 - 若持有锁的线程调用`wait()`方法，则会释放当前持有的Monitor，并将\_owner设置为null，将计数器\_count-1，并且当前线程会进入WaitSet等待被唤醒；
 - 若持有Monitor线程已结束执行代码块，那么会唤醒\_EntryList中的线程来竞争锁； 
-## 2. Synchronized锁的是什么？
+## 3. Synchronized锁的是什么？
 锁对象、锁类，实质上都是锁的对象，一个是锁的当前实例this，另一个锁的是类对象。
 
 同步方法：
@@ -345,7 +418,7 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 同步代码块：
 1. `synchronized (this)`：锁的是this这个实例对象；
 2. `synchronized (MyThread.class)`：锁的是`xx.class`类对象。
-## 3. synchronized是如何保证原子性、可见性、有序性的？
+## 4. synchronized是如何保证原子性、可见性、有序性的？
 ### 原子性：
 由`monitorenter`和`monitorexit`实现，保证了在锁未释放前，内部代码块不会被其他线程访问到。即使在`monitorexit`执行前，CPU时间片用完了，由于synchronized是可重入的，下一个时间片还是会被当前线程获取到，直至代码执行完毕并释放锁。
 - 其它线程获取了时间片，也无法执行内部代码块。
@@ -359,27 +432,41 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 1. 加锁前，会删除工作内存中共享变量的值，从而使用共享变量时会从主存中读取变量最新的值；
 2. 加锁后，其它线程无法获取主内存中的共享变量；
 3. 解锁前，必须把工作内存中变量的值同步到主存中。
-## 4. synchronized的可重入是如何实现的？
+## 5. synchronized的可重入是如何实现的？
 因为锁对象的对象头包含了一个Mark Word，存储着对象的状态以及锁信息。当线程尝试重入锁时，JVM会检查线程ID与Mark Word中的线程ID是否匹配，若匹配则锁计数器+1.
-## 5. synchronized的锁升级过程是怎样的？^
+## 6. synchronized的锁升级过程是怎样的？
 由轻量级锁升级到重量级锁的过程，**无锁→偏向锁→轻量级锁→重量级锁**。
 
 因为重量级锁，在获取锁和释放锁时都需要**在操作系统层面进行线程的阻塞和唤醒**，带来很大开销！因此，引入了“偏向锁”、“轻量级锁”来适应不同场景下的锁竞争情况。
 
 **Mark Word**
 - 使用低两位来表示锁状态：01（无锁/偏向锁）、00（轻量级锁）、10（重量级锁），并且引入低三位用于区分无锁和偏向锁。
-![[Pasted image 20241130211945.png]]
-
+![[Pasted image 20241130211945.png|700]]
+![[Pasted image 20241216225131.png|700]]
 ### 无锁→偏向锁：
-当同步代码块被线程首次进入时，JVM会在对象头中设置该线程的Thread ID，并将锁标志位设置成"01"，偏向锁位也设置成1。此时对象会偏向第一个访问的线程。
-### 偏向锁→轻量级锁：
-此时若有其他线程访问对象尝试获取锁，那么首先会检查是否与对象头中的线程ID相同，若相同，则直接获取锁；若不同，则锁状态会升级成轻量级锁，此时锁标志位被设置成"00"。
+>**同步代码块被线程首次进入。**
 
-在轻量级锁状态中，JVM为对象头的Mark Word预留了一部分空间，用于**存储指向线程栈中锁记录的指针**。
+**偏向锁结构**：
+- JVM会**在对象头(Mark Word)中设置该线程的Thread ID**，并将锁标志位设置成"01"，偏向锁位也设置成1。此时对象会偏向第一个访问的线程。
+### 偏向锁→轻量级锁：^
+>**有其它线程尝试获取偏向锁。**
+
+**轻量级锁结构**：
+- 在轻量级锁状态中，JVM为对象头的Mark Word预留了一部分空间，用于**存储指向线程栈中锁记录的指针**。
 ### 轻量级锁→重量级锁：
-当线程尝试获取
+>**CAS操作失败。**
 
-## 6. synchronized能降级吗？
+**重量级锁结构：**
+- JVM会将对象头中的Mark Word修改为指向**一个重量级锁结构（Monitor）**，该结构包含一个Entry Set，用于管理那些尝试获取锁但暂时无法获得的线程。
+
+当有其它线程尝试获取锁时，就会先进入等待队列（Wait Set），等待锁被释放。锁被释放后，会在等待队列中选择一个线程唤醒，此时线程进入就绪状态，尝试重新获取锁。
+
+## 7. 为什么JDK 15要废弃偏向锁？
+**偏向锁**：同一个线程重复进入代码块，能快速获得锁，避免CAS的原子操作。
+
+1. **性能损耗**：但是，当有**其它线程尝试获取偏向锁时，需要等到safe point时，才能将偏向锁撤销为无锁状态或者升级为轻量锁**，此过程需要消耗一定性能。
+2. **减少复杂性，提高代码可维护性**：偏向锁的引入导致代码变复杂，给HotSpot虚拟机中锁相关部分与其他组件之间的交互也带来了复杂性。
+## 8. synchronized能降级吗？
 锁一旦升级为重量级锁，它将保持在这个状态，直到锁被完全释放。
 
 **特殊情况：**
@@ -387,20 +474,19 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 2. 确定降级对象：JVM会识别出没有被任何线程持有的Monitor对象；
 3. “降级”操作：对于未被使用的Monitor对象，JVM会进行"deflation"操作，即清理对象状态，使其不再占用系统资源。
 
-## 7. synchronized的重量级锁很慢，为什么还需要重量级锁？
+## 9. synchronized的重量级锁很慢，为什么还需要重量级锁？
 
 使用轻量级锁，是因为重量级锁的阻塞和唤醒是比较“重”的操作，需要CPU从用户态切换到内核态，开销较大。
 
-但是，在并发高、竞争激烈的环境下，轻量级锁的自旋会导致CPU资源的浪费，此时就需要重量级锁通过阻塞来避免其他线程不断尝试、自旋，造成资源浪费。
+但是，在并发高、竞争激烈的环境下，轻量级锁的自旋会导致CPU资源的浪费，此时就需要重量级锁**通过阻塞来避免其他线程不断尝试、自旋，造成资源浪费。**
 
 >重量级锁是指在多线程竞争激烈的情况下，synchronized锁膨胀为一种**系统级别**的锁机制。与偏向锁和轻量级锁不同，重量级锁会**阻塞线程**，并会在**加锁和解锁过程中频繁地与操作系统交互**。
 
-## 8. synchronized的锁优化是怎样的？^
+## 10. synchronized的锁优化是怎样的？^
 
 ### 自旋：
 ### 锁消除：
 ### 锁粗化：
-## 9. 
 
 # <font color="#245bdb">volatile</font>
 ## 1. volatile关键字有什么作用？^
@@ -492,6 +578,7 @@ protected final boolean compareAndSetState(int expect, int update) {
 	- **缺点**：队列中除了第一个线程，其它线程都处于阻塞状态，唤醒阻塞线程的开销会很大。
 
 ## 5. 非公平锁吞吐量为什么比公平锁大？^
+吞吐量是指系统在单位时间内处理请求的数量。
 ## 6. LongAdder和AtomicLong的区别？
 LongAdder的出现是为了解决AtomicLong在多线程竞争激烈的情况下性能不高的问题，采用分段+CAS操作来提升原子操作的性能。
 - **优点**：性能更高！
@@ -598,7 +685,7 @@ ABA指的是在Compare 和 Swap之间，变量被连续修改了两次，使其�
 自旋指的是CAS在执行失败后，会尝试重新执行CAS操作，直至成功或达到最大尝试次数。
 - 采用自旋让CPU空转一段时间，而不是阻塞线程，可以避免线程切换和阻塞带来的开销。但是过多的尝试会耗费CPU资源。
 ## 4. 什么是Unsafe？
-Unsafe是CAS的核心类，用于提供硬件级别的原子操作：
+Unsafe是CAS的核心类，用于**提供硬件级别的原子操作**：
 1. 通过Unsafe可以分配、释放内存；
 2. 可以定位对象某字段的内存位置，也可以修改对象的字段值；
 3. 将线程挂起或恢复；

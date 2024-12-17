@@ -139,28 +139,163 @@ public static Integer valueOf(int i) {
     return new Integer(i);
 }
 ```
-
 ## 7. String为什么设计成不可变？
-## 8. String是如何实现不可变的？
+1. **性能**：
+	- String的不可变带来了**字符串常量池机制**：String变量被创建后，会存储在常量池中。如果有多个相同内容的String对象，JVM可以直接引用常量池的同一个对象，而无需创建新的实例，节省内存。
+	- **hashCode缓存**：String类不可变性保证了字符串的值不会改变，因此会在第一次调用`hashCode()`方法期间计算并缓存，并在后续直接返回相同的值。
+2. **线程安全**：String不可变，因此多个线程可以**安全地读取同一个String对象**。
+3. **安全性**：String类常用于存储敏感信息，因此不可变保证了其内容是可信任的。
 
+>[!String安全性的理解]-
+![[Pasted image 20241216142627.png]]
+## 8. String是如何实现不可变的？
+1. **不可被继承**：String类被final修饰，不可被继承，因此内部方法不可被重写；
+2. **数组不可变**：内部`char[](byte[])`数组被final修饰，因此一旦被初始化，就不能再让其指向另一个对象；并且`value[]`数组是private的，不暴露给外部，因此内部值也无法被修改。
+3. **内部方法的不可变**：String的`substring()`、`concat()`方法等都会创建新String对象。
+>[!数组不可变的测试]-
+>可以修改test数组内部的值，但不能让其指向新的`int[]`数组。
+>![[Pasted image 20241216143725.png]]
 ## 9. `String str = new String("cx");`创建了几个对象？
+分两种情况："cx"是否已经被加入到字符串常量池中。
+
+1. **若"cx"不存在**：会在堆上创建一个str对象，在字符串常量池中创建一个"cx"对象；（str的引用指向常量池中的"cx"）
+2. **若"cx"已存在**：只会在堆上创建一个字符串对象，其引用指向字符串常量池中的"cx"对象。
 
 ## 10. `String a = "ab"';String b = "a" + "b";` a\==b吗？
+相等的。"a"和"b"都是字面量常量，因此在编译期，"a"+"b"会被拼接成"ab"并放入字符串常量池中，因此b对象也是指向字符串常量池中的"ab"对象，故二者的引用相同，返回true。
 
-## 11. String中intern的原理是什么？
+
+```java
+String a = "ab";  
+String c = "b";  
+String b = "a" + c;  
+System.out.println(a==b);
+
+>>> false
+```
+此时`String b = "a" + c;`，c是变量，无法在编译期确认其内部的值。因此，`b="a"+c`会**在运行时动态生成新的String对象"ab"**，并且内存地址与字符串常量池中的"ab"地址不同。故返回值是false！
+## 11. String中intern的原理是什么？^
 
 ## 12. 为什么JDK9把String的char\[]改成了byte\[]？
+**节省字符串占用的内存空间**，减少 GC 次数。
 
+Java内部使用UTF16编码，导致某些字符只需要用一个字节表示，但仍占用两个字节。
+因此，通过`coder`变量区分是否使用哪个编码与数组：
+- 如果所有字符都能用一个字节表示，就会使用LATIN1编码与`byte[]`数组；
+- 如果有字符需要用两个字节表示，就仍会使用UTF16编码与`char[]`数组。。
 
-## 13. 什么是SPI？和API的区别是什么？
+## 13. JDK 9中对字符串的拼接做了什么优化？
+JDK9之前，总是会创建StringBuilder对象，利用append方法进行拼接，最后通过toString方法返回。
 
-## 14. 什么是AIO、BIO和NIO？
+JDK9之后：
+- 引入了`StringConcatFactory`负责生成字符串拼接所需要的代码，提供了一种**动态生成字符串拼接代码**的方法。
+- 基于`invokedynamic`指令实现，允许将字符串拼接的操作延迟到运行时，并根据实际场景选择最优的拼接策略。
 
-## 15. 什么是深拷贝和浅拷贝？
+## 14. JDK6与JDK7中的substring原理与区别:
+**substring的作用:**
+`substring(int beginIndex, int endIndex)`:截取并返回`[beginIndex,endIndex-1]`范围的字符串子串.
+
+### JDK6中的substring:
+jkd6中,String类内部存在三个成员变量:
+`char value[]`:存储真正的字符数组;
+`int offset`:数组的第一个位置索引
+`int count`:字符串中包含的字符个数.
+
+jdk6中,当调用substring方法的时候，会**创建一个新的string对象**，但是这个string的值仍然指向堆中的**同一个字符数组**。这两个对象中**只有count和offset 的值是不同的**:
+![[Pasted image 20241016153919.png|450]]
+`this.value = value`,引用的还是原来的字符数组.
+```java
+//JDK 6
+String(int offset, int count, char value[]) {
+    this.value = value; //相同的字符数组.
+    this.offset = offset;
+    this.count = count;
+}
+
+public String substring(int beginIndex, int endIndex) {
+    //check boundary
+    return  new String(offset + beginIndex, endIndex - beginIndex, value);
+}
+```
+
+#### **存在的问题:**
+如果你有一个很长很长的字符串，但是当你使用substring进行切割的时候你只需要很短的一段。**这可能导致性能问题，因为你需要的只是一小段字符序列，但是你却引用了整个字符串**（因为这个非常长的字符数组一直在被引用，所以无法被回收，就可能导致内存泄露）。在JDK 6中，一般用以下方式来解决该问题，原理其实就是生成一个新的字符串并引用他。
+
+```java
+x = x.substring(x, y) + ""
+```
+
+### JDK7中的substring:
+在jdk 7 中，substring方法会在**堆内存中创建一个新的数组**。
+![[Pasted image 20241016154303.png]]
+使用`this.value = Arrays.copyOfRange(value, offset, offset + count); `创建新数组.
+```java
+//JDK 7
+public String(char value[], int offset, int count) {
+    //check boundary
+    // 与jdk6中不同,创建了一个新的字符数组!
+    this.value = Arrays.copyOfRange(value, offset, offset + count); 
+    
+}
+
+public String substring(int beginIndex, int endIndex) {
+    //check boundary
+    int subLen = endIndex - beginIndex;
+    return new String(value, beginIndex, subLen);
+}
+```
+
+## 15. 什么是SPI？和API的区别是什么？^
+API：Application Programming Interface，用于定义调用接口。
+
+SPI：Service Provider Interface，通常用于在应用程序中提供可插拔的实现。
+## 16. 什么是AIO、BIO和NIO？
+**AIO**：Asynchronous I/O，异步非阻塞I/O模型。线程发起IO请求后，不需要阻塞，立即返回，也不需要定时轮询检查结果，**异步IO操作之后会回调通知调用方**。
+
+**BIO**：Blocking I/O，同步阻塞I/O模型。线程发起IO请求后，**一直阻塞，直到缓冲区数据就绪后**，再进入下一步操作。
+
+**NIO**：Non Blocking I/O，同步非阻塞I/O。线程发起IO请求后，不需要阻塞，立即返回。用户线程不原地等待IO缓冲区，可以先做一些其他操作，只需要**定时轮询检查IO缓冲区数据是否就绪**即可。
+![[Pasted image 20241216161021.png|500]]
+## 17. 什么是深拷贝和浅拷贝？
+**浅拷贝**：将一个对象复制到另一个变量中，但是只复制对象的地址，而不是对象本身。也就是说，原始对象和复制对象实际上是共享同一个内存地址的。
+**深拷贝**：将一个对象及其所有子对象都复制到另一个变量中，也就是说，它会**创建一个全新的对象，并将原始对象中的所有属性或元素都复制到新的对象中**。
+
+## 18. 有了equals为啥需要hashCode方法？
+`hashCode()`方法提供了一种**快速计算对象哈希值**的方式，这些哈希值用于确定对象在哈希表中的位置。这意味着可以快速定位到对象应该存储在哪个位置或者从哪个位置检索，显著提高了查找效率。
+
+## 19. 什么是反射机制？为什么反射慢？
+- 反射机制是指**程序在运行时能够获取自身信息**。
+
+**为什么慢：**
+- 反射涉及动态解析，因此不能执行某些JVM优化，如JIT优化；
+- 使用反射时，参数需要包装成`Object[]`类型，并且真正执行时，又要拆包成真正的类型，耗时且容易GC；
+- 调用方法时，需要遍历方法数组并检查可见性，耗时；
+
+## 20. 什么是序列化与反序列化？^
+**序列化**：将Java对象转换为字节数组的过程；
+**反序列化**：将字节数组转换为Java对象的过程。
+
+对象序列化机制（object serialization）是Java语言内建的一种对象持久化方式，通过对象序列化，可以把对象的状态保存为字节数组，并且可以在有需要的时候将这个字节数组通过反序列化的方式再转换成对象。对象序列化可以很容易的在JVM中的活动对象和字节数组（流）之间进行转换。
+## 21. transient关键字的作用是什么？
+
 
 ---
+
 # <font color="#245bdb">Java集合类</font>
-## 1. Hash冲突的解决方式有什么？
+
+## 1. ArrayList和LinkedList的区别是什么？
+- ArrayList基于数组实现；LinkedList基于链表实现。
+- ArrayList的get操作时间复杂度为O(1)；LinkedList的get操作时间复杂度是O(N)；
+## 2. ArrayList的扩容机制是如何实现的？
+add方法添加元素时，会先检查是否需要扩容：当前容量+1是否大于数组长度，若超过则需要扩容：
+	1. `int newCapacity = oldCapacity + (oldCapacity >> 1);`，扩容为原来的1.5倍；
+	2. 然后调用`Arrays.copyOf()`方法将原数组的值拷贝到新数组中。
+## ArrayList的序列化是如何实现的？
+## 3. COW是什么，如何保证的线程安全？
+- Copy-On-Write，写时复制，通过读写分离策略来解决并发问题。
+- 当需要修改时，会将内容Copy形成一份新内容然后在新内容上进行写操作，写完毕后再将原数组引用指向新数组。
+- `CopyOnWriteArrayList`的整个add操作都是在`synchronized`的保护下进行的。也就是说add方法是线程安全的。
+## 4. Hash冲突的解决方式有什么？
 ### 链地址法：
 将同一个hash值的元素连接成一个链表。
 
@@ -201,17 +336,17 @@ public static Integer valueOf(int i) {
 发生冲突时，使用不同的哈希函数计算哈希值，并在该哈希值对应槽位为空时直接存储。
 - 双重散列是在第一个冲突槽位的基础上加上第二个哈希值来获得下一个检测槽位，而再哈希是直接的第二个槽位就是第二个哈希值。
 
-## 2. HashMap的数据结构是怎样的？
+## 5. HashMap的数据结构是怎样的？
 JDK1.7以前，是通过数组+链表的数据结构进行存储的。数组中的每一个元素都被称为一个桶(bucket)，桶中存放链表的头结点(Entry)。
 ![[Pasted image 20241120225226.png]]
 JDK1.8以后，在链表长度大于8时，会将链表转换为红黑树结构，并在小于6时再次转换为链表结构。
 ![[Pasted image 20241121183819.png]]
-## 3. HashMap、Hashtable和ConcurrentHashMap的区别？
+## 6. HashMap、Hashtable和ConcurrentHashMap的区别？
 - HashMap线程不安全，效率更高，可以存储一个null的key；
 - Hashtable线程安全，效率较低，内部**方法通过synchronized修饰**。底层数组为数组+链表，不可以有null的key和value，默认初始容量为11.
 - ConcurrentHashMap是线程安全的HashMap，内部通过**CAS+分段锁**实现线程安全。它将哈希表分为多个Segment，每个Segment都类似于一个小的HashMap。执行写操作时，会直接锁定对应的Segment，而不是整个哈希表，据此大大提高并发性能。
 
-## 4. HashMap在get和put时经过哪些步骤？
+## 7. HashMap在get和put时经过哪些步骤？
 ### get方法详解：
 1. 调用`hash(key)`方法计算key的哈希值，计算出在数组中的索引位置；
 2. 若索引位置为空，则直接返回null；
@@ -316,16 +451,25 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     return null;  
 }
 ```
-## 5. HashMap的key可以为null吗？
+## 8. HashMap的key可以为null吗？
 可以有一个值为null的key。
 当出现key为null时，会直接令哈希值为0，不走`hashCode()`计算哈希值。
-## 6. HashMap的remove方法是如何实现的？
+
+```java
+static final int hash(Object key) {  
+    int h;  
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);  
+}
+```
+
+## 9. HashMap的remove方法是如何实现的？
 1. 调用hash方法计算哈希值，获取在数组中的索引位置；
-2. 为空，则直接返回null；
-3. 不为空，则检查是否与当前key相等，是的话则直接删除并返回键值对的值
+2. 为空，则对应键值对不存在，直接返回null；
+3. 不为空，则检查是否与当前key相等，是的话则直接删除并返回键值对的**值**；
 4. 不是的话，则会遍历链表或红黑树，找到对应键值对并删除。
 
-## 7. 讲讲HashMap的延迟初始化
+>若传入了val，则同时还需要比较value是否相等。
+## 10. 讲讲HashMap的延迟初始化
 HashMap的构造过程中，虽然创建了HashMap对象，但并不会立即分配内存给底层数组（table），只会设置一些基本参数，如负载因子。只有在第一次调用`put()`方法时，HashMap才会调用`resize()`方法来初始化哈希表并设置容量，从而实际分配内存。
 
 当创建一个 `HashMap` 实例时，可以指定初始容量和负载因子（此时初始容量存储在Threshold变量中），但内部的哈希表（即数组）并不会立即被分配。只有在插入第一个元素时，调用`resize()` 方法来初始化哈希表并设置容量，从而实际分配内存。
@@ -335,7 +479,7 @@ HashMap的构造过程中，虽然创建了HashMap对象，但并不会立即分
 
 **缺点：**
 - 多个线程同时访问未初始化的HashMap时，可能会导致竞态条件。
-## 8. 为什么HashMap的容量是$2^n$，如何保证？
+## 11. 为什么HashMap的容量是$2^n$，如何保证？
 简单来说，为了确保能利用位运算替代取模操作来计算桶下标索引。
 
 因为HashMap在计算某个元素对应的桶下标时，**采用了`h & (length - 1)`的位运算操作来代替取模操作**。位运算是基于内存的二进制直接运算，比转成十进制再进行取模运算要快。为了保证取模操作能使用位运算替代，因此要求容量必须是2的n次幂。
@@ -363,41 +507,41 @@ public static int numberOfLeadingZeros(int i) {
     return n - (i >>> 1);  
 }
 ```
-## 9. 为什么HashMap的默认负载因子设置成0.75？
+## 12. 为什么HashMap的默认负载因子设置成0.75？
 >`As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of the HashMap class, including get and put).`
 
 1. 负载因子设置为0.75f，是空间和时间成本的权衡。
 	- **过高**：虽减少了空间开销，但是提高了查询成本。假设负载因子取1，则此时在初始容量时，当元素满了才开始扩容，若哈希元素落在了同一个桶中，则查询复杂度增高，退化为$O(n)$.
 	- **过低**：导致频繁扩容，插入性能变得很低。
 2. 设置为0.75，则此时扩容阈值也肯定为整数。
-## 10. HashMap的初始容量设置成多少合适？
+## 13. HashMap的初始容量设置成多少合适？
 - 如果暂时无法确定集合大小，则指定为默认值16即可；
 - 若已知需要存储的元素个数，则设定为`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`
 
 不能简单地需要存储多少元素就设置初始容量为多少。例如需要存储7个元素，则设置初始容量为7，这样JDK内部会通过tableSizeFor方法将初始容量设置为8. 但是这个值也不是合理值。因为此时扩容阈值为$0.75\times8=6$，所以存入第6个元素后，内部就会通过resize方法扩容。因此，正确的初始容量设置应该遵循`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`！
 
-**对这个`+1`的理解：**
-- ~~假设刚好需要存储12个元素，那么通过`12/0.75`则会获得初始容量为16，那么刚好存储第12个元素就会扩容。而若初始容量+1=16，内部会通过tableSizeFor方法将初始容量设置为32，则可以避免在插入第12个元素的时候扩容。~~
+>[!对这个`+1`的理解：]-
+->- ~~假设刚好需要存储12个元素，那么通过`12/0.75`则会获得初始容量为16，那么刚好存储第12个元素就会扩容。而若初始容量+1=16，内部会通过tableSizeFor方法将初始容量设置为32，则可以避免在插入第12个元素的时候扩容。~~
 >**stackoverflow:**
 >	If you did a `+1` it would add one `Integer` which would then be promoted to a `Float` in the addition to the left hand side `float` value. **They reason they wrote `1.0F` is to tell the compiler that it is a `float` early, avoiding the eventual promotion of `int` to `float`.** **Yes, it's a human optimizing for the needs of the compiler and runtime, but in some JVMs it really can make a difference.** `1.0d` is the `double` version, `1L` is the long version; but, there's no constant specifiers for "less than int" integer data types.
-
+>
 >**stackoverflow:**
 >	The table needs to be reallocated when **entry_count > table_size * load_factor**.
 >	If we solve for table size, we find that in order to ensure that a reallocation isn't required, we need **table_size >= entry_count / load_factor**.
 >	This size is calculated in floating point, and the **1.0F** is added to ensure that the chosen table size will _still_ be large enough after it is rounded down to an integer number of entries.
 
-## 11. ==HashMap是如何扩容的？^==
+## 14. ==HashMap是如何扩容的？^==
 
 
 
 
-## 12. 为什么JDK8中HashMap的数据结构要转成红黑树？
+## 15. 为什么JDK8中HashMap的数据结构要转成红黑树？
 1. **使用链表**：若某一个bucket的链表过长，则会导致查询的时间复杂度过高；
 2. **使用二叉树**：在极端情况下，也会退化成链表，导致查询的时间复杂度过高；
 3. **使用AVL树**：虽然能克服二叉树的退化情况，但是由于需要保持平衡，所以在插入删除时可能会频繁左旋、右旋，导致插入性能低；
 - 红黑树在**平衡性上更为宽松，允许更少的旋转来维护平衡**，在插入上最多2次旋转，在删除上最多3次旋转，因此在插入和删除操作上通常比AVL树快。
 	- 平衡二叉树要求任意左右子树的高度差不超过1，而红黑树对平衡的要求较宽松，因此不需要频繁的旋转调整。
-## 13. 为什么是链表长度达到8的时候转？
+## 16. 为什么是链表长度达到8的时候转？
 ### 为什么不在冲突时立刻转换为红黑树？
 1. 因为在存储相同数量的节点，红黑树所占用的空间是链表的2倍，因此发生冲突立刻转换，会导致空间浪费；
 2. 红黑树的插入删除操作比链表慢（需要节点变色和旋转），因此小于8就转换为红黑树的话，在时间和空间的综合平衡上没链表好。
@@ -411,7 +555,7 @@ public static int numberOfLeadingZeros(int i) {
 
 8的时候转成红黑树，那么如果小于8立刻转回去，那么就可能会导致频繁转换，所以要选一个小于8的值，但是又不能是7。而通过前面提到的泊松分布可以看到，当红黑树节点数小于 6 时，它所带来的优势其实就是已经没有那么大了，就不足以抵消由于红黑树维护节点所带来的额外开销，此时转换回链表能够节省空间和时间。
 
-## 14. 如何再次转换回链表的？
+## 17. 如何再次转换回链表的？
 会在红黑树的节点小于6时调用`untreeify()`方法重新转换回链表结构。
 
 ```java
@@ -428,7 +572,7 @@ final Node<K,V> untreeify(HashMap<K,V> map) {
     return hd;  
 }
 ```
-## 15. ==HashMap的hash方法是如何实现的？==
+## 18. ==HashMap的hash方法是如何实现的？==
 
 ### JDK1.7：
 1. `hashseed`与key的哈希值进行异或，增加随机性；
@@ -465,7 +609,28 @@ static final int hash(Object key) {
 >在 `HashMap` 中，直接使用 `hashCode()` 值作为数组下标可能会导致较多的哈希冲突，因为虽然 `hashCode()` 的取值范围很大（\[-2147483648, 2147483647]），但**实际数组的大小通常较小**（如默认大小为 16），所以与`length-1`做与运算后，高位信息会被丢失，这就意味着许多不同的键可能会映射到同一个下标。
 >
 >使用扰动函数可以**有效地混合哈希值的高位和低位信息，使得相同的低位哈希值不再总是映射到同一个桶中，从而提高了元素在哈希表中的分散程度。**
-## 16. ==ConcurrentHashMap是如何保证线程安全的==？
+
+## 19. 重写HashMap的equal和hashcode方法需要注意什么？
+重写规则：
+- 如果`o1.equals(o2)`，那么`o1.hashCode() == o2.hashCode()`始终为true；
+- 如果`o1.hashCode() == o2.hashCode()`，并不意味着`o1.equals(o2)`会为true
+
+假如重写规则不当，那么会导致不同的key会获得相同的`hashCode()`和`equals()`输出，导致其中一个key-value会被覆盖。
+
+## 20. HashMap为什么在1.7之前采用头插法？为什么1.8以后用尾插法？
+### 头插法
+优点：
+1. **插入效率高**：O(1)复杂度进行插入；
+2. **符合时间局部性原理**：最近插入的数据被使用的概率更高，因此通过头插法插入到链表头部，可以使查询效率更高。
+
+缺点：
+1. **并发问题**：多线程并发会产生循环引用问题。
+### 尾插法：
+优点：
+1. 更适合红黑树：
+2. 解决了循环引用问题：
+
+## 21. ==ConcurrentHashMap是如何保证线程安全的==？
 ### JDK1.7以前
 ![[Pasted image 20241214160057.png|450]]
 - 底层数据结构是“Segment数组+HashEntry数组+链表”。
@@ -477,71 +642,12 @@ static final int hash(Object key) {
 - 采用“CAS+Synchronized”的机制来保证线程安全：
 	- 若某个Node为空，则使用CAS来添加新节点；
 	- 若Node不为空，则使用synchronized锁住当前节点，然后遍历链表或红黑树来插入新节点。
-## 17. Set是如何保证元素不重复的？
+## 22. Set是如何保证元素不重复的？
 Set的实现类有HashSet和TreeSet，二者保证不重复的机制不同。
 ### HashSet：
-1. 通过`hashCode()`方法获取插入元素的哈希码，并经过扰动处理后用于确定元素在HashSet中的存储位置；
-2. 若位置已被占用，则通过`equals()`方法判断二者是否相等，若相等则不插入；若不相等，则会使用链表或红黑树来解决哈希冲突，继续寻找空位来存储元素。
+HashSet的基本操作都是基于HashMap底层实现：![[Pasted image 20241216191335.png]]
+1. 通过`hashCode()`方法获取插入元素的哈希码，并经过扰动处理后用于确定元素的索引；
+2. 若位置已被占用，则通过`equals()`方法判断二者是否相等，**若相等则不插入**；若不相等，则进行插入。
 ### TreeSet：
-TreeSet中的元素都必须实现Comparable接口，通过compareTo方法比较新元素和树中已有元素，若出现结果为0，则代表有重复元素，不插入；否则插入节点。
-
-## 18. JDK6与JDK7中的substring原理与区别:
-**substring的作用:**
-`substring(int beginIndex, int endIndex)`:截取并返回`[beginIndex,endIndex-1]`范围的字符串子串.
-
-### JDK6中的substring:
-jkd6中,String类内部存在三个成员变量:
-`char value[]`:存储真正的字符数组;
-`int offset`:数组的第一个位置索引
-`int count`:字符串中包含的字符个数.
-
-jdk6中,当调用substring方法的时候，会**创建一个新的string对象**，但是这个string的值仍然指向堆中的**同一个字符数组**。这两个对象中**只有count和offset 的值是不同的**:
-![[Pasted image 20241016153919.png|450]]
-`this.value = value`,引用的还是原来的字符数组.
-```java
-//JDK 6
-String(int offset, int count, char value[]) {
-    this.value = value; //相同的字符数组.
-    this.offset = offset;
-    this.count = count;
-}
-
-public String substring(int beginIndex, int endIndex) {
-    //check boundary
-    return  new String(offset + beginIndex, endIndex - beginIndex, value);
-}
-```
-
-#### **存在的问题:**
-如果你有一个很长很长的字符串，但是当你使用substring进行切割的时候你只需要很短的一段。**这可能导致性能问题，因为你需要的只是一小段字符序列，但是你却引用了整个字符串**（因为这个非常长的字符数组一直在被引用，所以无法被回收，就可能导致内存泄露）。在JDK 6中，一般用以下方式来解决该问题，原理其实就是生成一个新的字符串并引用他。
-
-```java
-x = x.substring(x, y) + ""
-```
-
-### JDK7中的substring:
-在jdk 7 中，substring方法会在**堆内存中创建一个新的数组**。
-![[Pasted image 20241016154303.png]]
-使用`this.value = Arrays.copyOfRange(value, offset, offset + count); `创建新数组.
-```java
-//JDK 7
-public String(char value[], int offset, int count) {
-    //check boundary
-    // 与jdk6中不同,创建了一个新的字符数组!
-    this.value = Arrays.copyOfRange(value, offset, offset + count); 
-    
-}
-
-public String substring(int beginIndex, int endIndex) {
-    //check boundary
-    int subLen = endIndex - beginIndex;
-    return new String(value, beginIndex, subLen);
-}
-```
-
-## 19. 重写HashMap的equal和hashcode方法需要注意什么？
-重写规则：
-- 如果`o1.equals(o2)`，那么`o1.hashCode() == o2.hashCode()`始终为true；
-- 如果`o1.hashCode() == o2.hashCode()`，并不意味着`o1.equals(o2)`会为true
-
-假如重写规则不当，那么会导致不同的key会获得相同的`hashCode()`和`equals()`输出，导致其中一个key-value会被覆盖。
+TreeSet的基本操作是基于TreeMap底层实现的。
+在 `TreeSet` 中，元素的**唯一性由 `compareTo()`（如果元素是可比较的）或 `Comparator` 接口决定**。如果两个元素的排序顺序相同（即 `compareTo()` 返回 `0` 或 `Comparator.compare()` 返回 `0`），则它们被认为是相等的，不会被添加。
