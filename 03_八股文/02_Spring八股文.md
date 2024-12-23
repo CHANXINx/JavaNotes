@@ -35,7 +35,6 @@ SpringAOP支持两种动态代理：
 ### 基于接口的动态代理(JDK动态代理)：
 使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现，需要被代理类实现一个或多个接口。
 Java会创建一个**实现了相同接口的代理类，在运行时创建该类的实例**。当通过代理对象调用一个方法时，方法的调用会被转发为由InvocationHandler接口的`invoke()`方法进行调用。
-
 ### 基于类的动态代理(CGLIB动态代理):
 当被代表的类**没有实现接口**时，会使用CGLIB库通过字节码技术动态生成一个被代理类的子类作为代理。
 

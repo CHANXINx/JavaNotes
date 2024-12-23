@@ -568,7 +568,6 @@ CAS只能保证对变量修改的原子性，但不能保证可见性。通过�
 ## 8. 什么是happens-before原则和as-if-serial原则?^
 ### **happens-before原则：**
 - 多线程程序中操作执行顺序的规则：如果一个操作 A “happen-before” 另一个操作 B，那么 A 的结果对 B 是可见的。
-
 ### **as-if-serial语义：**
 - 单线程程序中的执行顺序规则：不管怎么重排序，单线程程序的执行结果都不能被改变
 # <font color="#245bdb">AQS</font>
@@ -763,7 +762,7 @@ Unsafe是CAS的核心类，用于**提供硬件级别的原子操作**：
 3. 将线程挂起或恢复；
 4. CAS操作。
 ## 5. CAS是如何保证原子性的？
-基于cmpxchg命令（CoMPareAndEXcHanGe）实现。
+基于cmpxchg命令（CompareAndExchange）实现。
 1. cmpxchg是原子指令，执行时处理器会自动锁定总线，防止其他CPU访问共享变量，然后执行比较和交换，结束后释放总线；
 2. CPU会自动禁止中断；
 3. cmpxchg是硬件实现的，CPU的硬件电路确保了执行正确执行以及对共享变量的访问是原子的。
