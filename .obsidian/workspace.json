@@ -8,87 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0a19138217679c6d",
+            "id": "cf27d6a13c7ce528",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_八股文/03_MySQL八股.md",
+                "file": "04_力扣刷题笔记/01_数组.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03_MySQL八股"
+              "title": "01_数组"
             }
           },
           {
-            "id": "de304dd7cfe421a9",
+            "id": "0ef22f8dbc2acabb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_项目笔记/02_天机学堂/00_天机学堂面试题总结.md",
+                "file": "04_力扣刷题笔记/08_图论.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_天机学堂面试题总结"
+              "title": "08_图论"
             }
           },
           {
-            "id": "5403c846ba9aa71c",
+            "id": "1bde5b2453f64d6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_八股文/04_Redis八股.md",
+                "file": "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04_Redis八股"
-            }
-          },
-          {
-            "id": "cf2814c4d285dd4d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/05_JUC八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "05_JUC八股"
-            }
-          },
-          {
-            "id": "517fcf6c6f60b754",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/02_Spring八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02_Spring八股文"
-            }
-          },
-          {
-            "id": "b4581ff051c93fb6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/06_JVM八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06_JVM八股文"
+              "title": "10_数据库索引：MySQL为什么用B+树？"
             }
           }
         ],
@@ -123,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "贪心",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,8 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 281.5026054382324,
-    "collapsed": true
+    "width": 246.50260543823242
   },
   "right": {
     "id": "45beac71d173d048",
@@ -250,8 +207,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 367.5,
-    "collapsed": true
+    "width": 367.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -267,13 +223,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5403c846ba9aa71c",
+  "active": "1bde5b2453f64d6b",
   "lastOpenFiles": [
+    "01_课程学习笔记/后端工程师的高端面经/01_服务注册与发现：AP和CP，你选择哪个？.md",
+    "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
+    "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224203314.png",
+    "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224202847.png",
+    "01_课程学习笔记/后端工程师的高端面经/imgs",
+    "01_课程学习笔记/后端工程师的高端面经",
+    "04_力扣刷题笔记/08_图论.md",
+    "04_力扣刷题笔记/05_二叉树.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241224120117.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241224115811.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241224105845.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241224101503.png",
+    "04_力扣刷题笔记/06_贪心算法.md",
+    "04_力扣刷题笔记/04_哈希表.md",
+    "04_力扣刷题笔记/06_栈与队列.md",
+    "04_力扣刷题笔记/10_数学.md",
+    "04_力扣刷题笔记/09_单调栈.md",
+    "04_力扣刷题笔记/07_动态规划.md",
+    "04_力扣刷题笔记/01_数组.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241223221023.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241223220928.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241223210825.png",
+    "03_八股文/04_Redis八股.md",
     "03_八股文/05_JUC八股.md",
     "03_八股文/02_Spring八股文.md",
     "03_八股文/06_JVM八股文.md",
     "03_八股文/03_MySQL八股.md",
-    "03_八股文/04_Redis八股.md",
     "02_项目笔记/02_天机学堂/00_天机学堂面试题总结.md",
     "陈鑫的个人求职简历.md",
     "03_八股文/09_分布式.md",
@@ -281,40 +259,18 @@
     "03.1_场景题/VIVO优惠券系统架构设计与实践.md",
     "02_项目笔记/02_天机学堂/00_天机学堂.md",
     "03_八股文/imgs/Pasted image 20241221113058.png",
-    "03_八股文/imgs/Pasted image 20241220220334.png",
-    "03_八股文/imgs/Pasted image 20241220220156.png",
-    "03_八股文/imgs/Pasted image 20241220112928.png",
-    "03_八股文/imgs/Pasted image 20241220111945.png",
-    "03_八股文/imgs/Pasted image 20241220111707.png",
-    "03_八股文/imgs/Pasted image 20241220110355.png",
-    "03_八股文/imgs/Pasted image 20241220110324.png",
     "02_项目笔记/99_牛券/基于ShardingSphere的分库分表.md",
     "00_权衡的艺术：为什么、优缺点/01_新组件有优点，但不可避免也会带来缺点。.md",
     "00_权衡的艺术：为什么、优缺点/02_不考虑后果的考虑一切可能的情况，而是否需要处理想好解决办法再判断。.md",
     "02_项目笔记/99_牛券/基于责任链模式创建优惠券模板.md",
-    "02_项目笔记/02_天机学堂/00_GateWay网关设计.md",
     "02_项目笔记/99_牛券",
-    "02_项目笔记/02_天机学堂/imgs/Pasted image 20241219204016.png",
-    "02_项目笔记/02_天机学堂/imgs/Pasted image 20241219171039.png",
-    "02_项目笔记/02_天机学堂/点赞系统的设计.md",
-    "03.1_场景题/常见问题关联.md",
-    "03.1_场景题/直播间弹幕系统设计.md",
     "imgs",
-    "03.1_场景题/线程池参数设置为多少才合适？.md",
-    "99_模板/刷题笔记模板_其它思路.md",
-    "03.1_场景题/订单到期如何关闭？.md",
-    "04_力扣刷题笔记/05_二叉树.md",
     "03.1_场景题/imgs",
-    "03_八股文/01_Java基础兼集合类八股.md",
     "03.1_场景题",
-    "04_力扣刷题笔记/02_链表.md",
-    "99_模板/刷题笔记模板.md",
     "00_权衡的艺术：为什么、优缺点",
     "04_力扣刷题笔记/陈鑫_典型无源干扰作用下海面目标与环境毫米波辐射图像模拟(1).doc",
     "01_课程学习笔记/Spring6笔记/imgs",
     "01_课程学习笔记/MySQL/imgs",
-    "01_课程学习笔记/Git笔记/imgs",
-    "01_课程学习笔记/Spring6笔记",
     "八股文/未命名.canvas"
   ]
 }
