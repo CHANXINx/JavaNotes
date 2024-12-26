@@ -8,34 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cf27d6a13c7ce528",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04_力扣刷题笔记/01_数组.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "01_数组"
-            }
-          },
-          {
-            "id": "0ef22f8dbc2acabb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04_力扣刷题笔记/08_图论.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "08_图论"
-            }
-          },
-          {
             "id": "1bde5b2453f64d6b",
             "type": "leaf",
             "state": {
@@ -48,9 +20,23 @@
               "icon": "lucide-file",
               "title": "10_数据库索引：MySQL为什么用B+树？"
             }
+          },
+          {
+            "id": "9d70c016ad515f17",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_力扣刷题笔记/03_字符串.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "03_字符串"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "贪心",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +94,7 @@
             "state": {
               "type": "tag",
               "state": {
-                "sortOrder": "frequency",
+                "sortOrder": "alphabetical",
                 "useHierarchy": true
               },
               "icon": "lucide-tags",
@@ -207,7 +193,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 367.5
+    "width": 367.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,16 +210,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1bde5b2453f64d6b",
+  "active": "9d70c016ad515f17",
   "lastOpenFiles": [
-    "01_课程学习笔记/后端工程师的高端面经/01_服务注册与发现：AP和CP，你选择哪个？.md",
     "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
+    "04_力扣刷题笔记/05_二叉树.md",
+    "04_力扣刷题笔记/11_回溯.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20241225171816.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20241225152648.png",
+    "04_力扣刷题笔记/01_数组.md",
+    "02_项目笔记/01_苍穹外卖/苍穹外卖.md",
+    "04_力扣刷题笔记/08_图论.md",
+    "01_课程学习笔记/后端工程师的高端面经/01_服务注册与发现：AP和CP，你选择哪个？.md",
     "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224203314.png",
     "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224202847.png",
     "01_课程学习笔记/后端工程师的高端面经/imgs",
     "01_课程学习笔记/后端工程师的高端面经",
-    "04_力扣刷题笔记/08_图论.md",
-    "04_力扣刷题笔记/05_二叉树.md",
     "04_力扣刷题笔记/imgs/Pasted image 20241224120117.png",
     "04_力扣刷题笔记/imgs/Pasted image 20241224115811.png",
     "04_力扣刷题笔记/imgs/Pasted image 20241224105845.png",
@@ -243,10 +235,8 @@
     "04_力扣刷题笔记/10_数学.md",
     "04_力扣刷题笔记/09_单调栈.md",
     "04_力扣刷题笔记/07_动态规划.md",
-    "04_力扣刷题笔记/01_数组.md",
     "04_力扣刷题笔记/imgs/Pasted image 20241223221023.png",
     "04_力扣刷题笔记/imgs/Pasted image 20241223220928.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241223210825.png",
     "03_八股文/04_Redis八股.md",
     "03_八股文/05_JUC八股.md",
     "03_八股文/02_Spring八股文.md",
@@ -258,11 +248,7 @@
     "02_项目笔记/02_天机学堂/优惠券系统的设计.md",
     "03.1_场景题/VIVO优惠券系统架构设计与实践.md",
     "02_项目笔记/02_天机学堂/00_天机学堂.md",
-    "03_八股文/imgs/Pasted image 20241221113058.png",
     "02_项目笔记/99_牛券/基于ShardingSphere的分库分表.md",
-    "00_权衡的艺术：为什么、优缺点/01_新组件有优点，但不可避免也会带来缺点。.md",
-    "00_权衡的艺术：为什么、优缺点/02_不考虑后果的考虑一切可能的情况，而是否需要处理想好解决办法再判断。.md",
-    "02_项目笔记/99_牛券/基于责任链模式创建优惠券模板.md",
     "02_项目笔记/99_牛券",
     "imgs",
     "03.1_场景题/imgs",
