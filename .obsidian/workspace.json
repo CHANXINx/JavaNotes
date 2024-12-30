@@ -8,35 +8,91 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1bde5b2453f64d6b",
+            "id": "60a105d3a783cf95",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
+                "file": "99_每日学习记录/学习记录_1227-1229.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10_数据库索引：MySQL为什么用B+树？"
+              "title": "学习记录_1227-1229"
             }
           },
           {
-            "id": "9d70c016ad515f17",
+            "id": "9a5f37f7479907ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04_力扣刷题笔记/03_字符串.md",
+                "file": "02_项目笔记/03_拖把数藏/通用设计.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03_字符串"
+              "title": "通用设计"
+            }
+          },
+          {
+            "id": "a624da943ef3b0e4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03.1_场景题/场景题总结.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "场景题总结"
+            }
+          },
+          {
+            "id": "4b45562dff39ebf0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_力扣刷题笔记/05_二叉树.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_二叉树"
+            }
+          },
+          {
+            "id": "3ec557ccadd2bae6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/07_计算机网络八股文.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07_计算机网络八股文"
+            }
+          },
+          {
+            "id": "7f12a9fcfe48def1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04_力扣刷题笔记/06_贪心算法.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06_贪心算法"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -67,7 +123,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "跳跃",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,17 +151,19 @@
               "type": "tag",
               "state": {
                 "sortOrder": "alphabetical",
-                "useHierarchy": true
+                "useHierarchy": false
               },
               "icon": "lucide-tags",
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 246.50260543823242
+    "width": 246.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "45beac71d173d048",
@@ -193,7 +251,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 367.5,
+    "width": 291.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -210,53 +268,53 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9d70c016ad515f17",
+  "active": "7f12a9fcfe48def1",
   "lastOpenFiles": [
-    "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "04_力扣刷题笔记/06_贪心算法.md",
+    "03.1_场景题/场景题总结.md",
+    "02_项目笔记/03_拖把数藏/通用设计.md",
+    "99_每日学习记录/学习记录_1227-1229.md",
+    "99_每日学习记录/imgs/Pasted image 20241230022858.png",
+    "99_每日学习记录/imgs/Pasted image 20241230022820.png",
+    "02_项目笔记/03_拖把数藏/未命名.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20241230011955.png",
     "04_力扣刷题笔记/05_二叉树.md",
-    "04_力扣刷题笔记/11_回溯.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241225171816.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241225152648.png",
+    "04_力扣刷题笔记/02_链表.md",
+    "03.1_场景题/imgs/Pasted image 20241229224823.png",
+    "03.1_场景题/imgs/Pasted image 20241229204817.png",
+    "03.1_场景题/imgs/Pasted image 20241229204801.png",
+    "03.1_场景题/imgs/Pasted image 20241229201521.png",
+    "04_力扣刷题笔记/06_栈与队列.md",
+    "04_力扣刷题笔记/04_哈希表.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20241229024624.png",
+    "02_项目笔记/03_拖把数藏/imgs",
+    "99_每日学习记录/imgs/Pasted image 20241229013105.png",
+    "02_项目笔记/03_拖把数藏",
+    "99_每日学习记录/每日学习记录.md",
+    "04_力扣刷题笔记/09_单调栈.md",
+    "01_课程学习笔记/后端工程师的高端面经/10_数据库索引：MySQL为什么用B+树？.md",
+    "03.1_场景题/imgs/Pasted image 20241228192915.png",
+    "99_每日学习记录/imgs",
+    "99_模板/学习记录模板.md",
+    "99_模板/abstract.md",
     "04_力扣刷题笔记/01_数组.md",
+    "03.1_场景题/订单到期如何关闭？.md",
+    "03.1_场景题/常见问题关联.md",
+    "03.1_场景题/不用分布式锁，如何防止用户重复点击？.md",
+    "04_力扣刷题笔记/11_回溯.md",
+    "04_力扣刷题笔记/03_字符串.md",
     "02_项目笔记/01_苍穹外卖/苍穹外卖.md",
     "04_力扣刷题笔记/08_图论.md",
     "01_课程学习笔记/后端工程师的高端面经/01_服务注册与发现：AP和CP，你选择哪个？.md",
-    "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224203314.png",
-    "01_课程学习笔记/后端工程师的高端面经/imgs/Pasted image 20241224202847.png",
     "01_课程学习笔记/后端工程师的高端面经/imgs",
     "01_课程学习笔记/后端工程师的高端面经",
-    "04_力扣刷题笔记/imgs/Pasted image 20241224120117.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241224115811.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241224105845.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241224101503.png",
-    "04_力扣刷题笔记/06_贪心算法.md",
-    "04_力扣刷题笔记/04_哈希表.md",
-    "04_力扣刷题笔记/06_栈与队列.md",
     "04_力扣刷题笔记/10_数学.md",
-    "04_力扣刷题笔记/09_单调栈.md",
-    "04_力扣刷题笔记/07_动态规划.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241223221023.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20241223220928.png",
-    "03_八股文/04_Redis八股.md",
-    "03_八股文/05_JUC八股.md",
-    "03_八股文/02_Spring八股文.md",
-    "03_八股文/06_JVM八股文.md",
-    "03_八股文/03_MySQL八股.md",
-    "02_项目笔记/02_天机学堂/00_天机学堂面试题总结.md",
-    "陈鑫的个人求职简历.md",
-    "03_八股文/09_分布式.md",
-    "02_项目笔记/02_天机学堂/优惠券系统的设计.md",
-    "03.1_场景题/VIVO优惠券系统架构设计与实践.md",
-    "02_项目笔记/02_天机学堂/00_天机学堂.md",
-    "02_项目笔记/99_牛券/基于ShardingSphere的分库分表.md",
     "02_项目笔记/99_牛券",
     "imgs",
     "03.1_场景题/imgs",
     "03.1_场景题",
     "00_权衡的艺术：为什么、优缺点",
-    "04_力扣刷题笔记/陈鑫_典型无源干扰作用下海面目标与环境毫米波辐射图像模拟(1).doc",
-    "01_课程学习笔记/Spring6笔记/imgs",
-    "01_课程学习笔记/MySQL/imgs",
     "八股文/未命名.canvas"
   ]
 }
