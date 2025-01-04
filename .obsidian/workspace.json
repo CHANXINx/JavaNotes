@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "60a105d3a783cf95",
+            "id": "b032f82ced6d505d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99_每日学习记录/学习记录_1230-0105.md",
+                "file": "02_项目笔记/03_拖把数藏/01_通用设计.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "学习记录_1230-0105"
-            }
-          },
-          {
-            "id": "6f1fa6298a125071",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/04_业务功能.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04_业务功能"
+              "title": "01_通用设计"
             }
           },
           {
@@ -50,63 +36,49 @@
             }
           },
           {
-            "id": "9a5f37f7479907ea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "03_最佳实践"
-            }
-          },
-          {
             "id": "a624da943ef3b0e4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03.1_场景题/场景题总结.md",
+                "file": "02_项目笔记/03_拖把数藏/04_业务功能.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "场景题总结"
+              "title": "04_业务功能"
             }
           },
           {
-            "id": "4b45562dff39ebf0",
+            "id": "6f1fa6298a125071",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04_力扣刷题笔记/05_二叉树.md",
+                "file": "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05_二叉树"
+              "title": "05_重构逻辑"
             }
           },
           {
-            "id": "3ec557ccadd2bae6",
+            "id": "83ff4cc5c3d080b0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_八股文/07_计算机网络八股文.md",
+                "file": "99_模板/设计文档模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07_计算机网络八股文"
+              "title": "设计文档模板"
             }
           },
           {
-            "id": "7f12a9fcfe48def1",
+            "id": "164d041a10cbf4cf",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -120,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -279,10 +251,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02_项目笔记/03_拖把数藏/04_业务功能.md"
+                "file": "04_力扣刷题笔记/07_动态规划.md"
               },
               "icon": "lucide-list",
-              "title": "04_业务功能 的大纲"
+              "title": "07_动态规划 的大纲"
             }
           }
         ],
@@ -307,33 +279,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6f1fa6298a125071",
+  "active": "164d041a10cbf4cf",
   "lastOpenFiles": [
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20241231112332.png",
+    "04_力扣刷题笔记/01_数组.md",
+    "02_项目笔记/03_拖把数藏/01_通用设计.md",
+    "99_模板/设计文档模板.md",
+    "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
     "02_项目笔记/03_拖把数藏/02_关键技术.md",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
-    "02_项目笔记/03_拖把数藏/01_通用设计.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
     "99_每日学习记录/学习记录_1230-0105.md",
+    "99_每日学习记录/imgs/Pasted image 20250103020520.png",
+    "99_每日学习记录/imgs/Pasted image 20250103020505.png",
+    "99_每日学习记录/imgs/Pasted image 20250103020419.png",
+    "99_每日学习记录/imgs/Pasted image 20250103020345.png",
+    "03.1_场景题/场景题总结.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250102164922.png",
+    "04_力扣刷题笔记/05_二叉树.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "04_力扣刷题笔记/07_动态规划.md",
+    "04_力扣刷题笔记/10_数学.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20241231112332.png",
     "99_每日学习记录/学习记录_1227-1229.md",
     "99_每日学习记录/imgs/Pasted image 20241231025323.png",
     "99_每日学习记录/imgs/Pasted image 20241231025304.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20241230233610.png",
-    "03.1_场景题/场景题总结.md",
     "02_项目笔记/03_拖把数藏/00_整体架构.md",
     "03.1_场景题/imgs/Pasted image 20241230205113.png",
-    "04_力扣刷题笔记/05_二叉树.md",
-    "03_八股文/07_计算机网络八股文.md",
-    "03.1_场景题/imgs/Pasted image 20241230204644.png",
-    "03.1_场景题/imgs/Pasted image 20241230202416.png",
-    "03.1_场景题/imgs/Pasted image 20241230173910.png",
-    "04_力扣刷题笔记/07_动态规划.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241230144028.png",
-    "04_力扣刷题笔记/01_数组.md",
     "02_项目笔记/02_天机学堂/00_天机学堂.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241230132201.png",
     "04_力扣刷题笔记/06_贪心算法.md",
-    "04_力扣刷题笔记/imgs/Pasted image 20241230120330.png",
     "04_力扣刷题笔记/02_链表.md",
     "04_力扣刷题笔记/06_栈与队列.md",
     "04_力扣刷题笔记/04_哈希表.md",
@@ -346,8 +320,6 @@
     "99_模板/学习记录模板.md",
     "99_模板/abstract.md",
     "03.1_场景题/订单到期如何关闭？.md",
-    "03.1_场景题/常见问题关联.md",
-    "03.1_场景题/不用分布式锁，如何防止用户重复点击？.md",
     "01_课程学习笔记/后端工程师的高端面经/imgs",
     "01_课程学习笔记/后端工程师的高端面经",
     "02_项目笔记/99_牛券",
