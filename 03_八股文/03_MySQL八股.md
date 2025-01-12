@@ -387,7 +387,6 @@ SELECT f1, f2 FROM t1 WHERE f1 =2 and f2 = 40;
 >1. 当前读；
 >2. Read View（不同时期创建）；
 >3. 锁
-
 1. **读未提交**：可以读取到其他事务还未提交的变更。
 	- 读取最新版本的数据。
 2. **读已提交**：可以读取到其他事务已提交的变更。
@@ -545,7 +544,7 @@ UPDATE xx_table ...
 
 ### undolog:
 Undo Log则用于在**事务回滚或系统崩溃时撤销（回滚）事务所做的修改**。当一个事务执行过程中，MySQL会将**事务修改前的数据**记录到Undo Log中。如果事务需要回滚，则会从Undo Log中找到相应的记录来**撤销事务所做的修改**。
-## 5. binlog, redolog和undolog的持久化时间？
+## 5. binlog, redolog和undolog的持久化时间？ TODO
 ## 6. MySQL中的binlog有几种格式?
 共有三种格式：row、statement和mixed.
 ### statement:
@@ -574,6 +573,7 @@ binlog中会记录每个数据更改的具体行的细节，每条日志都会�
 - 因为binlog已落盘，所以此时会根据redolog中的记录将数据恢复，并提交事务。
 	- 若此时将事务回滚，那么binlog中就会多出一条记录(已写入的binlog不能被修改！)，导致数据不一致。
 
+![[Pasted image 20250107125613.png]]
 ## 8. 两阶段提交中，如何判断binlog和redolog是否达成了一致?
 当MySQL写完redolog并将它标记为prepare状态时，并且会在redolog中记录一个**XID**，它**全局唯一的标识着这个事务**。而当你设置`sync_binlog=1`时，做完了上面第一阶段写redolog后，mysql就会对应binlog并且会直接将其刷新到磁盘中。
 

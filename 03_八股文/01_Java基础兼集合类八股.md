@@ -532,7 +532,10 @@ public static int numberOfLeadingZeros(int i) {
 
 ## 14. ==HashMap是如何扩容的？^==
 
+- **第1步**是对哈希表长度的扩展（2倍）
+- **第2步**是将旧哈希表中的数据放到新的哈希表中
 
+索引计算为`hashCode & newLength-1`
 
 
 ## 15. 为什么JDK8中HashMap的数据结构要转成红黑树？
