@@ -290,12 +290,28 @@ SPI：Service Provider Interface，通常用于在应用程序中提供可插拔
 add方法添加元素时，会先检查是否需要扩容：当前容量+1是否大于数组长度，若超过则需要扩容：
 	1. `int newCapacity = oldCapacity + (oldCapacity >> 1);`，扩容为原来的1.5倍；
 	2. 然后调用`Arrays.copyOf()`方法将原数组的值拷贝到新数组中。
-## ArrayList的序列化是如何实现的？
-## 3. COW是什么，如何保证的线程安全？
-- Copy-On-Write，写时复制，通过读写分离策略来解决并发问题。
-- 当需要修改时，会将内容Copy形成一份新内容然后在新内容上进行写操作，写完毕后再将原数组引用指向新数组。
+## 3. ArrayList的序列化是如何实现的？
+## 4. COW是什么，如何保证的线程安全？
+- Copy-On-Write，写时复制，通过**读写分离**策略来解决并发问题。
+- 一开始多个线程都共享同一个内容，当某个线程需要修改时，会将内容Copy形成一份新内容然后在**新内容上进行写操作**，**写完毕后再将原数组引用指向新数组**。
 - `CopyOnWriteArrayList`的整个add操作都是在`synchronized`的保护下进行的。也就是说add方法是线程安全的。
-## 4. Hash冲突的解决方式有什么？
+  ![[Pasted image 20250112152228.png]]
+	- CopyOnWriteArrayList适合读多写少的场景，允许读读并发、读写并发、但不允许写写并发，会被`syhchronized`阻塞。
+
+## 5. 为什么后面CopyOnWriteArrayList采用synchronized加锁代替ReentrantLock加锁？
+因为后面JVM引入了锁升级机制，即偏向锁、轻量级锁、重量级锁几种锁状态，使得其性能已经与ReentrantLock相近，甚至在某些情况更优了！
+
+>`Since Java 9, they use synchronized rather than ReentrantLock in order to save 32 bytes per instance.`
+## 6. 什么是fail-fast？什么是fail-safe？ TODO
+#### fail-fast快速失败
+先考虑异常情况，出现异常了就直接返回并立即上报。
+
+#### fail-safe安全失败
+在遍历时防止抛异常中断执行。
+
+JUC包下的集合类都是fail-safe的，可以在多线程并发下使用与修改。
+## 7. ConcurrentHashMap是如何保证
+## 8. Hash冲突的解决方式有什么？
 ### 链地址法：
 将同一个hash值的元素连接成一个链表。
 
@@ -336,17 +352,17 @@ add方法添加元素时，会先检查是否需要扩容：当前容量+1是否
 发生冲突时，使用不同的哈希函数计算哈希值，并在该哈希值对应槽位为空时直接存储。
 - 双重散列是在第一个冲突槽位的基础上加上第二个哈希值来获得下一个检测槽位，而再哈希是直接的第二个槽位就是第二个哈希值。
 
-## 5. HashMap的数据结构是怎样的？
+## 9. HashMap的数据结构是怎样的？
 JDK1.7以前，是通过数组+链表的数据结构进行存储的。数组中的每一个元素都被称为一个桶(bucket)，桶中存放链表的头结点(Entry)。
 ![[Pasted image 20241120225226.png]]
 JDK1.8以后，在链表长度大于8时，会将链表转换为红黑树结构，并在小于6时再次转换为链表结构。
 ![[Pasted image 20241121183819.png]]
-## 6. HashMap、Hashtable和ConcurrentHashMap的区别？
+## 10. HashMap、Hashtable和ConcurrentHashMap的区别？
 - HashMap线程不安全，效率更高，可以存储一个null的key；
 - Hashtable线程安全，效率较低，内部**方法通过synchronized修饰**。底层数组为数组+链表，不可以有null的key和value，默认初始容量为11.
 - ConcurrentHashMap是线程安全的HashMap，内部通过**CAS+分段锁**实现线程安全。它将哈希表分为多个Segment，每个Segment都类似于一个小的HashMap。执行写操作时，会直接锁定对应的Segment，而不是整个哈希表，据此大大提高并发性能。
 
-## 7. HashMap在get和put时经过哪些步骤？
+## 11. HashMap在get和put时经过哪些步骤？
 ### get方法详解：
 1. 调用`hash(key)`方法计算key的哈希值，计算出在数组中的索引位置；
 2. 若索引位置为空，则直接返回null；
@@ -451,7 +467,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
     return null;  
 }
 ```
-## 8. HashMap的key可以为null吗？
+## 12. HashMap的key可以为null吗？
 可以有一个值为null的key。
 当出现key为null时，会直接令哈希值为0，不走`hashCode()`计算哈希值。
 
@@ -462,14 +478,14 @@ static final int hash(Object key) {
 }
 ```
 
-## 9. HashMap的remove方法是如何实现的？
+## 13. HashMap的remove方法是如何实现的？
 1. 调用hash方法计算哈希值，获取在数组中的索引位置；
 2. 为空，则对应键值对不存在，直接返回null；
 3. 不为空，则检查是否与当前key相等，是的话则直接删除并返回键值对的**值**；
 4. 不是的话，则会遍历链表或红黑树，找到对应键值对并删除。
 
 >若传入了val，则同时还需要比较value是否相等。
-## 10. 讲讲HashMap的延迟初始化
+## 14. 讲讲HashMap的延迟初始化
 HashMap的构造过程中，虽然创建了HashMap对象，但并不会立即分配内存给底层数组（table），只会设置一些基本参数，如负载因子。只有在第一次调用`put()`方法时，HashMap才会调用`resize()`方法来初始化哈希表并设置容量，从而实际分配内存。
 
 当创建一个 `HashMap` 实例时，可以指定初始容量和负载因子（此时初始容量存储在Threshold变量中），但内部的哈希表（即数组）并不会立即被分配。只有在插入第一个元素时，调用`resize()` 方法来初始化哈希表并设置容量，从而实际分配内存。
@@ -479,7 +495,7 @@ HashMap的构造过程中，虽然创建了HashMap对象，但并不会立即分
 
 **缺点：**
 - 多个线程同时访问未初始化的HashMap时，可能会导致竞态条件。
-## 11. 为什么HashMap的容量是$2^n$，如何保证？
+## 15. 为什么HashMap的容量是$2^n$，如何保证？
 简单来说，为了确保能利用位运算替代取模操作来计算桶下标索引。
 
 因为HashMap在计算某个元素对应的桶下标时，**采用了`h & (length - 1)`的位运算操作来代替取模操作**。位运算是基于内存的二进制直接运算，比转成十进制再进行取模运算要快。为了保证取模操作能使用位运算替代，因此要求容量必须是2的n次幂。
@@ -507,14 +523,14 @@ public static int numberOfLeadingZeros(int i) {
     return n - (i >>> 1);  
 }
 ```
-## 12. 为什么HashMap的默认负载因子设置成0.75？
+## 16. 为什么HashMap的默认负载因子设置成0.75？
 >`As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of the HashMap class, including get and put).`
 
 1. 负载因子设置为0.75f，是空间和时间成本的权衡。
 	- **过高**：虽减少了空间开销，但是提高了查询成本。假设负载因子取1，则此时在初始容量时，当元素满了才开始扩容，若哈希元素落在了同一个桶中，则查询复杂度增高，退化为$O(n)$.
 	- **过低**：导致频繁扩容，插入性能变得很低。
 2. 设置为0.75，则此时扩容阈值也肯定为整数。
-## 13. HashMap的初始容量设置成多少合适？
+## 17. HashMap的初始容量设置成多少合适？
 - 如果暂时无法确定集合大小，则指定为默认值16即可；
 - 若已知需要存储的元素个数，则设定为`initialCapacity= (需要存储的元素个数 / 负载因子) + 1`
 
@@ -530,7 +546,7 @@ public static int numberOfLeadingZeros(int i) {
 >	If we solve for table size, we find that in order to ensure that a reallocation isn't required, we need **table_size >= entry_count / load_factor**.
 >	This size is calculated in floating point, and the **1.0F** is added to ensure that the chosen table size will _still_ be large enough after it is rounded down to an integer number of entries.
 
-## 14. ==HashMap是如何扩容的？^==
+## 18. ==HashMap是如何扩容的？^==
 
 - **第1步**是对哈希表长度的扩展（2倍）
 - **第2步**是将旧哈希表中的数据放到新的哈希表中
@@ -538,13 +554,13 @@ public static int numberOfLeadingZeros(int i) {
 索引计算为`hashCode & newLength-1`
 
 
-## 15. 为什么JDK8中HashMap的数据结构要转成红黑树？
+## 19. 为什么JDK8中HashMap的数据结构要转成红黑树？
 1. **使用链表**：若某一个bucket的链表过长，则会导致查询的时间复杂度过高；
 2. **使用二叉树**：在极端情况下，也会退化成链表，导致查询的时间复杂度过高；
 3. **使用AVL树**：虽然能克服二叉树的退化情况，但是由于需要保持平衡，所以在插入删除时可能会频繁左旋、右旋，导致插入性能低；
 - 红黑树在**平衡性上更为宽松，允许更少的旋转来维护平衡**，在插入上最多2次旋转，在删除上最多3次旋转，因此在插入和删除操作上通常比AVL树快。
 	- 平衡二叉树要求任意左右子树的高度差不超过1，而红黑树对平衡的要求较宽松，因此不需要频繁的旋转调整。
-## 16. 为什么是链表长度达到8的时候转？
+## 20. 为什么是链表长度达到8的时候转？
 ### 为什么不在冲突时立刻转换为红黑树？
 1. 因为在存储相同数量的节点，红黑树所占用的空间是链表的2倍，因此发生冲突立刻转换，会导致空间浪费；
 2. 红黑树的插入删除操作比链表慢（需要节点变色和旋转），因此小于8就转换为红黑树的话，在时间和空间的综合平衡上没链表好。
@@ -558,7 +574,7 @@ public static int numberOfLeadingZeros(int i) {
 
 8的时候转成红黑树，那么如果小于8立刻转回去，那么就可能会导致频繁转换，所以要选一个小于8的值，但是又不能是7。而通过前面提到的泊松分布可以看到，当红黑树节点数小于 6 时，它所带来的优势其实就是已经没有那么大了，就不足以抵消由于红黑树维护节点所带来的额外开销，此时转换回链表能够节省空间和时间。
 
-## 17. 如何再次转换回链表的？
+## 21. 如何再次转换回链表的？
 会在红黑树的节点小于6时调用`untreeify()`方法重新转换回链表结构。
 
 ```java
@@ -575,7 +591,8 @@ final Node<K,V> untreeify(HashMap<K,V> map) {
     return hd;  
 }
 ```
-## 18. ==HashMap的hash方法是如何实现的？==
+## 22. ==HashMap的hash方法是如何实现的？==
+hash方法的作用：计算哈希值并进行混合处理，使哈希值分布更均匀，从而减少冲突。
 
 ### JDK1.7：
 1. `hashseed`与key的哈希值进行异或，增加随机性；
@@ -607,20 +624,22 @@ static final int hash(Object key) {
 }
 ```
 
+求取桶下标，在put、get等方法内部实现：
+`e = tab[index = (n - 1) & hash]`
 >[!NOTE]
 >**扰动计算：**
 >在 `HashMap` 中，直接使用 `hashCode()` 值作为数组下标可能会导致较多的哈希冲突，因为虽然 `hashCode()` 的取值范围很大（\[-2147483648, 2147483647]），但**实际数组的大小通常较小**（如默认大小为 16），所以与`length-1`做与运算后，高位信息会被丢失，这就意味着许多不同的键可能会映射到同一个下标。
 >
 >使用扰动函数可以**有效地混合哈希值的高位和低位信息，使得相同的低位哈希值不再总是映射到同一个桶中，从而提高了元素在哈希表中的分散程度。**
 
-## 19. 重写HashMap的equal和hashcode方法需要注意什么？
+## 23. 重写HashMap的equal和hashCode方法需要注意什么？
 重写规则：
 - 如果`o1.equals(o2)`，那么`o1.hashCode() == o2.hashCode()`始终为true；
 - 如果`o1.hashCode() == o2.hashCode()`，并不意味着`o1.equals(o2)`会为true
 
 假如重写规则不当，那么会导致不同的key会获得相同的`hashCode()`和`equals()`输出，导致其中一个key-value会被覆盖。
-
-## 20. HashMap为什么在1.7之前采用头插法？为什么1.8以后用尾插法？
+## 24. hashCode方法是如何实现的？TODO
+## 25. HashMap为什么在1.7之前采用头插法？为什么1.8以后用尾插法？
 ### 头插法
 优点：
 1. **插入效率高**：O(1)复杂度进行插入；
@@ -633,7 +652,7 @@ static final int hash(Object key) {
 1. 更适合红黑树：
 2. 解决了循环引用问题：
 
-## 21. ==ConcurrentHashMap是如何保证线程安全的==？
+## 26. ==ConcurrentHashMap是如何保证线程安全的==？
 ### JDK1.7以前
 ![[Pasted image 20241214160057.png|450]]
 - 底层数据结构是“Segment数组+HashEntry数组+链表”。
@@ -645,12 +664,32 @@ static final int hash(Object key) {
 - 采用“CAS+Synchronized”的机制来保证线程安全：
 	- 若某个Node为空，则使用CAS来添加新节点；
 	- 若Node不为空，则使用synchronized锁住当前节点，然后遍历链表或红黑树来插入新节点。
-## 22. Set是如何保证元素不重复的？
-Set的实现类有HashSet和TreeSet，二者保证不重复的机制不同。
+## 27. Set是如何保证元素不重复的？
+Set的实现类有HashSet和TreeSet，**二者保证不重复的机制不同**。
 ### HashSet：
-HashSet的基本操作都是基于HashMap底层实现：![[Pasted image 20241216191335.png]]
+HashSet的基本操作都是**基于HashMap**底层实现：![[Pasted image 20241216191335.png]]
 1. 通过`hashCode()`方法获取插入元素的哈希码，并经过扰动处理后用于确定元素的索引；
 2. 若位置已被占用，则通过`equals()`方法判断二者是否相等，**若相等则不插入**；若不相等，则进行插入。
 ### TreeSet：
-TreeSet的基本操作是基于TreeMap底层实现的。
+TreeSet的基本操作是**基于TreeMap**底层实现的。
 在 `TreeSet` 中，元素的**唯一性由 `compareTo()`（如果元素是可比较的）或 `Comparator` 接口决定**。如果两个元素的排序顺序相同（即 `compareTo()` 返回 `0` 或 `Comparator.compare()` 返回 `0`），则它们被认为是相等的，不会被添加。
+
+## 28. ConcurrentHashMap为什么不允许null值？TODO
+HashMap可以存储**一个null的key和不限数量的多个null的值**；而ConcurrentHashMap**既不能存储null的key、也不能存储null的值。**
+
+主要是为了避免并发场景下的二义性。
+- HashMap允许null值，因为其是设计给单线程使用的，可以通过`contains(key)`是否真正存储了null（在无其他线程修改的情况下）；
+- ConcurrentHashMap是为了多线程并发而设计的，因此假设存储了null值，此时通过`get(key)`获取了null值，是无法通过`contains(key)`来判断是否真正存储了null值的，因此**可能有其他线程在这期间修改了该值**！
+
+![[Pasted image 20250112143012.png]]
+
+**HashMap测试：**
+![[Pasted image 20250112143546.png]]
+```java
+>> null
+>> false
+```
+使用HashMap的`get(3)`方法获取null值，此时可以通过`containsKey(3)`来判断是因为到底是key不存在还是就是存了null值。【在无其他线程修改的情况下】
+
+#### 如何解决？
+如果需要在 `ConcurrentHashMap` 中表示键没有值的场景，通常**可以使用一个特殊的默认值（例如空字符串、默认对象等）来代替 `null`。**
