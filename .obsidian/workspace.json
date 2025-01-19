@@ -95,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "二叉树的直径",
+                "query": "\"abc\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -129,7 +129,8 @@
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -250,7 +251,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "37f10c666af71f4a",
+  "active": "fc845e5391f7d965",
   "lastOpenFiles": [
     "02_项目笔记/04_动态线程池",
     "04_力扣刷题笔记/05_二叉树.md",
