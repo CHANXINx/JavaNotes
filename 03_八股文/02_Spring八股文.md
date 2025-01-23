@@ -116,7 +116,7 @@ Bean的生命周期分为5个阶段：**①实例化；②属性赋值；③初�
 ![[Pasted image 20250113013019.png|300]]
 **整个Bean的创建的过程都依赖于AbstractAutowireCapableBeanFactory这个类，而销毁主要依赖DisposableBeanAdapter这个类。**
 ## 15. 如何让Bean按顺序加载？
-通过@DependsOn注解，可以指定某个Bean先加载。
+通过@**DependsOn注解**，可以指定某个Bean先加载。
 ## ---
 ## 16. Spring的事务传播机制
 Spring的事务传播机制用于控制在多个事务方法相互调用时事务的行为，用于确保事务的一致性和完整性。
