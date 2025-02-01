@@ -8,199 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7a77fbb366fb2c37",
+            "id": "fb6770020842d971",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_项目笔记/03_拖把数藏/00_整体架构.md",
+                "file": "04_力扣刷题笔记/01_数组.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "a82b34aaf12324d6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/01_通用设计.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bf9530bccf270a05",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/02_关键技术.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b5a7d496ecc24ebf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "edff50204b1b6c4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/04_业务功能.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "95630e9bf735e129",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "30b3ef33bf0fb4a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/00_非技术类八股.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9ac7b137d25da1d0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/07_计算机网络八股文.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cde99ef5f9f3e22c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "100_面试记录/面试记录.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a4788de60c7c4a16",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e65ffbac89c154e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/03_MySQL八股.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e41f1b7675f53d02",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/02_天机学堂/优惠券系统的设计.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6f90c63d3c74cb60",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/02_天机学堂/00_天机学堂.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "943aee8611c340ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "100_面试记录/面试记录.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ae7b5a62646a5e91",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/02_Spring八股文.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c87d64c3dfb1bb9f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01_课程学习笔记/MySQL/MySQL实战45讲.md",
-                "mode": "source",
-                "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "01_数组"
             }
           }
-        ],
-        "currentTab": 15
+        ]
       }
     ],
     "direction": "vertical"
@@ -219,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -229,13 +53,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "类加载机制",
+                "query": "多数元素",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -243,7 +69,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           },
           {
@@ -254,10 +82,13 @@
               "state": {
                 "sortOrder": "alphabetical",
                 "useHierarchy": false
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -277,7 +108,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -285,7 +118,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -293,7 +128,9 @@
             "type": "leaf",
             "state": {
               "type": "quiet-outline",
-              "state": {}
+              "state": {},
+              "icon": "lines-of-text",
+              "title": "Quiet Outline"
             }
           },
           {
@@ -301,7 +138,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
@@ -310,7 +149,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01_课程学习笔记/MySQL/MySQL实战45讲.md",
+                "file": "04_力扣刷题笔记/01_数组.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -318,7 +157,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "01_数组 的反向链接列表"
             }
           },
           {
@@ -327,10 +168,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01_课程学习笔记/MySQL/MySQL实战45讲.md",
+                "file": "04_力扣刷题笔记/01_数组.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "01_数组 的出链列表"
             }
           },
           {
@@ -339,8 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_课程学习笔记/MySQL/MySQL实战45讲.md"
-              }
+                "file": "04_力扣刷题笔记/01_数组.md"
+              },
+              "icon": "lucide-list",
+              "title": "01_数组 的大纲"
             }
           }
         ]
@@ -363,8 +208,11 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "fb6770020842d971",
   "lastOpenFiles": [
+    "04_力扣刷题笔记/02_链表.md",
+    "04_力扣刷题笔记/01_数组.md",
+    "01_课程学习笔记/MySQL/MySQL实战45讲.md",
     "01_课程学习笔记/MySQL/imgs/Pasted image 20250128222043.png",
     "03_八股文/05_JUC八股.md",
     "01_课程学习笔记/未命名",
@@ -393,15 +241,12 @@
     "03_八股文/10_消息队列.md",
     "03_八股文/12_设计模式.md",
     "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "02_项目笔记/03_拖把数藏/02_关键技术.md",
-    "02_项目笔记/03_拖把数藏/01_通用设计.md",
     "04_力扣刷题笔记/imgs/Pasted image 20250122212418.png",
     "99_每日学习记录/imgs/Pasted image 20250122024531.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021850.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021846.png",
     "04_力扣刷题笔记/imgs/Pasted image 20250121155210.png",
     "99_每日学习记录/imgs/Pasted image 20250121031331.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250121014316.png",
     "01_课程学习笔记/设计模式/imgs",
     "01_课程学习笔记/设计模式",
     "02_项目笔记/04_动态线程池",
