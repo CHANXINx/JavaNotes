@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "多数元素",
+                "query": "轮转",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 227.50260543823242,
-    "collapsed": true
+    "width": 227.50260543823242
   },
   "right": {
     "id": "45beac71d173d048",
@@ -208,10 +207,12 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "fb6770020842d971",
+  "active": "929a8fdae625b599",
   "lastOpenFiles": [
-    "04_力扣刷题笔记/02_链表.md",
+    "04_力扣刷题笔记/03_字符串.md",
+    "04_力扣刷题笔记/07_动态规划.md",
     "04_力扣刷题笔记/01_数组.md",
+    "04_力扣刷题笔记/02_链表.md",
     "01_课程学习笔记/MySQL/MySQL实战45讲.md",
     "01_课程学习笔记/MySQL/imgs/Pasted image 20250128222043.png",
     "03_八股文/05_JUC八股.md",
@@ -239,8 +240,6 @@
     "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
     "03_八股文/10_消息队列.md",
-    "03_八股文/12_设计模式.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
     "04_力扣刷题笔记/imgs/Pasted image 20250122212418.png",
     "99_每日学习记录/imgs/Pasted image 20250122024531.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021850.png",
