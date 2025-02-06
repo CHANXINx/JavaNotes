@@ -230,9 +230,35 @@
               "icon": "lucide-file",
               "title": "07_动态规划"
             }
+          },
+          {
+            "id": "8848494d0ce2d6fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
+          },
+          {
+            "id": "52aa6de2430e05fb",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
+            }
           }
         ],
-        "currentTab": 15
+        "currentTab": 17
       }
     ],
     "direction": "vertical"
@@ -251,7 +277,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -297,8 +324,7 @@
               "title": "标签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -417,8 +443,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "929a8fdae625b599",
+  "active": "5c2c5105078021e7",
   "lastOpenFiles": [
+    "04_力扣刷题笔记/07_动态规划.md",
+    "conflict-files-obsidian-git.md",
+    "01_课程学习笔记/MySQL/imgs/Pasted image 20250128222043.png",
     "01_课程学习笔记/MySQL/MySQL实战45讲.md",
     "03_八股文/05_JUC八股.md",
     "01_课程学习笔记/未命名",
@@ -447,15 +476,12 @@
     "03_八股文/10_消息队列.md",
     "03_八股文/12_设计模式.md",
     "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "02_项目笔记/03_拖把数藏/02_关键技术.md",
-    "02_项目笔记/03_拖把数藏/01_通用设计.md",
     "04_力扣刷题笔记/imgs/Pasted image 20250122212418.png",
     "99_每日学习记录/imgs/Pasted image 20250122024531.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021850.png",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021846.png",
     "04_力扣刷题笔记/imgs/Pasted image 20250121155210.png",
     "99_每日学习记录/imgs/Pasted image 20250121031331.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250121014316.png",
     "01_课程学习笔记/设计模式/imgs",
     "01_课程学习笔记/设计模式",
     "02_项目笔记/04_动态线程池",
