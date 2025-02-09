@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "不同路径",
+                "query": "最大深度",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -162,8 +162,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 227.50260543823242,
-    "collapsed": true
+    "width": 227.50260543823242
   },
   "right": {
     "id": "45beac71d173d048",
@@ -261,13 +260,11 @@
               "title": "07_动态规划 的大纲"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 320.5,
-    "collapsed": true
+    "width": 320.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -283,18 +280,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6a3a4f9e96c70539",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
+    "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250209202603.png",
     "02_项目笔记/03_拖把数藏/02_关键技术.md",
+    "04_力扣刷题笔记/01_数组.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20250209141102.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20250209141100.png",
+    "04_力扣刷题笔记/imgs/Pasted image 20250209141025.png",
+    "04_力扣刷题笔记/05_二叉树.md",
+    "04_力扣刷题笔记/imgs/Pasted image 20250209131253.png",
     "02_项目笔记/03_拖把数藏/01_通用设计.md",
     "02_项目笔记/03_拖把数藏/00_整体架构.md",
-    "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
     "04_力扣刷题笔记/06_贪心算法.md",
     "04_力扣刷题笔记/07_动态规划.md",
     "04_力扣刷题笔记/02_链表.md",
-    "04_力扣刷题笔记/01_数组.md",
     "99_模板/刷题笔记模板.md",
     "99_模板/刷题笔记模板_其它思路.md",
     "04_力扣刷题笔记/03_字符串.md",
@@ -311,17 +314,10 @@
     "01_课程学习笔记/未命名",
     "03_八股文/11_其它.md",
     "03_八股文/08_操作系统八股文.md",
-    "03_八股文/02_Spring八股文.md",
-    "03_八股文/06_JVM八股文.md",
     "03_八股文/imgs/Pasted image 20250123121359.png",
     "03_八股文/imgs/Pasted image 20250123115250.png",
     "03_八股文/imgs/Pasted image 20250123104540.png",
     "04_力扣刷题笔记/imgs/Pasted image 20250122212418.png",
-    "99_每日学习记录/imgs/Pasted image 20250122024531.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021850.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250122021846.png",
-    "04_力扣刷题笔记/imgs/Pasted image 20250121155210.png",
-    "99_每日学习记录/imgs/Pasted image 20250121031331.png",
     "01_课程学习笔记/设计模式/imgs",
     "01_课程学习笔记/设计模式",
     "02_项目笔记/04_动态线程池",
