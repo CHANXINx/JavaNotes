@@ -34,23 +34,8 @@
               "icon": "lucide-file",
               "title": "04_业务功能"
             }
-          },
-          {
-            "id": "e0f88a1892b1728b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/05_JUC八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "05_JUC八股"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +105,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 285.5
+    "width": 285.5,
+    "collapsed": true
   },
   "right": {
     "id": "45beac71d173d048",
@@ -159,6 +145,54 @@
               "icon": "lines-of-text",
               "title": "Quiet Outline"
             }
+          },
+          {
+            "id": "f9dde34645556725",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "03_最佳实践 的反向链接列表"
+            }
+          },
+          {
+            "id": "bf5197ecf863cc9d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "03_最佳实践 的出链列表"
+            }
+          },
+          {
+            "id": "293962a91f2be7b9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "03_最佳实践 的大纲"
+            }
           }
         ],
         "currentTab": 2
@@ -182,13 +216,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e0f88a1892b1728b",
+  "active": "50e4a04b9046c40b",
   "lastOpenFiles": [
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250223022843.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250223022842.png",
     "03_八股文/05_JUC八股.md",
     "04_力扣刷题笔记/04_哈希表.md",
     "04_力扣刷题笔记/01_数组.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
     "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
     "04_力扣刷题笔记/05_二叉树.md",
     "03.1_场景题/场景题总结.md",
@@ -211,8 +247,6 @@
     "02_项目笔记/99_牛券/基于ShardingSphere的分库分表.md",
     "02_项目笔记/99_牛券/基于责任链模式创建优惠券模板.md",
     "99_每日学习记录/imgs/Pasted image 20250220021308.png",
-    "99_每日学习记录/imgs/Pasted image 20250220021248.png",
-    "99_每日学习记录/imgs/Pasted image 20250220021246.png",
     "04_力扣刷题笔记/06_贪心算法.md",
     "架构设计思想/DDD分层架构思想.md",
     "01_课程学习笔记/设计模式/设计模式.md",
@@ -220,7 +254,6 @@
     "架构设计思想",
     "03_八股文/01_Java基础兼集合类八股.md",
     "03_八股文/06_JVM八股文.md",
-    "03_八股文/04_Redis八股.md",
     "01_课程学习笔记/未命名",
     "01_课程学习笔记/设计模式/imgs",
     "01_课程学习笔记/设计模式",
