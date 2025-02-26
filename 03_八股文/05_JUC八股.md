@@ -40,7 +40,7 @@ CPU的时间被划分为长短相同的时间片，通过操作系统的管理�
 6. **终止(TERMINATED)**：表示该线程已经执行完毕，生命周期结束，不会再被重启。
 ![[Pasted image 20241126233627.png|]]
 
-## 线程的优先级是什么？
+## 6. 线程的优先级是什么？
 每个线程都有优先级，可以通过`getPriority()`获取线程的优先级，通过`setPriority()`获取线程的优先级，优先级的范围在1-10之间，超出时会报`IllegalArgumentException`！
 优先级有几个常量：
 - `MIN_PRIORITY = 1;`：最低优先级；
@@ -48,7 +48,7 @@ CPU的时间被划分为长短相同的时间片，通过操作系统的管理�
 - `MAX_PRIORITY = 10;`：最高优先级。
 
 优先级并不保证线程一定会按照优先级顺序执行，只是给操作系统的调度建议。实际调度顺序以操作系统的调度策略为准。
-## 6. 什么是守护线程，和普通线程有什么区别？
+## 7. 什么是守护线程，和普通线程有什么区别？
 Java线程分为两类，一类是用户线程，另一类就是守护线程。
 - 用户线程一般用于执行用户级任务，而守护线程也就是“后台线程”，一般用**来执行后台任务**，守护线程最典型的应用就是**GC(垃圾回收器)。**
 - 若用户线程在运行，则JVM会等所有用户线程运行结束后才退出；而若守护线程仍在运行，JVM会直接退出，不必等待守护线程运行结束。
@@ -62,7 +62,7 @@ t1.setDaemon(true);
 ```java
 t1.isDaemon();
 ```
-## 7. JDK21中的虚拟线程是什么？
+## 8. JDK21中的虚拟线程是什么？
 新引入的虚拟线程，是JDK 实现的**轻量级线程**，他可以**避免上下文切换带来的的额外耗费**。他的实现原理其实是JDK**不再是每一个线程都一对一的对应一个操作系统的线程**，而是会**将多个虚拟线程映射到少量操作系统线程**中，通过有效的调度来避免那些上下文切换。
 1. **由JDK实现的轻量级线程，由JVM调度；**
 2. **多个虚拟线程共享同一个操作系统线程；**
@@ -87,7 +87,7 @@ t1.isDaemon();
 - 使用线程池创建虚拟线程： `Executors.newVirtualThreadPerTaskExecutor()`
 	- 不建议使用。因为线程池的使用场景为避免创建新的操作系统线程带来的额外开销，然而创建虚拟线程开销并不大。
 
-## 8. 创建线程有几种方式？
+## 9. 创建线程有几种方式？
 共有**4种**创建方式：
 ### ①继承Thread类创建线程：
 1.创建MyThread类并继承Thread类；2. 调用`new MyThread()`方法创建线程。
@@ -188,24 +188,54 @@ class Task implements Runnable{
 	```
 4. 合理控制线程池大小，可以最大化CPU利用率和系统吞吐量。
 
-## 9. run/start、wait/sleep、notify/notifyAll区别?
+## 10. `run/start`、`wait/sleep`、`notify/notifyAll`区别?
 
-### run/start：
+### `run/start`：
 - start方法用于启动线程；
 - 若调用`t1.run()`，**只会在当前线程运行run方法，不会创建新线程**。
-### wait/sleep：
+### `wait/sleep`：
 - sleep方法可以在任意地方调用；而wait方法只能在同步代码块中调用；
 - sleep不会释放对象锁，**而wait方法会释放对象锁**；
 - wait的线程会进入WAITING状态，直至被唤醒；sleep的线程会进入TIME_WAITING，等待休眠结束后再重新尝试获取时间片；
-### notify/notifyAll：
+### `notify/notifyAll`：
 - notify只会随机唤醒一个线程，而notifyAll会唤醒所有处于WAITING/TIME_WAITING的线程；
 	- 对于hotspot虚拟机，使用“先进先出”的顺序唤醒。
 - 被唤醒后会重新竞争锁，并且notifyAll唤醒的线程最终也只会有一个线程成功获取锁；
-## 10. ⭐`run()`和`start()`的区别？
+
+## 11. `wait`和`notifiy`的虚假唤醒的产生原因及如何解决？
+#### 是什么及产生原因： TODO
+
+#### 解决办法：
+- 避免使用`if`条件判断条件谓词是否成立，而是使用`while`循环判断。
+
+使用`if`条件判断时：
+```java
+synchronized (lock) {
+    if (queue.isEmpty()) {
+        lock.wait();  // 等待队列不为空
+    }
+    // 执行业务操作
+	...
+}
+```
+此处，`queue.isEmpty()`为条件谓词，当线程进入该if块，执行`lock.wait()`时，线程会进入休眠状态。后续，由于某种原因，线程被唤醒，但此时条件谓词并未满足条件，而**由于if块只会判断一次**，因此线程被虚假唤醒，会继续往后执行业务操作。
+
+使用`while`条件判断时：
+```java
+synchronized (lock) {
+    if (queue.isEmpty()) {
+        lock.wait();  // 等待队列不为空
+    }
+    // 执行业务操作
+	...
+}
+```
+与上述相同，`queue.isEmpty()`为条件谓词，当满足条件时，会进入`while`块，执行`lock.wait()`，线程进入休眠状态。后续，线程被唤醒后，**由于`while`会再次判断条件谓词是否成立，因此此时若条件谓词不成立，则线程会进入再次休眠状态**，因此避免了虚假唤醒。
+## 12. ⭐`run()`和`start()`的区别？
 **run()方法是在当前线程中同步执行线程任务，而start()方法则是启动一个新的线程来异步执行线程任务。**
 - `start()`方法是启动一个新线程，并使该线程进入就绪状态，以便操作系统能调度该线程执行任务。`start()`方法内部包含了`run()`方法。
 - `run()`方法是在当前线程中执行代码块内的任务，不会创建新线程。
-## 11. 如何停止一个线程的运行? 
+## 13. 如何停止一个线程的运行? 
 >参考《Java并发编程实战》第七章：取消与关闭。
 
 终止线程的方式有4种：
@@ -218,7 +248,7 @@ class Task implements Runnable{
 	- 静态的`interrupted()`方法和捕获到`InterruptedException`会清除中断状态。因此，使用该方法进行中断操作时，应该在捕获异常后**再次调用`interrupt()`方法恢复中断状态**。
 4. 用future对象获取提交给线程池的任务的返回结果，可通过`cancel()`方法请求终止线程。
 
-## 12. 线程同步方式
+## 14. 线程同步方式
 线程同步指的是让多个线程按顺序访问同一共享资源。
 1. synchronized：保证同一时间只有一个线程访问共享资源；
 2. ReentrantLock：也保证同一时间只有一个线程访问共享资源，但是更灵活，通过`lock.lock()`加锁。并且支持公平锁、可中断锁、多个条件变量等；
@@ -227,7 +257,7 @@ class Task implements Runnable{
 5. CyclicBarrier：用来进行线程协作，**允许多个线程相互等待，当满足计数后，所有等待线程同步执行**。
 6. Phaser：与CyclicBarrier类似，但是支持更灵活的栅栏操作，可以动态地注册和注销参与者，并可以控制各个参与者的到达和离开。
 
-## 13. 介绍下线程死锁
+## 15. 介绍下线程死锁
 死锁发生在多个线程相互等待对方释放锁资源，导致所有线程都无法继续执行。
 
 **产生死锁的四个必要条件：**  
@@ -235,23 +265,23 @@ class Task implements Runnable{
 （2） 占有且等待：一个进程因请求资源而阻塞时，对已获得的资源保持不放。  
 （3）不可强行占有：进程已获得的资源，在末使用完之前，不能强行剥夺。  
 （4） 循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。
-## 14. 死锁问题如何排查？
-7. 系统级别的排查，Linux环境中，使用`top ps`可查看进程信息，查看哪个进程占用资源多；
-8. 使用JDK自带的监控工具进行排查，如使用`jstack pid`命令可以查看死锁的线程信息。
+## 16. 死锁问题如何排查？
+1. 系统级别的排查，Linux环境中，使用`top ps`可查看进程信息，查看哪个进程占用资源多；
+2. 使用JDK自带的监控工具进行排查，如使用`jstack pid`命令可以查看死锁的线程信息。
 
-## 15. Thread.sleep(0)的作用是什么？
+## 17. Thread.sleep(0)的作用是什么？
 让当前线程释放CPU时间片，然后重新开始争抢。
 
 使用场景主要为某些底层框架中，**让长期占用CPU资源的线程主动释放CPU时间片**，让其它线程可以有机会获取CPU时间片。
 
-## 16. 实现线程安全的方案有哪些？
-9. 单线程执行，例如Redis；
-10. 互斥锁，例如synchronized；
-11. 读写分离，例如COW；
-12. 原子操作，例如AtomicInteger、CAS；
-13. 不可变模式，让共享变量只有读操作，例如不可变模式；
-14. 数据不共享，例如ThreadLocal，线程之间数据不共享。
-## 17. 什么是可重入锁？
+## 18. 实现线程安全的方案有哪些？
+1. 单线程执行，例如Redis；
+2. 互斥锁，例如synchronized；
+3. 读写分离，例如COW；
+4. 原子操作，例如AtomicInteger、CAS；
+5. 不可变模式，让共享变量只有读操作，例如不可变模式；
+6. 数据不共享，例如ThreadLocal，线程之间数据不共享。
+## 19. 什么是可重入锁？
 可重入锁是一种多线程同步机制，**允许同一线程多次获取同一个锁而不会导致死锁**。
 
 **优点：**
@@ -259,6 +289,31 @@ class Task implements Runnable{
 
 **实现：**
 - state记录重入次数，threadId记录获取锁的线程ID。
+## 20. 什么是乐观锁？
+一种与悲观锁相对的并发控制机制。乐观锁假设发生冲突的概率较小，因此在操作之前不加锁，而是**在操作提交时进行冲突检测**。
+
+实现：
+- 可通过版本号、时间戳等方式实现。【本质都是在修改时利用该标志位判断数据是否被修改过。】
+
+使用场景：
+- **读多写少**：例如商品查询等。
+- **低冲突**：如修改用户信息。
+
+优点：
+- **无锁开销**：不需要加锁，避免了锁开销和死锁问题。
+- **高性能**：在读多写少的场景下，能提高系统并发性能。
+
+缺点：
+- **重试机制**：并发冲突发生时，需要重新读取数据并重试更新，可能会增加系统复杂度。
+- **不适合高冲突场景**：在高冲突的场景下，频繁的失败重试可能会导致性能降低
+## 21. 什么是自旋锁？
+## 22. JVM的线程调度是什么？TODO
+
+## 23. 引起CPU进行上下文切换的原因？
+
+## 24. 线程什么时候主动放弃CPU？
+
+## 25. 为什么说线程的上下文切换效率不高？
 # <font color="#245bdb">线程池</font>
 ## 1. 什么是线程池，如何实现的？
 - 线程池是一种池化技术。**提前创建一批线程保存到线程池中**，当有任务需要执行时，从线程池中选择一个线程来执行任务。
@@ -415,9 +470,69 @@ private static ExecutorService executor = new ThreadPoolExecutor(10, 10,
 - 可以提交实现Runnable接口（不带返回值）或实现Callable接口的任务（带返回值）；
 - 返回`Future<T>`对象，可根据返回对象获取返回值、撤销任务、判断任务是否完成等。
 ![[Pasted image 20241217202342.png]]
-## 13. 如何重构一个线程工厂 TODO
+## 13. 如何重构一个线程工厂？
+有以下几个好处：
+1. **统一线程的管理和创建**：可以集中管理线程的创建过程，确保线程都具有一致的属性设置，如名称、优先级等。
+2. **增强可维护性**：将线程的创建逻辑从业务代码中抽离，使代码更清晰；
+3.  **增强可扩展性**：通过自定义线程工厂，可以轻松添加新功能，例如日志记录、异常处理等。
 
-## 14. 线程池的`shutDown()`和`shutDownNow()`方法有什么区别？
+#### 实现：
+- 实现ThreadFactory类，并重写(实现)其中的`newThread()`方法
+```java
+public class customThreadFactory implements ThreadFactory {
+
+    private static final Logger logger = LoggerFactory.getLogger(customThreadFactory.class);
+
+    // 用于记录线程ID
+    private final AtomicInteger threadId = new AtomicInteger(1);
+
+    private final String namePrefix;
+    private final boolean daemon;
+    private final int priority;
+
+    public customThreadFactory(String namePrefix, boolean daemon, int priority) {
+        this.namePrefix = namePrefix;
+        this.daemon = daemon;
+        this.priority = priority;
+    }
+
+    @Override
+    public Thread newThread(Runnable r) {
+        Thread thread = new Thread(r, namePrefix + "-thread-" + threadId.getAndIncrement());
+        thread.setPriority(priority);
+        thread.setDaemon(daemon);
+
+        //打印日志
+        logger.info("创建线程：{}", thread.getName());
+
+        return thread;
+    }
+}
+
+```
+
+**使用：**
+```java
+public class threadFactoryTest {
+    public static void main(String[] args) {
+        customThreadFactory customThreadFactory = new customThreadFactory("customThreadFactory", false, Thread.NORM_PRIORITY);
+        ExecutorService pool = Executors.newFixedThreadPool(10, customThreadFactory);
+        for (int i = 0; i < 10; i++) {
+            pool.submit(() -> {
+                System.out.println("当前线程名称：" + Thread.currentThread().getName());
+            });
+        }
+        pool.shutdown();
+    }
+}
+```
+
+## 14. 线程池的`shutDown()`和`shutDownNow()`方法有什么区别？TODO
+- `shutDown()`会启动线程池的关闭过程，但不会立即关闭，而是停止新任务接收，并继续执行已经提交但未完成的任务（包括尚未开始执行的任务）。待所有任务完成后，才完全关闭。
+- `shutDownNow()`
+
+## 15. `park`和`unPark`的使用 TODO
+
 
 # <font color="#245bdb">ThreadLocal：</font>
 ## 1. 什么是ThreadLocal，如何实现的？
@@ -465,9 +580,9 @@ value只有一个引用，就是Thread对象。
 所以
 # <font color="#245bdb">Synchronized</font>
 
-## 1. Synchronized是如何实现的？
-12. 针对于代码块，**通过字节码`monitorenter`和`monitorexit`实现**，前者代表加锁，后者代表释放锁。每个对象都维护着一个记录着被锁次数的计数器，未加锁的对象计数器值为0，加锁后计数器自增变1，重入后次数会再加1，解锁的话会减1。计数器为0的话就会释放锁。
-13. 针对于方法，是**通过`ACC_SYNCHRONIZED`（ACCESS）标志**实现。当某个线程要访问某个方法时，会先检查是否有该标志。若有，则需要先获得监视器锁。此时若有其它线程来访问，则会因为无法获得监视器锁而被阻塞！
+## 1. Synchronized是如何实现的？（底层实现） TODO
+1. 针对于代码块，**通过字节码`monitorenter`和`monitorexit`实现**，前者代表加锁，后者代表释放锁。每个对象都维护着一个记录着被锁次数的计数器，未加锁的对象计数器值为0，加锁后计数器自增变1，重入后次数会再加1，解锁的话会减1。计数器为0的话就会释放锁。
+2. 针对于方法，是**通过`ACC_SYNCHRONIZED`（ACCESS）标志**实现。当某个线程要访问某个方法时，会先检查是否有该标志。若有，则需要先获得监视器锁。此时若有其它线程来访问，则会因为无法获得监视器锁而被阻塞！
 ## 2. Monitor是什么？
 Java中每个对象都有自己的监视器Monitor，当尝试获取对象的锁时，实质上就是对对象监视器Monitor的获取。
 
@@ -614,20 +729,23 @@ synchronized(this){
 ### 可见性：
 - 写操作之后，立马刷新到主存；
 - 读操作，永远读的是主存中的最新数据。（将本地内存的变量置为无效，直接从主存中读取共享变量）
-## 5. volatile能保证原子性吗？（volatile能保证线程安全吗？）
-不能。但是可以保证有序性和可见性。
-## 6. 有了synchronized为何还需要volatile？^
 
-## 7. 有了CAS为什么还需要volatile？
+## 5. 为什么指令重排能够提高性能？
+
+## 6. volatile能保证原子性吗？（volatile能保证线程安全吗？）
+不能。但是可以保证有序性和可见性。
+## 7. 有了synchronized为何还需要volatile？^
+
+## 8. 有了CAS为什么还需要volatile？
 CAS只能保证对变量修改的原子性，但不能保证可见性。通过添加volatile可以使得CAS的修改能立刻刷新到主存中，避免出现内存不一致错误。
 
-## 8. 什么是happens-before原则和as-if-serial原则?^
+## 9. 什么是happens-before原则和as-if-serial原则?^
 ### **happens-before原则：**
 - 多线程程序中操作执行顺序的规则：如果一个操作 A “happen-before” 另一个操作 B，那么 A 的结果对 B 是可见的。
 ### **as-if-serial语义：**
 - 单线程程序中的执行顺序规则：不管怎么重排序，单线程程序的执行结果都不能被改变
 # <font color="#245bdb">AQS</font>
-## 1. ==AQS是什么== TODO
+## 1. ==AQS是什么？==
 
 - AbstractQueueSynchronizer，抽象队列同步器，是很多同步器的基础框架，如ReentrantLock、Semaphore、CountDownLatch，并且还能通过AQS类来自定义同步器。
 - **核心思想**：如果被请求的共享资源空闲，则当前线程能够成功获取资源；否则，它将进入一个等待队列，当有其他线程释放资源时，系统会挑选等待队列中的一个线程，赋予其资源。
