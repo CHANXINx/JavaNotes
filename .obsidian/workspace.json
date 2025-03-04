@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "da6d26faca5fe605",
+        "id": "521ba467ab9673c2",
         "type": "tabs",
         "children": [
           {
@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "ca0ebbe9af38c072",
+            "id": "02a37d3acd3494de",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,23 +34,9 @@
               "icon": "lucide-file",
               "title": "03_最佳实践"
             }
-          },
-          {
-            "id": "79e7b1d64893f1a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/04_Redis八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04_Redis八股"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -82,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "最长递增子序列",
+                "query": "找重复数",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,7 +102,8 @@
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -183,45 +170,45 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "79e7b1d64893f1a9",
+  "active": "02a37d3acd3494de",
   "lastOpenFiles": [
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "05_力扣刷题笔记/07_动态规划.md",
-    "05_力扣刷题笔记/02_链表.md",
-    "99999_暂未分类_文章/缓存与数据库的一致性方案总结及代码demo.md",
-    "99999_暂未分类_文章/imgs/Pasted image 20250301003948.png",
-    "99999_暂未分类_文章/imgs/Pasted image 20250301001607.png",
-    "99999_暂未分类_文章/imgs/Pasted image 20250301000946.png",
-    "99999_暂未分类_文章/imgs/Pasted image 20250228174823.png",
-    "99999_暂未分类_文章/imgs/Pasted image 20250228174728.png",
-    "100_面试记录/面试记录.md",
-    "03_八股文/04_Redis八股.md",
-    "99999_暂未分类_文章/imgs/Pasted image 20250228172450.png",
-    "99999_暂未分类_文章/imgs",
     "03_八股文/03_MySQL八股.md",
-    "03_八股文/imgs/Pasted image 20250228143914.png",
-    "Obsidian使用指南.md",
-    "05_力扣刷题笔记/04_哈希表.md",
-    "05_力扣刷题笔记/09_单调栈.md",
+    "03_八股文/imgs/Pasted image 20250304163933.png",
+    "03_八股文/04_Redis八股.md",
+    "03_八股文/imgs/Pasted image 20250304160935.png",
+    "03_八股文/imgs/Pasted image 20250304142246.png",
+    "03_八股文/imgs/Pasted image 20250304142148.png",
+    "03_八股文/imgs/Pasted image 20250304141828.png",
+    "03_八股文/imgs/Pasted image 20250304141807.png",
+    "03_八股文/imgs/Pasted image 20250304141719.png",
+    "99_每日学习记录/学习记录_0302-0309.md",
+    "05_力扣刷题笔记/02_链表.md",
+    "05_力扣刷题笔记/01_数组.md",
+    "05_力扣刷题笔记/07_动态规划.md",
+    "99_每日学习记录/imgs/Pasted image 20250304023952.png",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304014922.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304004832.png",
     "05_力扣刷题笔记/06_栈与队列.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "02_项目笔记/03_拖把数藏/02_关键技术.md",
     "05_力扣刷题笔记/06_贪心算法.md",
+    "05_力扣刷题笔记/04_哈希表.md",
+    "05_力扣刷题笔记/03_字符串.md",
+    "无重复字符的最长子串.md",
+    "05_力扣刷题笔记/AlgoNote.md",
+    "长度最小的子数组.md",
+    "05_力扣刷题笔记/11_回溯.md",
+    "99999_暂未分类_文章/缓存与数据库的一致性方案总结及代码demo.md",
+    "100_面试记录/面试记录.md",
+    "99999_暂未分类_文章/imgs",
+    "Obsidian使用指南.md",
+    "05_力扣刷题笔记/09_单调栈.md",
     "05_力扣刷题笔记/刷题笔记.md",
     "03_八股文/05_JUC八股.md",
-    "05_力扣刷题笔记/03_字符串.md",
     "02_项目笔记/99_牛券/开发日志.md",
     "99999_暂未分类_文章",
-    "05_力扣刷题笔记/01_数组.md",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250224002153.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250224001721.png",
-    "05_力扣刷题笔记/11_回溯.md",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250223022843.png",
-    "02_项目笔记/03_拖把数藏/05_重构逻辑.md",
-    "05_力扣刷题笔记/05_二叉树.md",
-    "04_场景题/场景题总结.md",
-    "03_八股文/02_Spring八股文.md",
-    "99_每日学习记录/学习记录_0219-0223.md",
-    "05_力扣刷题笔记/08_图论.md",
     "架构设计思想",
     "01_课程学习笔记/未命名",
     "01_课程学习笔记/设计模式/imgs",

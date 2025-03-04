@@ -179,5 +179,20 @@
       ],
       "key": "E"
     }
+  ],
+  "switcher:open": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    },
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "O"
+    }
   ]
 }
