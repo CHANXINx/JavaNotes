@@ -34,9 +34,65 @@
               "icon": "lucide-file",
               "title": "03_最佳实践"
             }
+          },
+          {
+            "id": "0eacc753c3725b73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/09_分布式.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "09_分布式"
+            }
+          },
+          {
+            "id": "eb32583973db0bfe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/03_MySQL八股.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "03_MySQL八股"
+            }
+          },
+          {
+            "id": "560ee33726ed395c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_力扣刷题笔记/06_贪心算法.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06_贪心算法"
+            }
+          },
+          {
+            "id": "6a48c5ca2cca8000",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_二叉树"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -68,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "找重复数",
+                "query": "从中序与后序遍历序列构造二叉树",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +152,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "alphabetical",
-                "useHierarchy": false
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -147,6 +205,54 @@
               "icon": "lines-of-text",
               "title": "Quiet Outline"
             }
+          },
+          {
+            "id": "ad65282feccf86fe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "05_二叉树 的反向链接列表"
+            }
+          },
+          {
+            "id": "dd5820baf1d2c519",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "05_二叉树 的出链列表"
+            }
+          },
+          {
+            "id": "e35b40da662a3801",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "05_二叉树 的大纲"
+            }
           }
         ],
         "currentTab": 2
@@ -170,30 +276,32 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "02a37d3acd3494de",
+  "active": "6a48c5ca2cca8000",
   "lastOpenFiles": [
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
+    "05_力扣刷题笔记/05_二叉树.md",
+    "05_力扣刷题笔记/06_贪心算法.md",
+    "05_力扣刷题笔记/01_数组.md",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+    "03_八股文/09_分布式.md",
     "03_八股文/03_MySQL八股.md",
+    "03_八股文/imgs/Pasted image 20250305135805.png",
+    "05_力扣刷题笔记/02_链表.md",
+    "05_力扣刷题笔记/imgs/Pasted image 20250305102134.png",
+    "05_力扣刷题笔记/imgs/Pasted image 20250305101335.png",
+    "99_每日学习记录/学习记录_0302-0309.md",
+    "99_每日学习记录/imgs/Pasted image 20250305024113.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250102164922.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250104111023.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304192043.png",
     "03_八股文/imgs/Pasted image 20250304163933.png",
     "03_八股文/04_Redis八股.md",
     "03_八股文/imgs/Pasted image 20250304160935.png",
     "03_八股文/imgs/Pasted image 20250304142246.png",
-    "03_八股文/imgs/Pasted image 20250304142148.png",
-    "03_八股文/imgs/Pasted image 20250304141828.png",
-    "03_八股文/imgs/Pasted image 20250304141807.png",
-    "03_八股文/imgs/Pasted image 20250304141719.png",
-    "99_每日学习记录/学习记录_0302-0309.md",
-    "05_力扣刷题笔记/02_链表.md",
-    "05_力扣刷题笔记/01_数组.md",
     "05_力扣刷题笔记/07_动态规划.md",
-    "99_每日学习记录/imgs/Pasted image 20250304023952.png",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304014922.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304004832.png",
     "05_力扣刷题笔记/06_栈与队列.md",
     "03_八股文/07_计算机网络八股文.md",
     "02_项目笔记/03_拖把数藏/02_关键技术.md",
-    "05_力扣刷题笔记/06_贪心算法.md",
     "05_力扣刷题笔记/04_哈希表.md",
     "05_力扣刷题笔记/03_字符串.md",
     "无重复字符的最长子串.md",
@@ -207,7 +315,6 @@
     "05_力扣刷题笔记/09_单调栈.md",
     "05_力扣刷题笔记/刷题笔记.md",
     "03_八股文/05_JUC八股.md",
-    "02_项目笔记/99_牛券/开发日志.md",
     "99999_暂未分类_文章",
     "架构设计思想",
     "01_课程学习笔记/未命名",
