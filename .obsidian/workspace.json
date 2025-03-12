@@ -4,31 +4,87 @@
     "type": "split",
     "children": [
       {
-        "id": "521ba467ab9673c2",
+        "id": "20513d4675f60a03",
         "type": "tabs",
         "children": [
           {
-            "id": "2ba8306456108f48",
+            "id": "d28cb1345c93b71d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_项目笔记/03_拖把数藏/04_业务功能.md",
-                "mode": "source",
+                "file": "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04_业务功能"
+              "title": "!!!_问题梳理"
             }
           },
           {
-            "id": "02a37d3acd3494de",
+            "id": "26fa958b6d1be92e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/05_JUC八股.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_JUC八股"
+            }
+          },
+          {
+            "id": "7eea921d19656538",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/06_JVM八股文.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06_JVM八股文"
+            }
+          },
+          {
+            "id": "c9577953cbe0c8af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/07_计算机网络八股文.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07_计算机网络八股文"
+            }
+          },
+          {
+            "id": "089468ae801f4b83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_八股文/08_操作系统八股文.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "08_操作系统八股文"
+            }
+          },
+          {
+            "id": "e603a6edc81e7f3d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -36,63 +92,35 @@
             }
           },
           {
-            "id": "0eacc753c3725b73",
+            "id": "d155ec5fa487ac35",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_八股文/09_分布式.md",
+                "file": "03_八股文/02_Spring八股文.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09_分布式"
+              "title": "02_Spring八股文"
             }
           },
           {
-            "id": "eb32583973db0bfe",
+            "id": "0fe2c9a4f9a176fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_八股文/03_MySQL八股.md",
-                "mode": "source",
+                "file": "03_八股文/04_Redis八股.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03_MySQL八股"
-            }
-          },
-          {
-            "id": "560ee33726ed395c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/06_贪心算法.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06_贪心算法"
-            }
-          },
-          {
-            "id": "6a48c5ca2cca8000",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "08_操作系统八股文"
+              "title": "04_Redis八股"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -112,7 +140,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -124,7 +152,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "从中序与后序遍历序列构造二叉树",
+                "query": "事务消息",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -164,7 +192,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 285.5
+    "width": 284.5,
+    "collapsed": true
   },
   "right": {
     "id": "45beac71d173d048",
@@ -210,7 +239,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
+                "file": "03_八股文/02_Spring八股文.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -220,7 +249,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "08_操作系统八股文 的反向链接列表"
+              "title": "02_Spring八股文 的反向链接列表"
             }
           },
           {
@@ -229,12 +258,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
+                "file": "03_八股文/02_Spring八股文.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "08_操作系统八股文 的出链列表"
+              "title": "02_Spring八股文 的出链列表"
             }
           },
           {
@@ -243,13 +272,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
+                "file": "03_八股文/02_Spring八股文.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "08_操作系统八股文 的大纲"
+              "title": "02_Spring八股文 的大纲"
             }
           }
         ],
@@ -257,8 +286,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5,
-    "collapsed": true
+    "width": 320.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -271,57 +299,58 @@
       "remotely-save:Remotely Save": false,
       "random-note:开始漫游笔记": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "audio-recorder:开始/结束录音": false
     }
   },
-  "active": "6a48c5ca2cca8000",
+  "active": "d155ec5fa487ac35",
   "lastOpenFiles": [
-    "03_八股文/01_Java基础兼集合类八股.md",
-    "05_力扣刷题笔记/11_回溯.md",
-    "未命名.md",
-    "Obsidian使用指南.md",
-    "05_力扣刷题笔记/06_贪心算法.md",
-    "03_八股文/03_MySQL八股.md",
-    "03_八股文/09_分布式.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "02_项目笔记/03_拖把数藏/04_业务功能.md",
-    "05_力扣刷题笔记/05_二叉树.md",
-    "05_力扣刷题笔记/01_数组.md",
-    "03_八股文/imgs/Pasted image 20250305135805.png",
-    "05_力扣刷题笔记/02_链表.md",
-    "05_力扣刷题笔记/imgs/Pasted image 20250305102134.png",
-    "05_力扣刷题笔记/imgs/Pasted image 20250305101335.png",
-    "99_每日学习记录/学习记录_0302-0309.md",
-    "99_每日学习记录/imgs/Pasted image 20250305024113.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250102164922.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250104111023.png",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250304192043.png",
-    "03_八股文/imgs/Pasted image 20250304163933.png",
+    "01_课程学习笔记/消息队列MQ/RocketMQ.md",
     "03_八股文/04_Redis八股.md",
-    "03_八股文/imgs/Pasted image 20250304160935.png",
-    "03_八股文/imgs/Pasted image 20250304142246.png",
-    "05_力扣刷题笔记/07_动态规划.md",
-    "05_力扣刷题笔记/06_栈与队列.md",
+    "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
+    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
+    "03_八股文/06_JVM八股文.md",
     "03_八股文/07_计算机网络八股文.md",
-    "02_项目笔记/03_拖把数藏/02_关键技术.md",
-    "05_力扣刷题笔记/04_哈希表.md",
-    "05_力扣刷题笔记/03_字符串.md",
-    "无重复字符的最长子串.md",
-    "05_力扣刷题笔记/AlgoNote.md",
-    "长度最小的子数组.md",
-    "99999_暂未分类_文章/缓存与数据库的一致性方案总结及代码demo.md",
+    "03_八股文/08_操作系统八股文.md",
+    "03_八股文/05_JUC八股.md",
+    "03_八股文/03_MySQL八股.md",
+    "03_八股文/02_Spring八股文.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250312101130.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250312100906.png",
+    "03_八股文/01_Java基础兼集合类八股.md",
+    "03_八股文/00_非技术类八股.md",
+    "05_力扣刷题笔记/01_数组.md",
+    "01_课程学习笔记/消息队列MQ/imgs/Pasted image 20250311203501.png",
+    "01_课程学习笔记/消息队列MQ/imgs/Pasted image 20250311203410.png",
+    "01_课程学习笔记/消息队列MQ/RabbitMQ.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250311190139.png",
+    "03_八股文/09_分布式.md",
+    "03_八股文/10_消息队列.md",
+    "秒杀方案.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250311133517.png",
+    "分库分表.md",
+    "03_八股文/imgs/Pasted image 20250311102600.png",
+    "架构设计思想/架构设计面试.md",
+    "99_每日学习记录/学习记录_0309-0316.md",
+    "未命名",
+    "99_每日学习记录/学习记录_0302-0309.md",
+    "100_面试记录/面试技巧.md",
+    "99_每日学习记录/imgs/Pasted image 20250311011848.png",
+    "雪花算法详解与时钟回拨解决解决方案.md",
+    "04_场景题/直播间弹幕系统设计.md",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250310094411.png",
+    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250310090530.png",
     "100_面试记录/面试记录.md",
+    "03_八股文/11_其它.md",
+    "01_课程学习笔记/消息队列MQ/imgs",
+    "01_课程学习笔记/消息队列MQ",
+    "99_每日学习记录/imgs/Recording 20250309011115.webm",
+    "99_每日学习记录/imgs/Recording 20250309011106.webm",
+    "99_每日学习记录/imgs/陈鑫的个人求职简历_withPhoto.pdf",
     "99999_暂未分类_文章/imgs",
-    "05_力扣刷题笔记/09_单调栈.md",
     "99999_暂未分类_文章",
     "架构设计思想",
     "01_课程学习笔记/未命名",
-    "01_课程学习笔记/设计模式/imgs",
-    "01_课程学习笔记/设计模式",
-    "02_项目笔记/04_动态线程池",
-    "100_面试记录",
-    "02_项目笔记/03_拖把数藏/imgs",
-    "02_项目笔记/03_拖把数藏",
     "八股文/未命名.canvas"
   ]
 }

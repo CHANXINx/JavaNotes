@@ -63,6 +63,7 @@ Bean的作用域决定了bean在哪个范围内被使用，同时决定了Bean�
 可以。@Autowired**可以用于注入复杂的集合类型**，尤其在Map中比较常见。例如当某个Service有多个实现类，则通过@Autowired注解可以实现注入不同实现类的实例，其中KEY为Bean的名称，VALUE为Bean的实例。【通常用在工厂模式，根据不同名称获取不同实例】
 ## 9. @Autowired和@Resource的关系？
 @Autowired是Spring框架提供的自动注入注解，@Resource是JDK官方提供的自动注入注解。
+
 @Autowired：
 - @Autowired注解主要是基于类型注入；类型无法匹配，则通过bean名称（看根据注入的字段名是否能找到相同的bean名称）匹配。
 - @Autowired注解可以作用于构造器、字段、setter方法上。

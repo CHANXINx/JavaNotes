@@ -194,5 +194,14 @@
       ],
       "key": "O"
     }
+  ],
+  "editing-toolbar:change-font-color": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "E"
+    }
   ]
 }

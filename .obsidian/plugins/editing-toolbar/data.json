@@ -228,11 +228,6 @@
       "id": "editing-toolbar:workplace-fullscreen-focus",
       "name": "workplace-Fullscreen ",
       "icon": "exit-fullscreen"
-    },
-    {
-      "id": "number-headings-obsidian:number-headings",
-      "name": "Number Headings: Number all headings in document",
-      "icon": "header-n"
     }
   ],
   "appendMethod": "workspace",
@@ -240,7 +235,7 @@
   "cMenuVisibility": true,
   "cMenuBottomValue": 4.25,
   "cMenuNumRows": 12,
-  "cMenuWidth": 504,
+  "cMenuWidth": 452,
   "cMenuFontColor": "#ff0000",
   "cMenuBackgroundColor": "rgba(240, 200, 0, 0.2)",
   "autohide": false,

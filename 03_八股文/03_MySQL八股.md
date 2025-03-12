@@ -506,6 +506,15 @@ SELECT f1, f2 FROM t1 WHERE f1 =2 and f2 = 40;
 
 ## 16. MySQL为什么会选错索引?^
 
+## 17. 慢查询是什么？
+查询花费大量时间的日志，是指mysql记录所有执行超过`long_query_time`参数设定的时间阈值的SQL语句的日志。
+
+## 18. 什么是WAL技术?
+WAL，即Write Ahead Lock，预写日志技术，**利用了磁盘连续写的性能高于随机读写这一特性**。具体而言，是
+1. 先修改缓冲池中的内存页的数据并将该内存也标记为“脏页”；
+2. 然后写redo log（事务提交阶段），磁盘中的数据并不会立刻更新；
+3. 在之后在空闲时间、或者连接正常关闭时，由后台线程**Page Cleaner Thread**进行刷脏页操作，将缓冲池中的数据持久化到磁盘中。【顺序写性能高于随机写】
+
 ---
 # <font color="#245bdb">事务</font>
 ## 1. 什么是数据库事务?
@@ -709,7 +718,17 @@ AHI是**通过缓冲池的B+树页构造**而来，因此建立的速度很快�
 1. 高并发场景下可能会导致哈希锁的竞争。
 2. 自适应哈希索引建立在缓冲页中，因此需要有足够的内存资源。
 
+## 15. SavePoint保存点是什么？
+用于在事务中打点，避免将本次事务的内容全部回滚了。
+
+执行`ROLLBACK [SAVEPOINT]`会回滚到指定保存点的位置。
+
+## 16. 为什么崩溃恢复不用bin log而是使用redo log？
+1. bin log会记录所有的更改操作，保存更新删除数据、表结构的修改，主要用于人工恢复数据，可以通过`mysqlbinlog`工具恢复数据；redo log是InnoDB引擎特有的，用于保证`crash-safe`能力、持久性的，只会记录buffer pool中未刷盘的数据。
+2. 当数据库崩溃时，虽然bin log和redo log中记录了已写入但未刷盘的数据，但bin log中不存在某个标志可以判断哪些数据已经被持久化。但redo log不同，只要已被刷入磁盘的数据，都会从redo log中抹掉。
+
 ---
+
 # <font color="#245bdb">锁</font>
 ## 1. 介绍一下MySQL的锁
 ![[Pasted image 20241119215143.png]]
@@ -734,17 +753,19 @@ AHI是**通过缓冲池的B+树页构造**而来，因此建立的速度很快�
 	行锁与行锁之间的并发问题通过行级互斥锁实现。
 
 意向锁共有两种：1)意向共享锁；2)意向排他锁。共享+共享√，共享+排他×，排他+排他×.
+## 4. redo log的作用是什么？
 
-## 4. binlog, redolog和undolog的区别?
-#### binlog:
+
+## 5. binlog, redolog和undolog的区别?
+#### binlog
 - binlog主要用于对数据库进行**数据备份、主从复制和崩溃恢复**等操作。binlog是MySQL用于记录所有**DDL语句和DML语句**的一种二进制文件，不会记录查询类操作(如SELECT、SHOW)。
 - binlog是追加写形式，当写满一个文件后会创建新文件继续写，不会覆盖以前的日志。
-#### redolog:
+#### redolog
 - redolog是MySQL用于**实现崩溃恢复和数据持久性**的一种机制。在事务进行过程中，MySQL会**将事务做了什么改动**记录到Redo Log中。当系统崩溃或者发生异常情况时，MySQL会利用Redo Log中的记录信息来进行恢复操作，将事务所做的修改持久化到磁盘中。
-#### undolog:
+#### undolog
 Undo Log则用于在**事务回滚或系统崩溃时撤销（回滚）事务所做的修改**。当一个事务执行过程中，MySQL会将**事务修改前的数据**记录到Undo Log中。如果事务需要回滚，则会从Undo Log中找到相应的记录来**撤销事务所做的修改**。
-## 5. binlog, redolog和undolog的持久化时间？ TODO
-## 6. MySQL中的binlog有几种格式?
+## 6. binlog, redolog和undolog的持久化时间？ TODO
+## 7. MySQL中的binlog有几种格式?
 共有三种格式：row、statement和mixed.
 ### statement:
 数据库中的SQL语句会原封不动的被记录在binlog中。
@@ -759,7 +780,7 @@ binlog中会**记录每个数据更改的具体行的细节**，每条日志都�
 两者的结合，自动切换选择合适的格式进行记录。但是在RC级别下，只有row格式可以生效。
 
 
-## 7. ==什么是事务的两阶段提交?==
+## 8. ==什么是事务的两阶段提交?==
 ![[Pasted image 20241120013145.png|450]]
 将事务的更新分为Prepare准备阶段和Commit提交阶段。
 - **准备阶段**：MySQL将事务的更新操作记录到redo log中，并将其标记为Prepare状态；紧接着，MySQL将更新操作写入binlog。
@@ -774,7 +795,7 @@ binlog中会**记录每个数据更改的具体行的细节**，每条日志都�
 
 ![[Pasted image 20250107125613.png|500]]
 ![[Pasted image 20250123104540.png]]
-## 8. 两阶段提交中，如何判断binlog和redolog是否达成了一致?
+## 9. 两阶段提交中，如何判断binlog和redolog是否达成了一致?
 当MySQL写完redolog并将它标记为prepare状态时，并且会在redolog中记录一个**XID**，它**全局唯一的标识着这个事务**。而当你设置`sync_binlog=1`时，做完了上面第一阶段写redolog后，mysql就会对应binlog并且会直接将其刷新到磁盘中。
 
 下图就是磁盘上的row格式的binlog记录。binlog结束的位置上也有一个XID。
@@ -785,8 +806,7 @@ binlog中会**记录每个数据更改的具体行的细节**，每条日志都�
 
 >[!IMPORTANT]
 >**注意：保持binlog和redolog的一致，需要开启参数innodb_support_xa = 1**
-## 9. 什么是WAL技术?
-WAL，即Write Ahead Lock，预写日志技术，**利用了磁盘连续写的性能高于随机读写这一特性**。具体而言，是先修改缓冲池中的内存页的数据并将该内存也标记为“脏页”，然后写redo log(事务提交阶段)，磁盘中的数据并不会立刻更新，而是之后在空闲时间、或者连接正常关闭时，由后台线程**Page Cleaner Thread**进行刷脏页操作，将缓冲池中的数据持久化到磁盘中。
+
 
 ## 10. 死锁情况分析
 ![[Pasted image 20250217203021.png|400]]
