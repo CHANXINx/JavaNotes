@@ -12,7 +12,7 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "smartIndentList": false,
+  "smartIndentList": true,
   "foldHeading": true,
   "promptDelete": false,
   "strictLineBreaks": false

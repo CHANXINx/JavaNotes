@@ -228,6 +228,11 @@
       "id": "editing-toolbar:workplace-fullscreen-focus",
       "name": "workplace-Fullscreen ",
       "icon": "exit-fullscreen"
+    },
+    {
+      "id": "editor:set-heading-0",
+      "name": "移除小标题格式",
+      "icon": "heading-glyph"
     }
   ],
   "appendMethod": "workspace",

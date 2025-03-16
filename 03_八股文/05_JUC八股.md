@@ -506,20 +506,21 @@ public ScheduledThreadPoolExecutor(int corePoolSize) {
 - ForkJoinPool适用于**能够进行任务拆分的cpu密集型运算**，例如快速排序。
 - ForkJoinPool中的工作线程是一种特殊线程，会自动创建和销毁、自动管理线程的数量和调度。
 ## 10. 为什么不建议通过Executors构建线程池？
+#### 原因
 **FixedThreadPool和SingleThreadPool：**【两者都是核心（最大）线程数固定的线程池，因此OOM只会发生在请求数过多】
 - 内部的阻塞队列为LinkedBlockingQueue，会导致任务请求堆积过多而OOM。
 
 **CachedThreadPool和ScheduledThreadPool：**
 - 最大线程数为Integer.MAX_VALUE，会导致线程创建过多而OOM。
-
-6. 正确的创建线程池方式应该是调用ThreadPoolExecutor来创建线程池，并为阻塞队列指定容量。
-	```java
+#### 建议方式
+正确的创建线程池方式应该是调用`ThreadPoolExecutor`来创建线程池，并为阻塞队列指定容量。
+```java
 private static ExecutorService executor = new ThreadPoolExecutor(10, 10,
         60L, TimeUnit.SECONDS,
         new ArrayBlockingQueue(10));
-	```
+```
 
-7. 更推荐使用guava提供的`ThreadFactoryBuilder`创建线程池。
+更推荐使用guava提供的`ThreadFactoryBuilder`创建线程池。
 ## 11. 提交给线程池的任务能否撤回？
 - 提交给线程池并开始执行后，则无法撤销！
 - 但若提交给线程池，尚未进行处理，可以撤销：
