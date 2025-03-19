@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5e95c5e806ede370",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99_源码阅读/JUC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "JUC"
-            }
-          },
-          {
             "id": "e70ccc9b14a8bdb5",
             "type": "leaf",
             "state": {
@@ -64,6 +50,20 @@
             }
           },
           {
+            "id": "550f1e57ee27ee22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_二叉树"
+            }
+          },
+          {
             "id": "4154d2abedbc048b",
             "type": "leaf",
             "state": {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "COW",
+                "query": "二叉树展开为链表",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -146,7 +146,8 @@
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -197,7 +198,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "陈鑫的个人求职简历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -207,7 +208,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "场景题总结 的反向链接列表"
+              "title": "陈鑫的个人求职简历 的反向链接列表"
             }
           },
           {
@@ -216,12 +217,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "陈鑫的个人求职简历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "场景题总结 的出链列表"
+              "title": "陈鑫的个人求职简历 的出链列表"
             }
           },
           {
@@ -230,22 +231,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "陈鑫的个人求职简历.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "场景题总结 的大纲"
+              "title": "陈鑫的个人求职简历 的大纲"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 298.5,
-    "collapsed": true
+    "width": 298.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -263,8 +262,16 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "77b9b350b1ed4469",
+  "active": "7f9bd1c5f9f9f687",
   "lastOpenFiles": [
+    "99_面试记录/面试记录.md",
+    "99_源码阅读/JUC.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "05_力扣刷题笔记/05_二叉树.md",
+    "05_力扣刷题笔记/imgs/Pasted image 20250319151622.png",
+    "05_力扣刷题笔记/03_字符串.md",
+    "05_力扣刷题笔记/04_哈希表.md",
+    "05_力扣刷题笔记/01_数组.md",
     "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
     "01_课程学习笔记/计算机网络.md",
     "01_课程学习笔记/imgs/Pasted image 20250319001858.png",
@@ -275,10 +282,8 @@
     "03_八股文/03_MySQL八股.md",
     "99_书籍阅读",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250318212555.png",
-    "99_面试记录/面试记录.md",
     "陈鑫的个人求职简历.md",
     "99_面试记录/面试技巧.md",
-    "99_源码阅读/JUC.md",
     "99_书籍阅读/Java并发编程艺术.md",
     "99_源码阅读",
     "03_八股文/05_JUC八股.md",
@@ -301,12 +306,7 @@
     "04_场景题/imgs/Pasted image 20250315150823.png",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
     "99_暂未分类_文章/分库分表.md",
-    "02_项目笔记/03_拖把数藏/03_最佳实践.md",
-    "Excalidraw/Drawing 2025-03-13 22.58.03.excalidraw.md",
     "03_八股文/imgs/654c7jc2u5we3xvann6mkwzx36b813ucw6ehyx8daz8g2wqea3.png",
-    "03_八股文/imgs/Pasted image 20250314095910.png",
-    "04_场景题/常见问题关联.md",
-    "04_场景题/直播间弹幕系统设计.md",
     "Excalidraw",
     "01_课程学习笔记/消息队列MQ/imgs",
     "01_课程学习笔记/消息队列MQ",
