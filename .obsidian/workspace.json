@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -198,7 +198,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
+                "file": "01_课程学习笔记/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -208,7 +208,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "陈鑫的个人求职简历 的反向链接列表"
+              "title": "计算机网络 的反向链接列表"
             }
           },
           {
@@ -217,12 +217,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
+                "file": "01_课程学习笔记/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "陈鑫的个人求职简历 的出链列表"
+              "title": "计算机网络 的出链列表"
             }
           },
           {
@@ -231,13 +231,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
+                "file": "01_课程学习笔记/计算机网络.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "陈鑫的个人求职简历 的大纲"
+              "title": "计算机网络 的大纲"
             }
           }
         ]
@@ -262,8 +262,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "4154d2abedbc048b",
   "lastOpenFiles": [
+    "陈鑫的个人求职简历.md",
     "99_面试记录/面试记录.md",
     "99_源码阅读/JUC.md",
     "03_八股文/07_计算机网络八股文.md",
@@ -282,7 +283,6 @@
     "03_八股文/03_MySQL八股.md",
     "99_书籍阅读",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250318212555.png",
-    "陈鑫的个人求职简历.md",
     "99_面试记录/面试技巧.md",
     "99_书籍阅读/Java并发编程艺术.md",
     "99_源码阅读",
