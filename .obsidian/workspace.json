@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
-                "mode": "source",
+                "file": "03_八股文/07_计算机网络八股文.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "陈鑫的个人求职简历"
+              "title": "07_计算机网络八股文"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "file": "04_场景题/场景题总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05_二叉树"
+              "title": "场景题总结"
             }
           },
           {
@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_课程学习笔记/计算机网络.md",
+                "file": "03_八股文/01_Java基础兼集合类八股.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "计算机网络"
+              "title": "01_Java基础兼集合类八股"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -97,8 +97,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
+                "sortOrder": "alphabetical"
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -110,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "二叉树展开为链表",
+                "query": "IP地址",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -178,8 +177,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -188,8 +187,8 @@
             "state": {
               "type": "quiet-outline",
               "state": {},
-              "icon": "lines-of-text",
-              "title": "Quiet Outline"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -231,20 +230,19 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "陈鑫的个人求职简历.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "file": "04_场景题/场景题总结.md"
               },
               "icon": "lucide-list",
-              "title": "陈鑫的个人求职简历 的大纲"
+              "title": "场景题总结 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 298.5
+    "width": 298.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -254,58 +252,58 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "remotely-save:Remotely Save": false,
       "random-note:开始漫游笔记": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "audio-recorder:开始/结束录音": false,
+      "remotely-save:Remotely Save": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "7f9bd1c5f9f9f687",
+  "active": "550f1e57ee27ee22",
   "lastOpenFiles": [
-    "99_面试记录/面试记录.md",
-    "99_源码阅读/JUC.md",
-    "03_八股文/07_计算机网络八股文.md",
+    "02_项目笔记/02_天机学堂/00_天机学堂面试题总结.md",
+    "02_项目笔记/02_天机学堂/00_天机学堂.md",
     "05_力扣刷题笔记/05_二叉树.md",
+    "03_八股文/01_Java基础兼集合类八股.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "03_八股文/08_操作系统八股文.md",
+    "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
+    "03_八股文/05_JUC八股.md",
+    "03_八股文/04_Redis八股.md",
+    "01_课程学习笔记/计算机网络.md",
+    "03_八股文/03_MySQL八股.md",
+    "03_八股文/02_Spring八股文.md",
+    "03_八股文/00_非技术类八股.md",
+    "99_面试记录/面试记录.md",
+    "陈鑫的个人求职简历.md",
+    "99_源码阅读/JUC.md",
     "05_力扣刷题笔记/imgs/Pasted image 20250319151622.png",
     "05_力扣刷题笔记/03_字符串.md",
     "05_力扣刷题笔记/04_哈希表.md",
     "05_力扣刷题笔记/01_数组.md",
-    "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
-    "01_课程学习笔记/计算机网络.md",
     "01_课程学习笔记/imgs/Pasted image 20250319001858.png",
     "01_课程学习笔记/imgs/Pasted image 20250319001822.png",
     "01_课程学习笔记/imgs",
     "99_书籍阅读/imgs/Pasted image 20250317091819.png",
     "99_书籍阅读/imgs",
-    "03_八股文/03_MySQL八股.md",
     "99_书籍阅读",
     "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250318212555.png",
-    "陈鑫的个人求职简历.md",
     "99_面试记录/面试技巧.md",
     "99_书籍阅读/Java并发编程艺术.md",
     "99_源码阅读",
-    "03_八股文/05_JUC八股.md",
-    "03_八股文/01_Java基础兼集合类八股.md",
     "Excalidraw/Drawing 2025-03-16 20.54.26.excalidraw.md",
-    "02_项目笔记/02_天机学堂/00_天机学堂面试题总结.md",
-    "02_项目笔记/02_天机学堂/00_天机学堂.md",
-    "03_八股文/02_Spring八股文.md",
-    "03_八股文/00_非技术类八股.md",
     "99_书籍阅读/深入理解Java虚拟机.md",
     "imgs",
     "99_系统设计/系统设计面试：内幕指南.md",
     "Excalidraw/imgs/drwnio.excalidrawlib",
     "Excalidraw/imgs",
     "03_八股文/imgs/Pasted image 20250315165900.png",
-    "03_八股文/04_Redis八股.md",
     "04_场景题/场景题总结.md",
     "04_场景题/imgs/Pasted image 20250315150849.png",
     "04_场景题/imgs/Pasted image 20250315150825.png",
     "04_场景题/imgs/Pasted image 20250315150823.png",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
-    "99_暂未分类_文章/分库分表.md",
     "03_八股文/imgs/654c7jc2u5we3xvann6mkwzx36b813ucw6ehyx8daz8g2wqea3.png",
     "Excalidraw",
     "01_课程学习笔记/消息队列MQ/imgs",
