@@ -76,9 +76,22 @@
               "icon": "lucide-file",
               "title": "计算机网络"
             }
+          },
+          {
+            "id": "6e1cbfb1cd11d14d",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "staged": false
+              },
+              "icon": "git-pull-request",
+              "title": "Diff View (conflict-files-obsidian-git)"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -198,7 +211,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01_课程学习笔记/计算机网络.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -208,7 +220,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "计算机网络 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
@@ -217,12 +229,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01_课程学习笔记/计算机网络.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "计算机网络 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -231,13 +242,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_课程学习笔记/计算机网络.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "计算机网络 的大纲"
+              "title": "大纲"
             }
           }
         ]
@@ -262,8 +272,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "4154d2abedbc048b",
+  "active": "6e1cbfb1cd11d14d",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "01_课程学习笔记/计算机网络.md",
     "陈鑫的个人求职简历.md",
     "99_面试记录/面试记录.md",
     "99_源码阅读/JUC.md",
@@ -274,7 +286,6 @@
     "05_力扣刷题笔记/04_哈希表.md",
     "05_力扣刷题笔记/01_数组.md",
     "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
-    "01_课程学习笔记/计算机网络.md",
     "01_课程学习笔记/imgs/Pasted image 20250319001858.png",
     "01_课程学习笔记/imgs/Pasted image 20250319001822.png",
     "01_课程学习笔记/imgs",
@@ -305,7 +316,6 @@
     "04_场景题/imgs/Pasted image 20250315150825.png",
     "04_场景题/imgs/Pasted image 20250315150823.png",
     "02_项目笔记/03_拖把数藏/04_业务功能.md",
-    "99_暂未分类_文章/分库分表.md",
     "03_八股文/imgs/654c7jc2u5we3xvann6mkwzx36b813ucw6ehyx8daz8g2wqea3.png",
     "Excalidraw",
     "01_课程学习笔记/消息队列MQ/imgs",
