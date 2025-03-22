@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99_面试记录/面试记录.md",
+                "file": "04_场景题/场景题总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "面试记录"
+              "title": "场景题总结"
             }
           },
           {
@@ -95,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "二叉树展开为链表",
+                "query": "之积",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,8 +136,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5,
-    "collapsed": true
+    "width": 284.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -183,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "99_面试记录/面试记录.md",
+                "file": "04_场景题/场景题总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -193,7 +192,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "面试记录 的反向链接列表"
+              "title": "场景题总结 的反向链接列表"
             }
           },
           {
@@ -202,12 +201,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "99_面试记录/面试记录.md",
+                "file": "04_场景题/场景题总结.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "面试记录 的出链列表"
+              "title": "场景题总结 的出链列表"
             }
           },
           {
@@ -216,13 +215,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "99_面试记录/面试记录.md",
+                "file": "04_场景题/场景题总结.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "面试记录 的大纲"
+              "title": "场景题总结 的大纲"
             }
           }
         ]
@@ -248,13 +247,14 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "e70ccc9b14a8bdb5",
+  "active": "929a8fdae625b599",
   "lastOpenFiles": [
+    "04_场景题/imgs/Pasted image 20250322163849.png",
+    "99_面试记录/面试记录.md",
     "05_力扣刷题笔记/05_二叉树.md",
     "01_课程学习笔记/计算机网络.md",
     "conflict-files-obsidian-git.md",
     "陈鑫的个人求职简历.md",
-    "99_面试记录/面试记录.md",
     "99_源码阅读/JUC.md",
     "03_八股文/07_计算机网络八股文.md",
     "05_力扣刷题笔记/imgs/Pasted image 20250319151622.png",
@@ -291,7 +291,6 @@
     "04_场景题/imgs/Pasted image 20250315150849.png",
     "04_场景题/imgs/Pasted image 20250315150825.png",
     "04_场景题/imgs/Pasted image 20250315150823.png",
-    "02_项目笔记/03_拖把数藏/04_业务功能.md",
     "03_八股文/imgs/654c7jc2u5we3xvann6mkwzx36b813ucw6ehyx8daz8g2wqea3.png",
     "Excalidraw",
     "01_课程学习笔记/消息队列MQ/imgs",
