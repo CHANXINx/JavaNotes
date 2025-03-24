@@ -83,7 +83,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -131,8 +131,7 @@
               "title": "标签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -247,7 +246,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "929a8fdae625b599",
+  "active": "5c2c5105078021e7",
   "lastOpenFiles": [
     "04_场景题/imgs/Pasted image 20250322163849.png",
     "99_面试记录/面试记录.md",
