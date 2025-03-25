@@ -62,8 +62,23 @@
               "icon": "lucide-file",
               "title": "05_二叉树"
             }
+          },
+          {
+            "id": "424cf81750e4a30c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_力扣刷题笔记/01_数组.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_数组"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -131,7 +146,8 @@
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -181,7 +197,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "05_力扣刷题笔记/01_数组.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -191,7 +207,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "场景题总结 的反向链接列表"
+              "title": "01_数组 的反向链接列表"
             }
           },
           {
@@ -200,12 +216,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "05_力扣刷题笔记/01_数组.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "场景题总结 的出链列表"
+              "title": "01_数组 的出链列表"
             }
           },
           {
@@ -214,13 +230,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04_场景题/场景题总结.md",
+                "file": "05_力扣刷题笔记/01_数组.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "场景题总结 的大纲"
+              "title": "01_数组 的大纲"
             }
           }
         ]
@@ -246,8 +262,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "5c2c5105078021e7",
+  "active": "424cf81750e4a30c",
   "lastOpenFiles": [
+    "04_场景题/场景题总结.md",
     "04_场景题/imgs/Pasted image 20250322163849.png",
     "99_面试记录/面试记录.md",
     "05_力扣刷题笔记/05_二叉树.md",
@@ -286,11 +303,9 @@
     "Excalidraw/imgs",
     "03_八股文/imgs/Pasted image 20250315165900.png",
     "03_八股文/04_Redis八股.md",
-    "04_场景题/场景题总结.md",
     "04_场景题/imgs/Pasted image 20250315150849.png",
     "04_场景题/imgs/Pasted image 20250315150825.png",
     "04_场景题/imgs/Pasted image 20250315150823.png",
-    "03_八股文/imgs/654c7jc2u5we3xvann6mkwzx36b813ucw6ehyx8daz8g2wqea3.png",
     "Excalidraw",
     "01_课程学习笔记/消息队列MQ/imgs",
     "01_课程学习笔记/消息队列MQ",
