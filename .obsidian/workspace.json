@@ -69,16 +69,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
+                "file": "04_场景题/直播间弹幕系统设计.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_数组"
+              "title": "直播间弹幕系统设计"
+            }
+          },
+          {
+            "id": "f1f9bcea3667c9cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "99_系统设计/系统设计面试：内幕指南.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "系统设计面试：内幕指南"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -110,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "之积",
+                "query": "下一个更大",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -146,8 +160,7 @@
               "title": "标签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -262,8 +275,12 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "424cf81750e4a30c",
+  "active": "f1f9bcea3667c9cf",
   "lastOpenFiles": [
+    "99_系统设计/架构设计面试.md",
+    "04_场景题/直播间弹幕系统设计.md",
+    "99_系统设计/系统设计面试：内幕指南.md",
+    "05_力扣刷题笔记/01_数组.md",
     "04_场景题/场景题总结.md",
     "04_场景题/imgs/Pasted image 20250322163849.png",
     "99_面试记录/面试记录.md",
@@ -276,7 +293,6 @@
     "05_力扣刷题笔记/imgs/Pasted image 20250319151622.png",
     "05_力扣刷题笔记/03_字符串.md",
     "05_力扣刷题笔记/04_哈希表.md",
-    "05_力扣刷题笔记/01_数组.md",
     "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
     "01_课程学习笔记/imgs/Pasted image 20250319001858.png",
     "01_课程学习笔记/imgs/Pasted image 20250319001822.png",
@@ -298,11 +314,9 @@
     "03_八股文/00_非技术类八股.md",
     "99_书籍阅读/深入理解Java虚拟机.md",
     "imgs",
-    "99_系统设计/系统设计面试：内幕指南.md",
     "Excalidraw/imgs/drwnio.excalidrawlib",
     "Excalidraw/imgs",
     "03_八股文/imgs/Pasted image 20250315165900.png",
-    "03_八股文/04_Redis八股.md",
     "04_场景题/imgs/Pasted image 20250315150849.png",
     "04_场景题/imgs/Pasted image 20250315150825.png",
     "04_场景题/imgs/Pasted image 20250315150823.png",
