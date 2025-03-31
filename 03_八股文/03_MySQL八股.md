@@ -603,6 +603,26 @@ WAL，即Write Ahead Lock，预写日志技术，**利用了磁盘连续写的�
 2. 然后写redo log（事务提交阶段），磁盘中的数据并不会立刻更新；
 3. 在之后在空闲时间、或者连接正常关闭时，由后台线程**Page Cleaner Thread**进行刷脏页操作，将缓冲池中的数据持久化到磁盘中。【顺序写性能高于随机写】
 
+## !=、IS NOT NULL、IS NULL条件查询会走索引吗？
+不一定，可能走也可能不走。主要还是根据表中数据量的大小来判断扫描行数、执行成本。
+
+例如：
+建表，建立`unique_idx`的唯一索引与`nonunique_idx`的非唯一索引，插入100000条数据，此时执行以下语句：
+`EXPLAIN SELECT unique_idx FROM test2 WHERE unique_idx != 100005;`
+![[Pasted image 20250331014225.png]]
+可以发现，实质上还是走了索引的。
+
+但是执行以下语句：
+`EXPLAIN SELECT * FROM test2 WHERE unique_idx != 100005;`，
+![[Pasted image 20250331014311.png]]却又不走索引了。
+
+因此，实质上走不走索引
+
+>**NULL值在MySQL中的存储，是存放在B+树的最左侧，因为规定NULL值为最小的值**。
+
+
+
+
 ---
 # <font color="#245bdb">事务</font>
 ## 1. 什么是数据库事务?
@@ -968,3 +988,4 @@ binlog中会**记录每个数据更改的具体行的细节**，每条日志都�
 #### 方案三：基于ES
 使用Canal基于Binlog，将数据同步到ES中，使用ES进行查询。
 ## 7. 如何进行平滑的数据迁移？
+
