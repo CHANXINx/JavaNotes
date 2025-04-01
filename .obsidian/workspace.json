@@ -78,20 +78,6 @@
             }
           },
           {
-            "id": "f1f9bcea3667c9cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "01_数组"
-            }
-          },
-          {
             "id": "b19a41b08d1ec5b7",
             "type": "leaf",
             "state": {
@@ -103,32 +89,6 @@
               },
               "icon": "lucide-file",
               "title": "10_消息队列"
-            }
-          },
-          {
-            "id": "48673501b3193b9b",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2025-03-29 23.35.32.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-03-29 23.35.32.excalidraw"
-            }
-          },
-          {
-            "id": "efb2c55b92fc57a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/02_链表.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02_链表"
             }
           },
           {
@@ -145,8 +105,7 @@
               "title": "03_MySQL八股"
             }
           }
-        ],
-        "currentTab": 9
+        ]
       }
     ],
     "direction": "vertical"
@@ -331,30 +290,31 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "7e157cd4532fd14e",
+  "active": "e70ccc9b14a8bdb5",
   "lastOpenFiles": [
+    "陈鑫的个人求职简历.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "05_力扣刷题笔记/05_二叉树.md",
+    "04_场景题/直播间弹幕系统设计.md",
+    "05_力扣刷题笔记/01_数组.md",
+    "03_八股文/10_消息队列.md",
+    "05_力扣刷题笔记/02_链表.md",
+    "03_八股文/03_MySQL八股.md",
     "03_八股文/imgs/Pasted image 20250331014311.png",
     "03_八股文/imgs/Pasted image 20250331014225.png",
-    "05_力扣刷题笔记/02_链表.md",
-    "05_力扣刷题笔记/01_数组.md",
     "三数之和.md",
     "04_场景题/场景题总结.md",
-    "03_八股文/10_消息队列.md",
     "Excalidraw/Drawing 2025-03-29 23.35.32.excalidraw.md",
-    "04_场景题/直播间弹幕系统设计.md",
     "Excalidraw/imgs/Pasted Image 20250329235747_632.png",
     "04_场景题/imgs/Pasted image 20250329234130.png",
     "04_场景题/imgs/Pasted image 20250329233812.png",
-    "05_力扣刷题笔记/05_二叉树.md",
     "99_系统设计/系统设计面试：内幕指南.md",
     "99_系统设计/架构设计面试.md",
     "04_场景题/imgs/Pasted image 20250322163849.png",
     "99_面试记录/面试记录.md",
     "01_课程学习笔记/计算机网络.md",
     "conflict-files-obsidian-git.md",
-    "陈鑫的个人求职简历.md",
     "99_源码阅读/JUC.md",
-    "03_八股文/07_计算机网络八股文.md",
     "05_力扣刷题笔记/imgs/Pasted image 20250319151622.png",
     "05_力扣刷题笔记/03_字符串.md",
     "05_力扣刷题笔记/04_哈希表.md",
@@ -364,9 +324,7 @@
     "01_课程学习笔记/imgs",
     "99_书籍阅读/imgs/Pasted image 20250317091819.png",
     "99_书籍阅读/imgs",
-    "03_八股文/03_MySQL八股.md",
     "99_书籍阅读",
-    "02_项目笔记/03_拖把数藏/imgs/Pasted image 20250318212555.png",
     "99_面试记录/面试技巧.md",
     "99_书籍阅读/Java并发编程艺术.md",
     "99_源码阅读",
