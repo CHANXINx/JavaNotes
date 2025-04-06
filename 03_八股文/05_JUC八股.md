@@ -209,7 +209,7 @@ class Task implements Runnable{
 1. 线程池可以重用预先创建好的线程，避免了频繁创建和销毁线程的开销，显著提高程序性能；
 2. 对于需要快速响应的并发请求，线程池可以迅速提供线程来处理任务，减少了等待时间；
 3. 有效控制线程数量，避免因创建线程过多导致的线程资源耗尽；
-	```java
+```java
 class Task implements Runnable{  
     @Override  
     public void run() {  
@@ -223,7 +223,7 @@ class Task implements Runnable{
     }  
 }
 >>> 此处会创建100个线程！
-	```
+```
 4. 合理控制线程池大小，可以最大化CPU利用率和系统吞吐量。
 
 ## 13. `run/start`、`wait/sleep`、`notify/notifyAll`区别?
@@ -614,8 +614,8 @@ public class threadFactoryTest {
 ThreadLocal存放的值是**线程内共享的，线程间互斥的**，主要用于线程内共享一些数据，避免通过参数来传递，这样处理后，能够优雅的解决一些实际问题。
 ### 应用场景：
 主要就两个作用：1）解决并发问题；2）在线程内传递数据，避免一直使用参数进行传递。
-8. **用户信息存储**：使用ThreadLocal存储用户信息，例如JWT鉴权后存储userId；
-9. **线程安全**：用来定义一些需要并发安全处理的成员变量，例如SimpleDateFormat，可以使用ThreadLocal为每个线程创建一个独立的SimpleDateFormat实例。
+1. **用户信息存储**：使用ThreadLocal存储用户信息，例如JWT鉴权后存储userId；
+2. **线程安全**：用来定义一些需要并发安全处理的成员变量，例如SimpleDateFormat，可以使用ThreadLocal为每个线程创建一个独立的SimpleDateFormat实例。
 
 ## 2. ThreadLocalMap的内部结构是怎样的？
 
@@ -676,11 +676,12 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 锁对象、锁类，**实质上都是锁的对象（实例对象或类对象）**，一个是锁的当前实例this，另一个锁的是类对象。
 
 同步方法：
-14. `public synchronized void print(){}`：锁的是调用此方法的实例对象；
-15. `public static synchronized void print()`：锁的是类对象。
+1. `public synchronized void print(){}`：锁的是调用此方法的实例对象；
+2. `public static synchronized void print()`：锁的是类对象。
+
 同步代码块：
-16. `synchronized (this)`：锁的是this这个实例对象；
-17. `synchronized (MyThread.class)`：锁的是`xx.class`类对象。
+1. `synchronized (this)`：锁的是this这个实例对象；
+2. `synchronized (MyThread.class)`：锁的是`xx.class`类对象。
 ## 4. synchronized是如何保证原子性、可见性、有序性的？
 ### 原子性：
 由`monitorenter`和`monitorexit`实现，保证了在锁未释放前，内部代码块不会被其他线程访问到。即使在`monitorexit`执行前，CPU时间片用完了，由于synchronized是可重入的，下一个时间片还是会被当前线程获取到，直至代码执行完毕并释放锁。
@@ -692,9 +693,9 @@ Hotspot中，Monitor由ObjectMonitor实现，ObjectMonitor有几个关键属性�
 - 仍会发生指令重排！
 ### 可见性：
 当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值。
-18. 加锁前，会删除工作内存中共享变量的值，从而使用共享变量时会从主存中读取变量最新的值；
-19. 加锁后，其它线程无法获取主内存中的共享变量；
-20. 解锁前，必须把工作内存中变量的值同步到主存中。
+1. 加锁前，会删除工作内存中共享变量的值，从而使用共享变量时会从主存中读取变量最新的值；
+2. 加锁后，其它线程无法获取主内存中的共享变量；
+3. 解锁前，必须把工作内存中变量的值同步到主存中。
 ## 5. synchronized的可重入是如何实现的？
 因为锁对象的对象头包含了一个Mark Word，存储着对象的状态以及锁信息。当线程尝试重入锁时，JVM会检查线程ID与Mark Word中的线程ID是否匹配，若匹配则锁计数器+1.
 ## 6. synchronized的锁升级过程是怎样的？
@@ -869,7 +870,7 @@ protected final boolean compareAndSetState(int expect, int update) {
 }
 ```
 ## 2. 为什么AQS内部要采用双端队列？
-AQS 将队列改为 双向队列，新增了 `next` 指针，使得节点不仅知道前驱节点，也可以直接唤醒后继节点，从而简化了队列操作，提高了唤醒效率。
+AQS 将队列改为 双向队列，新增了 `next` 指针，使得节点不仅知道前驱节点，也可以直接唤醒后继节点，从而简化了队列操作，提高了唤醒效率。维护了head与tail变量，用于表示队头和队尾，因此获取队首和队尾元素只需要$O(1)$复杂度。
 
 **实现出队和入队的O(1)操作**
 ## 3. AQS是如何实现线程的等待和唤醒的？
@@ -878,9 +879,9 @@ AQS 将队列改为 双向队列，新增了 `next` 指针，使得节点不�
 - 当锁被释放，会通过`unpark()`方法唤醒队列中的线程来尝试获取锁。
 ## 4. 讲讲ReentrantLock。
 是一种可重入独占锁。有以下几个特性：
-30. **可重入性**：通过维护`state`变量来实现可重入。当线程重复进入时，`state`会+1；当线程释放锁时，`state`会-1；
-31. **支持公平锁和非公平锁**：默认是非公平锁，可通过new对象时传入true实参来实现公平锁。![[Pasted image 20241217223419.png]]
-32. **提供更灵活的锁操作**：具有响应中断、超时等待等操作。
+1. **可重入性**：通过维护`state`变量来实现可重入。当线程重复进入时，`state`会+1；当线程释放锁时，`state`会-1；
+2. **支持公平锁和非公平锁**：默认是非公平锁，可通过new对象时传入true实参来实现公平锁。![[Pasted image 20241217223419.png]]
+3. **提供更灵活的锁操作**：具有响应中断、超时等待等操作。
 
 **如何获取的公平锁？**
 - 根据传入的fair变量，返回不同的内部类对象。
@@ -1023,15 +1024,15 @@ ABA指的是在Compare 和 Swap之间，变量被连续修改了两次，使其�
 - 采用自旋让CPU空转一段时间，而不是阻塞线程，可以避免线程切换和阻塞带来的开销。但是过多的尝试会耗费CPU资源。
 ## 4. 什么是Unsafe？
 Unsafe是CAS的核心类，用于**提供硬件级别的原子操作**：
-33. 通过Unsafe可以分配、释放内存；
-34. 可以定位对象某字段的内存位置，也可以修改对象的字段值；
-35. 将线程挂起或恢复；
-36. CAS操作。
+1. 通过Unsafe可以分配、释放内存；
+2. 可以定位对象某字段的内存位置，也可以修改对象的字段值；
+3. 将线程挂起或恢复；
+4. CAS操作。
 ## 5. CAS是如何保证原子性的？
 **基于cmpxchg命令（CompareAndExchange）实现。**
-37. cmpxchg是原子指令，执行时处理器会自动锁定总线，防止其他CPU访问共享变量，然后执行比较和交换，结束后释放总线；
-38. CPU会自动禁止中断；
-39. cmpxchg是硬件实现的，CPU的硬件电路确保了执行正确执行以及对共享变量的访问是原子的。
+1. cmpxchg是原子指令，执行时处理器会自动锁定总线，防止其他CPU访问共享变量，然后执行比较和交换，结束后释放总线；
+2. CPU会自动禁止中断；
+3. cmpxchg是硬件实现的，CPU的硬件电路确保了执行正确执行以及对共享变量的访问是原子的。
 
 # <font color="#245bdb">内存模型</font>
 ## 1. ==JMM是什么？==
