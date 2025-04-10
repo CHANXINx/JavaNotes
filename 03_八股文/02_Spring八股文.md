@@ -156,12 +156,13 @@ SpringAOP支持两种动态代理：
 	- 当被代表的类**没有实现接口**时，会使用基于CGLIB的动态代理。**通过继承的方式，在运行时通过字节码技术动态创建子类实例作为代理类。**
 
 ## 13. 动态代理是什么？
-在**运行时动态创建代理对象**的机制，主要用于在不修改原始类的情况下对方法调用进行拦截和增强。
+在**运行时动态创建代理对象**的机制，主要用于在不修改原始类的情况下对方法调用进行拦截和增强，为原始类新增一些功能。
 #### 基于接口的动态代理(JDK动态代理)：
-使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现，需要被代理类实现一个或多个接口。
+使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现，**需要被代理类实现一个或多个接口**。
 Java会创建一个**实现了相同接口的代理类，在运行时创建该类的实例**。当通过代理对象调用一个方法时，方法的调用会被转发为由InvocationHandler接口的`invoke()`方法进行调用。
+
 #### 基于类的动态代理(CGLIB动态代理):
-当被代表的类**没有实现接口**时，会使用CGLIB库通过字节码技术动态生成一个被代理类的子类作为代理。
+当被代表的类**没有实现接口**时，会使用CGLIB库通过**字节码技术动态生成一个被代理类的子类作为代理**。
 
 CGLIB会在运行时动态生成一个目标类的子类。CGLIB通过继承的方式创建代理类。
 ## 14. AOP有什么注解？
@@ -169,7 +170,7 @@ CGLIB会在运行时动态生成一个目标类的子类。CGLIB通过继承的�
 - @Pointcut：切点
 - @Before：方法执行前执行通知
 - @After：方法执行后执行通知
-- @Around：方法执行前后都执行通知
+- **@Around**：方法执行前后都执行通知
 - @AfterReturning：方法执行返回结果后通知
 - @AfterThrowing：方法抛出异常后执行通知
 ## 15. AOP什么时候会失效？
@@ -177,8 +178,6 @@ AOP生效，需要动态代理生效，且能调用到代理对象的方法。
 1. **私有方法、类内部调用、内部类方法调用**：此时不会使用代理对象，而是直接通过this调用方法；
 2. **静态方法**：直接通过类调用，不会调用代理对象；（AOP只能代理实例方法）
 3. **final方法**：被`final`修饰的方法无法被所在类的子类重写；（CGLIB通过生成子类来实现代理）
-
-
 
 ## 16. 为什么Spring不建议使用基于字段的依赖注入？
 强制依赖使用构造器注入，可选依赖使用setter注入。
@@ -199,11 +198,11 @@ AOP生效，需要动态代理生效，且能调用到代理对象的方法。
 ![[Pasted image 20241208191125.png]]
 ```java
 public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements SingletonBeanRegistry {
-  //一级缓存，保存完成的Bean对象
+  //一级缓存，保存「完成的Bean对象」
   private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
-  //三级缓存，保存单例Bean的创建工厂
+  //三级缓存，保存「单例Bean创建工厂」
   private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<>(16);
-  //二级缓存，存储"半成品"的Bean对象
+  //二级缓存，存储「"半成品"的Bean对象」
   private final Map<String, Object> earlySingletonObjects = new ConcurrentHashMap<>(16);
 }
 ```
@@ -254,8 +253,8 @@ protected Object getSingleton(String beanName, boolean allowEarlyReference) {
 但是， 
 ## 21. 三级缓存是能解决所有循环依赖问题吗？ TODO
 不能，无法解决以下两类循环依赖问题：
-10. 使用构造器注入的循环依赖问题。
-11. 非单例Bean的循环依赖问题。
+1. 使用构造器注入的循环依赖问题。
+2. 非单例Bean的循环依赖问题。
 ## 22. ⭐Bean的生命周期(Hollis)
 ![[Pasted image 20241123151334.png]]
 可粗略分为三个阶段：创建、使用、销毁。
@@ -415,3 +414,5 @@ Model-View-Controller，是一种软件设计模式。
 
 
 ## 33. 过滤器和拦截器的区别是什么？
+## 自动配置 TODO
+自动扫描类路径下的类，将其注册为Bean，交由Spring容器管理。

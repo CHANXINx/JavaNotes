@@ -216,12 +216,11 @@ public static Integer valueOf(int i) {
 ## 14. `String str = new String("cx");`创建了几个对象？
 分两种情况："cx"是否已经被加入到字符串常量池中。
 
-7. **若"cx"不存在**：会在堆上创建一个str对象，在字符串常量池中创建一个"cx"对象；（str的引用指向常量池中的"cx"）
-8. **若"cx"已存在**：只会在堆上创建一个字符串对象，其引用指向字符串常量池中的"cx"对象。
+1. **若"cx"不存在**：会在堆上创建一个str对象，在字符串常量池中创建一个"cx"对象；（str的引用指向常量池中的"cx"）
+2. **若"cx"已存在**：只会在堆上创建一个字符串对象，其引用指向字符串常量池中的"cx"对象。
 
 ## 15. `String a = "ab"';String b = "a" + "b";` a\==b吗？
 相等的。"a"和"b"都是字面量常量，因此在**编译期**，**"a"+"b"会被拼接成"ab"并放入字符串常量池中**，因此b对象也是指向字符串常量池中的"ab"对象，故二者的引用相同，返回true。
-
 
 ```java
 String a = "ab";  
@@ -321,7 +320,11 @@ SPI：Service Provider Interface，通常用于在应用程序中提供可插拔
 
 ## 23. 有了equals为啥需要hashCode方法？
 `hashCode()`方法提供了一种**快速计算对象哈希值**的方式，这些哈希值用于确定对象在哈希表中的位置。这意味着可以快速定位到对象应该存储在哪个位置或者从哪个位置检索，显著提高了查找效率。
+## 为什么重写equals方法的时候必须要重写hashCode方法？
+为了保证「如果两个对象调用 equals 方法返回的结果为 true，那么两个对象调用 hashCode 方法返回的结果也必然相同」
 
+因此，必须重写hashCode方法，否则可能出现equals方法相等，但是hashCode值不相等的问题，这样就会出现在某些时候（例如HashMap），无法取出相等的两个元素。或者说会放置重复的元素。
+hashCode方法用于快速定位
 ## 24. 什么是反射机制？为什么反射慢？
 - 反射机制是指**程序在运行时能够获取自身信息**。
 
@@ -681,9 +684,9 @@ final Node<K,V> untreeify(HashMap<K,V> map) {
 hash方法的作用：计算哈希值并进行混合处理，使哈希值分布更均匀，从而减少冲突。
 
 ### JDK1.7：
-30. `hashseed`与key的哈希值进行异或，增加随机性；
-31. 进行一系列异或操作进行扰动计算；
-32. 调用indexFor方法：与`length-1`进行与操作，获取在数组中的索引下标。
+1. `hashseed`与key的哈希值进行异或，增加随机性；
+2. 进行一系列异或操作进行扰动计算；
+3. 调用indexFor方法：与`length-1`进行与操作，获取在数组中的索引下标。
 ```java
 final int hash(Object k) {
     int h = hashSeed; // transient int hashSeed = 0;
@@ -749,7 +752,7 @@ static final int hash(Object key) {
 - 底层数据结构为Node数组+链表/红黑树。
 - 采用“CAS+Synchronized”的机制来保证线程安全：
 	- 若某个Node为空，则使用CAS来添加新节点；
-	- 若Node不为空，则使用synchronized锁住当前节点，然后遍历链表或红黑树来插入新节点。
+	- 若Node不为空，则使用`synchronized`锁住当前节点，然后遍历链表或红黑树来插入新节点。
 ## 27. Set是如何保证元素不重复的？
 Set的实现类有HashSet和TreeSet，**二者保证不重复的机制不同**。
 ### HashSet：
