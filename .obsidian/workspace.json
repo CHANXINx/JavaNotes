@@ -4,165 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "189e86acb61329a7",
+        "id": "da8bfb6e90cf5599",
         "type": "tabs",
         "children": [
           {
-            "id": "bd286bc52dca023c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/07_计算机网络八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "07_计算机网络八股文"
-            }
-          },
-          {
-            "id": "54644c1fa5db8f35",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01_课程学习笔记/图解网络/图解网络.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "图解网络"
-            }
-          },
-          {
-            "id": "5f3651346e79d1e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/05_JUC八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "05_JUC八股"
-            }
-          },
-          {
-            "id": "417134a72610f181",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/07_计算机网络八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "07_计算机网络八股文"
-            }
-          },
-          {
-            "id": "56c79b071cc8c4d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "陈鑫的个人求职简历.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "陈鑫的个人求职简历"
-            }
-          },
-          {
-            "id": "48db0b9971d7d965",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "08_操作系统八股文"
-            }
-          },
-          {
-            "id": "ff9573b43411f6b8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/06_JVM八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06_JVM八股文"
-            }
-          },
-          {
-            "id": "931e839e3e04c17d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/用户模块.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "用户模块"
-            }
-          },
-          {
-            "id": "6a7414a39c3a98a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "!!!_问题梳理"
-            }
-          },
-          {
-            "id": "d50ef22ffddc9562",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/09_单调栈.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "09_单调栈"
-            }
-          },
-          {
-            "id": "c9a926eba0e2ca68",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/00_非技术类八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "00_非技术类八股"
-            }
-          },
-          {
-            "id": "f6ffe7eeb2fed62c",
+            "id": "59e6ce6283bef01a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -174,33 +20,8 @@
               "icon": "lucide-file",
               "title": "01_数组"
             }
-          },
-          {
-            "id": "2f3c8adf28073724",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "99_面试记录/面试记录.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "面试记录"
-            }
-          },
-          {
-            "id": "a4e2395079036907",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -232,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "视图",
+                "query": "二分",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -268,7 +89,8 @@
               "title": "标签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -385,8 +207,9 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "56c79b071cc8c4d9",
+  "active": "59e6ce6283bef01a",
   "lastOpenFiles": [
+    "陈鑫的个人求职简历.md",
     "03_八股文/07_计算机网络八股文.md",
     "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
     "03_八股文/05_JUC八股.md",
@@ -415,7 +238,6 @@
     "03_八股文/imgs/Pasted image 20250410100838.png",
     "03_八股文/imgs/Pasted image 20250410100440.png",
     "03_八股文/imgs/Pasted image 20250410100247.png",
-    "陈鑫的个人求职简历.md",
     "03_八股文/09_分布式.md",
     "01_课程学习笔记/图解网络",
     "05_力扣刷题笔记/07_动态规划.md",
