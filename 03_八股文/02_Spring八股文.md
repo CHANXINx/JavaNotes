@@ -1,4 +1,6 @@
-## 1. 介绍一下Spring的IOC:
+## 1. Springboot的启动流程是怎样的？
+
+## 2. 介绍一下Spring的IOC:
 >[!ABSTRACT]-
 >1. **是什么：** 将类的创建和销毁交由Spring容器，由容器负责对象的创建和管理。
 >2. **优点：** 
@@ -11,23 +13,23 @@ IOC，全称Inverse Of Control，控制反转.
 1. 使用者无需关心引用bean的全部细节.
 2. 不用创建多个相同的bean导致浪费.
 3. Bean的修改使用方无需感知.
-## 2. 介绍一下DI：
+## 3. 介绍一下DI：
 依赖注入，Spring框架实现IOC的具体方式。可以通过XML手动注入或自动注入两种方式实现。
 
 三种自动注入方式：
 1. Setter注入；
 2. 构造器注入；
 3. 字段注入（即通过`@Autowired`注解）.
-## 3. 介绍一下Spring的AOP:
+## 4. 介绍一下Spring的AOP:
 
 AOP，Aspect Oriented Programming，面向切面编程，**把业务逻辑中的通用代码抽取到独立的模块中**。
 
 优点：
 - 使代码模块化，减少代码冗余；
 - 提高代码的可重用性，并有利于未来的拓展。
-## 4. BeanFactory 和 ApplicationContext 的区别？ TODO
+## 5. BeanFactory 和 ApplicationContext 的区别？ TODO
 
-## 5. Bean标签的属性
+## 6. Bean标签的属性
 在XML实现注入Bean时，可配置的属性。
 - id：Bean的唯一标识符
 - name：Bean的别名，可以有1个或多个。
@@ -47,7 +49,7 @@ AOP，Aspect Oriented Programming，面向切面编程，**把业务逻辑中的
     <property name="anotherProperty" ref="anotherBean"/>
 </bean>
 ```
-## 6. Bean的作用域有哪些？
+## 7. Bean的作用域有哪些？
 Bean的作用域决定了bean在哪个范围内被使用，同时决定了Bean的创建、管理和销毁的方法，可以通过XML注入时的scope属性或自动注入时的`@Scope()`进行配置。Bean的作用域有以下六种：
 1. Singleton（单例）：默认作用域。对于一个IoC容器，只创建一个单例Bean。适用于状态是**全局共享**的状态。
 2. Prototype（原型）：每次请求该Bean都会创建一个新的Bean实例。适用于**所有状态是非共享**的情况。
@@ -57,11 +59,11 @@ Bean的作用域决定了bean在哪个范围内被使用，同时决定了Bean�
 5. Application（应用）：在 ServletContext 的生命周期内，只创建一个 Bean 实例。适用于**全应用程序级别**的共享数据。
 6. 自定义作用于：实现@Scope接口，实现`get()`、`remove()`等方法，然后在Config类中注册自定义作用域（通过`registerScope()`方法）
 后四种仅适用于Web应用。
-## 7. Bean的实例化方法有哪几种？TODO
+## 8. Bean的实例化方法有哪几种？TODO
 
-## 8. Spring的@Autowired能用在Map上吗？
+## 9. Spring的@Autowired能用在Map上吗？
 可以。@Autowired**可以用于注入复杂的集合类型**，尤其在Map中比较常见。例如当某个Service有多个实现类，则通过@Autowired注解可以实现注入不同实现类的实例，其中KEY为Bean的名称，VALUE为Bean的实例。【通常用在工厂模式，根据不同名称获取不同实例】
-## 9. @Autowired和@Resource的关系？
+## 10. @Autowired和@Resource的关系？
 @Autowired是Spring框架提供的自动注入注解，@Resource是JDK官方提供的自动注入注解。
 
 @Autowired：
@@ -119,7 +121,7 @@ class Test {
     private Bean bean;
 }
 ```
-## 10. @Bean 与 @Component 注解有什么区别?
+## 11. @Bean 与 @Component 注解有什么区别?
 >[!abstract]
 >“`@Bean` 和 `@Component` 都是用来定义 Spring 管理的 Bean，但它们的用法不太一样。`@Bean` 是放在方法上的，通常出现在 `@Configuration` 注解的类中，它的作用是通过方法返回一个对象，这个对象会被 Spring 容器管理。而 `@Component` 是放在类上的，标记一个类让 Spring 容器自动扫描并创建该类的实例，通常用来定义那些不需要特别配置的简单 Bean。
 >简单来说，`@Bean` 是显式声明 Bean，并允许你在方法内部做一些逻辑处理；而 `@Component` 则是隐式声明，Spring 会**自动扫描并注册标记了这个注解的类**。”
@@ -135,7 +137,7 @@ class Test {
 - 通常用于简单的Bean。
 - 结合`@ComponentScan`使用，Spring容器会自动扫描指定包及其子包的所有类，将含有@Component、@Service、@Repository注解的类注册为Bean。【在结合Springboot项目中，`@ComponentScan`注解被@SpringbootApplication注解涵盖】
 
-## 11. 介绍一下AspectJ的两种代理实现方式
+## 12. 介绍一下AspectJ的两种代理实现方式
 有两种实现方式：
 - **静态代理**：在代码运行前，通过修改.class字节码文件完成代理，功能可以无限扩大，并且运行效率比动态代理快很多，但复杂性相对较高。有三种方式：
 	- **编译时**：在代码编译时，通过AspectJ编译器重新生成一个新代理类，并把该类加载到JVM中；
@@ -144,7 +146,7 @@ class Test {
 - **动态代理**：在代码运行时进行代理，功能受限且有额外的运行时性能开销，不过使用相对简单！
 	- CGLIB动态代理：通过**字节码技术在运行时生成主类的代理类**；【默认】
 	- JDK PROXY：通过**实现主类接口**，从而构造一个足以伪装成主类的代理类。
-## 12. AOP是如何实现的？
+## 13. AOP是如何实现的？
 基于**动态代理**实现的：在运行时动态生成代理对象。允许开发者在运行时指定要代理的接口和行为，从而实现在不修改源码的情况下增强方法的功能。
 
 SpringAOP支持两种动态代理：
@@ -155,7 +157,7 @@ SpringAOP支持两种动态代理：
 - **基于CGLIB的动态代理**：
 	- 当被代表的类**没有实现接口**时，会使用基于CGLIB的动态代理。**通过继承的方式，在运行时通过字节码技术动态创建子类实例作为代理类。**
 
-## 13. 动态代理是什么？
+## 14. 动态代理是什么？
 在**运行时动态创建代理对象**的机制，主要用于在不修改原始类的情况下对方法调用进行拦截和增强，为原始类新增一些功能。
 #### 基于接口的动态代理(JDK动态代理)：
 使用`Java.lang.reflect.Proxy`类和`Java.lang.reflect.InnovationHandler`实现，**需要被代理类实现一个或多个接口**。
@@ -165,7 +167,7 @@ Java会创建一个**实现了相同接口的代理类，在运行时创建该�
 当被代表的类**没有实现接口**时，会使用CGLIB库通过**字节码技术动态生成一个被代理类的子类作为代理**。
 
 CGLIB会在运行时动态生成一个目标类的子类。CGLIB通过继承的方式创建代理类。
-## 14. AOP有什么注解？
+## 15. AOP有什么注解？
 - @Aspect：切面
 - @Pointcut：切点
 - @Before：方法执行前执行通知
@@ -173,13 +175,13 @@ CGLIB会在运行时动态生成一个目标类的子类。CGLIB通过继承的�
 - **@Around**：方法执行前后都执行通知
 - @AfterReturning：方法执行返回结果后通知
 - @AfterThrowing：方法抛出异常后执行通知
-## 15. AOP什么时候会失效？
+## 16. AOP什么时候会失效？
 AOP生效，需要动态代理生效，且能调用到代理对象的方法。
 1. **私有方法、类内部调用、内部类方法调用**：此时不会使用代理对象，而是直接通过this调用方法；
 2. **静态方法**：直接通过类调用，不会调用代理对象；（AOP只能代理实例方法）
 3. **final方法**：被`final`修饰的方法无法被所在类的子类重写；（CGLIB通过生成子类来实现代理）
 
-## 16. 为什么Spring不建议使用基于字段的依赖注入？
+## 17. 为什么Spring不建议使用基于字段的依赖注入？
 强制依赖使用构造器注入，可选依赖使用setter注入。
 - 单一职责问题：一个类的设计应该符合单一职责原则，使用字段注入可能在不自觉中就引入更多的依赖；
 - 依赖完整性：确保所有必需依赖在对象创建时就被注入，避免了空指针异常的风险。
@@ -187,10 +189,10 @@ AOP生效，需要动态代理生效，且能调用到代理对象的方法。
 - 初始化保证：组件在使用前已完全初始化，减少了潜在的错误。
 - 测试便利性：在单元测试中，可以直接通过构造函数传入模拟的依赖项，而不必依赖 Spring 容器进行注入。
 
-## 17. 什么是循环依赖？
+## 18. 什么是循环依赖？
 在Setter注入或字段注入时，A依赖B，B依赖A，导致A在实例化时需要创建B实例，而B在实例化时又要创建A实例。
 ![[Pasted image 20241208190639.png|450]]
-## 18. 什么是Spring的三级缓存？
+## 19. 什么是Spring的三级缓存？
 在`DefaultSingletonBeanRegistry`类中实现了BeanFactory接口，并且维护了三级缓存：
 - 一级缓存`singletonObjects`：存放完整创建好的单例Bean对象；【完成实例化、初始化的Bean】
 - 二级缓存`earlySingletonObjects`：存放尚未完全创建好的单例Bean对象【未完全初始化】；
@@ -206,7 +208,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
   private final Map<String, Object> earlySingletonObjects = new ConcurrentHashMap<>(16);
 }
 ```
-## 19. Spring是如何解决循环依赖的？
+## 20. Spring是如何解决循环依赖的？
 通过三级缓存机制解决的【本质是实例化和初始化是可以分开的，即初始化可延后】，但是无法解决非单例Bean以及构造注入的循环依赖问题。具体流程如下：
 - 实例化A，发现需要属性B，并且从一级缓存中获取不到实例B，那么就先将实例A放到三级缓存中；
 - 实例化B，发现需要属性A，此时从一级缓存与二级缓存中获取不到实例A，从三级缓存中获取到实例A的Bean工厂，创建实例A，并将创建好的实例A放到二级缓存中，并删除实例A的Bean工厂。至此，实例B初始化完成，加入到一级缓存中。
@@ -246,25 +248,25 @@ protected Object getSingleton(String beanName, boolean allowEarlyReference) {
 }
 ```
 ![[Pasted image 20250220212012.png]]
-## 20. 解决循环依赖一定需要三级缓存吗？ TODO
+## 21. 解决循环依赖一定需要三级缓存吗？ TODO
 其实通过二级缓存也可以实现。基本思路就是将已实例化但未初始化的实例A放入二级缓存中，以便实例化B时能从二级缓存中获取实例A进行注入，完成初始化。
 
 ![[Pasted image 20250220214300.png]]
 但是， 
-## 21. 三级缓存是能解决所有循环依赖问题吗？ TODO
+## 22. 三级缓存是能解决所有循环依赖问题吗？ TODO
 不能，无法解决以下两类循环依赖问题：
 1. 使用构造器注入的循环依赖问题。
 2. 非单例Bean的循环依赖问题。
-## 22. ⭐Bean的生命周期(Hollis)
+## 23. ⭐Bean的生命周期(Hollis)
 ![[Pasted image 20241123151334.png]]
 可粗略分为三个阶段：创建、使用、销毁。
 也可进一步细分为：实例化、初始化、注册Destruction回调、Bean的使用、Bean的销毁。
 
-## 23. Bean的初始化过程
+## 24. Bean的初始化过程
 ![[Pasted image 20241123151820.png|500]]
 初始化是在Bean实例化后，进行一些设置或准备工作，包括Bean属性的赋值、调用各种前置后置换处理器。
 
-## 24. 介绍一下Bean的生命周期
+## 25. 介绍一下Bean的生命周期
 Bean的生命周期分为5个阶段：**①实例化；②属性赋值；③初始化；④Bean的使用；⑤Bean的销毁。**
 
 ①实例化：Spring使用构造方法或工厂方法创建Bean的实例，此时为空对象，并未设置属性值；
@@ -276,9 +278,9 @@ Bean的生命周期分为5个阶段：**①实例化；②属性赋值；③初�
 ![[Pasted image 20250113005638.png|300]]
 ![[Pasted image 20250113013019.png|300]]
 **整个Bean的创建的过程都依赖于AbstractAutowireCapableBeanFactory这个类，而销毁主要依赖DisposableBeanAdapter这个类。**
-## 25. 如何让Bean按顺序加载？
+## 26. 如何让Bean按顺序加载？
 通过@**DependsOn注解**，可以指定某个Bean先加载。
-## 26. Spring的事务传播机制
+## 27. Spring的事务传播机制
 Spring的事务传播机制用于控制在多个事务方法相互调用时事务的行为，用于确保事务的一致性和完整性。
 Spring规定了**7种**事务的传播机制，**默认为REQUIRED**。【一般就用默认的REQUIRED】
 1. **REQUIRED：** 如果不存在，则开启事务；若存在，则加入之前已开启的事务，总是只有一个事务在执行；
@@ -297,7 +299,7 @@ Spring规定了**7种**事务的传播机制，**默认为REQUIRED**。【一般
 [18个示例详解 Spring 事务传播机制-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2226182)
 
 
-## 27. ==Spring事务失效原因==
+## 28. ==Spring事务失效原因==
 `@Transactional`声明式事务是基于Spring的AOP机制实现的，而AOP是基于动态代理实现的，因此动态代理失效，事务也就会失效。
 
 #### 1. 非public使用@Transactional
@@ -373,7 +375,7 @@ public class MyService {
 #### 5. 事务中用了多线程
 `@Transactional`的事务管理是通过ThreadLocal机制来存储事务上下文，而ThreadLocal变量是线程隔离的，因此多线程环境下会失效。
 
-## 28. Spring常用注解
+## 29. Spring常用注解
 - @SpringBootApplication：标注主应用程序类，标识一个Spring Boot应用程序的入口点，同时启用**自动配置和组件扫描**。
 	- @EnableAutoConfiguration自动配置：扫描类路径下的所有spring.factories文件，然后进行Bean的自动化配置。
 	- @ComponentScan组件扫描：扫描被@Component注解标识的Bean。
@@ -391,9 +393,9 @@ public class MyService {
 	- @Controller：标识控制器类；
 	- @Service：标识服务类；
 	- @Repository：标识数据访问组件
-## 29. Springboot Starter有什么优点？TODO
+## 30. Springboot Starter有什么优点？TODO
 
-## 30. Spring中使用了什么设计模式？ TODO
+## 31. Spring中使用了什么设计模式？ TODO
 #### 工厂模式
 
 #### 单例模式
@@ -408,11 +410,157 @@ public class MyService {
 
 #### 策略模式
 
-## 31. MVC是什么？
+## 32. MVC是什么？
 Model-View-Controller，是一种软件设计模式。
-## 32. SpringMVC是如何将不同的Request路由到不同Controller中的？
+## 33. SpringMVC是如何将不同的Request路由到不同Controller中的？TODO
+[✅SpringMVC是如何将不同的Request路由到不同Controller中的？](https://www.yuque.com/hollis666/hkhtl7/kdhprf)
 
+## 34. 过滤器和拦截器的区别是什么？
+## 35. 什么是Springboot的自动配置？
 
-## 33. 过滤器和拦截器的区别是什么？
-## 自动配置 TODO
-自动扫描类路径下的类，将其注册为Bean，交由Spring容器管理。
+Springboot会自动扫描类路径下的类，将其注册为Bean，交由Spring容器管理。
+
+Springboot通过Spring的条件配置决定哪些bean可以被配置，
+
+#### 自动配置过程
+1. 扫描：Springboot启动时，会扫描META-INF下的`spring.factories`文件，列出所有的自动配置类；
+2. 加载：springboot会尝试加载自动配置类；
+3. 评估条件注解：对于每个自动配置类，springboot会评估其上的条件注解，如果满足则会被应用；
+4. 应用自动配置：自动配置类中的配置会被应用到Spring容器中，注册相应的bean。
+
+在springboot2.7之后，spring.factories已不建议使用，最新的方式是使用`/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`
+#### 如何开启？
+- 通过@EnableAutoConfiguration注解进行开启。
+- 或者通过`@SpringbootApplication`注解开启，该注解包含`@EnableAutoConfiguration`、`@Component`和`@Configuration`。
+#### 条件化配置
+支持使用@Condition注解进行条件化配置，类似的注解还有：
+- @ConditionalOnBean；
+- @ConditionalOnClass；
+- @ConditionalOnMissingBean；
+#### 示例
+`org.springframework.boot.autoconfigure.AutoConfiguration.imports`文件示例：
+```yaml
+cn.hollis.nft.turbo.web.configuration.WebConfiguration
+```
+配置类：定义了相关Bean的实例化配置，说明了哪些Bean可以被自动配置，什么条件下可以自动配置。
+会自动扫描该类下的所有Bean，将符合条件的Bean注册到Spring容器中。
+```java
+@AutoConfiguration
+@ConditionalOnWebApplication
+public class WebConfiguration implements WebMvcConfigurer {
+
+    @Bean
+    @ConditionalOnMissingBean
+    GlobalWebExceptionHandler globalWebExceptionHandler() {
+        return new GlobalWebExceptionHandler();
+    }
+
+    /**
+     * 注册token过滤器
+     *
+     * @param redissonClient
+     * @return
+     */
+    @Bean
+    public FilterRegistrationBean<TokenFilter> tokenFilter(RedissonClient redissonClient) {
+        FilterRegistrationBean<TokenFilter> registrationBean = new FilterRegistrationBean<>();
+
+        registrationBean.setFilter(new TokenFilter(redissonClient));
+        // token过滤器只在下单接口生效.
+        registrationBean.addUrlPatterns("/trade/buy","/trade/newBuy");
+        // 设置过滤器次数: 从小到大执行.
+        registrationBean.setOrder(10);
+
+        return registrationBean;
+    }
+
+}
+
+```
+
+## 36. Springboot如何进行优雅停机？
+优雅停机指的是：
+- 以受控的方式终止程序的进程，**允许程序完成正在进行中的任务**，释放资源，以保证数据的完整性。
+
+从Springboot2.3开始，内置了优雅停机的功能，只需要在`application.properties`文件中添加一行代码：
+```
+server.shutdown = graceful
+// 设置等待时间：默认为30秒
+//spring.lifecycle.timeout-per-shutdown-phase=2m
+```
+
+## 37. 如何在Spring启动过程中做缓存预热？
+实质上就是在Spring的启动过程中进行额外操作。
+
+#### 方法一：监听ApplicationReadyEvent时间
+ApplicationReadyEvent是Springboot框架中的一个事件类，表示应用程序已经准备好接收请求，即应用程序已启动且上下文已刷新。
+
+我们可以通过监听此事件，实现在完全启动后进行一些初始化逻辑，例如：
+```java
+@EventListener(ApplicationReadyEvent.class)
+public void preloadCache() {
+	// 缓存预热逻辑 
+	...
+}
+```
+#### 方法二：Runner
+可以通过CommandLineRunner和ApplicationRunner来实现该功能。
+
+`CommandLineRunner`和`ApplicationRunner`是Springboot用于在应用程序启动后执行特定逻辑的接口，因此我们可以实现该接口，并重写其中的run方法，实现缓存预热逻辑。
+```java
+@Component
+public class MyCommandLineRunner implements CommandLineRunner {
+
+    @Override
+    public void run(String... args) throws Exception {
+        // 在应用启动后执行缓存预热逻辑
+        // ...
+    }
+}
+```
+
+```java
+@Component
+public class MyApplicationRunner implements ApplicationRunner {
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        // 在应用启动后执行缓存预热逻辑
+        // ...
+    }
+}
+
+```
+#### 方法三：使用InitializingBean接口
+Bean初始化过程中会调用`afterPropertiesSet`方法，因此我们可以重写该方法，在里面实现缓存预热逻辑：
+```java
+@Component
+public class CachePreloader implements InitializingBean{
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        // 执行缓存预热逻辑
+        // ...
+    }
+}
+```
+
+类似地，可以使用`@PostConstruct`注解标注方法，代表着在**Bean构造函数执行完毕**后会调用该方法：
+```java
+@Component
+public class CachePreloader {
+
+    @PostConstruct
+    public void preloadCache() {
+        // 执行缓存预热逻辑
+        // ...
+    }
+}
+
+```
+
+## 38. Springboot和Spring的区别是什么？
+1. 自动配置：通过自动配置来减少开发人员的配置工作，使开发人员可以更专注于业务逻辑而不是配置；
+2. 内嵌Web服务器：内嵌Tomcat服务器，因此可以轻松创建独立应用程序，无需外部Web服务器；
+3. 约定大于配置：例如默认读取`spring.factories`来加载starter，读取application.properties来进行属性配置。
+
+## 39. Springboot是如何实现main方法启动Web项目的？
