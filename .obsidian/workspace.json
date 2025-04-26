@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
+                "file": "05_力扣刷题笔记/05_二叉树.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_数组"
+              "title": "05_二叉树"
             }
           }
         ],
@@ -225,7 +225,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
+                "file": "05_力扣刷题笔记/05_二叉树.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -235,7 +235,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "01_数组 的反向链接列表"
+              "title": "05_二叉树 的反向链接列表"
             }
           },
           {
@@ -258,13 +258,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
+                "file": "05_力扣刷题笔记/05_二叉树.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "01_数组 的大纲"
+              "title": "05_二叉树 的大纲"
             }
           }
         ],
@@ -293,6 +293,7 @@
   },
   "active": "cf9a29d8db5cd488",
   "lastOpenFiles": [
+    "05_力扣刷题笔记/01_数组.md",
     "03_八股文/07_计算机网络八股文.md",
     "03_八股文/03_MySQL八股.md",
     "03_八股文/imgs/Pasted image 20250425103854.png",
@@ -304,7 +305,6 @@
     "03_八股文/imgs/Pasted image 20250425005717.png",
     "03_八股文/imgs/Pasted image 20250425003216.png",
     "03_八股文/imgs/Pasted image 20250424235700.png",
-    "05_力扣刷题笔记/01_数组.md",
     "03_八股文/13_微服务.md",
     "04_场景题/场景题总结.md",
     "03_八股文/09_分布式.md",
