@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "da8bfb6e90cf5599",
+        "id": "478bacbee7626de5",
         "type": "tabs",
         "children": [
           {
-            "id": "13c040aaa9b2e484",
+            "id": "22ac427147acc65b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,93 +20,8 @@
               "icon": "lucide-file",
               "title": "面试记录"
             }
-          },
-          {
-            "id": "ca84a4cf3db073b7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/04_哈希表.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04_哈希表"
-            }
-          },
-          {
-            "id": "d68ba341320a1ffb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/04_Redis八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04_Redis八股"
-            }
-          },
-          {
-            "id": "b861d8b229f125d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/08_操作系统八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "08_操作系统八股文"
-            }
-          },
-          {
-            "id": "04ee4601af23aaf4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/03_MySQL八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "03_MySQL八股"
-            }
-          },
-          {
-            "id": "ff0ae7822d1a32f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_八股文/07_计算机网络八股文.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "07_计算机网络八股文"
-            }
-          },
-          {
-            "id": "cf9a29d8db5cd488",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05_力扣刷题笔记/05_二叉树.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "05_二叉树"
-            }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -138,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "索引下推",
+                "query": "LRU",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -220,51 +135,18 @@
             }
           },
           {
-            "id": "ad65282feccf86fe",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "05_力扣刷题笔记/05_二叉树.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "05_二叉树 的反向链接列表"
-            }
-          },
-          {
-            "id": "dd5820baf1d2c519",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "05_力扣刷题笔记/01_数组.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "01_数组 的出链列表"
-            }
-          },
-          {
             "id": "e35b40da662a3801",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "05_力扣刷题笔记/05_二叉树.md",
+                "file": "99_面试记录/面试记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "05_二叉树 的大纲"
+              "title": "面试记录 的大纲"
             }
           }
         ],
@@ -291,43 +173,43 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "cf9a29d8db5cd488",
+  "active": "22ac427147acc65b",
   "lastOpenFiles": [
     "05_力扣刷题笔记/01_数组.md",
-    "03_八股文/07_计算机网络八股文.md",
-    "03_八股文/03_MySQL八股.md",
-    "03_八股文/imgs/Pasted image 20250425103854.png",
-    "03_八股文/imgs/Pasted image 20250425103846.png",
+    "04_场景题/场景题总结.md",
     "99_面试记录/面试记录.md",
+    "03_八股文/05_JUC八股.md",
+    "03_八股文/10_消息队列.md",
+    "05_力扣刷题笔记/02_链表.md",
+    "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
+    "03_八股文/03_MySQL八股.md",
     "03_八股文/04_Redis八股.md",
+    "03_八股文/07_计算机网络八股文.md",
+    "03_八股文/09_分布式.md",
+    "03_八股文/imgs/Pasted image 20250427175541.png",
+    "03_八股文/imgs/Pasted image 20250427175118.png",
+    "03_八股文/imgs/4d2dc376b5fd68dae70d9284ae82b73a.webp",
+    "03_八股文/imgs/Pasted image 20250427175051.png",
+    "03_八股文/imgs/Pasted image 20250427173325.png",
+    "03_八股文/imgs/Pasted image 20250427171231.png",
+    "03_八股文/imgs/Pasted image 20250427171216.png",
+    "03_八股文/imgs/Pasted image 20250427170627.png",
+    "03_八股文/imgs/Pasted image 20250427142728.png",
+    "03_八股文/imgs/Pasted image 20250427135112.png",
+    "05_力扣刷题笔记/05_二叉树.md",
     "05_力扣刷题笔记/04_哈希表.md",
     "03_八股文/08_操作系统八股文.md",
-    "03_八股文/imgs/Pasted image 20250425005717.png",
-    "03_八股文/imgs/Pasted image 20250425003216.png",
-    "03_八股文/imgs/Pasted image 20250424235700.png",
     "03_八股文/13_微服务.md",
-    "04_场景题/场景题总结.md",
-    "03_八股文/09_分布式.md",
     "05_力扣刷题笔记/11_回溯.md",
-    "02_项目笔记/03_拖把数藏/!!!_问题梳理.md",
     "陈鑫的个人求职简历.md",
     "03_八股文/02_Spring八股文.md",
     "05_力扣刷题笔记/07_动态规划.md",
-    "05_力扣刷题笔记/02_链表.md",
-    "03_八股文/10_消息队列.md",
     "03_八股文/06_JVM八股文.md",
-    "03_八股文/05_JUC八股.md",
     "03_八股文/01_Java基础兼集合类八股.md",
     "03_八股文/00_非技术类八股.md",
     "01_课程学习笔记/设计模式/设计模式.md",
     "03_八股文/imgs/09_设计模式八股文.md",
-    "03_八股文/imgs/Pasted image 20250422013434.png",
     "03_八股文/11_其它.md",
-    "01_课程学习笔记/计算机网络.md",
-    "03_八股文/imgs/Pasted image 20250410105207.png",
-    "03_八股文/imgs/Pasted image 20250410105043.png",
-    "03_八股文/imgs/Pasted image 20250410104816.png",
-    "03_八股文/imgs/Pasted image 20250410104600.png",
     "01_课程学习笔记/图解网络",
     "01_课程学习笔记/imgs",
     "99_书籍阅读/imgs",
