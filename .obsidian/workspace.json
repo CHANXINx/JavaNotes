@@ -25,12 +25,14 @@
             "id": "9f30511883e69be8",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "01_课程学习笔记/消息队列MQ/RabbitMQ.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "icon": "lucide-file",
+              "title": "RabbitMQ"
             }
           }
         ],
@@ -106,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5,
-    "collapsed": true
+    "width": 284.5
   },
   "right": {
     "id": "45beac71d173d048",
@@ -168,6 +169,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "01_课程学习笔记/消息队列MQ/RabbitMQ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +179,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "RabbitMQ 的反向链接列表"
             }
           },
           {
@@ -186,11 +188,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "01_课程学习笔记/消息队列MQ/RabbitMQ.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "RabbitMQ 的出链列表"
             }
           }
         ],
