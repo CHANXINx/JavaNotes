@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "面试记录"
             }
+          },
+          {
+            "id": "9f30511883e69be8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -148,6 +161,37 @@
               "icon": "lucide-list",
               "title": "面试记录 的大纲"
             }
+          },
+          {
+            "id": "0a2928607d41a04c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "53b58ffc6a22bf6e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
           }
         ],
         "currentTab": 2
@@ -173,7 +217,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "22ac427147acc65b",
+  "active": "9f30511883e69be8",
   "lastOpenFiles": [
     "05_力扣刷题笔记/01_数组.md",
     "04_场景题/场景题总结.md",
