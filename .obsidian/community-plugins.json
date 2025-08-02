@@ -1,7 +1,6 @@
 [
   "calendar",
   "remotely-save",
-  "obsidian-git",
   "editing-toolbar",
   "table-editor-obsidian",
   "obsidian-quiet-outline",
@@ -9,5 +8,6 @@
   "code-styler",
   "number-headings-obsidian",
   "obsidian-heading-shifter",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "obsidian-git"
 ]
