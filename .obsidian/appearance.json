@@ -1,6 +1,6 @@
 {
-  "textFontFamily": "Source Han Sans CN,iA Writer Mono V Regular,霞鹜文楷",
-  "interfaceFontFamily": "Source Han Sans CN,iA Writer Mono V Regular",
+  "textFontFamily": "Source Han Sans,iA Writer Mono V Regular,霞鹜文楷",
+  "interfaceFontFamily": "Source Han Sans,iA Writer Mono V Regular",
   "baseFontSizeAction": true,
   "theme": "moonstone",
   "baseFontSize": 17,
@@ -9,5 +9,6 @@
     "有序列表样式",
     "无序列表样式",
     "侧边栏字体"
-  ]
+  ],
+  "monospaceFontFamily": "Fira Code"
 }

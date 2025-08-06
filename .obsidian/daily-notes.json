@@ -1,5 +1,5 @@
 {
-  "format": "MM月DD日",
-  "folder": "每日学习记录",
-  "template": "模板/学习记录模板"
+  "format": "YYYY年MM月DD日",
+  "folder": "MyLife/MyDiary",
+  "template": "MyLife/模板/日记模板"
 }
