@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyLife/MyDiary/2025年08月07日.md",
+                "file": "MyNotes/实习/文华教育产出梳理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025年08月07日"
+              "title": "文华教育产出梳理"
             }
           }
         ],
@@ -230,15 +230,16 @@
   "active": "e1c178d8ff760c62",
   "lastOpenFiles": [
     "MyLife/MyDiary/2025年08月08日.md",
+    "MyLife/MyDiary/2025年08月07日.md",
+    "MyLife/MyDiary/2025年08月06日.md",
+    "MyLife/MyDiary/2025年08月09日.md",
     "MyNotes/03_八股文/09_分布式.md",
     "MyNotes/03_八股文/06_JVM八股文.md",
     "Excalidraw/垃圾回收器分代区分.md",
     "MyNotes/03_八股文/07_计算机网络八股文.md",
-    "MyLife/MyDiary/2025年08月07日.md",
     "Excalidraw",
     "MyNotes/03_八股文/Untitled Diagram.svg",
     "MyNotes/03_八股文/imgs/Pasted image 20250807091226.png",
-    "MyLife/MyDiary/2025年08月06日.md",
     "MyLife/模板/日记模板.md",
     "MyLife/MyDiary/25年08月07日.md",
     "MyLife/MyDiary",
@@ -273,7 +274,6 @@
     "MyNotes/实习/文华教育产出梳理.md",
     "MyNotes/人脸识别机器人开发/开发计划.md",
     "MyNotes/人脸识别机器人开发/开发日记.md",
-    "MyNotes/02_项目笔记/03_拖把数藏/用户模块.md",
     "MyNotes/人脸识别机器人开发",
     "八股文/未命名.canvas"
   ]
