@@ -27,12 +27,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/03_八股文/04_Redis八股.md",
+                "file": "MyNotes/03_八股文/11_注册中心.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04_Redis八股"
+              "title": "11_注册中心"
+            }
+          },
+          {
+            "id": "4735fa0f4d7cf6d7",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/关于赚钱.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "关于赚钱"
             }
           }
         ],
@@ -68,7 +80,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Memcached",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -104,8 +116,7 @@
               "title": "标签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -125,8 +136,8 @@
             "state": {
               "type": "quiet-outline",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "lines-of-text",
+              "title": "Quiet Outline"
             }
           },
           {
@@ -140,28 +151,13 @@
             }
           },
           {
-            "id": "6eb554d5919b8f28",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "MyLife/MyDiary/2025年08月07日.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "2025年08月07日 的大纲"
-            }
-          },
-          {
             "id": "0fe693d88a5cbe47",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -170,8 +166,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
@@ -206,14 +202,27 @@
               "icon": "links-going-out",
               "title": "02_链表 的出链列表"
             }
+          },
+          {
+            "id": "80753375520af5f8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MyNotes/03_八股文/11_注册中心.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "11_注册中心 的大纲"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 298.5,
-    "collapsed": true
+    "width": 298.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,10 +240,16 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "929a8fdae625b599",
+  "active": "c83d7676f882c15c",
   "lastOpenFiles": [
+    "MyNotes/03_八股文/11_其它.md",
+    "MyNotes/03_八股文/11_注册中心.md",
+    "MyNotes/03_八股文/04_Redis八股.md",
+    "MyNotes/03_八股文/imgs/Pasted image 20250812234904.png",
     "MyLife/MyDiary/2025年08月11日.md",
     "MyLife/MyDiary/2025年08月10日.md",
+    "MyLife/MyDiary/2025年08月12日.md",
+    "Excalidraw/关于赚钱.md",
     "MyLife/MyDiary/2025年08月09日.md",
     "MyNotes/实习/美团实习/核心单据梳理.md",
     "MyNotes/实习/美团实习/imgs/Pasted image 20250810221851.png",
@@ -248,7 +263,6 @@
     "MyNotes/实习/美团实习/imgs/Untitled Diagram.drawio.png",
     "MyNotes/实习/美团实习/imgs",
     "MyLife/MyThoughts/关于赚钱.md",
-    "Excalidraw/关于赚钱.md",
     "Excalidraw/垃圾回收器分代区分.md",
     "MyLife/MyThoughts",
     "MyLife/Untitled Diagram.svg",
@@ -260,7 +274,6 @@
     "MyNotes/03_八股文/06_JVM八股文.md",
     "MyNotes/03_八股文/07_计算机网络八股文.md",
     "Excalidraw",
-    "MyNotes/03_八股文/Untitled Diagram.svg",
     "MyLife/模板/日记模板.md",
     "MyLife/MyDiary/25年08月07日.md",
     "MyLife/MyDiary",
@@ -273,10 +286,6 @@
     "MyNotes/05_力扣刷题笔记/00_算法基础.md",
     "MyNotes/实习/美团实习",
     "MyNotes/05_力扣刷题笔记/06_栈与队列.md",
-    "MyNotes/05_力扣刷题笔记/03_字符串.md",
-    "MyNotes/05_力扣刷题笔记/02_链表.md",
-    "MyNotes/05_力扣刷题笔记/05_二叉树.md",
-    "MyNotes/实习/美团实习/定点到站在途时长数据系统化.md",
     "MyNotes/实习/imgs",
     "MyNotes/实习",
     "八股文/未命名.canvas"
