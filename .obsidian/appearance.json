@@ -3,7 +3,7 @@
   "interfaceFontFamily": "Source Han Sans,iA Writer Mono V Regular",
   "baseFontSizeAction": true,
   "theme": "moonstone",
-  "baseFontSize": 17,
+  "baseFontSize": 13,
   "enabledCssSnippets": [
     "图片对齐语法",
     "有序列表样式",

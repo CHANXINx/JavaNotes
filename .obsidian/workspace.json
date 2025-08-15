@@ -27,12 +27,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyNotes/03_八股文/11_注册中心.md",
+                "file": "MyNotes/实习/美团实习/慢SQL优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11_注册中心"
+              "title": "慢SQL优化"
+            }
+          },
+          {
+            "id": "f55d94d78b33705d",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "MyNotes/实习/美团实习/imgs/Pasted image 20250815002147.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250815002147"
             }
           },
           {
@@ -209,20 +221,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyNotes/03_八股文/11_注册中心.md",
+                "file": "MyNotes/实习/美团实习/慢SQL优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "11_注册中心 的大纲"
+              "title": "慢SQL优化 的大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 298.5
+    "width": 298.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -242,50 +255,50 @@
   },
   "active": "c83d7676f882c15c",
   "lastOpenFiles": [
-    "MyNotes/03_八股文/11_其它.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815012743.png",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815012609.png",
+    "MyNotes/实习/美团实习/业务配置迁移海马平台.md",
+    "MyNotes/实习/美团实习/慢SQL优化.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815005917.png",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815005909.png",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815005524.png",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815005425.png",
+    "MyNotes/实习/美团实习/预排线优化.md",
+    "MyNotes/实习/美团实习/运单波次在途变更告知.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815005031.png",
+    "MyNotes/实习/美团实习/系统分享.md",
+    "MyNotes/实习/美团实习/货量预估接口切换.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815004710.png",
+    "MyNotes/实习/美团实习/定点到站在途时长数据系统化.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815004517.png",
+    "MyNotes/实习/美团实习/标准到站时间导入.md",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815004005.png",
+    "MyNotes/实习/美团实习/imgs/Pasted image 20250815002147.png",
+    "MyNotes/实习/美团实习/小象运输业务分享2.md",
+    "MyNotes/实习/美团实习/小象运输业务分享.md",
+    "MyNotes/03_八股文/14_ElasticSearch.md",
     "MyNotes/03_八股文/11_注册中心.md",
+    "MyNotes/03_八股文/11_其它.md",
     "MyNotes/03_八股文/04_Redis八股.md",
-    "MyNotes/03_八股文/imgs/Pasted image 20250812234904.png",
     "MyLife/MyDiary/2025年08月11日.md",
     "MyLife/MyDiary/2025年08月10日.md",
     "MyLife/MyDiary/2025年08月12日.md",
     "Excalidraw/关于赚钱.md",
     "MyLife/MyDiary/2025年08月09日.md",
     "MyNotes/实习/美团实习/核心单据梳理.md",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810221851.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810221831.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810221815.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810221802.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810221010.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810220955.png",
-    "MyNotes/实习/美团实习/imgs/Pasted image 20250810220921.png",
     "MyNotes/实习/美团实习/小象运输业务介绍.md",
-    "MyNotes/实习/美团实习/imgs/Untitled Diagram.drawio.png",
     "MyNotes/实习/美团实习/imgs",
     "MyLife/MyThoughts/关于赚钱.md",
     "Excalidraw/垃圾回收器分代区分.md",
     "MyLife/MyThoughts",
-    "MyLife/Untitled Diagram.svg",
     "MyNotes/实习/文华教育产出梳理.md",
     "MyLife/MyDiary/2025年08月08日.md",
-    "MyLife/MyDiary/2025年08月07日.md",
-    "MyLife/MyDiary/2025年08月06日.md",
-    "MyNotes/03_八股文/09_分布式.md",
-    "MyNotes/03_八股文/06_JVM八股文.md",
-    "MyNotes/03_八股文/07_计算机网络八股文.md",
     "Excalidraw",
-    "MyLife/模板/日记模板.md",
-    "MyLife/MyDiary/25年08月07日.md",
     "MyLife/MyDiary",
-    "MyNotes/Obsidian使用指南.md",
     "MyLife/模板",
     "MyLife",
     "MyNotes",
-    "MyNotes/实习/美团实习/标准到站时间导入.md",
-    "MyNotes/实习/美团实习/转正自评.md",
-    "MyNotes/05_力扣刷题笔记/00_算法基础.md",
     "MyNotes/实习/美团实习",
-    "MyNotes/05_力扣刷题笔记/06_栈与队列.md",
     "MyNotes/实习/imgs",
     "MyNotes/实习",
     "八股文/未命名.canvas"
